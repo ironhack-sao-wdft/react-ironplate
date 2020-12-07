@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
-import axios from "axios";
 
 const genres = [
   "Romance",
@@ -26,47 +26,28 @@ function generateYears() {
   // return years;
 }
 
-function BookForm() {
-  const [bookState, setBookState] = useState({
-    title: "",
-    author: "",
-    genre: "",
-    publisher: "",
-    year: new Date().getFullYear(),
-  });
-
+function BookForm(props) {
   function handleChange(event) {
-    setBookState({
-      ...bookState,
+    props.setState({
+      ...props.state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
 
-    try {
-      const response = await axios.post(
-        "http://localhost:1234/book",
-        bookState
-      );
-
-      console.log(response);
-    } catch (err) {
-      console.error(err);
-    }
+    props.handleSubmit();
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>New Book</h1>
-
       <TextInput
         id="bookTitle"
         type="text"
         name="title"
         label="Book Title"
-        value={bookState.title}
+        value={props.state.title}
         onChange={handleChange}
       />
 
@@ -75,7 +56,7 @@ function BookForm() {
         type="text"
         name="author"
         label="Book Author"
-        value={bookState.author}
+        value={props.state.author}
         onChange={handleChange}
       />
 
@@ -84,7 +65,7 @@ function BookForm() {
         id="bookReleaseYear"
         name="year"
         options={generateYears()}
-        value={bookState.year}
+        value={props.state.year}
         onChange={handleChange}
       />
 
@@ -93,7 +74,7 @@ function BookForm() {
         id="bookGenre"
         name="genre"
         options={genres}
-        value={bookState.genre}
+        value={props.state.genre}
         onChange={handleChange}
       />
 
@@ -102,11 +83,14 @@ function BookForm() {
         type="text"
         name="publisher"
         label="Book Publisher"
-        value={bookState.publisher}
+        value={props.state.publisher}
         onChange={handleChange}
       />
 
       <div className="form-group">
+        <Link className="btn btn-light mx-2" to="/book/all">
+          Back
+        </Link>
         <button type="submit" className="btn btn-primary">
           Save
         </button>

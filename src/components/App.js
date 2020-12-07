@@ -1,17 +1,24 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import BookCreate from "../routeComponents/book/BookForm";
+import Home from "../routeComponents/Home";
+import BookRouter from "../routeComponents/book/BookRouter";
+
+import NoMatch from "../components/404";
+import InternalServerError from "../components/InternalServerError";
 
 function App() {
   return (
-    <div className="container-fluid">
-      <BrowserRouter>
-        <Switch>
-          <Route path="/book/create" component={BookCreate} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/book" component={BookRouter} />
+
+        {/* Error handling routes */}
+        <Route path="/internal-server-error" component={InternalServerError} />
+        <Route path="*" component={NoMatch} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
