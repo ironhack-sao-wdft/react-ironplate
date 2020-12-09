@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 import BookForm from "./BookForm";
 
@@ -14,10 +14,7 @@ function BookCreate(props) {
 
   async function handleSubmit() {
     try {
-      const response = await axios.post(
-        "http://localhost:1234/book",
-        bookState
-      );
+      const response = await api.post("/book", bookState);
 
       props.history.push("/book/all");
     } catch (err) {

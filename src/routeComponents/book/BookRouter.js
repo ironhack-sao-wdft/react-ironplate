@@ -8,6 +8,8 @@ import BookDetail from "./BookDetail";
 import BookDelete from "./BookDelete";
 import Navbar from "../../components/Navbar";
 
+import PrivateRoute from "../../routeComponents/auth/PrivateRoute";
+
 function BookRouter(props) {
   return (
     // <> é um alias (apelido) para React.Fragment
@@ -15,7 +17,10 @@ function BookRouter(props) {
       <Navbar />
       <div className="container-fluid">
         <Switch>
-          <Route path={`${props.match.path}/create`} component={BookCreate} />
+          <PrivateRoute
+            path={`${props.match.path}/create`}
+            component={BookCreate}
+          />
           <Route path={`${props.match.path}/all`} component={BookList} />
           <Route
             exact

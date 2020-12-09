@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 import BookForm from "./BookForm";
 
@@ -17,7 +17,7 @@ function BookUpdate(props) {
   useEffect(() => {
     async function fetchBook() {
       try {
-        const response = await axios.get(`http://localhost:1234/book/${id}`);
+        const response = await api.get(`/book/${id}`);
         setBookState({ ...response.data });
       } catch (err) {
         console.error(err);
@@ -28,10 +28,7 @@ function BookUpdate(props) {
 
   async function handleSubmit() {
     try {
-      const response = await axios.patch(
-        `http://localhost:1234/book/${id}`,
-        bookState
-      );
+      const response = await api.patch(`/book/${id}`, bookState);
 
       props.history.push("/book/all");
     } catch (err) {

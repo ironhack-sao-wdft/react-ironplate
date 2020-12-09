@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 function BookDelete(props) {
   const { id } = props.match.params;
@@ -7,7 +7,7 @@ function BookDelete(props) {
   useEffect(() => {
     async function deleteBook() {
       try {
-        await axios.delete(`http://localhost:1234/book/${id}`);
+        await api.delete(`/book/${id}`);
         props.history.push("/book/all");
       } catch (err) {
         console.error(err);

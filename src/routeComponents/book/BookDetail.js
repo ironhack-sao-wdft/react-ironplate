@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState, useContext } from "react";
+
+import { AuthContext } from "../../contexts/authContext";
+
+import api from "../../apis/bookApi";
 
 function BookDetail(props) {
+  const authContext = useContext(AuthContext);
+
   // 1. Extrair o id do livro atual da URL
   const { id } = props.match.params;
 
@@ -18,7 +23,7 @@ function BookDetail(props) {
     async function fetchBooks() {
       // 2. Buscar os detalhes do livro no nosso servidor (backend)
       try {
-        const response = await axios.get(`http://localhost:1234/book/${id}`);
+        const response = await api.get(`/book/${id}`);
         console.log(response);
         setBook({ ...response.data });
       } catch (err) {

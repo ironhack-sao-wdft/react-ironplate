@@ -25,7 +25,7 @@ function BookList() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await axios.get("http://localhost:1234/book");
+        const response = await axios.get("http://localhost:1234/api/book");
         console.log(response);
         setBooks([...response.data]);
         setLoading(false);
