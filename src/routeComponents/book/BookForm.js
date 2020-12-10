@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
+import FileInput from "../../components/FileInput";
 
 const genres = [
   "Romance",
@@ -28,6 +29,13 @@ function generateYears() {
 
 function BookForm(props) {
   function handleChange(event) {
+    if (event.currentTarget.files) {
+      return props.setState({
+        ...props.state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
+    }
+
     props.setState({
       ...props.state,
       [event.currentTarget.name]: event.currentTarget.value,
@@ -84,6 +92,14 @@ function BookForm(props) {
         name="publisher"
         label="Book Publisher"
         value={props.state.publisher}
+        onChange={handleChange}
+      />
+
+      <FileInput
+        id="bookCoverImage"
+        name="bookCoverImage"
+        label="Choose an Image"
+        value={props.state.bookCoverImage}
         onChange={handleChange}
       />
 

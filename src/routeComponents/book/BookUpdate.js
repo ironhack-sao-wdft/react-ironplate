@@ -10,6 +10,7 @@ function BookUpdate(props) {
     genre: "Romance",
     publisher: "",
     year: new Date().getFullYear(),
+    bookCoverImage: "",
   });
 
   const { id } = props.match.params;

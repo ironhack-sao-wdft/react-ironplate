@@ -37,6 +37,13 @@ function BookDetail(props) {
   return (
     <div>
       <h1>Book Details</h1>
+
+      {book.bookCoverImage ? (
+        <img src={book.bookCoverImage} alt="book cover" />
+      ) : (
+        <p>No Book Cover available</p>
+      )}
+
       <p>
         <strong>Title: </strong>
         {book.title}
