@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 import TextInput from "../../components/TextInput";
 
@@ -23,10 +23,7 @@ function Signup(props) {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:1234/api/signup",
-        state
-      );
+      const response = await api.post("/signup", state);
       console.log(response);
       setErrors({ name: "", password: "", email: "" });
       props.history.push("/auth/login");

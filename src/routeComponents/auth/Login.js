@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 import TextInput from "../../components/TextInput";
 
@@ -28,10 +28,7 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:1234/api/login",
-        state
-      );
+      const response = await api.post("/login", state);
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });

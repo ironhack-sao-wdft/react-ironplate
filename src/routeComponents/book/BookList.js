@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import axios from "axios";
+import api from "../../apis/bookApi";
 
 import trashIcon from "../../assets/images/trashIcon.svg";
 import pencilIcon from "../../assets/images/pencilIcon.svg";
@@ -25,7 +25,7 @@ function BookList() {
   useEffect(() => {
     async function fetchBooks() {
       try {
-        const response = await axios.get("http://localhost:1234/api/book");
+        const response = await api.get("/book");
         console.log(response);
         setBooks([...response.data]);
         setLoading(false);
