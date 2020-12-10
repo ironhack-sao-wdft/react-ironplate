@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:1234/api",
+  baseURL: process.env.REACT_APP_API_BASE,
 });
 
 const storedUser = localStorage.getItem("loggedInUser");
