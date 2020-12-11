@@ -8,12 +8,10 @@ function AuthRouter(props) {
   return (
     // <> é um alias (apelido) para React.Fragment
     <React.Fragment>
-      <div className="container-fluid">
-        <Switch>
-          <Route path={`${props.match.path}/signup`} component={Signup} />
-          <Route path={`${props.match.path}/login`} component={Login} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path={`${props.match.path}/signup`} component={Signup} />
+        <Route path={`${props.match.path}/login`} component={Login} />
+      </Switch>
     </React.Fragment>
   );
 }

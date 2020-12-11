@@ -1,15 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import api from "../../apis/bookApi";
-
-import TextInput from "../../components/TextInput";
+import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
-
-  console.log("CONTEXT => ", authContext);
 
   const [state, setState] = useState({ password: "", email: "" });
   const [errors, setErrors] = useState({
@@ -48,30 +44,32 @@ function Login(props) {
     <form onSubmit={handleSubmit}>
       <h1>Login</h1>
 
-      <TextInput
-        type="email"
-        label="E-mail Address"
-        name="email"
-        id="signupFormEmail"
-        value={state.email}
-        error={errors.email}
-        onChange={handleChange}
-      />
+      <div>
+        <label htmlFor="signupFormEmail">E-mail Address</label>
+        <input
+          type="email"
+          name="email"
+          id="signupFormEmail"
+          value={state.email}
+          error={errors.email}
+          onChange={handleChange}
+        />
+      </div>
 
-      <TextInput
-        type="password"
-        label="Password"
-        name="password"
-        id="signupFormPassword"
-        value={state.password}
-        error={errors.password}
-        onChange={handleChange}
-      />
+      <div>
+        <label htmlFor="signupFormPassword">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="signupFormPassword"
+          value={state.password}
+          error={errors.password}
+          onChange={handleChange}
+        />
+      </div>
 
-      <div className="form-group">
-        <button type="submit" className="btn btn-primary">
-          Login!
-        </button>
+      <div>
+        <button type="submit">Login!</button>
 
         <Link to="/auth/signup">
           Don't have an account? Click here to signup!
