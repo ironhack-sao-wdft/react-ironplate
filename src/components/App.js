@@ -7,10 +7,12 @@ import AuthRouter from "../routeComponents/auth/AuthRouter";
 import { AuthContextComponent } from "../contexts/authContext";
 import Cart from "../routeComponents/Cart";
 import Checkout from "../routeComponents/Checkout";
+import Navmenu from "./Navmenu";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navmenu />
       <AuthContextComponent>
         <Switch>
           <Route exact path="/" component={Home} />
