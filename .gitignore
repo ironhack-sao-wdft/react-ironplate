@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .env
+package-lock.json
+.eslintcache
 
 # testing
 /coverage
