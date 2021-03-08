@@ -8,6 +8,7 @@ import Catalog from "../routeComponents/Catalog";
 import { AuthContextComponent } from "../contexts/authContext";
 import Cart from "../routeComponents/Cart";
 import Checkout from "../routeComponents/Checkout";
+import ProductDetails from "../routeComponents/ProductDetails";
 import Navmenu from "./Navmenu";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
           <Route path="/catalog" component={Catalog} />
+          <Route path="/product/:id" component={ProductDetails} />
           </div>
         </Switch>
       </AuthContextComponent>
