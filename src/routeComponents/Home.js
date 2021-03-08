@@ -6,14 +6,16 @@ import ProductCard from "../components/ProductCard";
 function Home() {
   return (
     <div className="text-center home-bg-color">
-      <div className="slogan-text">
-        <h3 className="text-size">The most</h3>
+      <div className="general-text">
         <h3 className="text-size">
-          <i> peculiar </i>
+          The most
+          <span>
+            <i>peculiar </i>
+          </span>
+          online store you've ever seen
         </h3>
-        <h3 className="text-size">online store you've ever seen</h3>
       </div>
-      <h4 className="slogan-text">
+      <h4 className="general-text">
         Find items you didn't know you wished you had
       </h4>
       <div>

@@ -1,3 +1,8 @@
+html,
+body {
+  background-color: rgb(35, 75, 150);
+}
+
 .home-bg-color {
   background-color: rgb(35, 75, 150);
 }
@@ -9,13 +14,21 @@
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
-.slogan-text {
+.general-text {
   color: #e8e9eb;
   padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.slogan-bg {
+  background-color: #e8e9eb;
+}
+
+.slogan-color {
+  color: rgb(35, 75, 150);
 }
 
 .text-size {

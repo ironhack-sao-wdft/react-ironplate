@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Form, Button, FormControl } from "react-bootstrap";
 import "./Navmenu.css";
-// import Logo from "/images/logoWrittenNoBg.png";
 
 function Navmenu() {
   return (
     <Navbar className="bg-color" expand="lg">
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src={"/images/logoWrittenNoBg.png"}
           alt={"OddMarket Logo"}
@@ -16,8 +15,12 @@ function Navmenu() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto link-text">
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
+          <Link to="/" className="link-text">
+            Home
+          </Link>
+          <Link to="/products" className="link-text">
+            Products
+          </Link>
         </Nav>
         <Form inline>
           <FormControl
@@ -29,10 +32,12 @@ function Navmenu() {
           <Button variant="outline-success">Search</Button>
         </Form>
         <Nav className="mr-auto">
-          <Link to="/login" className="link-text">
+          <Link to="/auth/login" className="link-text">
             Login
           </Link>
-          <Link to="/signup">Sign Up</Link>
+          <Link to="/auth/signup" className="link-text">
+            Sign Up
+          </Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

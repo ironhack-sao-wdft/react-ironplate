@@ -4,4 +4,7 @@
 
 .link-text {
   text-decoration: none;
+  color: #e8e9eb;
+  margin-right: 5px;
+  margin-left: 5px;
 }
