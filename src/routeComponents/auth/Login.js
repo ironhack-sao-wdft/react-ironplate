@@ -45,12 +45,12 @@ function Login(props) {
   }
 
   return (
-    <div className="general-text container">
+    <div className="general-text">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div className="container mt-5">
-          <div className="d-flex justify-content-between">
-            <label htmlFor="signupFormEmail">E-mail Address</label>
+          <div className="d-flex justify-content-between m-1">
+            <label htmlFor="signupFormEmail">E-mail</label>
             <input
               type="email"
               name="email"
@@ -61,7 +61,7 @@ function Login(props) {
             />
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between m-1">
             <label htmlFor="signupFormPassword">Password</label>
             <input
               type="password"
@@ -73,13 +73,17 @@ function Login(props) {
             />
           </div>
 
-          <div>
-            <Button variant="light" type="submit">
+          <div className="d-flex flex-column align-items-center">
+            <Button
+              variant="light"
+              type="submit"
+              style={{ width: 100, margin: 20 }}
+            >
               Login!
             </Button>
 
             <Link to="/auth/signup">
-              Don't have an account? Click here to signup!
+              Don't have an account? Click here to sign up!
             </Link>
           </div>
         </div>

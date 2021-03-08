@@ -33,11 +33,11 @@ function Signup(props) {
   }
 
   return (
-    <div className="general-text container">
+    <div className="general-text">
       <form onSubmit={handleSubmit}>
         <h1>Sign Up!</h1>
         <div className="container mt-5">
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between m-1">
             <label htmlFor="signupFormName">Name</label>
             <input
               type="text"
@@ -49,8 +49,8 @@ function Signup(props) {
             />
           </div>
 
-          <div className="d-flex justify-content-between">
-            <label htmlFor="signupFormEmail">E-mail Address</label>
+          <div className="d-flex justify-content-between m-1">
+            <label htmlFor="signupFormEmail">E-mail</label>
             <input
               type="email"
               name="email"
@@ -61,7 +61,7 @@ function Signup(props) {
             />
           </div>
 
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between m-1">
             <label htmlFor="signupFormPassword">Password</label>
             <input
               type="password"
