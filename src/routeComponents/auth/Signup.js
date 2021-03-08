@@ -35,52 +35,57 @@ function Signup(props) {
   return (
     <div className="general-text container">
       <form onSubmit={handleSubmit}>
-        <h1>Signup!</h1>
+        <h1>Sign Up!</h1>
+        <div className="container mt-5">
+          <div className="d-flex justify-content-between">
+            <label htmlFor="signupFormName">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="signupFormName"
+              value={state.name}
+              error={errors.name}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label htmlFor="signupFormName">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="signupFormName"
-            value={state.name}
-            error={errors.name}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="d-flex justify-content-between">
+            <label htmlFor="signupFormEmail">E-mail Address</label>
+            <input
+              type="email"
+              name="email"
+              id="signupFormEmail"
+              value={state.email}
+              error={errors.email}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label htmlFor="signupFormEmail">E-mail Address</label>
-          <input
-            type="email"
-            name="email"
-            id="signupFormEmail"
-            value={state.email}
-            error={errors.email}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="d-flex justify-content-between">
+            <label htmlFor="signupFormPassword">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="signupFormPassword"
+              value={state.password}
+              error={errors.password}
+              onChange={handleChange}
+            />
+          </div>
 
-        <div>
-          <label htmlFor="signupFormPassword">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="signupFormPassword"
-            value={state.password}
-            error={errors.password}
-            onChange={handleChange}
-          />
-        </div>
+          <div className="d-flex flex-column align-items-center">
+            <Button
+              variant="light outline-light"
+              type="submit"
+              style={{ width: 100, margin: 20 }}
+            >
+              Sign Up!
+            </Button>
 
-        <div className="">
-          <Button variant="light outline-light" type="submit">
-            Sign Up!
-          </Button>
-
-          <Link to="/auth/login">
-            Already have an account? Click here to login.
-          </Link>
+            <Link to="/auth/login">
+              Already have an account? Click here to login.
+            </Link>
+          </div>
         </div>
       </form>
     </div>

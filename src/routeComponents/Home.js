@@ -10,7 +10,7 @@ function Home() {
         <h3 className="text-size">
           The most
           <span>
-            <i>peculiar </i>
+            <i> peculiar </i>
           </span>
           online store you've ever seen
         </h3>

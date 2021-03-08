@@ -4,7 +4,7 @@ import "./Navmenu.css";
 
 function Navmenu() {
   return (
-    <Navbar className="bg-color" expand="lg">
+    <Navbar className="bg-color d-flex justify-content-around" expand="lg">
       <Navbar.Brand href="/">
         <img
           src={"/images/logoWrittenNoBg.png"}
@@ -29,7 +29,7 @@ function Navmenu() {
             className="mr-sm-2"
             style={{ width: 230 }}
           />
-          <Button variant="outline-success">Search</Button>
+          <Button variant="outline-light">Search</Button>
         </Form>
         <Nav className="mr-auto">
           <Link to="/auth/login" className="link-text">
