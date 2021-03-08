@@ -5,10 +5,12 @@ import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 
 import { AuthContextComponent } from "../contexts/authContext";
+import Navmenu from "./Navmenu";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navmenu />
       <AuthContextComponent>
         <Switch>
           <Route exact path="/" component={Home} />
