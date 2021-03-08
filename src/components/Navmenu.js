@@ -18,8 +18,8 @@ function Navmenu() {
           <Link to="/" className="link-text">
             Home
           </Link>
-          <Link to="/products" className="link-text">
-            Products
+          <Link to="/catalog" className="link-text">
+            Catalog
           </Link>
         </Nav>
         <Form inline>
