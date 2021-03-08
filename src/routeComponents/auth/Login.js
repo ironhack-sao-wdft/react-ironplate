@@ -45,7 +45,7 @@ function Login(props) {
   }
 
   return (
-    <div className="general-text container">
+    <div className="general-text">
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div className="container mt-5">
