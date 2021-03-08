@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
+import Catalog from "../routeComponents/Catalog";
 
 import { AuthContextComponent } from "../contexts/authContext";
 import Cart from "../routeComponents/Cart";
@@ -19,6 +20,7 @@ function App() {
           <Route path="/auth" component={AuthRouter} />
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
+          <Route path="/catalog" component={Catalog} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
