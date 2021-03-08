@@ -20,6 +20,7 @@ function App() {
           <Route path="/auth" component={AuthRouter} />
           <Route path='/cart' component={Cart} />
           <Route path='/checkout' component={Checkout} />
+          <Route path="/catalog" component={Catalog} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
