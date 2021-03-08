@@ -6,10 +6,12 @@ import AuthRouter from "../routeComponents/auth/AuthRouter";
 import Catalog from "../routeComponents/Catalog";
 
 import { AuthContextComponent } from "../contexts/authContext";
+import Navmenu from "./Navmenu";
 
 function App() {
   return (
     <BrowserRouter>
+      <Navmenu />
       <AuthContextComponent>
         <Switch>
           <Route exact path="/" component={Home} />
