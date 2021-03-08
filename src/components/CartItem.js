@@ -2,28 +2,29 @@ import React from 'react';
 import photo from '../img/Captura de tela de 2021-03-04 16-59-05.png';
 import { useState, useEffect } from 'react';
 
+
 function CartItem(props) {
-	const [state, setState] = useState({
-		price: '',
-		quantity: 2
-	});
+	const [quantity, setQuantity] = useState(0);
+
+	const[products, setProducts] = useState([])
 
 	function handleIncrement() {
-		setState(state.quantity);
+		setQuantity(quantity + 1);
+		console.log();
 	}
 
 	function handleDecrement() {
-		setState(state.quantity - 1);
+		setQuantity(quantity - 1);
 	}
 
 	return (
-		<div className='card mb-3  col-lg-6' style={{ maxWidth: '540px;' }}>
+		<div className='card mb-3 col-12 col-lg-6' style={{ maxWidth: '540px;' }}>
 			<div className='row g-0'>
 				<div className='col-md-4'>
 					<img
 						src={photo}
 						alt='jordan cries'
-						style={{ width: '200px' }}
+						style={{ width: '250px' }}
 						className='rounded'
 					/>
 				</div>
@@ -40,7 +41,7 @@ function CartItem(props) {
 						>
 							-
 						</button>
-						<span>{state.quantity}</span>
+						<span>{quantity}</span>
 						<button
 							type='button'
 							className='btn btn-primary rounded-circle'

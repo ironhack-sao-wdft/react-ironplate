@@ -10,9 +10,9 @@ export default function Cart() {
 				<strong>My Cart</strong>
 			</h1>
 			<p>5 items</p>
-			<div className='d-flex justify-content-between'>
+			<div className='d-flex justify-content-between flex-wrap'>
 				<CartItem />
-				<div className='card col-lg-4' style={{ width: '18rem;' }}>
+				<div className='card col-12 col-lg-4' style={{ width: '18rem;' }}>
 					<div className='card-body'>
 						<h5 className='card-title'>
 							<strong>Order summary</strong>
