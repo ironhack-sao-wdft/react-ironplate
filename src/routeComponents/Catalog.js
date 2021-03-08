@@ -21,9 +21,9 @@ function Catalog() {
   }, []);
 
   return (
-    <div className="text-center">
+    <div className="text-center d-flex flex-wrap mt-5 col-12">
     {products.map(item => (
-      <ProductCardCatalog name={item.name} price={item.price} picture={item.picture} />
+      <ProductCardCatalog className="m-2" name={item.name} price={item.price} picture={item.picture} description={item.description} />
     ))}
     </div>
   );
