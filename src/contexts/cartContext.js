@@ -16,10 +16,10 @@ function CartContextComponent(props) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ cart, setCart }}>
+    <CartContext.Provider value={{ cart, setCart }}>
       {props.children}
-    </AuthContext.Provider>
+    </CartContext.Provider>
   );
 }
 
-export { AuthContextComponent, AuthContext };
+export { CartContextComponent, CartContext };

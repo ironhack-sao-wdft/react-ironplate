@@ -12,6 +12,7 @@ import Checkout from "../routeComponents/Checkout";
 import ProductDetails from "../routeComponents/ProductDetails";
 import Navmenu from "./Navmenu";
 import CheckoutTest from '../routeComponents/Checkout2';
+import { CartContextComponent } from '../contexts/cartContext';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Navmenu />
       <AuthContextComponent>
+      <CartContextComponent>
         <Switch>
         <div className="container">
           <Route exact path="/" component={Home} />
@@ -29,6 +31,7 @@ function App() {
           <Route path="/product/:id" component={ProductDetails} />
           </div>
         </Switch>
+        </CartContextComponent>
       </AuthContextComponent>
     </BrowserRouter>
   );

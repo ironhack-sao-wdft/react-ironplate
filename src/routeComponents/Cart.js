@@ -22,7 +22,7 @@ export default function Cart() {
 					<CartItem />
 				</div>
 
-				<div className='card col-12 col-lg-4' style={{ width: '18rem;' }}>
+				<div className='card col-12 col-lg-4' style={{ width: '18rem' }}>
 					<div className='card-body'>
 						<h5 className='card-title'>
 							<strong>Order summary</strong>
