@@ -18,13 +18,13 @@ function CartItem(props) {
 
 	return (
 		<div className='card mb-3'>
-			<div className='row g-0'>
-				<div>
+			<div className='d-flex g-0 w-100 p-3 flex-wrap'>
+				<div className='d-flex justify-content-center align-items-center'>
 					<img
 						src={photo}
 						alt='jordan cries'
-						style={{ width: '200px' }}
-						className='rounded'
+						style={{ width: '150px', height: '150px' }}
+						className='rounded '
 					/>
 				</div>
 				<div>
