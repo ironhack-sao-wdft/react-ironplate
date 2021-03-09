@@ -22,6 +22,8 @@ function CartItem(props) {
 		}
 	}
 
+	
+
 	return (
 		<div className='card mb-3'>
 			<div className='d-flex g-0 w-100 p-3 flex-wrap'>
@@ -37,7 +39,7 @@ function CartItem(props) {
 					<div className='card-body'>
 						<h5 className='card-title'>{props.name}</h5>
 						<p className='card-text'>{props.description}</p>
-						<p>{props.price}</p>
+						<p>{props.price*quantity}</p>
 						<div className='d-flex flex-row align-items-center'>
 							<button
 								type='button'
