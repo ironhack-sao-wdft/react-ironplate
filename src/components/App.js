@@ -20,6 +20,7 @@ function App() {
     <BrowserRouter>
       <Navmenu />
       <AuthContextComponent>
+      <CartContextComponent>
         <Switch>
         <div className="container">
           <Route exact path="/" component={Home} />
@@ -31,6 +32,7 @@ function App() {
           <Route path="/newproduct" component={NewProduct} />
           </div>
         </Switch>
+        </CartContextComponent>
       </AuthContextComponent>
     </BrowserRouter>
   );
