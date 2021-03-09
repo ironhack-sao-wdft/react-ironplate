@@ -21,6 +21,9 @@ function Navmenu() {
           <Link to="/catalog" className="link-text">
             Catalog
           </Link>
+          <Link to="/newproduct" className="link-text">
+            New Product
+          </Link>
         </Nav>
         <Form inline>
           <FormControl
