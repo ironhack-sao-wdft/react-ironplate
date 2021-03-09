@@ -16,12 +16,21 @@ function App() {
       <Navmenu />
       <AuthContextComponent>
         <Switch>
+<<<<<<< HEAD
           <div className="container">
             <Route exact path="/" component={Home} />
             <Route path="/auth" component={AuthRouter} />
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/catalog" component={Catalog} />
+=======
+        <div className="container">
+          <Route exact path="/" component={Home} />
+          <Route path="/auth" component={AuthRouter} />
+          <Route path='/cart' component={Cart} />
+          <Route path='/checkout' component={Checkout} />
+          <Route path="/catalog" component={Catalog} />
+>>>>>>> 75ea7f74bee481e5cc4672f906bcaafbe83cac09
           </div>
         </Switch>
       </AuthContextComponent>
