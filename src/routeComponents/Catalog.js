@@ -18,7 +18,7 @@ function Catalog() {
   }, []);
 
   return (
-    <div className="text-center d-flex flex-wrap mt-5 col-12">
+    <div className="text-center d-flex align-items-center justify-content-center flex-wrap col-12">
       {products.map((item) => (
         <ProductCardCatalog
           name={item.name}
