@@ -8,11 +8,7 @@ function Home() {
     <div className="text-center home-bg-color">
       <div className="general-text">
         <h3 className="text-size">
-          The most
-          <span>
-            <i> peculiar </i>
-          </span>
-          online store you've ever seen
+          The most<em> peculiar </em> online store you've ever seen
         </h3>
       </div>
       <h4 className="general-text">
