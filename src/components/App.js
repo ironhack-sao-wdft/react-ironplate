@@ -9,6 +9,7 @@ import { AuthContextComponent } from '../contexts/authContext';
 import Cart from '../routeComponents/Cart';
 import Checkout from '../routeComponents/Checkout';
 import Navmenu from './Navmenu';
+import CheckoutTest from '../routeComponents/Checkout2';
 
 function App() {
 	return (
@@ -20,7 +21,7 @@ function App() {
 						<Route exact path='/' component={Home} />
 						<Route path='/auth' component={AuthRouter} />
 						<Route path='/cart' component={Cart} />
-						<Route path='/checkout' component={Checkout} />
+						<Route path='/checkout' component={CheckoutTest} />
 						<Route path='/catalog' component={Catalog} />
 					</Switch>
 				</div>
