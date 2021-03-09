@@ -1,5 +1,4 @@
 import React from 'react';
-import photo from '../img/Captura de tela de 2021-03-04 16-59-05.png';
 import { useState, useEffect, useContext } from 'react';
 
 import { CartContext } from "../contexts/cartContext";
@@ -23,14 +22,12 @@ function CartItem(props) {
 		}
 	}
 
-	console.log(cartContext.cart);
-
 	return (
 		<div className='card mb-3'>
 			<div className='d-flex g-0 w-100 p-3 flex-wrap'>
 				<div className='d-flex justify-content-center align-items-center'>
 					<img
-						src={photo}
+						src={props.photo}
 						alt='jordan cries'
 						style={{ width: '150px', height: '150px' }}
 						className='rounded '
@@ -38,9 +35,9 @@ function CartItem(props) {
 				</div>
 				<div>
 					<div className='card-body'>
-						<h5 className='card-title'>Jordan tears</h5>
-						<p className='card-text'>Short description</p>
-						<p>R$250,00</p>
+						<h5 className='card-title'>{props.name}</h5>
+						<p className='card-text'>{props.description}</p>
+						<p>{props.price}</p>
 						<div className='d-flex flex-row align-items-center'>
 							<button
 								type='button'
