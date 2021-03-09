@@ -1,5 +1,4 @@
 import React from 'react';
-import photo from '../img/Captura de tela de 2021-03-04 16-59-05.png';
 import { useState, useEffect, useContext } from 'react';
 
 import { CartContext } from "../contexts/cartContext";
@@ -38,7 +37,7 @@ function CartItem(props) {
 					<div className='card-body'>
 						<h5 className='card-title'>{props.name}</h5>
 						<p className='card-text'>{props.description}</p>
-						<p>R$250,00</p>
+						<p>{props.price}</p>
 						<div className='d-flex flex-row align-items-center'>
 							<button
 								type='button'

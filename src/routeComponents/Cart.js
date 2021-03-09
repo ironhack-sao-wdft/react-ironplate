@@ -9,15 +9,12 @@ export default function Cart() {
 
 	const cartContext = useContext(CartContext);
 
-	console.log(cart);
-
 	useEffect(() => {
 		async function fetchMyCart() {
 			try {
 				for (let i = 0; i <= cartContext.cart.length; i++) {
 					let response = await api.get(`product/${cartContext.cart[i]}`);
 					console.log(response.data);
-					console.log(cart);
 					setCart((cart) => [...cart, response.data]);
 				}
 			} catch (err) {
@@ -27,7 +24,7 @@ export default function Cart() {
 		fetchMyCart();
 	}, []);
 
-	console.log(cart);
+	console.log(cart)
 
 	return (
 		<div className='d-flex flex-column'>
@@ -37,15 +34,20 @@ export default function Cart() {
 			<p>{cart.length} Items</p>
 			<div className='d-flex flex-row justify-content-between flex-wrap'>
 				<div className='d-flex flex-column col-12 col-lg-7'>
-					{cart.length > 0 ? cart.map((element) => {
-						return (
-							<CartItem
-								name={element.name}
-								photo={element.picture}
-								description={element.description}
-							/>
-						);
-					}) : <div className='card'>Your cart is empty =[</div>}
+					{cart.length > 0 ? (
+						cart.map((element) => {
+							return (
+								<CartItem
+									name={element.name}
+									photo={element.picture}
+									description={element.description}
+									price={element.price}
+								/>
+							);
+						})
+					) : (
+						<div className='card'>Your cart is empty =[</div>
+					)}
 				</div>
 				<OrderSummary />
 			</div>
