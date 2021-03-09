@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../apis/api";
 
-
 import ProductCardCatalog from "../components/ProductCardCatalog";
 
 function Catalog() {
@@ -10,21 +9,27 @@ function Catalog() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-
         const response = await api.get("/product");
         console.log(response);
-        setProducts([...response.data])
-
+        setProducts([...response.data]);
       } catch (err) {}
     }
     fetchProducts();
   }, []);
 
   return (
-    <div className="text-center d-flex flex-wrap mt-5 col-12">
-    {products.map(item => (
-      <ProductCardCatalog className="m-2" name={item.name} price={item.price} picture={item.picture} description={item.description} />
-    ))}
+    <div className="text-center d-flex align-items-center justify-content-center flex-wrap col-12">
+      {products.map((item) => (
+        <div key={item._id}>
+        <ProductCardCatalog
+          name={item.name}
+          price={item.price}
+          picture={item.picture}
+          description={item.description}         
+          id={item._id}
+        />
+        </div>
+      ))}
     </div>
   );
 }
