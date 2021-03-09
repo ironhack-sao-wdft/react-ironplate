@@ -3,6 +3,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import './Navmenu.css';
 
 function Navmenu() {
+
 	return (
 		<Navbar className='bg-color d-flex justify-content-around' expand='lg'>
 			<Navbar.Brand href='/'>
