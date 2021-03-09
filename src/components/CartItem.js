@@ -1,11 +1,16 @@
 import React from 'react';
 import photo from '../img/Captura de tela de 2021-03-04 16-59-05.png';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+
+import { CartContext } from "../contexts/cartContext";
+
 
 function CartItem(props) {
-	const [quantity, setQuantity] = useState(0);
+	const [quantity, setQuantity] = useState(1);
 
 	const [products, setProducts] = useState([]);
+
+	const cartContext = useContext(CartContext);
 
 	function handleIncrement() {
 		setQuantity(quantity + 1);
@@ -13,8 +18,12 @@ function CartItem(props) {
 	}
 
 	function handleDecrement() {
+		if (quantity > 0){
 		setQuantity(quantity - 1);
+		}
 	}
+
+	console.log(cartContext.cart);
 
 	return (
 		<div className='card mb-3'>
