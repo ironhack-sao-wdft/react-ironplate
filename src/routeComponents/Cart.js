@@ -3,7 +3,6 @@ import CartItem from "../components/CartItem";
 import { CartContext } from "../contexts/cartContext";
 import api from "../apis/api";
 import OrderSummary from "../components/OrderSummary";
-import Footer from "../components/Footer";
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -33,34 +32,31 @@ export default function Cart() {
   // }, [cart]);
 
   return (
-    <div>
-      <div className="d-flex flex-column">
-        <h1>
-          <strong>My Cart</strong>
-        </h1>
-        <p>{cart.length} Items</p>
-        <div className="d-flex flex-row justify-content-between flex-wrap">
-          <div className="d-flex flex-column col-12 col-lg-7">
-            {cart.length > 0 ? (
-              cart.map((element) => {
-                return (
-                  <CartItem
-                    name={element.name}
-                    photo={element.picture}
-                    description={element.description}
-                    price={element.price}
-                    id={element._id}
-                  />
-                );
-              })
-            ) : (
-              <div className="card">Your cart is empty =[</div>
-            )}
-          </div>
-          <OrderSummary subtotal={subtotal} />
+    <div className="d-flex flex-column">
+      <h1>
+        <strong>My Cart</strong>
+      </h1>
+      <p>{cart.length} Items</p>
+      <div className="d-flex flex-row justify-content-between flex-wrap">
+        <div className="d-flex flex-column col-12 col-lg-7">
+          {cart.length > 0 ? (
+            cart.map((element) => {
+              return (
+                <CartItem
+                  name={element.name}
+                  photo={element.picture}
+                  description={element.description}
+                  price={element.price}
+                  id={element._id}
+                />
+              );
+            })
+          ) : (
+            <div className="card">Your cart is empty =[</div>
+          )}
         </div>
+        <OrderSummary subtotal={subtotal} />
       </div>
-      <Footer />
     </div>
   );
 }
