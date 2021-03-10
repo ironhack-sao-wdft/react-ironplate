@@ -81,6 +81,16 @@ body {
   font-size: calc(2.75vw + 2.75vh);
 }
 
+.footer-text {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(1.5vw + 1.5vh);
+}
+
 .product-detail-bg {
   background-color: white;
   width: 600;

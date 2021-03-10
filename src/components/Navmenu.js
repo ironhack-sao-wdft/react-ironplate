@@ -13,7 +13,11 @@ import { AuthContext } from "../contexts/authContext";
 
 function Navmenu() {
   const authContext = useContext(AuthContext);
-  console.log(authContext);
+
+  function handleClick() {
+    let removeUser = localStorage.removeItem("loggedInUser");
+  }
+
   return (
     <div className="bg-color">
       <Navbar className="d-flex justify-content-between container" expand="lg">
@@ -51,7 +55,11 @@ function Navmenu() {
                 </Nav.Link>
               </Link>
               <Link to="/auth/logout">
-                <Nav.Link path="/auth/logout" className="link-text">
+                <Nav.Link
+                  path="/auth/logout"
+                  className="link-text"
+                  handleClick={handleClick}
+                >
                   Log Out
                 </Nav.Link>
               </Link>

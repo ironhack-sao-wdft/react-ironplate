@@ -27,20 +27,20 @@ function Catalog() {
     fetchProducts();
   }, [id]);
 
-	const handleAddToCart = () => {
-		const productId = product._id;
-		if (!cartContext.cart.includes(productId)) {
-			cartContext.setCart([...cartContext.cart, product]);
-		}
-	};
+  const handleAddToCart = () => {
+    const productId = product._id;
+    if (!cartContext.cart.includes(productId)) {
+      cartContext.setCart([...cartContext.cart, product]);
+    }
+  };
 
-	const handleBuyNow = () => {
-		const productId = product._id;
-		if (!cartContext.cart.includes(productId)) {
-			cartContext.setCart([...cartContext.cart, product]);
-		}
-		history.push('/cart');
-	};
+  const handleBuyNow = () => {
+    const productId = product._id;
+    if (!cartContext.cart.includes(productId)) {
+      cartContext.setCart([...cartContext.cart, product]);
+    }
+    history.push("/cart");
+  };
 
   console.log(cartContext.cart);
 

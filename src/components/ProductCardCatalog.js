@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ProductCardCatalog(props) {
   return (
     <div className="col-lg-3 col-12 m-3" key={props.key}>
-      <Card style={{ width: "18rem", height: "400px" }}>
+      <Card style={{ width: "18rem", height: "350px" }}>
         <Card.Img
           variant="top"
           src={props.picture}
