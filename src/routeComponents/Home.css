@@ -33,6 +33,10 @@ body {
   align-items: center;
 }
 
+.slogan-carousel-size {
+  height: 40vh;
+}
+
 .slogan-bg {
   background-color: rgb(255, 91, 58);
 }
@@ -41,6 +45,13 @@ body {
   font-family: "Fugaz One", cursive;
   color: white;
   text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
+}
+
+.slogan-2-text {
+  color: white;
+  text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
 }
 
 .text-size {
@@ -56,6 +67,17 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.card-individual {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  background-color: red;
+}
+
+.footer-icons {
+  color: white;
+  font-size: calc(2.75vw + 2.75vh);
 }
 
 .product-detail-bg {
