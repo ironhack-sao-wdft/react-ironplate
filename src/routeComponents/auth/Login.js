@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import "../Home.css";
 import { Button } from "react-bootstrap";
-
+import "../Home.css";
 import { AuthContext } from "../../contexts/authContext";
 
 // document.body.style.backgroundColor = red;
@@ -47,7 +47,7 @@ function Login(props) {
 
   return (
     <div className="general-text">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-signup-container">
         <h1>Login</h1>
         <div className="container mt-5">
           <div className="d-flex justify-content-between m-1">
@@ -74,7 +74,7 @@ function Login(props) {
             />
           </div>
 
-          <div className="d-flex flex-column align-items-center">
+          <div className="d-flex flex-column align-items-center link-style">
             <Button
               variant="light"
               type="submit"

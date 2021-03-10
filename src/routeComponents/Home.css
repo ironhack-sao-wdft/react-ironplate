@@ -1,21 +1,31 @@
 html,
 body {
-  background-color: rgb(35, 75, 150);
+  background-color: rgb(102, 194, 211);
 }
 
 .home-bg-color {
-  background-color: rgb(35, 75, 150);
+  background-color: rgb(102, 194, 211);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Bebas Neue", cursive;
+  font-family: "Bitter", serif;
+}
+
+.login-signup-container {
+  background-color: rgb(255, 91, 58);
+  padding: 25px;
+  margin: 20px;
+}
+
+.link-style {
+  text-decoration: none;
 }
 
 .general-text {
-  color: #e8e9eb;
+  color: white;
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -24,11 +34,13 @@ body {
 }
 
 .slogan-bg {
-  background-color: #e8e9eb;
+  background-color: rgb(255, 91, 58);
 }
 
-.slogan-color {
-  color: rgb(35, 75, 150);
+.slogan-text {
+  font-family: "Fugaz One", cursive;
+  color: white;
+  text-align: center;
 }
 
 .text-size {

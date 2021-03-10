@@ -34,7 +34,7 @@ function Signup(props) {
 
   return (
     <div className="general-text">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="login-signup-container">
         <h1>Sign Up!</h1>
         <div className="container mt-5">
           <div className="d-flex justify-content-between m-1">

@@ -11,7 +11,7 @@ function Navmenu() {
     <Navbar className="bg-color d-flex justify-content-around" expand="lg">
       <Navbar.Brand href="/">
         <img
-          src={"/images/logoWrittenNoBg.png"}
+          src={"/images/logoWrittenOrange.png"}
           alt={"OddMarket Logo"}
           style={{ width: 200 }}
         />
@@ -42,7 +42,7 @@ function Navmenu() {
               <Link to="/auth/logout">Log Out</Link>
             </div>
           )}
-          <Link to="/cart">
+          <Link to="/cart" className="link-text">
             <i className="fas fa-shopping-cart"></i>
           </Link>
         </Nav>
