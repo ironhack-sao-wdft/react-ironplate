@@ -5,6 +5,7 @@ import "../Home.css";
 import { Button } from "react-bootstrap";
 import "../Home.css";
 import { AuthContext } from "../../contexts/authContext";
+import Footer from "../../components/Footer";
 
 // document.body.style.backgroundColor = red;
 
@@ -46,49 +47,52 @@ function Login(props) {
   }
 
   return (
-    <div className="general-text">
-      <form onSubmit={handleSubmit} className="login-signup-container">
-        <h1>Login</h1>
-        <div className="container mt-5">
-          <div className="d-flex justify-content-between m-1">
-            <label htmlFor="signupFormEmail">E-mail</label>
-            <input
-              type="email"
-              name="email"
-              id="signupFormEmail"
-              value={state.email}
-              error={errors.email}
-              onChange={handleChange}
-            />
-          </div>
+    <div>
+      <div className="general-text">
+        <form onSubmit={handleSubmit} className="login-signup-container">
+          <h1>Login</h1>
+          <div className="container mt-5">
+            <div className="d-flex justify-content-between m-1">
+              <label htmlFor="signupFormEmail">E-mail</label>
+              <input
+                type="email"
+                name="email"
+                id="signupFormEmail"
+                value={state.email}
+                error={errors.email}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="d-flex justify-content-between m-1">
-            <label htmlFor="signupFormPassword">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="signupFormPassword"
-              value={state.password}
-              error={errors.password}
-              onChange={handleChange}
-            />
-          </div>
+            <div className="d-flex justify-content-between m-1">
+              <label htmlFor="signupFormPassword">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="signupFormPassword"
+                value={state.password}
+                error={errors.password}
+                onChange={handleChange}
+              />
+            </div>
 
-          <div className="d-flex flex-column align-items-center link-style">
-            <Button
-              variant="light"
-              type="submit"
-              style={{ width: 100, margin: 20 }}
-            >
-              Login!
-            </Button>
+            <div className="d-flex flex-column align-items-center link-style">
+              <Button
+                variant="light"
+                type="submit"
+                style={{ width: 100, margin: 20 }}
+              >
+                Login!
+              </Button>
 
-            <Link to="/auth/signup">
-              Don't have an account? Click here to sign up!
-            </Link>
+              <Link to="/auth/signup">
+                Don't have an account? Click here to sign up!
+              </Link>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 }
