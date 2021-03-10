@@ -30,14 +30,14 @@ function Catalog() {
 	const handleAddToCart = () => {
 		const productId = product._id;
 		if (!cartContext.cart.includes(productId)) {
-			cartContext.setCart([...cartContext.cart, productId]);
+			cartContext.setCart([...cartContext.cart, product]);
 		}
 	};
 
 	const handleBuyNow = () => {
 		const productId = product._id;
 		if (!cartContext.cart.includes(productId)) {
-			cartContext.setCart([...cartContext.cart, productId]);
+			cartContext.setCart([...cartContext.cart, product]);
 		}
 		history.push('/cart');
 	};

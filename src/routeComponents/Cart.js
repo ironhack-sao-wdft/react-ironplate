@@ -1,46 +1,67 @@
 import React, { useContext, useState, useEffect } from 'react';
 import CartItem from '../components/CartItem';
 import { CartContext } from '../contexts/cartContext';
-import api from '../apis/api';
 import OrderSummary from '../components/OrderSummary';
 
 export default function Cart() {
-	const [cart, setCart] = useState([]);
-
 	const cartContext = useContext(CartContext);
 
-	const [subtotal, setSubtotal] = useState(0);
+	function handleIncrement(id) {
+		let productIndex = undefined;
 
-	useEffect(() => {
-		async function fetchMyCart() {
-			try {
-				for (let i = 0; i <= cartContext.cart.length; i++) {
-					let response = await api.get(`product/${cartContext.cart[i]}`);
-					setCart((cart) => [...cart, response.data]);
-				}
-			} catch (err) {
-				console.log(err);
-			}
+		let findProduct = cartContext.cart.find((element, index) => {
+			productIndex = index;
+			return element._id === id;
+		});
+
+		console.log(findProduct);
+
+		if (findProduct) {
+			let currentState = [...cartContext.cart];
+			currentState[productIndex].quantity += 1;
+			cartContext.setCart(currentState);
 		}
-		fetchMyCart();
-	}, []);
+	}
+
+	function handleDecrement(id) {
+		let productIndex = undefined;
+
+		let findProduct = cartContext.cart.find((element, index) => {
+			productIndex = index;
+			return element._id === id;
+		});
+
+		if (findProduct) {
+			let currentState = [...cartContext.cart];
+			currentState[productIndex].quantity -= 1;
+			cartContext.setCart(currentState);
+		}
+	}
 
 	// useEffect(() => {
-	// 	if (cart.length > 0) {
-	// 		setSubtotal((subtotal) => [...subtotal, response.data]);
+	// 	async function fetchMyCart() {
+	// 		try {
+	// 			for (let i = 0; i <= cartContext.cart.length; i++) {
+	// 				let response = await api.get(`product/${cartContext.cart[i]}`);
+	// 				setCart((cart) => [...cart, response.data]);
+	// 			}
+	// 		} catch (err) {
+	// 			console.log(err);
+	// 		}
 	// 	}
-	// }, [cart]);
+	// 	fetchMyCart();
+	// }, []);
 
 	return (
 		<div className='d-flex flex-column'>
 			<h1>
 				<strong>My Cart</strong>
 			</h1>
-			<p>{cart.length} Items</p>
+			<p>{cartContext.cart.length} Items</p>
 			<div className='d-flex flex-row justify-content-between flex-wrap'>
 				<div className='d-flex flex-column col-12 col-lg-7'>
-					{cart.length > 0 ? (
-						cart.map((element) => {
+					{cartContext.cart.length > 0 ? (
+						cartContext.cart.map((element) => {
 							return (
 								<CartItem
 									name={element.name}
@@ -48,6 +69,9 @@ export default function Cart() {
 									description={element.description}
 									price={element.price}
 									id={element._id}
+									handleIncrement={handleIncrement}
+									handleDecrement={handleDecrement}
+									quantity={element.quantity}
 								/>
 							);
 						})
@@ -55,7 +79,11 @@ export default function Cart() {
 						<div className='card'>Your cart is empty =[</div>
 					)}
 				</div>
-				<OrderSummary subtotal={subtotal} />
+				<OrderSummary
+					subtotal={cartContext.cart.reduce((ac, cv) => {
+						return ac + cv.price * cv.quantity;
+					}, 0)}
+				/>
 			</div>
 		</div>
 	);

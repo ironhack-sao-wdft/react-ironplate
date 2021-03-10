@@ -12,6 +12,7 @@ import './Navmenu.css';
 import { AuthContext } from '../contexts/authContext';
 
 function Navmenu() {
+
 	const authContext = useContext(AuthContext);
 	console.log(authContext);
 	return (
@@ -44,12 +45,16 @@ function Navmenu() {
 							</Link>
 						</div>
 					) : (
-						<div>
+						<div className='d-flex'>
 							<Link to='/auth/myprofile'>
-								<Nav.Link path='/auth/myprofile'>My Profile</Nav.Link>
+								<Nav.Link path='/auth/myprofile' className='link-text'>
+									My Profile
+								</Nav.Link>
 							</Link>
 							<Link to='/auth/logout'>
-								<Nav.Link path='/auth/logout'>Log Out</Nav.Link>
+								<Nav.Link path='/auth/logout' className='link-text'>
+									Log Out
+								</Nav.Link>
 							</Link>
 						</div>
 					)}

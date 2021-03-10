@@ -17,7 +17,7 @@ export default function CheckoutButton(props) {
 		const products = [
 			{
 				price_data: {
-					currency: 'usd',
+					currency: 'brl',
 					product_data: {
 						name: 'T-shirt',
 					},
