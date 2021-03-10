@@ -1,6 +1,6 @@
 import { Card, Button } from "react-bootstrap";
 
-function ProductCard() {
+function ProductCard(props) {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img
