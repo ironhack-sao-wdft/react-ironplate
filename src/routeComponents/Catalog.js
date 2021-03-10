@@ -4,18 +4,18 @@ import Footer from "../components/Footer";
 import ProductCardCatalog from "../components/ProductCardCatalog";
 
 function Catalog() {
-  const [products, setProducts] = useState([]);
+	const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    async function fetchProducts() {
-      try {
-        const response = await api.get("/product");
-        console.log(response);
-        setProducts([...response.data]);
-      } catch (err) {}
-    }
-    fetchProducts();
-  }, []);
+	useEffect(() => {
+		async function fetchProducts() {
+			try {
+				const response = await api.get('/product');
+				console.log(response);
+				setProducts([...response.data]);
+			} catch (err) {}
+		}
+		fetchProducts();
+	}, []);
 
   return (
     <div>

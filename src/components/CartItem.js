@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect, useContext } from 'react';
 
-import { CartContext } from "../contexts/cartContext";
-
+import { CartContext } from '../contexts/cartContext';
 
 function CartItem(props) {
 	const [quantity, setQuantity] = useState(1);
@@ -11,18 +10,16 @@ function CartItem(props) {
 
 	const cartContext = useContext(CartContext);
 
-	function handleIncrement() {
-		setQuantity(quantity + 1);
-		console.log();
-	}
+	// function handleIncrement() {
+	// 	setQuantity(quantity + 1);
+	// 	console.log();
+	// }
 
-	function handleDecrement() {
-		if (quantity > 0){
-		setQuantity(quantity - 1);
-		}
-	}
-
-	
+	// function handleDecrement() {
+	// 	if (quantity > 0){
+	// 	setQuantity(quantity - 1);
+	// 	}
+	// }
 
 	return (
 		<div className='card mb-3'>
@@ -39,21 +36,21 @@ function CartItem(props) {
 					<div className='card-body'>
 						<h5 className='card-title'>{props.name}</h5>
 						<p className='card-text'>{props.description}</p>
-						<p>{props.price*quantity}</p>
+						<p>{props.price * props.quantity}</p>
 						<div className='d-flex flex-row align-items-center'>
 							<button
 								type='button'
 								className='btn btn-primary rounded-circle p-0'
-								onClick={handleDecrement}
+								onClick={() => props.handleDecrement(props.id)}
 								style={{ width: '20px', lineHeight: '20px' }}
 							>
 								-
 							</button>
-							<span className='ml-2 mr-2'>{quantity}</span>
+							<span className='ml-2 mr-2'>{props.quantity}</span>
 							<button
 								type='button'
 								className='btn btn-primary rounded-circle p-0'
-								onClick={handleIncrement}
+								onClick={() => props.handleIncrement(props.id)}
 								style={{ width: '20px', lineHeight: '20px' }}
 							>
 								+
