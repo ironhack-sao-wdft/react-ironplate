@@ -57,3 +57,35 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.product-detail-bg {
+  background-color: white;
+  width: 600;
+  height: 400;
+  padding: 10vh;
+  /* margin-right: 5vh; */
+  margin-left: 0.2vh;
+  margin-bottom: 3vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.product-detail-img {
+  height: 250px;
+  width: auto;
+  margin-bottom: 3vh;
+}
+
+.detail-btn-orange {
+  background-color: rgb(255, 91, 58);
+  color: white;
+}
+
+.detail-btn-blue {
+  background-color: rgb(102, 194, 211);
+  color: white;
+}
