@@ -9,12 +9,13 @@ export default function Cart() {
 
 	const cartContext = useContext(CartContext);
 
+	const [subtotal, setSubtotal] = useState(0);
+
 	useEffect(() => {
 		async function fetchMyCart() {
 			try {
 				for (let i = 0; i <= cartContext.cart.length; i++) {
 					let response = await api.get(`product/${cartContext.cart[i]}`);
-					console.log(response.data);
 					setCart((cart) => [...cart, response.data]);
 				}
 			} catch (err) {
@@ -24,7 +25,11 @@ export default function Cart() {
 		fetchMyCart();
 	}, []);
 
-	console.log(cart)
+	// useEffect(() => {
+	// 	if (cart.length > 0) {
+	// 		setSubtotal((subtotal) => [...subtotal, response.data]);
+	// 	}
+	// }, [cart]);
 
 	return (
 		<div className='d-flex flex-column'>
@@ -42,6 +47,7 @@ export default function Cart() {
 									photo={element.picture}
 									description={element.description}
 									price={element.price}
+									id={element._id}
 								/>
 							);
 						})
@@ -49,7 +55,7 @@ export default function Cart() {
 						<div className='card'>Your cart is empty =[</div>
 					)}
 				</div>
-				<OrderSummary />
+				<OrderSummary subtotal={subtotal} />
 			</div>
 		</div>
 	);

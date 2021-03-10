@@ -10,6 +10,8 @@ function Catalog() {
 
 	const cartContext = useContext(CartContext);
 
+	console.log(cartContext)
+
 	const history = useHistory();
 
 	const { id } = useParams();
