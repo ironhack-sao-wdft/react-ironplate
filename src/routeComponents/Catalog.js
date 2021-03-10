@@ -9,7 +9,7 @@ function Catalog() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await api.get("/product/12");
+        const response = await api.get("/product/number/12");
         console.log(response);
         setProducts([...response.data]);
       } catch (err) {}
