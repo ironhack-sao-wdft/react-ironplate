@@ -1,10 +1,10 @@
 import { Card } from "react-bootstrap";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function ProductCardCatalog(props) {
   return (
     <div className="col-lg-3 col-12 m-3" key={props.key}>
-      <Card style={{ width: "18rem", height: "375px" }}>
+      <Card style={{ width: "18rem", height: "400px" }}>
         <Card.Img
           variant="top"
           src={props.picture}
@@ -14,7 +14,9 @@ function ProductCardCatalog(props) {
           <Card.Title>{props.name}</Card.Title>
           <Card.Text>R${props.price}</Card.Text>
           <Card.Text>{props.description}</Card.Text>
-          <Link to={`product/${props.id}`} className="btn btn-primary">See Details!</Link>
+          <Link to={`product/${props.id}`} className="btn btn-primary">
+            See Details!
+          </Link>
         </Card.Body>
       </Card>
     </div>
