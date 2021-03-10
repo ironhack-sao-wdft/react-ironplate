@@ -8,10 +8,8 @@ const stripePromise = loadStripe(
 );
 
 export default function CheckoutButton(props) {
-	const [products, setProducts] = useState(props);
 
 	const handleClick = async (event) => {
-		// Get Stripe.js instance
 		const stripe = await stripePromise;
 
 		const products = [
