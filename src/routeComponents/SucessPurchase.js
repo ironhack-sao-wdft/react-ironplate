@@ -1,9 +1,10 @@
-import React from 'react'
+import { useEffect } from 'react';
+import React from 'react';
 
 export default function SucessPurchase() {
-    return (
-        <div>
-            
-        </div>
-    )
+	useEffect(() => {
+		localStorage.removeItem('cart');
+	});
+
+	return <div></div>;
 }

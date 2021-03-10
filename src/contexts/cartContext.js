@@ -15,6 +15,10 @@ function CartContextComponent(props) {
 		}
 	}, []);
 
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart]);
+
 	return (
 		<CartContext.Provider value={{ cart, setCart }}>
 			{props.children}
