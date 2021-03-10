@@ -27,7 +27,7 @@ function Navmenu() {
           </Link>
         </Nav>
         <Nav className="mr-auto link-text">
-          {!authContext.user._id ? (
+          {!authContext.loggedInUser.user._id ? (
             <div>
               <Link to="/auth/login" className="link-text">
                 Login
@@ -38,8 +38,12 @@ function Navmenu() {
             </div>
           ) : (
             <div>
-              <Link to="/auth/myprofile">My Profile</Link>
-              <Link to="/auth/logout">Log Out</Link>
+              <Link to="/auth/myprofile" className="link-text">
+                My Profile
+              </Link>
+              <Link to="/auth/logout" className="link-text">
+                Log Out
+              </Link>
             </div>
           )}
           <Link to="/cart" className="link-text">

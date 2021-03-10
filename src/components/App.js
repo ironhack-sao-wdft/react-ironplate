@@ -17,8 +17,8 @@ import NewProduct from "../routeComponents/NewProduct";
 function App() {
   return (
     <BrowserRouter>
-      <Navmenu />
       <AuthContextComponent>
+        <Navmenu />
         <Switch>
           <div className="container">
             <Route exact path="/" component={Home} />
