@@ -19,22 +19,22 @@ function Navmenu() {
 			<Navbar className='d-flex justify-content-between container' expand='lg'>
 				<Navbar.Brand href='/'>
 					<img
-						src={'/images/logoWrittenNoBg.png'}
+						src={'/images/logoWrittenOrange.png'}
 						alt={'OddMarket Logo'}
 						style={{ width: 200 }}
 					/>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls='basic-navbar-nav' />
 				<Navbar.Collapse id='basic-navbar-nav'>
-					<Nav className='mr-auto'>
-						<Link to='/about-us'>
-							<Nav.Link href='/about-us'>About us</Nav.Link>
+					<Nav className='mr-auto d-flex align-items-center'>
+						<Link to='/about-us' className='link-text'>
+							About us
 						</Link>
-						<Link to='/catalog'>
-							<Nav.Link href='/catalog'>Catalog</Nav.Link>
+						<Link to='/catalog' className='link-text'>
+							Catalog
 						</Link>
 					</Nav>
-					{!authContext.user._id ? (
+					{!authContext.loggedInUser.user._id ? (
 						<div>
 							<Link to='/auth/login' className='link-text'>
 								Login
@@ -53,7 +53,7 @@ function Navmenu() {
 							</Link>
 						</div>
 					)}
-					<Link to='/cart'>
+					<Link to='/cart' className='link-text'>
 						<i className='fas fa-shopping-cart'></i>
 					</Link>
 				</Navbar.Collapse>

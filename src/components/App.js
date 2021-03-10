@@ -7,11 +7,9 @@ import Catalog from "../routeComponents/Catalog";
 
 import { AuthContextComponent } from "../contexts/authContext";
 import Cart from "../routeComponents/Cart";
-import Checkout from "../routeComponents/Checkout";
 import ProductDetails from "../routeComponents/ProductDetails";
 import Navmenu from "./Navmenu";
 import CheckoutTest from "../routeComponents/Checkout2";
-import { CartContextComponent } from "../contexts/cartContext";
 import NewProduct from "../routeComponents/NewProduct";
 
 function App() {
