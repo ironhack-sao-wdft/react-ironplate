@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apis = {
-  development: "http://localhost:4000",
+  development: "http://localhost:1234",
   production: "https://oddmarket-api.herokuapp.com",
 };
 
