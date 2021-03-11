@@ -13,7 +13,7 @@ export default function OrderSummary(props) {
 				<h5 className='card-title'>
 					<strong>Order summary</strong>
 				</h5>
-				<p className='card-text'>Total price: R${props.subtotal}</p>
+				<p className='card-text'>Total price: R${props.subtotal.toFixed(2)}</p>
 				{!authContext.loggedInUser.user._id ? (
 					<div class='alert alert-warning' role='alert'>
 						You must me logged in to Checkout

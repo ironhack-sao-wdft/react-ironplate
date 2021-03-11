@@ -36,7 +36,7 @@ function Navmenu() {
             </div>
             {authContext.loggedInUser.user._id ? (
               <div>
-                <Link to="/auth/myprofile" className="link-text">
+                <Link to="/my-profile" className="link-text">
                   My Profile
                 </Link>
                 <Link to="/" className="link-text" onClick={handleClick}>
