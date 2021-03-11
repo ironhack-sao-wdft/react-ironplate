@@ -23,13 +23,12 @@ function Home() {
   return (
     <div className="text-center home-bg-color">
       <div className="d-flex flex-wrap m-3 slogan-carousel-size ">
-        <div className="slogan-bg slogan-text d-flex flex-column flex-wrap justify-content-center align-items-center col-12 col-md-6">
+        <div className="slogan-bg slogan-text d-flex flex-column flex-wrap justify-content-center align-items-center col-12 col-md-6 p-4">
           <h3 className="text-size slogan-text d-flex flex-wrap">
             The most peculiar online store you've ever seen
           </h3>
-          <h4 className="slogan-2-text d-flex flex-wrap">
-            Find items you didn't know you
-            <br /> wished you had
+          <h4 className="slogan-2-text d-flex flex-wrap mt-3">
+            Find items you didn't know you wished you had
           </h4>
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center mb-5">

@@ -11,6 +11,7 @@ import ProductDetails from "../routeComponents/ProductDetails";
 import Navmenu from "./Navmenu";
 import NewProduct from "../routeComponents/NewProduct";
 import Footer from "../components/Footer";
+import AboutUs from "../routeComponents/AboutUs";
 import { CartContextComponent } from "../contexts/cartContext";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
               <Route path="/catalog" component={Catalog} />
               <Route path="/product/:id" component={ProductDetails} />
               <Route path="/newproduct" component={NewProduct} />
+              <Route path="/about-us" component={AboutUs} />
             </div>
           </Switch>
           <Footer />

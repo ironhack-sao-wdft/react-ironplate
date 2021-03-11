@@ -1,4 +1,5 @@
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   return (
@@ -11,7 +12,13 @@ function ProductCard(props) {
       <Card.Body>
         <Card.Title>{props.state.name}</Card.Title>
         <Card.Text>R$ {props.state.price}</Card.Text>
-        <Button variant="primary">See details!</Button>
+        {/* <Button variant="primary">See details!</Button> */}
+        <Link
+          to={`product/${props.state._id}`}
+          className="btn detail-btn-orange"
+        >
+          See Details!
+        </Link>
       </Card.Body>
     </Card>
   );

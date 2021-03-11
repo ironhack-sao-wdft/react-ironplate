@@ -122,3 +122,17 @@ body {
   background-color: rgb(102, 194, 211);
   color: white;
 }
+
+.about-icons {
+  color: white;
+  font-size: calc(2.75vw + 2.75vh);
+}
+
+.about-bg-orange {
+  background-color: rgb(255, 91, 58);
+}
+
+.about-divs {
+  display: inline-block;
+  min-width: 100%;
+}
