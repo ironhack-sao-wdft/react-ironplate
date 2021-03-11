@@ -9,7 +9,7 @@ function Catalog() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await api.get("/product");
+        const response = await api.get("/product/number/12");
         console.log(response);
         setProducts([...response.data]);
       } catch (err) {}
@@ -21,13 +21,12 @@ function Catalog() {
     <div className="text-center d-flex align-items-center justify-content-center flex-wrap col-12">
       {products.map((item) => (
         <div key={item._id}>
-        <ProductCardCatalog
-          name={item.name}
-          price={item.price}
-          picture={item.picture}
-          description={item.description}         
-          id={item._id}
-        />
+          <ProductCardCatalog
+            name={item.name}
+            price={item.price}
+            picture={item.picture}
+            id={item._id}
+          />
         </div>
       ))}
     </div>

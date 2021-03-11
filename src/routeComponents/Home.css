@@ -33,6 +33,10 @@ body {
   align-items: center;
 }
 
+.slogan-carousel-size {
+  height: 40vh;
+}
+
 .slogan-bg {
   background-color: rgb(255, 91, 58);
 }
@@ -41,6 +45,20 @@ body {
   font-family: "Fugaz One", cursive;
   color: white;
   text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
+}
+
+.slogan-2-text {
+  color: white;
+  text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
+}
+
+.carousel-first-slide {
+  background-color: #fdcc73;
+  color: white;
+  text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
 }
 
 .text-size {
@@ -56,4 +74,72 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 17vh;
+}
+
+.card-individual {
+  margin-left: 1vw;
+  margin-right: 1vw;
+  background-color: red;
+}
+
+.footer-icons {
+  color: white;
+  font-size: calc(2.75vw + 2.75vh);
+}
+
+.footer-text {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(1.1vw + 1.1vh);
+}
+
+.product-detail-bg {
+  background-color: white;
+  width: 600;
+  height: 400;
+  padding: 10vh;
+  /* margin-right: 5vh; */
+  margin-left: 0.2vh;
+  margin-bottom: 3vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.product-detail-img {
+  height: 250px;
+  width: auto;
+  margin-bottom: 3vh;
+}
+
+.detail-btn-orange {
+  background-color: rgb(255, 91, 58);
+  color: white;
+}
+
+.detail-btn-blue {
+  background-color: rgb(102, 194, 211);
+  color: white;
+}
+
+.about-icons {
+  color: white;
+  font-size: calc(2.75vw + 2.75vh);
+}
+
+.about-bg-orange {
+  background-color: rgb(255, 91, 58);
+}
+
+.about-divs {
+  display: inline-block;
+  min-width: 100%;
 }

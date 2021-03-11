@@ -1,33 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import api from "../apis/api";
 import "./Home.css";
 import ProductCard from "../components/ProductCard";
-import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
+import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await api.get("/product/number/3");
+        console.log(response);
+        setProducts([...response.data]);
+      } catch (err) {}
+    }
+    fetchProducts();
+  }, []);
+
   return (
     <div className="text-center home-bg-color">
-      <div className="d-flex m-3" style={{ height: 250 }}>
-        <div className="slogan-bg slogan-text ml-3 mr-3 d-flex flex-column justify-content-center align-items-center col-">
-          <h3 className="general-text text-size slogan-text">
+      <div className="d-flex flex-wrap m-3 slogan-carousel-size ">
+        <div className="slogan-bg slogan-text d-flex flex-column flex-wrap justify-content-center align-items-center col-12 col-md-6 p-4">
+          <h3 className="text-size slogan-text d-flex flex-wrap">
             The most peculiar online store you've ever seen
           </h3>
-          <h4 className="general-text">
-            Find items you didn't know you
-            <br /> wished you had
+          <h4 className="slogan-2-text d-flex flex-wrap mt-3">
+            Find items you didn't know you wished you had
           </h4>
         </div>
-
-        <AwesomeSlider className="col-12 col-lg-6">
-          <div data-src="/images/logoWrittenOrange.png" />
-          <div data-src="/images/logoWrittenOrange.png" />
-          <div data-src="/images/logoWrittenOrange.png" />
-        </AwesomeSlider>
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center mb-5">
+          <Link to="/catalog">
+            <Carousel>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/images/launch-sale.png"
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src="/images/new-products.png"
+                  alt="Second slide"
+                />
+              </Carousel.Item>
+            </Carousel>
+          </Link>
+        </div>
       </div>
       <div className="card-center">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.map((element) => (
+          <ProductCard state={element} />
+        ))}
       </div>
     </div>
   );
