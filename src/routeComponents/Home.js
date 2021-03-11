@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import api from "../apis/api";
 import "./Home.css";
 import ProductCard from "../components/ProductCard";
-import AwesomeSlider from "react-awesome-slider";
 import "react-awesome-slider/dist/styles.css";
-import Footer from "../components/Footer";
+import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -32,79 +32,24 @@ function Home() {
           </h4>
         </div>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center mb-5">
-          <AwesomeSlider style={{ height: "40vh" }}>
-            <div data-src="/images/logoWrittenOrange.png" />
-            <div data-src="/images/logoWrittenOrange.png" />
-            <div data-src="/images/logoWrittenOrange.png" />
-          </AwesomeSlider>
-          {/* <div
-            id="carouselExampleIndicators"
-            class="carousel slide"
-            data-ride="carousel"
-          >
-            <ol class="carousel-indicators">
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="1"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="2"
-              ></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+          <Link to="/catalog">
+            <Carousel>
+              <Carousel.Item>
                 <img
-                  src="/images/logoWrittenOrange.png"
-                  class="d-block w-100"
-                  alt="..."
+                  className="d-block w-100"
+                  src="/images/launch-sale.png"
+                  alt="Second slide"
                 />
-              </div>
-              <div class="carousel-item">
+              </Carousel.Item>
+              <Carousel.Item>
                 <img
-                  src="/images/logoWrittenOrange.png"
-                  class="d-block w-100"
-                  alt="..."
+                  className="d-block w-100"
+                  src="/images/new-products.png"
+                  alt="Second slide"
                 />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="/images/logoWrittenOrange.png"
-                  class="d-block w-100"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <a
-              class="carousel-control-prev"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a
-              class="carousel-control-next"
-              href="#carouselExampleIndicators"
-              role="button"
-              data-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div> */}
+              </Carousel.Item>
+            </Carousel>
+          </Link>
         </div>
       </div>
       <div className="card-center">

@@ -54,6 +54,13 @@ body {
   font-size: calc(1.75vw + 1.75vh);
 }
 
+.carousel-first-slide {
+  background-color: #fdcc73;
+  color: white;
+  text-align: center;
+  font-size: calc(1.75vw + 1.75vh);
+}
+
 .text-size {
   font-weight: 800;
   display: flex;
@@ -135,4 +142,15 @@ body {
 .about-divs {
   display: inline-block;
   min-width: 100%;
+}
+
+.div-row {
+  display: flex;
+}
+
+.div-col {
+  flex: 1; /* additionally, equal width */
+
+  padding: 1em;
+  border: solid;
 }
