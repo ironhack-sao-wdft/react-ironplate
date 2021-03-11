@@ -15,7 +15,65 @@ function Navmenu() {
 
   return (
     <div className="bg-color">
-      <Navbar className="d-flex justify-content-between container" expand="lg">
+      <Navbar collapseOnSelect expand="lg">
+        <Navbar.Brand href="/">
+          <img
+            src={"/images/logoWrittenOrange.png"}
+            alt={"OddMarket Logo"}
+            style={{ width: 200 }}
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link>
+              <Link to="/about-us" className="link-text">
+                About Us
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/catalog" className="link-text">
+                Products
+              </Link>
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            {authContext.loggedInUser.user._id ? (
+              <div className="d-flex">
+                <Nav.Link>
+                  <Link to="/auth/myprofile" className="link-text">
+                    My Profile
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/" className="link-text" onClick={handleClick}>
+                    Log Out
+                  </Link>
+                </Nav.Link>
+              </div>
+            ) : (
+              <div className="d-flex">
+                <Nav.Link>
+                  <Link to="/auth/login" className="link-text">
+                    Login
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/auth/signup" className="link-text">
+                    Sign Up
+                  </Link>
+                </Nav.Link>
+              </div>
+            )}
+            <Nav.Link>
+              <Link to="/cart" className="link-text">
+                <i className="fas fa-shopping-cart mr-5"></i>
+              </Link>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      {/* <Navbar className="d-flex justify-content-between container" expand="lg">
         <Navbar.Brand href="/">
           <img
             src={"/images/logoWrittenOrange.png"}
@@ -58,7 +116,7 @@ function Navmenu() {
             </Link>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar> */}
     </div>
   );
 }
