@@ -38,20 +38,6 @@ export default function Cart() {
 		}
 	}
 
-	// useEffect(() => {
-	// 	async function fetchMyCart() {
-	// 		try {
-	// 			for (let i = 0; i <= cartContext.cart.length; i++) {
-	// 				let response = await api.get(`product/${cartContext.cart[i]}`);
-	// 				setCart((cart) => [...cart, response.data]);
-	// 			}
-	// 		} catch (err) {
-	// 			console.log(err);
-	// 		}
-	// 	}
-	// 	fetchMyCart();
-	// }, []);
-
 	return (
 		<div className='d-flex flex-column'>
 			<h1>
