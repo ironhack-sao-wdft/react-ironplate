@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useContext } from "react";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import "./Navmenu.css";
@@ -6,11 +6,12 @@ import { AuthContext } from "../contexts/authContext";
 
 function Navmenu() {
   const authContext = useContext(AuthContext);
+  let history = useHistory();
 
   function handleClick() {
     authContext.setLoggedInUser({});
     localStorage.removeItem("loggedInUser");
-    window.history.go(0);
+    history.push("/");
   }
 
   return (
@@ -38,8 +39,9 @@ function Navmenu() {
             </Nav.Link>
           </Nav>
           <Nav>
-            {authContext.loggedInUser.user._id ? (
-              <div className="d-flex">
+            {authContext.loggedInUser.user &&
+            authContext.loggedInUser.user._id ? (
+              <React.Fragment>
                 <Nav.Link>
                   <Link to="/auth/myprofile" className="link-text">
                     My Profile
@@ -50,9 +52,9 @@ function Navmenu() {
                     Log Out
                   </Link>
                 </Nav.Link>
-              </div>
+              </React.Fragment>
             ) : (
-              <div className="d-flex">
+              <React.Fragment>
                 <Nav.Link>
                   <Link to="/auth/login" className="link-text">
                     Login
@@ -63,7 +65,7 @@ function Navmenu() {
                     Sign Up
                   </Link>
                 </Nav.Link>
-              </div>
+              </React.Fragment>
             )}
             <Nav.Link>
               <Link to="/cart" className="link-text">
