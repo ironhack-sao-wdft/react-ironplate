@@ -7,20 +7,19 @@ import "react-awesome-slider/dist/styles.css";
 import Footer from "../components/Footer";
 
 function Home() {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchProducts() {
-  //     try {
-  //       const response = await api.get("/product/number/3");
-  //       console.log(response);
-  //       setProducts([...response.data]);
-  //     } catch (err) {}
-  //   }
-  //   fetchProducts();
-  // }, []);
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await api.get("/product/number/3");
+        console.log(response);
+        setProducts([...response.data]);
+      } catch (err) {}
+    }
+    fetchProducts();
+  }, []);
 
-  // useEffect({});
   return (
     <div className="text-center home-bg-color">
       <div className="d-flex flex-wrap m-3 slogan-carousel-size ">
@@ -110,9 +109,9 @@ function Home() {
         </div>
       </div>
       <div className="card-center">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.map((element) => (
+          <ProductCard state={element} />
+        ))}
       </div>
     </div>
   );
