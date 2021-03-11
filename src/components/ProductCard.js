@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   return (
-    <Card style={{ width: "18rem", height: "450px" }}>
+    <Card style={{ width: "18rem", height: "450px" }} className="m-2">
       <Card.Img
         variant="top"
         src={props.state.picture}
