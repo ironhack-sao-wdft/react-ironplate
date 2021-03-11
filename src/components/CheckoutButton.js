@@ -16,9 +16,6 @@ export default function CheckoutButton(props) {
 	const cartContext = useContext(CartContext);
 	console.log(cartContext);
 
-	// let itemsToStripe = [];
-
-
 	let itemsToStripe = {
 		products: [],
 		id: authContext.loggedInUser.user._id
