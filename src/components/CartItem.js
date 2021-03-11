@@ -1,26 +1,6 @@
 import React from 'react';
-import { useState, useEffect, useContext } from 'react';
-
-import { CartContext } from '../contexts/cartContext';
 
 function CartItem(props) {
-	const [quantity, setQuantity] = useState(1);
-
-	const [products, setProducts] = useState([]);
-
-	const cartContext = useContext(CartContext);
-
-	// function handleIncrement() {
-	// 	setQuantity(quantity + 1);
-	// 	console.log();
-	// }
-
-	// function handleDecrement() {
-	// 	if (quantity > 0){
-	// 	setQuantity(quantity - 1);
-	// 	}
-	// }
-
 	return (
 		<div className='card mb-3'>
 			<div className='d-flex g-0 w-100 p-3 flex-wrap'>
