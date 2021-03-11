@@ -22,6 +22,7 @@ export default function OrderSummary(props) {
 					<CheckoutButton
 						price={totalPrice}
 						user={authContext.loggedInUser.user._id}
+						total={props.subtotal}
 					/>
 				)}
 			</div>
