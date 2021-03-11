@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from 'react';
-import CheckoutButton from './CheckoutButton';
-import { AuthContext } from '../contexts/authContext';
+import React, { useEffect, useState, useContext } from "react";
+import CheckoutButton from "./CheckoutButton";
+import { AuthContext } from "../contexts/authContext";
 
 export default function OrderSummary(props) {
-	const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext);
 
-	let totalPrice = 40;
+  let totalPrice = 40;
 
 	return (
 		<div className='card col-12 col-lg-4' style={{ width: '18rem' }}>

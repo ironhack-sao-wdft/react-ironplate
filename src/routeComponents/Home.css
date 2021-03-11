@@ -67,6 +67,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 17vh;
 }
 
 .card-individual {
@@ -78,6 +79,16 @@ body {
 .footer-icons {
   color: white;
   font-size: calc(2.75vw + 2.75vh);
+}
+
+.footer-text {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: calc(1.1vw + 1.1vh);
 }
 
 .product-detail-bg {
@@ -110,4 +121,18 @@ body {
 .detail-btn-blue {
   background-color: rgb(102, 194, 211);
   color: white;
+}
+
+.about-icons {
+  color: white;
+  font-size: calc(2.75vw + 2.75vh);
+}
+
+.about-bg-orange {
+  background-color: rgb(255, 91, 58);
+}
+
+.about-divs {
+  display: inline-block;
+  min-width: 100%;
 }
