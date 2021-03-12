@@ -13,7 +13,7 @@ function ProductCardCatalog(props) {
         />
         <Card.Body>
           <Card.Title>{props.name}</Card.Title>
-          <Card.Text>R${props.price.toFixed(2)}</Card.Text>
+          <Card.Text>R${(props.price/100).toFixed(2)}</Card.Text>
           <Card.Text>{props.description}</Card.Text>
           <Link to={`product/${props.id}`} className="btn detail-btn-orange">
             See Details!
