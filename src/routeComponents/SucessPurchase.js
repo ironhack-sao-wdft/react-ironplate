@@ -102,7 +102,7 @@ export default function SucessPurchase(props) {
 											</p>
 											<p class='mb-1'>Quantity: {element.quantity}</p>
 											<p class='mb-1'>
-												Subtotal: R${element.amount_subtotal.toFixed(2)}
+												Subtotal: R${(element.amount_subtotal / 100).toFixed(2)}
 											</p>
 										</li>
 									);

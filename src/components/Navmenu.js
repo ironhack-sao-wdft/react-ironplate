@@ -43,7 +43,7 @@ function Navmenu() {
             authContext.loggedInUser.user._id ? (
               <React.Fragment>
                 <Nav.Link>
-                  <Link to="/auth/myprofile" className="link-text">
+                  <Link to="/my-profile" className="link-text">
                     My Profile
                   </Link>
                 </Nav.Link>
