@@ -18,7 +18,7 @@ export default function CheckoutButton(props) {
 
 	let itemsToStripe = {
 		products: [],
-		id: authContext.loggedInUser.user._id
+		id: authContext.loggedInUser.user._id,
 	};
 
 	for (let i = 0; i < cartContext.cart.length; i++) {
@@ -51,14 +51,20 @@ export default function CheckoutButton(props) {
 
 	return (
 		<div>
-			<button
-				type='button'
-				class='btn btn-primary'
-				role='link'
-				onClick={handleClick}
-			>
-				Checkout
-			</button>
+			{cartContext.cart.length > 0 ? (
+				<button
+					type='button'
+					className='btn btn-primary'
+					role='link'
+					onClick={handleClick}
+				>
+					Checkout
+				</button>
+			) : (
+				<button type='button' className='btn btn-primary disabled'>
+					Checkout
+				</button>
+			)}
 		</div>
 	);
 }

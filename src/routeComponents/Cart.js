@@ -5,6 +5,7 @@ import OrderSummary from '../components/OrderSummary';
 
 export default function Cart() {
 	const cartContext = useContext(CartContext);
+	console.log(cartContext);
 
 	function handleIncrement(id) {
 		let productIndex = undefined;
@@ -13,8 +14,6 @@ export default function Cart() {
 			productIndex = index;
 			return element._id === id;
 		});
-
-		console.log(findProduct);
 
 		if (findProduct) {
 			let currentState = [...cartContext.cart];
@@ -31,16 +30,24 @@ export default function Cart() {
 			return element._id === id;
 		});
 
+		console.log(findProduct);
+
 		if (findProduct) {
-			let currentState = [...cartContext.cart];
-			currentState[productIndex].quantity -= 1;
-			cartContext.setCart(currentState);
+			if (findProduct.quantity === 1) {
+				let currentState = [...cartContext.cart];
+				currentState.splice(productIndex, 1);
+				cartContext.setCart(currentState);
+			} else {
+				let currentState = [...cartContext.cart];
+				currentState[productIndex].quantity -= 1;
+				cartContext.setCart(currentState);
+			}
 		}
 	}
 
 	return (
-		<div className='d-flex flex-column'>
-			<h1>
+		<div>
+			<h1 className='#fff'>
 				<strong>My Cart</strong>
 			</h1>
 			<p>{cartContext.cart.length} Items</p>
@@ -62,7 +69,7 @@ export default function Cart() {
 							);
 						})
 					) : (
-						<div class='card'>
+						<div class='card mb-3'>
 							<div class='card-body'>Your cart is empty =[</div>
 						</div>
 					)}
