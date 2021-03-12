@@ -1,4 +1,4 @@
-<img alt="OddMarket Logo" src="https://github.com/LBWKH/OddMarket---Client/blob/master/src/images/logoWrittenOrange.png" width="500px"/>
+<img alt="OddMarket Logo" src="https://github.com/LBWKH/OddMarket---Client/blob/master/public/images/logoWrittenOrange.png" width="500px"/>
 
 ## This is the client side of **OddMarket**, our 3rd project for Ironhack's Web Development Bootcamp
 
