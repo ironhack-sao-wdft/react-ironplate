@@ -11,7 +11,7 @@ function ProductCard(props) {
       />
       <Card.Body>
         <Card.Title>{props.state.name}</Card.Title>
-        <Card.Text>R$ {props.state.price}</Card.Text>
+        <Card.Text>R$ {(props.state.price/100).toFixed(2)}</Card.Text>
         {/* <Button variant="primary">See details!</Button> */}
         <Link
           to={`product/${props.state._id}`}
