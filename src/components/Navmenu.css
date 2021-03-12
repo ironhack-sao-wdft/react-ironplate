@@ -1,12 +1,10 @@
 .bg-color {
-	background-color: white;
-	margin-bottom: 7vh;
+  background-color: white;
+  margin-bottom: 7vh;
 }
 
 .link-text {
-	text-decoration: none;
-	color: rgb(255, 91, 58);
-	margin-right: 3.5vw;
-	margin-left: 3.5vw;
-	font-weight: 600;
+  text-decoration: none;
+  color: rgb(255, 91, 58);
+  font-weight: 600;
 }
