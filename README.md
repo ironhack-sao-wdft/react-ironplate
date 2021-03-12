@@ -22,6 +22,6 @@ Check out our deployed app [here](https://oddmarket.netlify.app)
 
 Check out the server's repository [here](https://github.com/LBWKH/OddMarket---Server)
 
+## Disclaimer
 
-
-
+OddMarket is a project solely for educational purposes, developed for the 3rd project of Ironhack's Web Development Bootcamp, hence the use of all of its resources do not constitute or mean any copyright infringement. All credits for the images utilized are given to the proper authors Matty Benedetto, aka @unnecessaryinventions, and Katerina Kamprani, aka the author of The Unfomcortable.
