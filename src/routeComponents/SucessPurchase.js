@@ -47,15 +47,12 @@ export default function SucessPurchase(props) {
 	useEffect(() => {
 		async function pushNewTransaction() {
 			try {
-				const newTransaction = await api.post(
-					`http://localhost:1234/transaction`,
-					{
-						value: stripeResponse.data.checkout.amount_total,
-						products: cartIds,
-						ownerId: authContext.loggedInUser.user._id,
-						checkoutId: props.match.params.id,
-					}
-				);
+				const newTransaction = await api.post(`/transaction`, {
+					value: stripeResponse.data.checkout.amount_total,
+					products: cartIds,
+					ownerId: authContext.loggedInUser.user._id,
+					checkoutId: props.match.params.id,
+				});
 
 				console.log(newTransaction);
 			} catch (err) {
