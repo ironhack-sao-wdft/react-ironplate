@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import CartItem from '../components/CartItem';
 import { CartContext } from '../contexts/cartContext';
 import OrderSummary from '../components/OrderSummary';
+import './Home.css';
 
 export default function Cart() {
 	const cartContext = useContext(CartContext);
@@ -47,10 +48,10 @@ export default function Cart() {
 
 	return (
 		<div>
-			<h1 className='#fff'>
+			<h1 className='white'>
 				<strong>My Cart</strong>
 			</h1>
-			<p>{cartContext.cart.length} Items</p>
+			<p className='white'>{cartContext.cart.length} Items</p>
 			<div className='d-flex flex-row justify-content-between flex-wrap'>
 				<div className='d-flex flex-column col-12 col-lg-7'>
 					{cartContext.cart.length > 0 ? (

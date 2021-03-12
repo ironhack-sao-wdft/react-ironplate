@@ -25,8 +25,10 @@ export default function MyProfile(props) {
 
 	return (
 		<div>
-			<h1>Welcome, {authContext.loggedInUser.user.name} =]</h1>
-			<div className='list-group'>
+			<h1 className='white'>
+				<strong>Welcome, {authContext.loggedInUser.user.name} =]</strong>
+			</h1>
+			<div className='list-group white'>
 				<h4>Here, you can see your orders</h4>
 				{transactions.length ? (
 					transactions.map((element, index) => {
