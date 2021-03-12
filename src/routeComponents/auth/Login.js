@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import "../Home.css";
 import { Button } from "react-bootstrap";
-import "../Home.css";
 import { AuthContext } from "../../contexts/authContext";
 
 // document.body.style.backgroundColor = red;

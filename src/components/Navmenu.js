@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import React, { useContext } from "react";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import "./Navmenu.css";
@@ -6,16 +6,17 @@ import { AuthContext } from "../contexts/authContext";
 
 function Navmenu() {
   const authContext = useContext(AuthContext);
+  let history = useHistory();
 
   function handleClick() {
     authContext.setLoggedInUser({});
     localStorage.removeItem("loggedInUser");
-    window.history.go(0);
+    history.push("/");
   }
 
   return (
     <div className="bg-color">
-      <Navbar className="d-flex justify-content-between container" expand="lg">
+      <Navbar collapseOnSelect expand="lg">
         <Navbar.Brand href="/">
           <img
             src={"/images/logoWrittenOrange.png"}
@@ -23,39 +24,54 @@ function Navmenu() {
             style={{ width: 200 }}
           />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto d-flex align-items-center justify-content-between">
-            <div>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link>
               <Link to="/about-us" className="link-text">
-                About us
+                About Us
               </Link>
+            </Nav.Link>
+            <Nav.Link>
               <Link to="/catalog" className="link-text">
-                Catalog
+                Products
               </Link>
-            </div>
-            {authContext.loggedInUser.user._id ? (
-              <div>
-                <Link to="/my-profile" className="link-text">
-                  My Profile
-                </Link>
-                <Link to="/" className="link-text" onClick={handleClick}>
-                  Log Out
-                </Link>
-              </div>
+            </Nav.Link>
+          </Nav>
+          <Nav>
+            {authContext.loggedInUser.user &&
+            authContext.loggedInUser.user._id ? (
+              <React.Fragment>
+                <Nav.Link>
+                  <Link to="/auth/myprofile" className="link-text">
+                    My Profile
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/" className="link-text" onClick={handleClick}>
+                    Log Out
+                  </Link>
+                </Nav.Link>
+              </React.Fragment>
             ) : (
-              <div>
-                <Link to="/auth/login" className="link-text">
-                  Login
-                </Link>
-                <Link to="/auth/signup" className="link-text">
-                  Sign Up
-                </Link>
-              </div>
+              <React.Fragment>
+                <Nav.Link>
+                  <Link to="/auth/login" className="link-text">
+                    Login
+                  </Link>
+                </Nav.Link>
+                <Nav.Link>
+                  <Link to="/auth/signup" className="link-text">
+                    Sign Up
+                  </Link>
+                </Nav.Link>
+              </React.Fragment>
             )}
-            <Link to="/cart" className="link-text">
-              <i className="fas fa-shopping-cart"></i>
-            </Link>
+            <Nav.Link>
+              <Link to="/cart" className="link-text">
+                <i className="fas fa-shopping-cart mr-5"></i>
+              </Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
