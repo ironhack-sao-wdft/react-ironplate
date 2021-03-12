@@ -52,7 +52,7 @@ function Catalog() {
 				<h4>
 					<b>{product.name}</b>
 				</h4>
-				<h6>R$ {product.price > 0 ? product.price.toFixed(2) : ''}</h6>
+				<h6>R$ {product.price > 0 ? (product.price/100).toFixed(2) : ''}</h6>
 				<p>{product.description}</p>
 				<div className='d-flex flex-column justify-content-center align-items-start'>
 					<button

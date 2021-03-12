@@ -62,7 +62,9 @@ export default function Cart() {
 							);
 						})
 					) : (
-						<div className='card'>Your cart is empty =[</div>
+						<div class='card'>
+							<div class='card-body'>Your cart is empty =[</div>
+						</div>
 					)}
 				</div>
 				<OrderSummary

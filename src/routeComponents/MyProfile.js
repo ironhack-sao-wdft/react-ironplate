@@ -55,7 +55,7 @@ export default function MyProfile(props) {
 									})}
 								</ul>
 								<p className='mb-1'>
-									Total value: R${element.value.toFixed(2)}
+									Total value: R${(element.value / 100).toFixed(2)}
 								</p>
 							</a>
 						);

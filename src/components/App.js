@@ -14,6 +14,7 @@ import { CartContextComponent } from '../contexts/cartContext';
 import SucessPurchase from '../routeComponents/SucessPurchase';
 import CanceledPurchase from '../routeComponents/CanceledPurchase';
 import MyProfile from "../routeComponents/MyProfile";
+import AboutUs from "../routeComponents/AboutUs";
 
 function App() {
 	return (
@@ -32,6 +33,7 @@ function App() {
 							<Route path='/order/success/:id' component={SucessPurchase} />
 							<Route path='/order/canceled' component={CanceledPurchase} />
 							<Route path='/my-profile' component={MyProfile} />
+							<Route path='/about-us' component={AboutUs} />
 						</div>
 					</Switch>
 				</CartContextComponent>

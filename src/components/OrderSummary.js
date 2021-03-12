@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import CheckoutButton from "./CheckoutButton";
-import { AuthContext } from "../contexts/authContext";
+import React, { useEffect, useState, useContext } from 'react';
+import CheckoutButton from './CheckoutButton';
+import { AuthContext } from '../contexts/authContext';
+import { CartContext } from '../contexts/cartContext';
 
 export default function OrderSummary(props) {
-  const authContext = useContext(AuthContext);
-
-  let totalPrice = 40;
+	const cartContext = useContext(CartContext);
+	const authContext = useContext(AuthContext);
 
 	return (
 		<div className='card col-12 col-lg-4' style={{ width: '18rem' }}>
@@ -14,13 +14,12 @@ export default function OrderSummary(props) {
 					<strong>Order summary</strong>
 				</h5>
 				<p className='card-text'>Total price: R${props.subtotal.toFixed(2)}</p>
-				{!authContext.loggedInUser.user._id ? (
+				{!authContext.loggedInUser.user._id || !cartContext.length ? (
 					<div class='alert alert-warning' role='alert'>
-						You must me logged in to Checkout
+						You must me logged in and add Products to Checkout
 					</div>
 				) : (
 					<CheckoutButton
-						price={totalPrice}
 						user={authContext.loggedInUser.user._id}
 						total={props.subtotal}
 					/>
