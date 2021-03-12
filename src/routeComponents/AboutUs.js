@@ -57,8 +57,8 @@ function AboutUs() {
             </div>
           </div>
           <h5 className="mt-5 text-center div-col">
-            OddMarket is an e-commerce mockup project for educational purposes
-            developed for the 3rd project of Ironhack's Web Development
+            OddMarket is an e-commerce mockup project meant for educational
+            purposes developed for the 3rd project of Ironhack's Web Development
             Bootcamp, hence the use of all of its resources do not constitute or
             mean any copyright infringement. <br /> All credits for the images
             utilized are given to the proper authors Matty Benedetto, aka
