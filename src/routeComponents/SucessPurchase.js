@@ -85,7 +85,7 @@ export default function SucessPurchase(props) {
 						<strong>
 							Total order: R$
 							{stripeResponse
-								? stripeResponse.data.checkout.amount_total.toFixed(2)
+								? (stripeResponse.data.checkout.amount_total / 100).toFixed(2)
 								: ''}
 						</strong>
 					</p>

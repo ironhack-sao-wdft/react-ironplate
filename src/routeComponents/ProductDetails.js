@@ -28,18 +28,37 @@ function Catalog() {
 	}, []);
 
 	const handleAddToCart = () => {
-		const productId = product._id;
-		if (!cartContext.cart.includes(productId)) {
+		let productIndex = undefined;
+
+		let findProduct = cartContext.cart.find((element, index) => {
+			productIndex = index;
+			return element._id === id;
+		});
+
+		if (!findProduct) {
 			cartContext.setCart([...cartContext.cart, product]);
 		} else {
-			console.log('teste');
+			let currentState = [...cartContext.cart];
+			currentState[productIndex].quantity += 1;
+			cartContext.setCart(currentState);
 		}
+		history.push('/catalog');
 	};
 
 	const handleBuyNow = () => {
-		const productId = product._id;
-		if (!cartContext.cart.includes(productId)) {
+		let productIndex = undefined;
+
+		let findProduct = cartContext.cart.find((element, index) => {
+			productIndex = index;
+			return element._id === id;
+		});
+
+		if (!findProduct) {
 			cartContext.setCart([...cartContext.cart, product]);
+		} else {
+			let currentState = [...cartContext.cart];
+			currentState[productIndex].quantity += 1;
+			cartContext.setCart(currentState);
 		}
 		history.push('/cart');
 	};
