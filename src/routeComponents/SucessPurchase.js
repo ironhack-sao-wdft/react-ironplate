@@ -10,7 +10,6 @@ export default function SucessPurchase(props) {
 	console.log(authContext);
 
 	const cartContext = useContext(CartContext);
-	console.log(cartContext);
 
 	const [stripeResponse, setStripeResponse] = useState('');
 
@@ -18,8 +17,16 @@ export default function SucessPurchase(props) {
 	// 	localStorage.removeItem('cart');
 	// });
 
-	// let test = localStorage.getItem('cart')
-	// console.log(test.JSON.parse)
+	let cart = JSON.parse(localStorage.getItem('cart'));
+
+	let cartIds = cart.map((element) => {
+		return {
+			item: element._id,
+			quantity: element.quantity,
+		};
+	});
+
+	console.log(cartIds);
 
 	useEffect(() => {
 		async function fetchResponse() {
@@ -28,6 +35,8 @@ export default function SucessPurchase(props) {
 					`/order/success/${props.match.params.id}`
 				);
 				setStripeResponse({ ...response });
+
+				console.log(response);
 			} catch (err) {
 				console.log(err);
 			}
@@ -35,18 +44,27 @@ export default function SucessPurchase(props) {
 		fetchResponse();
 	}, []);
 
-	async function sendTransaction() {
-		try {
-			const response = await api.post(`http://localhost:1234/transaction`, {
-				value: stripeResponse.data.checkout.amount_total,
-				products: ['60496332d20793ec16744061'],
-				ownerId: authContext.loggedInUser.user._id,
-				checkoutId: props.match.params.id,
-			});
-		} catch (err) {
-			console.log(err);
+	useEffect(() => {
+		async function pushNewTransaction() {
+			try {
+				const newTransaction = await api.post(
+					`http://localhost:1234/transaction`,
+					{
+						value: stripeResponse.data.checkout.amount_total,
+						products: cartIds,
+						ownerId: authContext.loggedInUser.user._id,
+						checkoutId: props.match.params.id,
+					}
+				);
+
+				console.log(newTransaction);
+			} catch (err) {
+				console.log(err);
+			}
 		}
-	}
+
+		pushNewTransaction();
+	}, [stripeResponse]);
 
 	// if (stripeResponse) {
 	// 	console.log(stripeResponse.data.items.data);

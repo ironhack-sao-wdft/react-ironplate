@@ -16,7 +16,11 @@ function CartContextComponent(props) {
 	}, []);
 
 	useEffect(() => {
-		localStorage.setItem('cart', JSON.stringify(cart))
+		if (cart.length) {
+			localStorage.setItem('cart', JSON.stringify(cart));
+		}
+
+		// localStorage.setItem('cart', JSON.stringify(cart))
 	}, [cart]);
 
 	return (
