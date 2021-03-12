@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const apis = {
-  development: process.env.REACT_APP_API_BASE,
-  production: "A URL DO SEU SERVIDOR DEPLOYADO NO HEROKU AQUI",
+  development: "http://localhost:1234",
+  production: "https://oddmarket-api.herokuapp.com",
 };
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
