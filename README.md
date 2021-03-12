@@ -10,9 +10,9 @@ Check out our deployed app [here](https://oddmarket.netlify.app)
 
 ## Authors
 
-- [Leonard Kim Her](github.com/LBWKH)
-- [Felipe Freitas](github.com/sincopeiro)
-- [Matheus Ciappina](github.com/mciappina)
+- [Leonard Kim Her](https://github.com/LBWKH)
+- [Felipe Freitas](https://github.com/sincopeiro)
+- [Matheus Ciappina](https://github.com/mciappina)
 
 ## Presentation Slides
 
