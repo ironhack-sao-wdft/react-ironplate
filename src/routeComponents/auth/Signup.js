@@ -1,84 +1,96 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import api from "../../apis/api";
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import api from '../../apis/api'
+
+import TextInput from '../../components/TextInput'
 
 function Signup(props) {
-  const [state, setState] = useState({ name: "", password: "", email: "" });
-  const [errors, setErrors] = useState({
-    name: null,
-    email: null,
-    password: null,
-  });
+  const [state, setState] = useState({
+    name: '',
+    email: '',
+    password: '',
+    profilePicture: '',
+    occupation: '',
+    location: '',
+    certificatesTerapies: '',
+    age: '',
+    phoneNumber: '',
+  })
+  const [errors, setErrors] = useState(null)
 
   function handleChange(event) {
+    if (event.target.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      })
+    }
+
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
-    });
+    })
+  }
+
+  async function handleFileUpload(file) {
+    const uploadData = new FormData()
+
+    uploadData.append('profilePicture', file)
+
+    const response = await api.post('/upload', uploadData)
+
+    return response.data.url
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
-      const response = await api.post("/signup", state);
-      setErrors({ name: "", password: "", email: "" });
-      props.history.push("/auth/login");
+      const {
+        street,
+        neighbourhood,
+        city,
+        stateOrProvince,
+        postalCode,
+        number,
+      } = state
+
+      const profilePictureUrl = await handleFileUpload(state.profilePicture)
+
+      const response = await api.post('/signup', {
+        ...state,
+        address: {
+          street,
+          neighbourhood,
+          city,
+          state: stateOrProvince,
+          postalCode,
+          number,
+        },
+        profilePictureUrl,
+      })
+      setError(null)
+      props.history.push('/auth/login')
     } catch (err) {
-      console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      console.error(err.response)
+      setError(err.response.data.error)
     }
   }
 
+  console.log(state)
+
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
-
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/auth/login">
-          Already have an account? Click here to login.
-        </Link>
-      </div>
-    </form>
-  );
+    <div className="container mt-5">
+      <h1>Cadastre-se</h1>
+      <TextInput
+        state={state}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        error={error}
+        location={props.location}
+      />
+    </div>
+  )
 }
 
-export default Signup;
+export default Signup
