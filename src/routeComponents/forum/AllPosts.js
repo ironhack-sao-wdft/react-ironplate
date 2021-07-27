@@ -13,7 +13,7 @@ function AllPosts() {
     async function fetchPosts() {
       try {
         const response = await api.get("/forum");
-        console.log(response);
+        // console.log(response);
         setPosts([...response.data]);
       } catch (err) {
         console.log(err);
@@ -26,7 +26,7 @@ function AllPosts() {
     <div className="container mt-5">
       {posts.map((post) => {
         return (
-          <Link>
+          <Link to={`/forum/${post._id}`}>
             <div className="card mb-3" style={{ maxWidth: "540px" }}>
               <div className="row no-gutters">
                 <div className="col-md-4">

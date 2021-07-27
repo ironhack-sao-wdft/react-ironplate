@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useHistory } from "react-router";
 import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
-import axios from "axios";
 
 function CreatePostForum() {
   const [state, setState] = useState({
@@ -32,6 +32,8 @@ function CreatePostForum() {
         pictureUrl: "",
         tags: "",
       });
+
+      useHistory.push("/forum");
     } catch (err) {
       console.log(err);
     }
