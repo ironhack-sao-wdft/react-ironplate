@@ -35,7 +35,7 @@ function Login(props) {
       setErrors({ password: "", email: "" });
       props.history.push("/book/all");
     } catch (err) {
-      console.error(err.response);
+      console.error(err);
       setErrors({ ...err.response.data.errors });
     }
   }
