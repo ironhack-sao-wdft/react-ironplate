@@ -1,13 +1,18 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
+import "./Signup.css";
 
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
 
-  const [state, setState] = useState({ password: "", email: "" });
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -35,7 +40,7 @@ function Login(props) {
       setErrors({ password: "", email: "" });
       props.history.push("/book/all");
     } catch (err) {
-      console.error(err.response);
+      console.error(err);
       setErrors({ ...err.response.data.errors });
     }
   }
@@ -50,6 +55,8 @@ function Login(props) {
           type="email"
           name="email"
           id="signupFormEmail"
+          className="email"
+          placeholder="Your e-mail here"
           value={state.email}
           error={errors.email}
           onChange={handleChange}
@@ -62,6 +69,8 @@ function Login(props) {
           type="password"
           name="password"
           id="signupFormPassword"
+          className="password"
+          placeholder="********"
           value={state.password}
           error={errors.password}
           onChange={handleChange}
@@ -71,7 +80,10 @@ function Login(props) {
       <div>
         <button type="submit">Login!</button>
 
-        <Link to="/auth/signup">
+        <Link
+          to="/auth/signup"
+          style={{ fontFamily: "san serif", color: "#F2E2C4" }}
+        >
           Don't have an account? Click here to signup!
         </Link>
       </div>

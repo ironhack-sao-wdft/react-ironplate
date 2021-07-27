@@ -21,10 +21,23 @@ function Signup(props) {
   });
 
   function handleChange(event) {
+    if (event.target.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
+    }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
+  }
+
+  async function handleFileUpload(file) {
+    const uploadData = new FormData();
+    uploadData.append("profilePicture", file);
+    const response = await api.post("/upload", uploadData);
+    return response.data.url;
   }
 
   async function handleSubmit(event) {
@@ -38,6 +51,7 @@ function Signup(props) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
     }
+    const profilePictureUrl = await handleFileUpload(state.profilePicture);
   }
 
   return (
@@ -103,12 +117,10 @@ function Signup(props) {
       <div>
         <label htmlFor="signupFormProfileImage">Profile Image</label>
         <input
-          type="text"
+          type="file"
           name="profileImage"
           id="signupFormProfileImage"
-          placeholder="Your profile image here"
-          //style={{fontFamily: "sans serif"}}
-          value={state.profileImage}
+          placeholder="Your profile image here" 
           error={errors.profileImage}
           onChange={handleChange}
         />
