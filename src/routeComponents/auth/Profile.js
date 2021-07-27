@@ -63,4 +63,5 @@ fetchProfile();
         {state.posts}
       </p>
       </div>
-} 
+  )}
+ 
