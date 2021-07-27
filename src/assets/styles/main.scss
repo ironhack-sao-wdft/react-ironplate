@@ -1,0 +1,39 @@
+/*! `Custom` Bootstrap 5 theme */
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
+$headings-font-family: Nunito;
+
+$enable-grid-classes: false;
+$primary: #d8765f;
+$secondary: #f2bb9c;
+$success: #fffdf0;
+$danger: #dc3545;
+$info: #0dcaf0;
+$warning: #ffc107;
+$light: #f8f9fa;
+$dark: #0f1715;
+@import "bootstrap";
+
+.primary {
+  color: #fff;
+  background-color: #d8765f;
+}
+
+// Add SASS theme customizations here..
+html {
+  font-size: 0.8rem;
+}
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1rem;
+  }
+}

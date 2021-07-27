@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "../assets/styles/main.scss"
 
+
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 
@@ -12,12 +16,14 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextComponent>
-        <Switch>
+        <Navbar />
+          <Switch> 
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
           <Route path="/signup"component={Signup}/>
           <Route path="/new-post" component={NewPost} />
         </Switch>
+        <Footer />
       </AuthContextComponent>
     </BrowserRouter>
   );
