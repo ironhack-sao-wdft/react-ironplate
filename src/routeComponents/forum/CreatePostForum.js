@@ -1,4 +1,5 @@
 import { useState } from "react";
+import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
@@ -10,7 +11,7 @@ function CreatePostForum() {
     description: "",
     link: "",
     pictureUrl: "",
-    tags: "Dica",
+    tags: "",
   });
 
   function handleChange(event) {
@@ -20,8 +21,17 @@ function CreatePostForum() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      //const response = await axios.post("http://localhost:4000/forum", state);
-      console.log(state);
+      const response = await api.post("/forum", {
+        ...state,
+        tags: state.tags.toLowerCase(),
+      });
+      setState({
+        title: "",
+        description: "",
+        link: "",
+        pictureUrl: "",
+        tags: "",
+      });
     } catch (err) {
       console.log(err);
     }
