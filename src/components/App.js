@@ -10,11 +10,13 @@ import AllPosts from "../routeComponents/forum/AllPosts";
 import { AuthContextComponent } from "../contexts/authContext";
 import Footer from "./Footer";
 import "../assets/styles/index.css";
+import Header from "./Header";
 
 function App() {
   return (
     <BrowserRouter>
       <AuthContextComponent>
+        <Header/>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
