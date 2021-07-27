@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-//import logo from "../../public/img/logo_branco.png"
+import logo from "../img/logo_branco.png"
 
 export default function Header (){
 return <div className="navbar" style={{height: "75px",
-opacity: "40%",backgroundColor:"grey"
+opacity: "30%",backgroundColor:"black"
 }}> 
-<Link className="nav-link active" aria-current="page" to="/"><img src="" alt="logo"/>
+<Link className="nav-link active" aria-current="page" to="/">
+    <img src={logo} alt="logo" style={{ height: "60px" }} />
   </Link>
     <div className="d-flex">
 

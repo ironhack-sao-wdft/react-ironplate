@@ -1,20 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 function Home() {
   return (
-    <div className="text-center">
-      <div className="" style={{backgroundImage: ""}}>
-        <h1>Mala e Cuia</h1>
-      <p>Tudo o que você precisa saber sobre a vida de expatriado.</p>
+    <div className="text-center hero-image" style={{width:"100vw", height:"40%"}}>
+      <div className="" style={{margin:"20%"}}>
+        <h1 style={{color:"white"}}>Mala e Cuia</h1>
+      <p style={{color:"white"}}>Tudo o que você precisa saber sobre a vida de expatriado.</p>
       </div>
-      
-      <div className="d-flex flex-column align-items-center">
-        <Link className="btn btn-lg btn-primary" to="/auth/signup">
-          Signup here!
-        </Link>
-      </div>
-      
+
       <div className="mt-5">
         <h5>Escolha o país:</h5>
      
