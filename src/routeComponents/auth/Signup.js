@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
+import "../auth/Signup.css";
 
 function Signup(props) {
-  const [state, setState] = useState({ name: "", password: "", email: "" });
+  const [state, setState] = useState({
+    name: "",
+    lastName: "",
+    email: "",
+    password: "",
+    profileImage: "",
+  });
+
   const [errors, setErrors] = useState({
     name: null,
+    lastName: null,
     email: null,
     password: null,
+    profileImage: null,
   });
 
   function handleChange(event) {
@@ -40,8 +50,24 @@ function Signup(props) {
           type="text"
           name="name"
           id="signupFormName"
+          placeholder="Your name here"
+          style={{ fontFamily: "sans serif" }}
           value={state.name}
           error={errors.name}
+          onChange={handleChange}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="signupFormLastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="signupFormLastName"
+          placeholder="Your last name here"
+          style={{ fontFamily: "sans serif" }}
+          value={state.lastName}
+          error={errors.lastName}
           onChange={handleChange}
         />
       </div>
@@ -52,6 +78,8 @@ function Signup(props) {
           type="email"
           name="email"
           id="signupFormEmail"
+          placeholder="Your e-mail address here"
+          style={{ fontFamily: "sans serif" }}
           value={state.email}
           error={errors.email}
           onChange={handleChange}
@@ -64,6 +92,8 @@ function Signup(props) {
           type="password"
           name="password"
           id="signupFormPassword"
+          placeholder="********"
+          style={{ fontFamily: "sans serif" }}
           value={state.password}
           error={errors.password}
           onChange={handleChange}
@@ -71,9 +101,29 @@ function Signup(props) {
       </div>
 
       <div>
-        <button type="submit">Signup!</button>
+        <label htmlFor="signupFormProfileImage">Profile Image</label>
+        <input
+          type="text"
+          name="profileImage"
+          id="signupFormProfileImage"
+          placeholder="Your profile image here"
+          //style={{fontFamily: "sans serif"}}
+          value={state.profileImage}
+          error={errors.profileImage}
+          onChange={handleChange}
+        />
+      </div>
 
-        <Link to="/auth/login">
+      <div>
+        <button
+          type="submit"
+          className="btn"
+          style={{ fontFamily: "sans serif" }}
+        >
+          Signup!
+        </button>
+
+        <Link to="/auth/login" className="backtologin">
           Already have an account? Click here to login.
         </Link>
       </div>

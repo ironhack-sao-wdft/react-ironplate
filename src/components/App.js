@@ -5,6 +5,7 @@ import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 
 import { AuthContextComponent } from "../contexts/authContext";
+import Signup from "../routeComponents/auth/Signup";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
+          <Route path="/signup"component={Signup}/>
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
