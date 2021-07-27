@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -25,16 +24,34 @@ function NewPost(props) {
   });
 
   function handleChange(event) {
+    if (event.target.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
+    }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
+  async function handleFileUpload(file) {
+    const uploadData = new FormData();
+
+    uploadData.append("image", file);
+
+    const response = await api.post("/upload", uploadData);
+
+    return response.data.url;
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
+      const imageUrl = await handleFileUpload(state.image);
+
       const response = await api.post("/post", state);
       console.log(response);
 
@@ -51,9 +68,9 @@ function NewPost(props) {
         cons: "",
         image: "",
       });
-      props.history.push("/book/all");
+      props.history.push("/profile");
     } catch (err) {
-      console.error(err.response);
+      console.error(err);
       setErrors({ ...err.response.data.errors });
     }
   }
@@ -64,7 +81,7 @@ function NewPost(props) {
       <hr />
 
       <div className="form-group">
-        <label for="postFormTitle">Destino</label>
+        <label htmlFor="postFormTitle">Destino</label>
         <input
           className="form-control"
           placeholder="País e cidade"
@@ -76,19 +93,6 @@ function NewPost(props) {
           onChange={handleChange}
         />
       </div>
-
-      {/* <div className="form-group mb-3"> */}
-      {/* <label htmlFor="postFormTitle">Título</label>
-        <input
-          className="form-control"
-          type="text"
-          name="title"
-          id="postFormTitle"
-          value={state.title}
-          error={errors.title}
-          onChange={handleChange}
-        />
-      </div> */}
 
       <div className="mt-3">
         <label htmlFor="postFormContent">Conte sobre sua viagem</label>
@@ -136,6 +140,7 @@ function NewPost(props) {
         <label htmlFor="postFormTripCost">Valor total:</label>
         <input
           className="ml-2"
+          placeholder="Valor e moeda"
           type="text"
           name="tripCost"
           id="postFormTripCost"
@@ -152,7 +157,6 @@ function NewPost(props) {
           type="file"
           name="image"
           id="signupFormImage"
-          value={state.image}
           error={errors.image}
           onChange={handleChange}
         />
