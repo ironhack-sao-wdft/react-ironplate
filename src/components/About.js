@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import LogoCircle from '../assets/images/logo sem fundo.png'
 import background from '../assets/images/backparticles.jpg'
 import '../assets/styles/About.css'
-
 function About() {
   return (
     <>
@@ -14,7 +13,7 @@ function About() {
         <hr />
 
         <section className="contaniner m-5">
-          <h1 className="text-center">Lorem Ipsum</h1>
+          <h1 className="text-center">Nossa Missão</h1>
           <p className="text-center">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text

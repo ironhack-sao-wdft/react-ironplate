@@ -7,6 +7,7 @@ import About from './About'
 import PrivateRoute from '../routeComponents/auth/PrivateRoute'
 import PostFeed from '../components/PostFeed'
 import Allusers from '../components/Allusers'
+import '../assets/styles/index.css'
 
 import { AuthContextComponent } from '../contexts/authContext'
 
@@ -14,14 +15,16 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextComponent>
-        <Navbar id />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/About" component={About} />
-          <Route exact path="/auth" component={AuthRouter} />
-          <Route path="/post" component={PostFeed} />
-          <Route path="/allusers" component={Allusers} />
-        </Switch>
+        <div className="backgroundfix">
+          <Navbar id />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/About" component={About} />
+            <Route exact path="/auth" component={AuthRouter} />
+            <Route path="/post" component={PostFeed} />
+            <Route path="/allusers" component={Allusers} />
+          </Switch>
+        </div>
       </AuthContextComponent>
     </BrowserRouter>
   )

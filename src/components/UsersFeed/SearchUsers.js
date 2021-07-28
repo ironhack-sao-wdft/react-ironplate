@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../assets/styles/transp-back.css'
 
 class SearchUsers extends React.Component {
   state = {
@@ -19,10 +20,10 @@ class SearchUsers extends React.Component {
   }
   render() {
     return (
-      <div className="searchUsersbackground">
+      <div className="">
         <input
           type="text"
-          className="input"
+          className="input searchUsersbackground"
           onChange={this.handleSearch}
           placeholder="Procurar..."
           value={this.state.input}

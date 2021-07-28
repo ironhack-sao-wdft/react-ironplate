@@ -1,16 +1,17 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import LogoCircle from '../assets/images/logo sem fundo.png'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import LogoCircle from '../assets/images/logosemfundo2.png'
+import '../assets/styles/transp-back.css'
 import { Link } from 'react-router-dom'
 
 import { NavLink } from 'react-router-dom'
 import { Dropdown } from 'react-bootstrap'
 import { useContext } from 'react'
-
+import { Navbar } from 'react-bootstrap'
 import { AuthContext } from '../contexts/authContext'
 
-function Navbar() {
+function Menu() {
   const { loggedInUser, setLoggedInUser } = useContext(AuthContext)
 
   return (
@@ -24,7 +25,10 @@ function Navbar() {
         alt="The Circle"
       />
 
-      <div className="d-flex justify-content-between" id="navbarText">
+      <div
+        className="collapse navbar-collapse d-flex justify-content-between"
+        id="navbarText"
+      >
         <ul className="navbar-nav mr-auto d-flex">
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/">
@@ -65,4 +69,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Menu

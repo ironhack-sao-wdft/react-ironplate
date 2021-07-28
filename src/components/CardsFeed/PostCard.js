@@ -1,18 +1,23 @@
 import { Link } from 'react-router-dom'
-import '../../assets/styles/BackgroundParalax.css'
-import LogoCircle from '../../assets/images/logo-thecircle.png'
+
+import LogoCircle from '../../assets/images/logo-thecircle-removebg.png'
+import '../../assets/styles/transp-back.css'
 
 function PostCard(props) {
   return (
     <>
-      <section className="postcards" style={{ color: '#ffffff' }}>
+      <section className="postcards">
         <div className="col postcards">
           <div
             className="card h-100  shadow postcards"
             style={{ fontColor: 'white' }}
           >
             <Link to={`/allusers/${props._id}`}>
-              <img src={LogoCircle} alt="The Circle" />
+              <img
+                src={LogoCircle}
+                alt="The Circle"
+                style={{ width: '50px' }}
+              />
               Autor{props._id}
             </Link>
             <div className="cardBody m-3">

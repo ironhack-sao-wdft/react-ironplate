@@ -1,8 +1,11 @@
 /* Seus estilos globais vão aqui */
-html {
+.backgroundfix {
   background-image: url('../images/backparticles.jpg');
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
 }

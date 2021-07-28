@@ -1,15 +1,20 @@
 import { Link } from 'react-router-dom'
-import '../../assets/styles/BackgroundParalax.css'
-import LogoCircle from '../../assets/images/logo-thecircle.png'
+
+import LogoCircle from '../../assets/images/logo-thecircle-removebg.png'
+import '../../assets/styles/transp-back.css'
 
 function UsersCard(props) {
   return (
     <>
-      <section className="userscard" style={{ color: '#ffffff' }}>
+      <section className="userscard">
         <div className="col userscard">
           <div className="card h-100  shadow userscard">
             <Link to={`/usersall/${props._id}`}>
-              <img src={LogoCircle} alt="The Circle" />
+              <img
+                src={LogoCircle}
+                style={{ width: '50px' }}
+                alt="The Circle"
+              />
               Autor
             </Link>
             <div className="cardBody m-3">

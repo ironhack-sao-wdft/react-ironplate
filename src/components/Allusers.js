@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import api from '../apis/api'
 import SearchUsers from './UsersFeed/SearchUsers'
 import UsersCard from './UsersFeed/UsersCard'
-import '../assets/styles/BackgroundParalax.css'
 
 function Allusers() {
   const [users, setUsers] = useState([])
@@ -30,10 +29,7 @@ function Allusers() {
         {users.map((user) => {
           return (
             <>
-              <div
-                key={user._id}
-                className="col-12 col-sm-4 col-md-5 allusersbackground"
-              >
+              <div key={user._id} className="col-12 col-sm-4 col-md-5">
                 <UsersCard user={user} />
               </div>
             </>

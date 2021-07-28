@@ -1,0 +1,29 @@
+.postcards {
+  background-color: transparent;
+  color: white;
+}
+.userscard {
+  background-color: transparent;
+  color: white;
+}
+.SearchbackgroundPost {
+  background-color: transparent;
+  color: white;
+}
+
+.searchUsersbackground {
+  background-color: transparent;
+  color: white;
+}
+
+.navbarbackground {
+  background-color: transparent;
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: auto;
+  min-height: 10vh;
+}
