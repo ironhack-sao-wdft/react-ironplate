@@ -101,7 +101,17 @@ function Profile() {
                           {post.tripCost}
                         </p>
                         <p className="card-text">
-                          <small className="text-muted">{post.createdAt}</small>
+                          <small className="text-muted">{`${new Date(
+                            post.createdAt
+                          )
+                            .getDay()
+                            .toString()
+                            .padStart(2, "0")}/${new Date(post.createdAt)
+                            .getMonth()
+                            .toString()
+                            .padStart(2, "0")}/${new Date(
+                            post.createdAt
+                          ).getFullYear()}`}</small>
                         </p>
                       </div>
                     </div>

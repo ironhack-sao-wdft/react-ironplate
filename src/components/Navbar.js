@@ -1,10 +1,17 @@
 import { Link, NavLink } from "react-router-dom";
 import "../assets/styles/main.scss";
 
+import icon from "../assets/images/paper-plane-icon.png";
 function Navbar() {
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
       <div className="container">
+        <img
+          src={icon}
+          alt="paper airplane icon"
+          style={{ maxWidth: "50px" }}
+          className="mx-1"
+        />
         <Link className="navbar-brand" to="/">
           TRIPPERS
         </Link>
