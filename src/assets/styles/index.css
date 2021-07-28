@@ -1,6 +1,10 @@
 /* Seus estilos globais vão aqui */
 .nav-footer {
   background-color: #1f3c88;
-  height: 15vh;
+  height: 10vh;
   color: whitesmoke;
+}
+
+.container-rotas {
+  margin-bottom: 12vh;
 }
