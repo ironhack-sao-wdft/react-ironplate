@@ -1,0 +1,10 @@
+.bg-color {
+  background-color: white;
+  margin-bottom: 7vh;
+}
+
+.link-text {
+  text-decoration: none;
+  color: rgb(255, 91, 58);
+  font-weight: 600;
+}

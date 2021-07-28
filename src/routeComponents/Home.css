@@ -1,0 +1,175 @@
+html,
+body {
+	background-color: rgb(102, 194, 211);
+}
+
+.home-bg-color {
+	background-color: rgb(102, 194, 211);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Bitter', serif;
+}
+
+.login-signup-container {
+	background-color: rgb(255, 91, 58);
+	padding: 25px;
+	margin: 20px;
+}
+
+.link-style {
+	text-decoration: none;
+}
+
+.general-text {
+	color: white;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.slogan-carousel-size {
+	height: 40vh;
+}
+
+.slogan-bg {
+	background-color: rgb(255, 91, 58);
+}
+
+.slogan-text {
+	font-family: 'Fugaz One', cursive;
+	color: white;
+	text-align: center;
+	font-size: calc(1.75vw + 1.75vh);
+}
+
+.slogan-2-text {
+	color: white;
+	text-align: center;
+	font-size: calc(1.75vw + 1.75vh);
+}
+
+.carousel-first-slide {
+	background-color: #fdcc73;
+	color: white;
+	text-align: center;
+	font-size: calc(1.75vw + 1.75vh);
+}
+
+.text-size {
+	font-weight: 800;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	text-align: center;
+}
+
+.card-center {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 10vh;
+}
+
+.card-individual {
+	margin-left: 1vw;
+	margin-right: 1vw;
+	background-color: red;
+}
+
+.footer-icons {
+	color: white;
+	font-size: calc(2.75vw + 2.75vh);
+}
+
+.footer-text {
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-size: calc(1.1vw + 1.1vh);
+}
+
+.product-detail-bg {
+	background-color: white;
+	width: 600;
+	height: 400;
+	padding: 10vh;
+	/* margin-right: 5vh; */
+	margin-left: 0.2vh;
+	margin-bottom: 3vh;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.product-detail-img {
+	height: 250px;
+	width: auto;
+	margin-bottom: 3vh;
+}
+
+.detail-btn-orange {
+	background-color: rgb(255, 91, 58);
+	color: white;
+}
+
+.detail-btn-blue {
+	background-color: rgb(102, 194, 211);
+	color: white;
+}
+
+.about-icons {
+	color: white;
+	font-size: calc(2.75vw + 2.75vh);
+}
+
+.about-bg-orange {
+	background-color: rgb(255, 91, 58);
+}
+
+.about-divs {
+	display: inline-block;
+	min-width: 100%;
+}
+
+.div-row {
+	display: flex;
+}
+
+.div-col {
+	flex: 1; /* additionally, equal width */
+
+	padding: 1em;
+	border: solid white;
+}
+
+.carousel-cover {
+	object-fit: cover;
+}
+
+.carousel-percentage {
+	flex: 1;
+	border: solid white;
+	min-width: 300px;
+	max-width: 600px;
+	margin: 1vw;
+	object-fit: contain;
+	/* width: 100%;
+  height: 100%; */
+}
+
+.white {
+	color: #fff;
+}

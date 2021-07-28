@@ -1,31 +1,27 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+<img alt="OddMarket Logo" src="https://github.com/LBWKH/OddMarket---Client/blob/master/public/images/logoWrittenOrange.png" width="300px"/>
 
-# React IronPlate
+## This is the client side of **OddMarket**, our 3rd project for Ironhack's Web Development Bootcamp
 
-Esse boilerplate já inclui:
+OddMarket is an ecommerce mockup that sells products that are slightly *peculiar*, or in other words, that nobody ever asked for. It uses Stripe's payment API in order to be able to simulate a real transaction.
 
-- Pré-configuração do Axios para injeção de cabeçalhos de autenticação e BaseURL
-- Context para armazenar state de usuário logado
-- Forms de Login e Signup
-- Roteamento básico
-- Componente de rota protegida
+## Deploy
 
-## Para Começar
+Check out our deployed app [here](https://oddmarket.netlify.app)
 
-- Faça o fork e clone deste repositório
+## Authors
 
-## Instalação
+- [Leonard Kim Her](https://github.com/LBWKH)
+- [Felipe Freitas](https://github.com/sincopeiro)
+- [Matheus Ciappina](https://github.com/mciappina)
 
-```shell
-$ npm install
-```
+## Presentation Slides
 
-## Deploy no Netlify
+[Google Slides](https://docs.google.com/presentation/d/1d7XnHfum8TtoYDmu1JaCfFW9EJYa_txjmPI7AjNWrMg/edit?usp=sharing)
 
-1. Faça login no Netlify e selecione seu repositório
-2. Em 'Deploy settings > build command' escreva: CI=false npm run build
-3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
-5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
+## Server Repository
 
-Happy coding! 💙
+Check out the server's repository [here](https://github.com/LBWKH/OddMarket---Server)
+
+## Disclaimer
+
+OddMarket is a project solely for educational purposes, developed for the 3rd project of Ironhack's Web Development Bootcamp, hence the use of all of its resources do not constitute or mean any copyright infringement. All credits for the images utilized are given to the proper authors Matty Benedetto, aka @unnecessaryinventions, and Katerina Kamprani, aka the author of The Unfomcortable.
