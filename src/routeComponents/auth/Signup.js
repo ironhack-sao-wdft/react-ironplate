@@ -9,7 +9,7 @@ function Signup(props) {
     lastName: "",
     email: "",
     password: "",
-    profileImage: "",
+    image: "",
   });
 
   const [errors, setErrors] = useState({
@@ -17,7 +17,7 @@ function Signup(props) {
     lastName: null,
     email: null,
     password: null,
-    profileImage: null,
+    image: null,
   });
 
   function handleChange(event) {
@@ -44,14 +44,18 @@ function Signup(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/signup", state);
+      const profilePictureUrl = await handleFileUpload(state.image);
+
+      const response = await api.post("/signup", {
+        ...state,
+        image: profilePictureUrl,
+      });
       setErrors({ name: "", password: "", email: "" });
       props.history.push("/auth/login");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
     }
-    const profilePictureUrl = await handleFileUpload(state.profilePicture);
   }
 
   return (
@@ -115,13 +119,13 @@ function Signup(props) {
       </div>
 
       <div>
-        <label htmlFor="signupFormProfileImage">Profile Image</label>
+        <label htmlFor="signupFormProfilePicture">Profile Image</label>
         <input
           type="file"
-          name="profileImage"
-          id="signupFormProfileImage"
-          placeholder="Your profile image here" 
-          error={errors.profileImage}
+          name="image"
+          id="signupFormProfilePicture"
+          placeholder="Your profile image here"
+          error={errors.image}
           onChange={handleChange}
         />
       </div>
