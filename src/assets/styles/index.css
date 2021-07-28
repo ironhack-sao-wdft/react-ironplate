@@ -45,7 +45,6 @@
   font-family: sans-serif;
   padding: 20vh;
   padding-top: 60vh;
-
 }
 
 .container-rotas {
@@ -57,12 +56,8 @@
   top: 0;
   z-index: -1;
   background-repeat: repeat-x;
-<<<<<<< HEAD
-}
-=======
 }
 
 .card-details {
   text-align: center;
 }
->>>>>>> d993dee512dd41cdd26f3e8c58c69319dc774a4f
