@@ -16,7 +16,7 @@ function AllMoradias() {
         console.log(response);
         setMoradias([...response.data]);
 
-        console.log("oi");
+        console.log("tchau");
       } catch (err) {
         console.log(err);
       }
