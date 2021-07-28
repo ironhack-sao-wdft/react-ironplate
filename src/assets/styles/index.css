@@ -42,7 +42,7 @@
 
 .titleForum {
   color: white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
   padding: 20vh;
   padding-top: 60vh;
 
@@ -57,4 +57,8 @@
   top: 0;
   z-index: -1;
   background-repeat: repeat-x;
+}
+
+.card-details {
+  text-align: center;
 }
