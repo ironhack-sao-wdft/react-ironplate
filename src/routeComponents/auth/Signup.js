@@ -9,7 +9,6 @@ function Signup(props) {
     name: '',
     email: '',
     password: '',
-    profilePicture: '',
     occupation: '',
     location: '',
     certificatesTerapies: '',

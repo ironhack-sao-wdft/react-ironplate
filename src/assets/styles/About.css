@@ -1,8 +1,10 @@
-/* Seus estilos globais vão aqui */
-html {
+.headerPost {
   background-image: url('../images/backparticles.jpg');
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #ffffff;
+  padding-top: 100px;
+  padding-bottom: 150px;
 }

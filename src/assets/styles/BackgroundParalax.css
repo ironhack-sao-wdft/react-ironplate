@@ -1,0 +1,68 @@
+.postcards {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.userscard {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.SearchbackgroundPost {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.allusersbackground {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.postfeedbackground {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.navbarbackground {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.searchUsersbackground {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.backgroundHome {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 80px;
+  padding-bottom: 150px;
+}

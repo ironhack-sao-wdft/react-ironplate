@@ -3,6 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './Navbar'
 import Home from '../routeComponents/Home'
 import AuthRouter from '../routeComponents/auth/AuthRouter'
+import About from './About'
+import PrivateRoute from '../routeComponents/auth/PrivateRoute'
+import PostFeed from '../components/PostFeed'
+import Allusers from '../components/Allusers'
 
 import { AuthContextComponent } from '../contexts/authContext'
 
@@ -13,7 +17,10 @@ function App() {
         <Navbar id />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/auth" component={AuthRouter} />
+          <Route path="/About" component={About} />
+          <Route exact path="/auth" component={AuthRouter} />
+          <Route path="/post" component={PostFeed} />
+          <Route path="/allusers" component={Allusers} />
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
