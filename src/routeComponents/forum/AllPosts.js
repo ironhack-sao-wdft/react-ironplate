@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import axios from "axios";
 import api from "../../apis/api";
 
 function AllPosts() {
@@ -13,7 +12,7 @@ function AllPosts() {
     async function fetchPosts() {
       try {
         const response = await api.get("/forum");
-        console.log(response);
+        // console.log(response);
         setPosts([...response.data]);
       } catch (err) {
         console.log(err);
@@ -23,29 +22,52 @@ function AllPosts() {
   }, []);
 
   return (
-    <div className="container mt-5">
-      {posts.map((post) => {
-        return (
-          <Link>
-            <div className="card mb-3" style={{ maxWidth: "540px" }}>
-              <div className="row no-gutters">
-                <div className="col-md-4">
-                  <img src={post.pictureUrl} className="card-img" alt="..." />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">{post.title}</h5>
-                    <p className="card-text">{post.description}</p>
-                    <p className="card-text">
-                      <small className="text-muted">{post.tags}</small>
-                    </p>
+    <div>
+      <div className="heroImageForum">
+        <h1 className="titleForum"> Fórum </h1>
+      </div>
+      <div className="botoes-forum mt-5">
+        <button className="btn botao-criarForum mb-3">
+          <Link to={"/criar-forum"} className="linksTextWhite">
+            Criar um novo post
+          </Link>
+        </button>
+      </div>
+
+      <div className="container mt-5 ml-5">
+        {posts.map((post) => {
+          return (
+            <Link to={`/forum/${post._id}`} className="allLinks">
+              <div
+                className="mb-4"
+                style={{ maxHeight: "40vh", maxWidth: "60vw" }}
+              >
+                <div className="row no-gutters">
+                  <div className="col-md-3">
+                    <img
+                      src={post.pictureUrl}
+                      className="card-img "
+                      alt="..."
+                      style={{ maxHeight: "20vh" }}
+                    />
+                  </div>
+                  <div className="col-md-8">
+                    <div className="card-body " style={{ maxHeight: "30vh" }}>
+                      <h5 className="card-title ">{post.title}</h5>
+                      <p className="card-text post-description">
+                        {post.description}
+                      </p>
+                      <p className="card-text">
+                        <small className="text-muted">{post.tags}</small>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }
