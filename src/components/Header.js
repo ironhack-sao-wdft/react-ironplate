@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo_branco.png"
 
+
 export default function Header (){
 return <div className="navbar" style={{height: "75px",
 opacity: "30%",backgroundColor:"black"
