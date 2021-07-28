@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
-import "../auth/Signup.css";
+
 
 function Signup(props) {
   const [state, setState] = useState({
@@ -59,91 +59,98 @@ function Signup(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+    <div style={{backgroundColor: "#fffdf0"}}>
+      <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
+        <h1 className="pt-4">Cadastro</h1>
+        <hr />
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          placeholder="Your name here"
-          style={{ fontFamily: "sans serif" }}
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group">
+          <label htmlFor="signupFormName" className="form-label mt-3">Nome </label>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            id="signupFormName"
+            placeholder="Seu nome aqui"
+            style={{ fontFamily: "sans serif" }}
+            value={state.name}
+            error={errors.name}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormLastName">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          id="signupFormLastName"
-          placeholder="Your last name here"
-          style={{ fontFamily: "sans serif" }}
-          value={state.lastName}
-          error={errors.lastName}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormLastName" className="form-label mt-3">Sobrenome </label>
+          <input
+            className="form-control"
+            type="text"
+            name="lastName"
+            id="signupFormLastName"
+            placeholder="Seu sobrenome aqui"
+            style={{ fontFamily: "sans serif" }}
+            value={state.lastName}
+            error={errors.lastName}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          placeholder="Your e-mail address here"
-          style={{ fontFamily: "sans serif" }}
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormEmail" className="form-label mt-3">E-mail </label>
+          <input
+            className="form-control"
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            placeholder="Seu e-mail aqui"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          placeholder="********"
-          style={{ fontFamily: "sans serif" }}
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormPassword" className="form-label mt-3">Senha </label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            placeholder="********"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormProfilePicture">Profile Image</label>
-        <input
-          type="file"
-          name="image"
-          id="signupFormProfilePicture"
-          placeholder="Your profile image here"
-          error={errors.image}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormProfilePicture" className="form-label mt-3">Imagem de perfil</label>
+          <input
+            className="form-control"
+            type="file"
+            name="image"
+            id="signupFormProfilePicture"
+            placeholder="Your profile image here"
+            error={errors.image}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <button
-          type="submit"
-          className="btn"
-          style={{ fontFamily: "sans serif" }}
-        >
-          Signup!
-        </button>
+        <div className="mt-4">
+          <button
+            type="submit"
+            className="btn btn-primary">
+            Cadastrar!
+          </button>
+        </div>
 
-        <Link to="/auth/login" className="backtologin">
-          Already have an account? Click here to login.
-        </Link>
-      </div>
-    </form>
+        <div className="mt-3 pb-5">
+          <Link to="/auth/login">
+            Já possui uma conta? Clique aqui para entrar.
+          </Link>
+        </div>
+
+      </form>
+    </div>
   );
 }
 

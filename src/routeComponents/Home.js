@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -25,7 +23,9 @@ function Home() {
 
       </header>
 
-      <section className="text-center" style={{backgroundColor: "#fffdf0"}}>   
+      <section className="text-center " style={{backgroundColor: "#fffdf0"}}>   
+
+        <div className="container">
       
         <h2 className="p-5">Aqui você pode:</h2>
           
@@ -55,13 +55,19 @@ function Home() {
                 
               </div>
 
+              
+
             </>
 
           </section>
 
+          </div>
+
       </section>
 
-      <section className="text-center" style={{backgroundColor: "#f2bb9c"}}>   
+      <section className="text-center" style={{backgroundColor: "#f2bb9c"}}>  
+
+          <div className="container"> 
         
             <h2 className="pt-5">Como funciona:</h2>
 
@@ -94,7 +100,7 @@ function Home() {
                 </>
 
               </section>
-
+          </div>
       </section>
 
     </>

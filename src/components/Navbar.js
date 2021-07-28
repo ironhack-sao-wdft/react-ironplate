@@ -6,8 +6,8 @@ import "../assets/styles/main.scss"
 
 function Navbar() {
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
-        <div className="container">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm ">
+        <div className="container ">
 
             <Link className="navbar-brand" to="#">TRIPPERS</Link>
 
@@ -21,8 +21,11 @@ function Navbar() {
                 aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
+            
+            {/* d-flex justify-content-end */}
+            <div className="collapse navbar-collapse  " id="toggleMobileMenu">
 
-            <div className="collapse navbar-collapse" id="toggleMobileMenu">
+
                 <ul className="navbar-nav ms-auto text-center me-5">
                     <li className="nav-item">
                         <NavLink className="nav-link active" aria-current="page" to="#">Home</NavLink>
