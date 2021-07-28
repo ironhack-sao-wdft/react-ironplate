@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
-import "./Signup.css";
+
 
 import { AuthContext } from "../../contexts/authContext";
 
@@ -46,48 +46,54 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div style={{backgroundColor: "#fffdf0"}}>
+      <form className="container md-me-5 mt-5" onSubmit={handleSubmit}>
+        <h1 className="pt-4">Login</h1>
+        <hr />
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          className="email"
-          placeholder="Your e-mail here"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group mt-4">
+          <label htmlFor="signupFormEmail" className="form-label mt-3">E-mail</label>
+          <input
+            className="form-control"
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            placeholder="Seu e-mail aqui"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          className="password"
-          placeholder="********"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group mt-4">
+          <label htmlFor="signupFormPassword" className="form-label">Senha</label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            placeholder="********"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <button type="submit">Login!</button>
+        <div className="form-group mt-4">
+          <button className="btn btn-primary" type="submit">Entrar</button>
 
-        <Link
-          to="/auth/signup"
-          style={{ fontFamily: "san serif", color: "#F2E2C4" }}
-        >
-          Don't have an account? Click here to signup!
-        </Link>
-      </div>
-    </form>
+        </div>
+
+        <div className="mt-3 pb-5">
+        <Link 
+            to="/auth/signup"
+
+          >
+            Não possui uma conta? Clique aqui para criar.
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
 
