@@ -34,21 +34,21 @@ function AllPosts() {
         </button>
       </div>
 
-      <div className="container mt-5 ml-5">
+      <div className="container mt-5 ">
         {posts.map((post) => {
           return (
             <Link to={`/forum/${post._id}`} className="allLinks">
               <div
-                className="mb-4"
-                style={{ maxHeight: "40vh", maxWidth: "60vw" }}
+                className="mb-2"
+                style={{ maxHeight: "30vh", maxWidth: "60vw" }}
               >
                 <div className="row no-gutters">
-                  <div className="col-md-3">
+                  <div className="col-md-2">
                     <img
                       src={post.pictureUrl}
                       className="card-img "
                       alt="..."
-                      style={{ maxHeight: "20vh" }}
+                      style={{ maxHeight: "16vh", maxWidth: "11vw" }}
                     />
                   </div>
                   <div className="col-md-8">
