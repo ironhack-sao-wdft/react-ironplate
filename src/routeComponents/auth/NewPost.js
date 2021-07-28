@@ -38,11 +38,8 @@ function NewPost(props) {
 
   async function handleFileUpload(file) {
     const uploadData = new FormData();
-
     uploadData.append("image", file);
-
-    const response = await api.post("/upload", uploadData);
-
+    const response = await api.post("/image-post-upload", uploadData);
     return response.data.url;
   }
 
@@ -52,7 +49,7 @@ function NewPost(props) {
     try {
       const imageUrl = await handleFileUpload(state.image);
 
-      const response = await api.post("/post", state);
+      const response = await api.post("/post", { ...state, image: imageUrl });
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -68,7 +65,7 @@ function NewPost(props) {
         cons: "",
         image: "",
       });
-      props.history.push("/profile");
+      props.history.push("/");
     } catch (err) {
       console.error(err);
       setErrors({ ...err.response.data.errors });

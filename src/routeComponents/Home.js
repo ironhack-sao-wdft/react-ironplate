@@ -1,26 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkedAlt, faUsers, faMoneyBill } from '@fortawesome/free-solid-svg-icons'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faMapMarkedAlt,
+  faUsers,
+  faMoneyBill,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   return (
     <>
-      <header className="text-center mt-5" style={{backgroundColor: "#d8765f" , color: "#fff"}}>
-
+      <header
+        className="text-center mt-5"
+        style={{ backgroundColor: "#d8765f", color: "#fff" }}
+      >
         <h1 className="p-5">Seja um Tripper você também!</h1>
-        <h4 className="pt-3 pb-5">A plataforma de compartilhamento de dicas de viagem que você precisa conhecer.</h4>
+        <h4 className="pt-3 pb-5">
+          A plataforma de compartilhamento de dicas de viagem que você precisa
+          conhecer.
+        </h4>
 
-          <Link className="btn btn-lg btn-outline-light m-4 mb-5" to="/auth/signup">
-            Inscreva-se!
-          </Link>
+        <Link
+          className="btn btn-lg btn-outline-light m-4 mb-5"
+          to="/auth/signup"
+        >
+          Inscreva-se!
+        </Link>
 
-          <Link className="btn btn-lg btn-outline-light m-4 mb-5" to="#">
-            Entrar
-          </Link>
-
+        <Link
+          className="btn btn-lg btn-outline-light m-4 mb-5"
+          to="/auth/login"
+        >
+          Entrar
+        </Link>
       </header>
 
       <section className="text-center " style={{backgroundColor: "#fffdf0"}}>   
@@ -102,7 +115,6 @@ function Home() {
               </section>
           </div>
       </section>
-
     </>
   );
 }
