@@ -15,6 +15,8 @@ function AllMoradias() {
         const response = await api.get("/moradia");
         console.log(response);
         setMoradias([...response.data]);
+
+        console.log("oi");
       } catch (err) {
         console.log(err);
       }
