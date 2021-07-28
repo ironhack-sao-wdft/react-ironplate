@@ -36,69 +36,84 @@ function Home() {
         </Link>
       </header>
 
-      <section className="text-center" style={{ backgroundColor: "#fffdf0" }}>
+      <section className="text-center " style={{backgroundColor: "#fffdf0"}}>   
+
+        <div className="container">
+      
         <h2 className="p-5">Aqui você pode:</h2>
+          
+          <section className="row">
 
-        <section className="row">
-          <>
-            <div className="col m-5">
-              <FontAwesomeIcon
-                icon={faMapMarkedAlt}
-                size="5x"
-                className="mb-5"
-              />
-              <h5>Encontrar dicas dos lugares que deseja conhecer.</h5>
-            </div>
+            <>
+              <div className="col m-5">
+                
+                <FontAwesomeIcon icon={faMapMarkedAlt} size="5x" className="mb-5" />
+                <h5>Encontrar dicas dos lugares que deseja conhecer.</h5>
+                
+              </div>
+              
+              
+              <div className="col m-5">
 
-            <div className="col m-5">
-              <FontAwesomeIcon icon={faUsers} size="5x" className="mb-5" />
-              <h5>Fazer perguntas e interagir com outros usuários.</h5>
-            </div>
+                <FontAwesomeIcon icon={faUsers} size="5x" className="mb-5" />
+                <h5>Fazer perguntas e interagir com outros usuários.</h5>
+                
+              </div>
+              
 
-            <div className="col m-5">
-              <FontAwesomeIcon icon={faMoneyBill} size="5x" className="mb-5" />
-              <h5>Descubrir os gastos necessários para cada viagem.</h5>
-            </div>
-          </>
-        </section>
+              <div className="col m-5">
+
+                <FontAwesomeIcon icon={faMoneyBill} size="5x" className="mb-5" />
+                <h5>Descubrir os gastos necessários para cada viagem.</h5>
+                
+              </div>
+
+              
+
+            </>
+
+          </section>
+
+          </div>
+
       </section>
 
-      <section className="text-center" style={{ backgroundColor: "#f2bb9c" }}>
-        <h2 className="pt-5">Como funciona:</h2>
+      <section className="text-center" style={{backgroundColor: "#f2bb9c"}}>  
 
-        <section className="row">
-          <>
-            <div className="col m-5">
-              <p className="mb-5" style={{ fontSize: "6rem", color: "#fff" }}>
-                1
-              </p>
-              <h5>
-                Faça seu cadastro para poder acessar o conteúdo completo dos
-                Trippers.
-              </h5>
-            </div>
+          <div className="container"> 
+        
+            <h2 className="pt-5">Como funciona:</h2>
 
-            <div className="col m-5">
-              <p className="mb-5" style={{ fontSize: "6rem", color: "#fff" }}>
-                2
-              </p>
-              <h5>
-                Compartilhe suas viagens com os detalhes que considera
-                interessantes.
-              </h5>
-            </div>
+              <section className="row">
 
-            <div className="col m-5">
-              <p className="mb-5" style={{ fontSize: "6rem", color: "#fff" }}>
-                3
-              </p>
-              <h5>
-                Interaja com os usuários fazendo e respondendo perguntas sobre
-                as viagens.
-              </h5>
-            </div>
-          </>
-        </section>
+                <>
+                  <div className="col m-5">
+                    
+                    <p className="mb-5" style={{fontSize: "6rem", color: "#fff" }}>1</p>
+                    <h5>Faça seu cadastro para poder acessar o conteúdo completo dos Trippers.</h5>
+                    
+                  </div>
+                  
+                  
+                  <div className="col m-5">
+
+                    <p className="mb-5" style={{fontSize: "6rem", color: "#fff" }}>2</p>
+                    <h5>Compartilhe suas viagens com os detalhes que considera interessantes.</h5>
+                    
+                  </div>
+                  
+
+                  <div className="col m-5">
+
+                    <p className="mb-5" style={{fontSize: "6rem", color: "#fff" }}>3</p>
+                    <h5>Interaja com os usuários fazendo e respondendo perguntas sobre as viagens.</h5>
+                    
+                  </div>
+
+                </>
+
+              </section>
+          </div>
       </section>
     </>
   );

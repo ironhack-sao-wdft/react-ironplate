@@ -5,6 +5,7 @@ import "../assets/styles/main.scss";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Home from "../routeComponents/Home";
+import Feed from "../routeComponents/Feed";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 import ProtectedRoute from "../routeComponents/auth/PrivateRoute";
 
@@ -21,7 +22,9 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/signup"component={Signup}/>
+          <Route path="/new-post" component={NewPost} />
+          <Route path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
           <ProtectedRoute path="/profile" component={Profile} />
         </Switch>
