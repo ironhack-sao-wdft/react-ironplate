@@ -1,6 +1,47 @@
 /* Seus estilos globais vão aqui */
 .nav-footer {
   background-color: #1f3c88;
-  height: 15vh;
-  color: whitesmoke;
+  height: 10vh;
+  text-align: center;
+}
+
+.container-rotas {
+  margin-bottom: 12vh;
+}
+
+.allLinks {
+  text-decoration: none;
+  color: black;
+}
+
+.linksTextWhite {
+  text-decoration: none;
+  color: white;
+}
+
+.post-description {
+  color: #000a24;
+}
+
+.botao-criarForum {
+  background-color: #5893d4;
+  margin-left: 80vw;
+}
+
+.heroImageForum {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1522152302542-71a8e5172aa1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=910&q=80");
+
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.titleForum {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20vh;
+  padding-top: 60vh;
 }

@@ -11,7 +11,7 @@ function CreatePostForum() {
     description: "",
     link: "",
     pictureUrl: "",
-    tags: "",
+    tags: "Saúde",
   });
 
   function handleChange(event) {
@@ -33,7 +33,7 @@ function CreatePostForum() {
         tags: "",
       });
 
-      useHistory.push("/forum");
+      // useHistory.push("/forum");
     } catch (err) {
       console.log(err);
     }

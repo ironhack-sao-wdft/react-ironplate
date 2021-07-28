@@ -17,14 +17,16 @@ function App() {
     <BrowserRouter>
       <AuthContextComponent>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/auth" component={AuthRouter} />
-          <Route exact path="/forum" component={AllPosts} />
-          <Route path="/criar-forum" component={CreatePostForum} />
-          <Route path="/forum/:id" component={DetailsPost} />
+          <div className="container-rotas">
+            <Route exact path="/" component={Home} />
+            <Route exact path="/auth" component={AuthRouter} />
+            <Route exact path="/forum" component={AllPosts} />
+            <Route path="/criar-forum" component={CreatePostForum} />
+            <Route path="/forum/:id" component={DetailsPost} />
+          </div>
         </Switch>
-        <Footer />
       </AuthContextComponent>
+      <Footer />
     </BrowserRouter>
   );
 }
