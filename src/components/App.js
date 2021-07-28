@@ -13,6 +13,7 @@ import EditPost from "../routeComponents/forum/EditPost";
 //Informações components
 import Contents from "../routeComponents/informacoes/Contents";
 
+// Moradia components
 import CreatePostMoradia from "../routeComponents/habitation/CreatePostMoradia";
 import AllMoradias from "../routeComponents/habitation/AllMoradias";
 
