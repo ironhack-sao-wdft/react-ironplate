@@ -1,5 +1,3 @@
-import react from "react";
-import ReactDom from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthContextComponent } from "../contexts/authContext";
 
@@ -9,14 +7,10 @@ import "../assets/styles/index.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import { AuthContextComponent } from "../contexts/authContext";
-import Footer from "./Footer";
 import "../assets/styles/index.css";
 
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
-import Habitation from "./Habitation";
-import AddHabitation from "./AddHabitation";
 
 //Forum components
 import CreatePostForum from "../routeComponents/forum/CreatePostForum";
@@ -28,9 +22,8 @@ import EditPost from "../routeComponents/forum/EditPost";
 import Contents from "../routeComponents/informacoes/Contents";
 
 // Moradia components
-import CreatePostMoradia from "../routeComponents/habitation/CreatePostMoradia";
-import AllMoradias from "../routeComponents/habitation/AllMoradias";
-
+import CreatePostMoradia from "../routeComponents/habitacao/CriarPostMoradia";
+import AllMoradias from "../routeComponents/habitacao/TodasMoradias";
 
 // Emprego components
 import CreatePostJobs from "../routeComponents/jobs/CreatePostJobs";
@@ -39,9 +32,9 @@ import AllJobs from "../routeComponents/jobs/AllJobs";
 function App() {
   return (
     <BrowserRouter>
-    <Header/>
+      <Header />
       <AuthContextComponent>
-        <<Switch>
+        <Switch>
           <div className="container-rotas">
             <Route exact path="/" component={Home} />
             <Route path="/auth" component={AuthRouter} />
