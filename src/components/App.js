@@ -1,6 +1,10 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { AuthContextComponent } from "../contexts/authContext";
+import Footer from "./Footer";
+import "../assets/styles/index.css";
+
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 
@@ -17,12 +21,9 @@ import Contents from "../routeComponents/informacoes/Contents";
 import CreatePostMoradia from "../routeComponents/habitation/CreatePostMoradia";
 import AllMoradias from "../routeComponents/habitation/AllMoradias";
 
+// Emprego components
 import CreatePostJobs from "../routeComponents/jobs/CreatePostJobs";
 import AllJobs from "../routeComponents/jobs/AllJobs";
-
-import { AuthContextComponent } from "../contexts/authContext";
-import Footer from "./Footer";
-import "../assets/styles/index.css";
 
 function App() {
   return (
