@@ -9,6 +9,10 @@ import "../assets/styles/index.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
+import { AuthContextComponent } from "../contexts/authContext";
+import Footer from "./Footer";
+import "../assets/styles/index.css";
+
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 import Habitation from "./Habitation";
@@ -27,32 +31,19 @@ import Contents from "../routeComponents/informacoes/Contents";
 import CreatePostMoradia from "../routeComponents/habitation/CreatePostMoradia";
 import AllMoradias from "../routeComponents/habitation/AllMoradias";
 
-{/*import DetailsPost from "../routeComponents/forum/DetailsPost";*/}
-{/*import CreatePostMoradia from "../routeComponents/habitation/CreatePostMoradia";*/}
-{/*import CreatePostJobs from "../routeComponents/jobs/CreatePostJobs";*/}
-{/*import AllJobs from "../routeComponents/jobs/AllJobs";*/}
 
-
+// Emprego components
+import CreatePostJobs from "../routeComponents/jobs/CreatePostJobs";
+import AllJobs from "../routeComponents/jobs/AllJobs";
 
 function App() {
   return (
     <BrowserRouter>
     <Header/>
       <AuthContextComponent>
-        <Switch>
+        <<Switch>
           <div className="container-rotas">
             <Route exact path="/" component={Home} />
-            <Route path="/habitation" component={Habitation} />
-            <Route path="/addhabitation" component={AddHabitation} />
-
-            <Route path="/auth" component={AuthRouter} />
-            <Route exact path="/forum" component={AllPosts} />
-            <Route path="/criar-forum" component={CreatePostForum} />
-            {/*<Route path="/criar-moradia" component={CreatePostMoradia} />*/}
-            {/*<Route path="/moradia" component={AllMoradias} />*/}
-            {/*<Route path="/criar-emprego" component={CreatePostJobs} />
-            <Route path="/emprego" component={AllJobs} />*/}
-
             <Route path="/auth" component={AuthRouter} />
             <Route exact path="/forum" component={AllPosts} />
             <Route path="/criar-forum" component={CreatePostForum} />

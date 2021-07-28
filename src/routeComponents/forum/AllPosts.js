@@ -13,6 +13,8 @@ function AllPosts() {
       try {
         const response = await api.get("/forum");
         // console.log(response);
+
+        console.log("oi");
         setPosts([...response.data]);
       } catch (err) {
         console.log(err);
