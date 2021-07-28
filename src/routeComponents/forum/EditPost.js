@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { useHistory } from "react-router";
+import { useEffect, useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+//import { useHistory } from "react-router";
 import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
 
-function CreatePostForum() {
+function EditPost() {
   const [state, setState] = useState({
     title: "",
     description: "",
@@ -14,41 +15,33 @@ function CreatePostForum() {
     tags: "Saúde",
   });
 
+  const { id } = useParams();
   const history = useHistory();
+  useEffect(() => {
+    async function fetchEditPost() {
+      try {
+        const response = await api.get(`/forum/${id}`);
+
+        const { _id, ...rest } = response.data;
+
+        setState({ ...rest });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchEditPost();
+  }, []);
 
   function handleChange(event) {
-    if (event.target.files) {
-      return setState({
-        ...state,
-        [event.currentTarget.name]: event.currentTarget.files[0],
-      });
-    }
-
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
-  }
-
-  async function handleFileUpload(file) {
-    const uploadData = new FormData();
-
-    uploadData.append("profilePicture", file);
-    console.log(uploadData);
-    const response = await api.post("/upload", uploadData);
-
-    return response.data.url;
+    setState({ ...state, [event.target.name]: event.target.value });
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const uploadImage = await handleFileUpload(state.pictureUrl);
-      console.log(uploadImage);
-      const response = await api.post("/forum", {
+      const response = await api.put(`/forum/${id}`, {
         ...state,
         tags: state.tags.toLowerCase(),
-        pictureUrl: uploadImage,
       });
       setState({
         title: "",
@@ -58,7 +51,7 @@ function CreatePostForum() {
         tags: "",
       });
 
-      history.push(`/forum`);
+      history.push("/forum");
     } catch (err) {
       console.log(err);
     }
@@ -93,11 +86,11 @@ function CreatePostForum() {
           ]}
         />
         <TextInput
-          label="Imagem"
-          type="file"
+          type="text"
+          label="Url Imagem:"
           name="pictureUrl"
-          id="signupFormPictureUrl"
           onChange={handleChange}
+          value={state.pictureUrl}
         />
 
         <TextInput
@@ -107,7 +100,6 @@ function CreatePostForum() {
           onChange={handleChange}
           value={state.link}
         />
-
         <div>
           <label>Descrição</label>
           <textarea
@@ -129,4 +121,4 @@ function CreatePostForum() {
   );
 }
 
-export default CreatePostForum;
+export default EditPost;
