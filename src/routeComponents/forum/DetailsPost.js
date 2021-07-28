@@ -91,6 +91,7 @@ function DetailsPost() {
           <div className="col-md-8">
             <div className="card-body " style={{ maxHeight: "30vh" }}>
               <h5 className="card-title ">{post.title}</h5>
+              <p>{post.link}</p>
               <p className="card-text post-description">{post.description}</p>
               <p className="card-text">
                 <small className="text-muted">
