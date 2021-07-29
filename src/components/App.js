@@ -13,6 +13,7 @@ import { AuthContextComponent } from "../contexts/authContext";
 import Signup from "../routeComponents/auth/Signup";
 import NewPost from "../routeComponents/auth/NewPost";
 import Profile from "../routeComponents/auth/Profile";
+import EditProfile from "../routeComponents/auth/EditProfile";
 
 import PostDetails from "../routeComponents/auth/PostDetails";
 
@@ -25,11 +26,14 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
           <Route path="/signup" component={Signup} />
-          <Route path="/new-post" component={NewPost} />
-          <Route path="/feed" component={Feed} />
-          <ProtectedRoute path="/new-post" component={NewPost} />
+
           <ProtectedRoute path="/profile" component={Profile} />
           <Route exact path="/post/:id" component={PostDetails} />
+
+          <ProtectedRoute path="/feed" component={Feed} />
+          <ProtectedRoute path="/new-post" component={NewPost} />
+
+          <ProtectedRoute path="/profile" component={EditProfile} />
         </Switch>
         <Footer />
       </AuthContextComponent>
