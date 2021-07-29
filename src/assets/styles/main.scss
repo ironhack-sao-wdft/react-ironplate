@@ -46,7 +46,7 @@ html {
 }
 
 .imagemProfile {
-  width: 150px;
-  height: 150px;
+  clip-path: circle();
+  width: 260px;
   object-fit: cover;
 }
