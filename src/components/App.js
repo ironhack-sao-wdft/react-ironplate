@@ -7,8 +7,6 @@ import "../assets/styles/index.css";
 import Header from "./Header";
 import Footer from "./Footer";
 
-import "../assets/styles/index.css";
-
 import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 

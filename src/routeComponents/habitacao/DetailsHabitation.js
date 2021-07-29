@@ -3,6 +3,7 @@ import { useParams, Link, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
 
+
 export default function DetailsHabitation(){
     const [state, setState] = useState({
         title: "",
@@ -41,6 +42,7 @@ export default function DetailsHabitation(){
       };
 
       return (<div>
+       
           <div
             className="mt-5 ml-5 "
             style={{ maxHeight: "40vh", maxWidth: "60vw" }}
