@@ -21,10 +21,11 @@ export default function Contents() {
   }, []);
 
   return (
-    <div>
+    <div className="textDoc">
       <div className="heroImageDoc"></div>
-      <h1>{contents.category}</h1>
-      <h3>{contents.country}</h3>
+      <h2>{contents.category.toUpperCase()}</h2>
+      <h3 className="countryDoc">{contents.country}</h3>
+      <hr className="docHr" />
       <p>{contents.content[0].content}</p>
       <p>{contents.content[1].content}</p>
     </div>

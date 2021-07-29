@@ -26,7 +26,7 @@ function AllPosts() {
   return (
     <div>
       <div className="heroImageForum">
-        <h1 className="titleForum"> Fórum </h1>
+        <h1 className="titleHero"> Fórum </h1>
       </div>
       <div className="botoes-forum mt-5">
         <button className="btn botao-criarForum mb-3">

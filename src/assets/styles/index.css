@@ -1,4 +1,8 @@
 /* Seus estilos globais vão aqui */
+* {
+  font-family: sans-serif;
+}
+
 .nav-footer {
   background-color: #1f3c88;
   height: 10vh;
@@ -32,7 +36,8 @@
 .heroImageForum {
   background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
     url("https://images.unsplash.com/photo-1522152302542-71a8e5172aa1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=910&q=80");
-
+  top: 0;
+  z-index: -1;
   height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,17 +45,7 @@
   position: relative;
 }
 
-.heroImageDoc {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
-    url("https://lh3.googleusercontent.com/g6h6RMjwO654wrOOiuHVJOmv7KwfSTv0BxMCjErqsjIoRJ9JbLVbYJcDxX89RXbITeBmWGziWuOJdbDbz_RcIi3UrQDFbqrDFEId2Wrwhc-61k-mHqgI1Wu4SKpBZYaics3WN8qh");
-
-  height: 60vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-.titleForum {
+.titleHero {
   color: white;
   font-family: sans-serif;
   padding: 20vh;
@@ -70,4 +65,25 @@
 
 .card-details {
   text-align: center;
+}
+
+.heroImageDoc {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://lh3.googleusercontent.com/g6h6RMjwO654wrOOiuHVJOmv7KwfSTv0BxMCjErqsjIoRJ9JbLVbYJcDxX89RXbITeBmWGziWuOJdbDbz_RcIi3UrQDFbqrDFEId2Wrwhc-61k-mHqgI1Wu4SKpBZYaics3WN8qh");
+
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: covers;
+  position: relative;
+}
+
+.textDoc {
+  text-align: center;
+}
+
+.docHr {
+  color: #f7b633;
+  width: 40vw;
+  size: 20;
 }
