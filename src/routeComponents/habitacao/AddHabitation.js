@@ -4,6 +4,11 @@ import api from "../../apis/api";
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
 
+<<<<<<< HEAD
+import { useParams } from "react-router-dom";
+
+=======
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 function AddHabitation() {
   const [state, setState] = useState({
     title: "",
@@ -17,6 +22,11 @@ function AddHabitation() {
     room: "Estúdio",
   });
 
+<<<<<<< HEAD
+  const { country } = useParams();
+
+=======
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
   function handleChange(event) {
     if (event.target.files) {
       return setState({
@@ -44,7 +54,11 @@ function AddHabitation() {
     event.preventDefault();
     try {
       const uploadImage = await handleFileUpload(state.photo);
+<<<<<<< HEAD
+      const response = await api.post(`/${country}/moradia`, {
+=======
       const response = await api.post("/moradia", {
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
         ...state,
         photo: uploadImage,
       });
@@ -65,8 +79,12 @@ function AddHabitation() {
     }
   }
   return (
+<<<<<<< HEAD
+    <div className="container mt-5">
+=======
     <div className="container mt-5 margin-footer">
       <h1 className="">Cadastre o seu imóvel</h1>
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
       <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
@@ -143,11 +161,15 @@ function AddHabitation() {
         </div>
 
         <div className="form-group">
+<<<<<<< HEAD
+          <button className="btn btn-primary mt-3" type="submit">
+=======
           <button
             className="btn yellowTaxi mt-3"
             type="submit"
             style={{ color: "white" }}
           >
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
             Enviar
           </button>
         </div>

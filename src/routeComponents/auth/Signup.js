@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import TextInput from "../../components/TextInput";
@@ -60,7 +60,7 @@ function Signup(props) {
       props.history.push("/auth/login");
     } catch (err) {
       console.error(err.response);
-      // setErrors({ ...err.response.data.errors });
+      //setErrors({ ...err.response.data.errors });
     }
   }
   console.log(state);
