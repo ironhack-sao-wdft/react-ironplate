@@ -22,8 +22,10 @@ import EditPost from "../routeComponents/forum/EditPost";
 import Contents from "../routeComponents/informacoes/Contents";
 
 // Moradia components
-import CreatePostMoradia from "../routeComponents/habitacao/CriarPostMoradia";
-import AllMoradias from "../routeComponents/habitacao/TodasMoradias";
+import AddHabitation from "../routeComponents/habitacao/AddHabitation";
+import AllHabitation from "../routeComponents/habitacao/AllHabitation";
+import DetailsHabitation from "../routeComponents/habitacao/DetailsHabitation"
+import EditHabitation from "../routeComponents/habitacao/EditHabitation"
 
 // Emprego components
 import CreatePostJobs from "../routeComponents/jobs/CreatePostJobs";
@@ -44,8 +46,11 @@ function App() {
             <Route exact path="/edit-forum/:id" component={EditPost} />
             <Route path="/conteudo/:country" component={Contents} />
 
-            <Route path="/criar-moradia" component={CreatePostMoradia} />
-            <Route path="/moradia" component={AllMoradias} />
+            <Route exact path="/moradia" component={AllHabitation} />
+            <Route path="/adicionar-moradia" component={AddHabitation} />
+            <Route path="/moradia/:id" component={DetailsHabitation} />
+            <Route path="/editar-moradia/:id/" component={EditHabitation} />
+            
             <Route path="/criar-emprego" component={CreatePostJobs} />
             <Route path="/emprego" component={AllJobs} />
           </div>
