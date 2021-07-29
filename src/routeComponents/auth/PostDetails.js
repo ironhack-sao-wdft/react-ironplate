@@ -14,6 +14,9 @@ function PostDetails(props) {
     cons: "",
     image: "",
     comments: [],
+    name: "",
+    lastName: "",
+    profilePicture: "",
   });
 
   const [comment, setComment] = useState({ content: "" });
@@ -51,7 +54,12 @@ function PostDetails(props) {
 
         console.log(postResponse);
 
-        setState({ ...postResponse.data });
+        setState({
+          ...postResponse.data,
+          name: postResponse.data.userId.name,
+          lastName: postResponse.data.userId.lastName,
+          profilePicture: postResponse.data.userId.image,
+        });
       } catch (err) {
         console.error(err);
       }
@@ -74,6 +82,15 @@ function PostDetails(props) {
               </div>
               <div className="col-md-8">
                 <div className="card-body">
+                <img
+                src={state.profilePicture}
+                className="img-fluid rounded-circle mb-2"
+                alt="profile pic"
+                style={{ maxWidth: "50px" }}
+              />
+              <h4 className="card-title">
+                {state.name} {state.lastName}
+              </h4>
                   <h5 className="card-title">
                     <strong>Destino:</strong> {state.title}
                   </h5>

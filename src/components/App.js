@@ -14,7 +14,7 @@ import Signup from "../routeComponents/auth/Signup";
 import NewPost from "../routeComponents/auth/NewPost";
 import Profile from "../routeComponents/auth/Profile";
 import EditProfile from "../routeComponents/auth/EditProfile";
-
+import DeletePost from "../routeComponents/auth/DeletePost";
 import PostDetails from "../routeComponents/auth/PostDetails";
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
           <ProtectedRoute path="/profile/edit" component={EditProfile} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route exact path="/post/:id" component={PostDetails} />
+          <ProtectedRoute path="/post/:id/DeletePost" component={DeletePost} />
           <ProtectedRoute path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
         </Switch>

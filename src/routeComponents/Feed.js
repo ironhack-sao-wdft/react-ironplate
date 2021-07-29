@@ -10,7 +10,8 @@ function Feed() {
     async function fetchProfile() {
       try {
         const postsResponse = await api.get("/posts");
-        console.log(postsResponse);
+        // console.log(postsResponse);
+        console.log(posts);
 
         if (postsResponse.data.length) {
           setPosts([...postsResponse.data]);
