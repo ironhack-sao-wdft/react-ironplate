@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { useParams, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
-import { faCommentMedical } from "@fortawesome/free-solid-svg-icons";
 
 function PostDetails(props) {
   const [state, setState] = useState({
@@ -17,6 +15,9 @@ function PostDetails(props) {
     name: "",
     lastName: "",
     profilePicture: "",
+    commentUserName: "",
+    commentUserLastName: "",
+    commentUserPhoto: "",
   });
 
   const [comment, setComment] = useState({ content: "" });
@@ -38,8 +39,6 @@ function PostDetails(props) {
         ...comment,
       });
       history.go(0);
-
-      //   props.history.push("/auth/login");
     } catch (err) {
       console.error(err);
     }
@@ -59,6 +58,9 @@ function PostDetails(props) {
           name: postResponse.data.userId.name,
           lastName: postResponse.data.userId.lastName,
           profilePicture: postResponse.data.userId.image,
+          commentUserName: postResponse.data.comments[0].userId.name,
+          commentUserLastName: postResponse.data.comments[0].userId.lastName,
+          commentUserPhoto: postResponse.data.comments[0].userId.image,
         });
       } catch (err) {
         console.error(err);
@@ -76,21 +78,21 @@ function PostDetails(props) {
               <div className="col-md-4">
                 <img
                   src={state.image}
-                  className="img-fluid rounded-start"
+                  className="img-fluid rounded-start imagem"
                   alt="Destiny"
                 />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                <img
-                src={state.profilePicture}
-                className="img-fluid rounded-circle mb-2"
-                alt="profile pic"
-                style={{ maxWidth: "50px" }}
-              />
-              <h4 className="card-title">
-                {state.name} {state.lastName}
-              </h4>
+                  <img
+                    src={state.profilePicture}
+                    className="img-fluid rounded-circle mb-2"
+                    alt="profile pic"
+                    style={{ maxWidth: "50px" }}
+                  />
+                  <h4 className="card-title">
+                    {state.name} {state.lastName}
+                  </h4>
                   <h5 className="card-title">
                     <strong>Destino:</strong> {state.title}
                   </h5>
@@ -121,50 +123,59 @@ function PostDetails(props) {
               </div>
             </div>
           </div>
-      
 
-      <div className="mt-4">
-        <label htmlFor="postFormContent">
-          <strong>Novo comentário</strong>
-        </label>
-        <textarea
-          className="form-control mt-3 mb-3"
-          type="text"
-          name="content"
-          id="comment"
-          value={comment.content}
-          onChange={handleChange}
-          rows="3"
-        ></textarea>
+          <div className="mt-4">
+            <label htmlFor="postFormContent">
+              <strong>Novo comentário</strong>
+            </label>
+            <textarea
+              className="form-control mt-3 mb-3"
+              type="text"
+              name="content"
+              id="comment"
+              value={comment.content}
+              onChange={handleChange}
+              rows="3"
+            ></textarea>
 
-          <button
-            className=" self-align-right btn btn-primary mt-4 mb-5 "
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Enviar
-          </button>
-      </div>
-
+            <button
+              className=" self-align-right btn btn-primary mt-4 mb-5 "
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Enviar
+            </button>
+          </div>
 
           <div>
             <strong>Comentários:</strong>
-              <hr/>
-              <div>{state.comments.map((comment) => {return(
+            <hr />
+            <div>
+              {state.comments.map((comment) => {
+                return (
                   <>
-                  <div>{comment.content}
-                  </div>
-                  <hr/>
-                  </>)})}
-              </div>
+                    <div className="row">
+                      <img
+                        src={state.commentUserPhoto}
+                        className="img-fluid rounded-circle mb-2"
+                        alt="profile pic"
+                        style={{ maxWidth: "50px" }}
+                      />
+                      <div>
+                        {state.commentUserName} {state.commentUserLastName}:
+                        <div>{comment.content}</div>
+                      </div>
+
+                      <hr />
+                    </div>
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
-
-    
   );
 }
 

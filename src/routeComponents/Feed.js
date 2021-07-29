@@ -30,12 +30,7 @@ function Feed() {
         {posts.length
           ? posts.map((post) => {
               return (
-                <div
-                  key={post._id}
-                  className=" card mt-5 mb-5"
-
-                >
-                  
+                <div key={post._id} className=" card mt-5 mb-5">
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
@@ -119,19 +114,3 @@ function Feed() {
 }
 
 export default Feed;
-
-{
-  /* <div style={{ backgroundColor: "#fffdf0" }}>
-  <div className="container p-5 ">
-    <div className="row">
-      <div className="col-2 " style={{ backgroundColor: "#f2bb9c" }}>
-        .col-4 this 4-column-wide div gets wrapped onto a new line as one
-        contiguous unit.
-      </div>
-      <div className="col-10" style={{ backgroundColor: "#fffdf0" }}>
-        .col-8 Subsequent columns continue along the new line.
-      </div>
-    </div>
-  </div>
-</div>; */
-}
