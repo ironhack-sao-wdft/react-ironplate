@@ -1,9 +1,7 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link, useHistory } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
+import { useParams, useHistory } from "react-router-dom";
 
 import api from "../../apis/api";
-import { faCommentMedical } from "@fortawesome/free-solid-svg-icons";
 
 function PostDetails(props) {
   const [state, setState] = useState({
@@ -17,6 +15,9 @@ function PostDetails(props) {
     name: "",
     lastName: "",
     profilePicture: "",
+    commentUserName: "",
+    commentUserLastName: "",
+    commentUserPhoto: "",
   });
 
   const [comment, setComment] = useState({ content: "" });
@@ -38,8 +39,6 @@ function PostDetails(props) {
         ...comment,
       });
       history.go(0);
-
-      //   props.history.push("/auth/login");
     } catch (err) {
       console.error(err);
     }
@@ -59,6 +58,9 @@ function PostDetails(props) {
           name: postResponse.data.userId.name,
           lastName: postResponse.data.userId.lastName,
           profilePicture: postResponse.data.userId.image,
+          commentUserName: postResponse.data.comments[0].userId.name,
+          commentUserLastName: postResponse.data.comments[0].userId.lastName,
+          commentUserPhoto: postResponse.data.comments[0].userId.image,
         });
       } catch (err) {
         console.error(err);
@@ -152,8 +154,20 @@ function PostDetails(props) {
               {state.comments.map((comment) => {
                 return (
                   <>
-                    <div>{comment.content}</div>
-                    <hr />
+                    <div className="row">
+                      <img
+                        src={state.commentUserPhoto}
+                        className="img-fluid rounded-circle mb-2"
+                        alt="profile pic"
+                        style={{ maxWidth: "50px" }}
+                      />
+                      <div>
+                        {state.commentUserName} {state.commentUserLastName}:
+                        <div>{comment.content}</div>
+                      </div>
+
+                      <hr />
+                    </div>
                   </>
                 );
               })}

@@ -60,7 +60,7 @@ function NewPost(props) {
         cons: "",
         image: "",
       });
-      props.history.push("/");
+      props.history.push("/feed");
     } catch (err) {
       console.error(err);
       setErrors({ ...err.response });
