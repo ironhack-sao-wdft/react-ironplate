@@ -1,8 +1,59 @@
 /* Seus estilos globais vão aqui */
-.nav-footer {
-  background-color: #1f3c88;
-  height: 10vh;
+.elefantBlue{
+  background-color: rgb(71, 96, 114)
+}
+.darkerBlue{
+  background-color:rgb(51, 66, 87)
+}
+.yellowTaxi{
+  background-color:rgb(247, 182, 51)
+}
+.darkGrey{
+  background-color:rgb(51, 66,87)
+}
+.whiteLayer{
+  background-color:rgb(255,255,255)
+} 
 
+
+/* Homepage */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+  url("https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  background-repeat: repeat-x;
+}
+.headerBg{
+position: absolute;
+height: 75px;
+width: 100vw;
+opacity: 30%;
+background-color: black;
+z-index: -1;
+margin: 0;
+padding: 0;
+}
+.nav-mae{
+   color: white;
+   width: 100vw;
+}
+.nav-footer {
+  background-color: rgb(71, 96, 114);
+  height: 23vh;
+  color: white;
+   width: 100vw;
+}
+.nav-p{
+  font-size: small;
+}
+.mini-footer{
+  background-color:rgb(51, 66, 87);
+  font-size: smaller;
+  width: 100vw;
+  height: 3vh;
+ 
   text-align: center;
 }
 
@@ -50,13 +101,7 @@
 .container-rotas {
   margin-bottom: 12vh;
 }
-.hero-image {
-  background-image: url("https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
-  position: absolute;
-  top: 0;
-  z-index: -1;
-  background-repeat: repeat-x;
-}
+
 
 .card-details {
   text-align: center;
