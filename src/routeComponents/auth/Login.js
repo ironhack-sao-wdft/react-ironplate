@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
 
-
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -38,7 +37,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+      props.history.push("/feed");
     } catch (err) {
       console.error(err);
       setErrors({ ...err.response.data.errors });
@@ -46,13 +45,15 @@ function Login(props) {
   }
 
   return (
-    <div style={{backgroundColor: "#fffdf0"}}>
+    <div style={{ backgroundColor: "#fffdf0" }}>
       <form className="container md-me-5 mt-5" onSubmit={handleSubmit}>
         <h1 className="pt-4">Login</h1>
         <hr />
 
         <div className="form-group mt-4">
-          <label htmlFor="signupFormEmail" className="form-label mt-3">E-mail</label>
+          <label htmlFor="signupFormEmail" className="form-label mt-3">
+            E-mail
+          </label>
           <input
             className="form-control"
             type="email"
@@ -66,7 +67,9 @@ function Login(props) {
         </div>
 
         <div className="form-group mt-4">
-          <label htmlFor="signupFormPassword" className="form-label">Senha</label>
+          <label htmlFor="signupFormPassword" className="form-label">
+            Senha
+          </label>
           <input
             className="form-control"
             type="password"
@@ -80,15 +83,13 @@ function Login(props) {
         </div>
 
         <div className="form-group mt-4">
-          <button className="btn btn-primary" type="submit">Entrar</button>
-
+          <button className="btn btn-primary" type="submit">
+            Entrar
+          </button>
         </div>
 
         <div className="mt-3 pb-5">
-        <Link 
-            to="/auth/signup"
-
-          >
+          <Link to="/auth/signup">
             Não possui uma conta? Clique aqui para criar.
           </Link>
         </div>

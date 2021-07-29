@@ -15,6 +15,8 @@ import NewPost from "../routeComponents/auth/NewPost";
 import Profile from "../routeComponents/auth/Profile";
 import EditProfile from "../routeComponents/auth/EditProfile";
 
+import PostDetails from "../routeComponents/auth/PostDetails";
+
 function App() {
   return (
     <BrowserRouter>
@@ -23,10 +25,14 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
-          <Route path="/signup"component={Signup}/>
+          <Route path="/signup" component={Signup} />
+
+          <ProtectedRoute path="/profile" component={Profile} />
+          <Route exact path="/post/:id" component={PostDetails} />
+
           <ProtectedRoute path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
-          <ProtectedRoute path="/profile" component={Profile} />
+
           <ProtectedRoute path="/profile" component={EditProfile} />
         </Switch>
         <Footer />

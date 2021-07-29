@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../apis/api";
 
+import { Link } from "react-router-dom";
+
 function Feed() {
   const [posts, setPosts] = useState([]);
 
@@ -21,10 +23,9 @@ function Feed() {
   }, []);
 
   return (
-    <div style={{backgroundColor: "#fffdf0"}}>
+    <div style={{ backgroundColor: "#fffdf0" }}>
       <div className="container pb-5">
-        <h1 className="text-center m-5 pt-5">Viagens da comunidade</h1>
-        {" "}
+        <h1 className="text-center m-5 pt-5">Viagens da comunidade</h1>{" "}
         {posts.length
           ? posts.map((post) => {
               return (
@@ -58,8 +59,24 @@ function Feed() {
                           <strong>Total gasto: </strong>
                           {post.tripCost}
                         </p>
+                        <Link
+                          className="btn btn-primary m-4 mb-5 float-right"
+                          to={`/post/${post._id}`}
+                        >
+                          Ver mais
+                        </Link>
                         <p className="card-text">
-                          <small className="text-muted">{post.createdAt}</small>
+                          <small className="text-muted">{`${new Date(
+                            post.createdAt
+                          )
+                            .getDay()
+                            .toString()
+                            .padStart(2, "0")}/${new Date(post.createdAt)
+                            .getMonth()
+                            .toString()
+                            .padStart(2, "0")}/${new Date(
+                            post.createdAt
+                          ).getFullYear()}`}</small>
                         </p>
                       </div>
                     </div>
@@ -68,7 +85,7 @@ function Feed() {
               );
             })
           : null}
-      </div>  
+      </div>
     </div>
     // <div class="container p-5" style={{ backgroundColor: "#fffdf0" }}>
     //   <div class="row">
@@ -100,7 +117,8 @@ function Feed() {
 
 export default Feed;
 
-<div style={{ backgroundColor: "#fffdf0" }}>
+{
+  /* <div style={{ backgroundColor: "#fffdf0" }}>
   <div className="container p-5 ">
     <div className="row">
       <div className="col-2 " style={{ backgroundColor: "#f2bb9c" }}>
@@ -112,4 +130,5 @@ export default Feed;
       </div>
     </div>
   </div>
-</div>;
+</div>; */
+}
