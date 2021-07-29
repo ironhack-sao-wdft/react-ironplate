@@ -36,7 +36,7 @@ function Navbar() {
                 aria-current="page"
                 to="/feed"
               >
-                Home
+                Feed
               </NavLink>
             </li>
 
