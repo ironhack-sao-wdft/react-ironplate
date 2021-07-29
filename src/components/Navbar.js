@@ -52,6 +52,15 @@ function Menu() {
               Solicitações Trocas
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to="/posting"
+            >
+              Solicitar
+            </NavLink>
+          </li>
           <li>
             <NavLink
               className="nav-link"
@@ -68,6 +77,24 @@ function Menu() {
               to="/login"
             >
               Login
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link text-white"
+              activeClassName="active"
+              to="/signup"
+            >
+              Cadastrar
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link text-white"
+              activeClassName="active"
+              to="/profile"
+            >
+              Perfil
             </NavLink>
           </li>
         </ul>

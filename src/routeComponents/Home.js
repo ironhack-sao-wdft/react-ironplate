@@ -24,7 +24,7 @@ function Home() {
       </h1>
       <p>This is the homepage</p>
       <div className="d-flex flex-column align-items-center">
-        <Link className="btn btn-lg btn-primary fadeInDown" to="/auth/signup">
+        <Link className="btn btn-lg btn-primary fadeInDown" to="/signup">
           Signup here!
         </Link>
       </div>

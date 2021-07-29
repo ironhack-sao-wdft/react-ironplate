@@ -34,10 +34,10 @@ function PostFeed() {
 
   return (
     <>
-      <div className="wrapper fadeInDown fadeIn">
+      <div className="">
         <input
           type="text"
-          className="input SearchbackgroundPost fadeIn.first wrapper fadeInDown"
+          className="input SearchbackgroundPost"
           onChange={handleChange}
           placeholder="Procurar..."
           value={input}

@@ -124,3 +124,8 @@
   height: auto;
   min-height: 10vh;
 }
+
+.loginbox {
+  background-color: transparent;
+  color: white;
+}

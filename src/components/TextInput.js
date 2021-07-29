@@ -1,6 +1,6 @@
 function TextInput(props) {
   return (
-    <div className="form-group mb-3">
+    <div className="form-group mb-3" style={{ color: 'white' }}>
       <label htmlFor={props.id}>{props.label}</label>
       <input
         id={props.id}
