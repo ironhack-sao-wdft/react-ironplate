@@ -24,21 +24,22 @@ function Feed() {
 
   return (
     <div style={{ backgroundColor: "#fffdf0" }}>
-      <div className="container pb-5">
-        <h1 className="text-center m-5 pt-5">Viagens da comunidade</h1>{" "}
+      <div className="container pb-4">
+        <h1 className="text-center mt-5 pt-5">Viagens da comunidade:</h1>{" "}
         {posts.length
           ? posts.map((post) => {
               return (
                 <div
                   key={post._id}
-                  className=" card m-5"
-                  style={{ maxWidth: "50wv" }}
+                  className=" card mt-5 mb-5"
+
                 >
+                  
                   <div className="row g-0">
                     <div className="col-md-4">
                       <img
                         src={post.image}
-                        className="img-fluid rounded-start"
+                        className="img-fluid rounded-start imagem"
                         alt="Destiny"
                       />
                     </div>
@@ -59,12 +60,7 @@ function Feed() {
                           <strong>Total gasto: </strong>
                           {post.tripCost}
                         </p>
-                        <Link
-                          className="btn btn-primary m-4 mb-5 float-right"
-                          to={`/post/${post._id}`}
-                        >
-                          Ver mais
-                        </Link>
+
                         <p className="card-text">
                           <small className="text-muted">{`${new Date(
                             post.createdAt
@@ -78,6 +74,12 @@ function Feed() {
                             post.createdAt
                           ).getFullYear()}`}</small>
                         </p>
+                        <Link
+                          className="btn btn-primary m-4 mb-5 float-right"
+                          to={`/post/${post._id}`}
+                        >
+                          Ver mais
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 import api from "../../apis/api";
+import { faCommentMedical } from "@fortawesome/free-solid-svg-icons";
 
 function PostDetails(props) {
   const [state, setState] = useState({
@@ -15,7 +16,9 @@ function PostDetails(props) {
     comments: [],
   });
 
-  const [comment, setComment] = useState({});
+  const [comment, setComment] = useState({ content: "" });
+
+  const history = useHistory();
 
   function handleChange(event) {
     setComment({
@@ -31,6 +34,7 @@ function PostDetails(props) {
       const response = await api.post(`/post/${state._id}/new-comment`, {
         ...comment,
       });
+      history.go(0);
 
       //   props.history.push("/auth/login");
     } catch (err) {
@@ -44,6 +48,8 @@ function PostDetails(props) {
     async function fetchPost() {
       try {
         const postResponse = await api.get(`/post/${id}`);
+
+        console.log(postResponse);
 
         setState({ ...postResponse.data });
       } catch (err) {
@@ -98,32 +104,50 @@ function PostDetails(props) {
               </div>
             </div>
           </div>
+      
 
-          <div className="mt-3">
-            <label htmlFor="postFormContent">
-              <strong>Novo comentário</strong>
-            </label>
-            <textarea
-              className="form-control"
-              type="text"
-              name="comment"
-              id="comment"
-              value={comment.comment}
-              onChange={handleChange}
-              rows="3"
-            ></textarea>
-          </div>
+      <div className="mt-4">
+        <label htmlFor="postFormContent">
+          <strong>Novo comentário</strong>
+        </label>
+        <textarea
+          className="form-control mt-3 mb-3"
+          type="text"
+          name="content"
+          id="comment"
+          value={comment.content}
+          onChange={handleChange}
+          rows="3"
+        ></textarea>
 
           <button
-            className=" self-align-right btn btn-primary m-4 mb-5 float-right"
+            className=" self-align-right btn btn-primary mt-4 mb-5 "
             type="submit"
             onClick={handleSubmit}
           >
             Enviar
           </button>
-        </div>
       </div>
+
+
+          <div>
+            <strong>Comentários:</strong>
+              <hr/>
+              <div>{state.comments.map((comment) => {return(
+                  <>
+                  <div>{comment.content}
+                  </div>
+                  <hr/>
+                  </>)})}
+              </div>
+          </div>
+        </div>
+        
+      </div>
+      
     </div>
+
+    
   );
 }
 

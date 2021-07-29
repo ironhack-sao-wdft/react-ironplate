@@ -31,19 +31,19 @@ function Profile() {
   }, []);
 
   return (
-    <div style={{backgroundColor: "#fffdf0"}}>
+    <div style={{ backgroundColor: "#fffdf0" }}>
       <div className="container md-me-5 mt-5">
         <h1 className="pt-4">Perfil</h1>
         <hr />
         <div className="row d-flex justify-content-sm-start align-items-center">
           <img
-            className="img-fluid rounded-circle"
+            className="img-fluid rounded-circle mr-2"
             style={{ maxWidth: "150px" }}
             src={state.image}
             alt="Sua foto de perfil"
           />
 
-          <div class="d-flex flex-column bd-highlight mb-3 mt-5">
+          <div className="d-flex flex-column bd-highlight mb-3 mt-5">
             <p>
               <strong>Nome: </strong>
               {state.name}
@@ -80,7 +80,7 @@ function Profile() {
                       <div className="col-md-4">
                         <img
                           src={post.image}
-                          className="img-fluid rounded-start"
+                          className="img-fluid rounded-start imagem"
                           alt="Destiny"
                         />
                       </div>
