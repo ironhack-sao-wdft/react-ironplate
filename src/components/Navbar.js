@@ -6,7 +6,7 @@ import '../assets/styles/transp-back.css'
 import { Link } from 'react-router-dom'
 
 import { NavLink } from 'react-router-dom'
-import { Dropdown } from 'react-bootstrap'
+
 import { useContext } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { AuthContext } from '../contexts/authContext'
@@ -16,20 +16,27 @@ function Menu() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark bg-primary navbarbackground"
+      className="navbar navbar-expand-lg navbar-dark bg-primary navbarbackground d-flex "
       style={{ opacity: '100%' }}
     >
-      <img
-        src={LogoCircle}
-        style={{ width: '120px', margin: '0px', padding: '0px', border: '0px' }}
-        alt="The Circle"
-      />
+      <Link to="/">
+        <img
+          src={LogoCircle}
+          style={{
+            width: '120px',
+            margin: '0px',
+            padding: '2px',
+            border: '0px',
+          }}
+          alt="The Circle"
+        />
+      </Link>
 
       <div
         className="collapse navbar-collapse d-flex justify-content-between"
         id="navbarText"
       >
-        <ul className="navbar-nav mr-auto d-flex">
+        <ul className="navbar-nav mr-auto d-flex " style={{ margin: '15px' }}>
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/">
               Home

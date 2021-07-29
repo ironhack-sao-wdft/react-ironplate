@@ -6,10 +6,10 @@ import '../../assets/styles/transp-back.css'
 function PostCard(props) {
   return (
     <>
-      <section className="postcards">
+      <section className="postcards fadeInDown fadeIn">
         <div className="col postcards">
           <div
-            className="card h-100  shadow postcards"
+            className="card h-100  shadow postcards fadeIn.first fadeInDown"
             style={{ fontColor: 'white' }}
           >
             <Link to={`/allusers/${props._id}`}>
@@ -29,6 +29,20 @@ function PostCard(props) {
               <p className="cardText">{props.post.description}</p>
               <strong>Quero Trocar:</strong>
               <p className="cardText">{props.post.terapiesfinding}</p>
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary text-align-center fadeIn.second"
+                  style={{
+                    height: '25px',
+                    width: '110px',
+                    paddingBottom: '10px',
+                    paddingTop: '0px',
+                  }}
+                >
+                  Responder
+                </button>
+              </div>
             </div>
           </div>
         </div>

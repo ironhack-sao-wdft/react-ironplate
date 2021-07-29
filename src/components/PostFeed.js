@@ -4,34 +4,51 @@ import api from '../apis/api'
 import SearchPost from './CardsFeed/SearchPost'
 
 function PostFeed() {
-  const [posts, setPosts] = useState([])
+  const [input, setInput] = useState('')
+  const [posts, setUposts] = useState([])
 
+  //buscando palavras do campo title da postagem
   useEffect(() => {
-    async function fetchPosts() {
+    async function fetchProfile() {
       try {
         const response = await api.get('/allposts')
+        const filtered = response.data.filter(
+          (el) => el.title.toLowerCase().includes(input.toLowerCase()),
+          // ||
+          // el.description.toLowerCase().includes(input.toLowerCase()) ||
+          // el.terapiesfinding.toLowerCase().includes(input.toLowerCase()),
+        )
 
-        console.log(response)
-
-        setPosts([...response.data])
+        setUposts([...filtered])
       } catch (err) {
-        console.error(err)
+        console.error(err.response)
       }
     }
-    fetchPosts()
-  }, [])
+    fetchProfile()
+  }, [input])
+
+  function handleChange(event) {
+    setInput(event.target.value)
+  }
+  console.log(posts)
 
   return (
     <>
-      <SearchPost />
+      <div className="wrapper fadeInDown fadeIn">
+        <input
+          type="text"
+          className="input SearchbackgroundPost fadeIn.first wrapper fadeInDown"
+          onChange={handleChange}
+          placeholder="Procurar..."
+          value={input}
+        />
+      </div>
+      {/* jogando na tela todas postagens já feitas */}
       <div className="row">
         {posts.map((post) => {
           return (
             <>
-              <div
-                key={post._id}
-                className="col-12 col-sm-4 col-md-5 postfeedbackground"
-              >
+              <div key={post._id} className="col-12 col-sm-4 col-md-3 ">
                 <PostCard post={post} />
               </div>
             </>

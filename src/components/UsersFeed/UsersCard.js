@@ -6,9 +6,9 @@ import '../../assets/styles/transp-back.css'
 function UsersCard(props) {
   return (
     <>
-      <section className="userscard">
-        <div className="col userscard">
-          <div className="card h-100  shadow userscard">
+      <section className="userscard fadeInDown fadeIn">
+        <div className="col userscard ">
+          <div className="card h-100  shadow userscard fadeIn.first fadeInDown">
             <Link to={`/usersall/${props._id}`}>
               <img
                 src={LogoCircle}
@@ -24,6 +24,20 @@ function UsersCard(props) {
               <p className="cardText">{props.user.email}</p>
               <strong>Terapias Certificados:</strong>
               <p className="cardText">{props.user.certificatesTerapies}</p>
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary text-align-center fadeIn.second"
+                  style={{
+                    height: '25px',
+                    width: '110px',
+                    paddingBottom: '10px',
+                    paddingTop: '0px',
+                  }}
+                >
+                  Mensagem
+                </button>
+              </div>
             </div>
           </div>
         </div>
