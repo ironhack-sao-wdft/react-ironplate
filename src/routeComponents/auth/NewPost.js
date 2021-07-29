@@ -52,11 +52,6 @@ function NewPost(props) {
       const response = await api.post("/post", { ...state, image: imageUrl });
       console.log(response);
 
-      authContext.setLoggedInUser({ ...response.data });
-      localStorage.setItem(
-        "loggedInUser",
-        JSON.stringify({ ...response.data })
-      );
       setErrors({
         title: "",
         content: "",
@@ -68,7 +63,7 @@ function NewPost(props) {
       props.history.push("/");
     } catch (err) {
       console.error(err);
-      //setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response });
     }
   }
 
