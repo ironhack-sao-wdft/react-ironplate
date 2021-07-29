@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
+import { useParams } from "react-router-dom";
 import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
@@ -15,6 +16,7 @@ function CreatePostForum() {
   });
 
   const history = useHistory();
+  const { country } = useParams();
 
   function handleChange(event) {
     if (event.target.files) {
@@ -34,7 +36,7 @@ function CreatePostForum() {
     const uploadData = new FormData();
 
     uploadData.append("profilePicture", file);
-    
+
     const response = await api.post("/upload", uploadData);
 
     return response.data.url;
@@ -45,7 +47,7 @@ function CreatePostForum() {
     try {
       const uploadImage = await handleFileUpload(state.pictureUrl);
       console.log(uploadImage);
-      const response = await api.post("/forum", {
+      const response = await api.post(`/${country}/forum`, {
         ...state,
         tags: state.tags.toLowerCase(),
         pictureUrl: uploadImage,
@@ -58,7 +60,7 @@ function CreatePostForum() {
         tags: "",
       });
 
-      history.push(`/forum`);
+      history.push(`/${country}/forum`);
     } catch (err) {
       console.log(err);
     }

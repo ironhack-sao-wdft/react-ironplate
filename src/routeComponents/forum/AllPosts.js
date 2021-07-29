@@ -7,13 +7,13 @@ import api from "../../apis/api";
 function AllPosts() {
   const [posts, setPosts] = useState([]);
 
-  // const { country } = useParams();
+  const { country } = useParams();
 
   //buscar e montar todos os posts do back
   useEffect(() => {
     async function fetchPosts() {
       try {
-        const response = await api.get("/forum");
+        const response = await api.get(`/${country}/forum`);
         // console.log(response);
 
         setPosts([...response.data]);
@@ -31,7 +31,7 @@ function AllPosts() {
       </div>
       <div className="botoes-forum mt-5">
         <button className="btn botao-criarForum mb-3">
-          <Link to={"/criar-forum"} className="linksTextWhite">
+          <Link to={`/${country}/criar-forum`} className="linksTextWhite">
             Criar um novo post
           </Link>
         </button>
@@ -40,12 +40,12 @@ function AllPosts() {
       <div className="container mt-5 ">
         {posts.map((post) => {
           return (
-            <Link to={`/forum/${post._id}`} className="allLinks">
+            <Link to={`/${country}/forum/${post._id}`} className="allLinks">
               <div
-                className="mb-2"
+                className="mb-2 ml-5"
                 style={{ maxHeight: "30vh", maxWidth: "60vw" }}
               >
-                <div className="row no-gutters">
+                <div className="row no-gutters ">
                   <div className="col-md-2">
                     <img
                       src={post.pictureUrl}
@@ -63,6 +63,7 @@ function AllPosts() {
                       <p className="card-text">
                         <small className="text-muted">{post.tags}</small>
                       </p>
+                      <hr className="postHr" />
                     </div>
                   </div>
                 </div>

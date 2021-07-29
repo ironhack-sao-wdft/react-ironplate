@@ -15,12 +15,12 @@ function EditPost() {
     tags: "Saúde",
   });
 
-  const { id } = useParams();
+  const { id, country } = useParams();
   const history = useHistory();
   useEffect(() => {
     async function fetchEditPost() {
       try {
-        const response = await api.get(`/forum/${id}`);
+        const response = await api.get(`/${country}/forum/${id}`);
 
         const { _id, ...rest } = response.data;
 
@@ -39,7 +39,7 @@ function EditPost() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const response = await api.put(`/forum/${id}`, {
+      const response = await api.put(`/${country}/forum/${id}`, {
         ...state,
         tags: state.tags.toLowerCase(),
       });
@@ -51,7 +51,7 @@ function EditPost() {
         tags: "",
       });
 
-      history.push("/forum");
+      history.push(`/${country}/forum`);
     } catch (err) {
       console.log(err);
     }
