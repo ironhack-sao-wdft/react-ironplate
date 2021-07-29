@@ -29,47 +29,47 @@ function EditProfile(props) {
     fecthUser();
   }, []);
   function handleChange(event) {
-    if (event.target.files) {
-      return setState({
-        ...state,
-        [event.currentTarget.name]: event.currentTarget.files[0],
-      });
-    }
+    // if (event.target.files) {
+    //   return setState({
+    //     ...state,
+    //     [event.currentTarget.name]: event.currentTarget.files[0],
+    //   });
+    // }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
-    async function handleFileUpload(file) {
-    const uploadData = new FormData();
-    uploadData.append("profilePicture", file);
-    const response = await api.post("/upload", uploadData);
-    return response.data.url;
-   }
+  // async function handleFileUpload(file) {
+  //   const uploadData = new FormData();
+  //   uploadData.append("profilePicture", file);
+  //   const response = await api.post("/upload", uploadData);
+  //   return response.data.url;
+  // }
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const profilePictureUrl = await handleFileUpload(state.image);
+      // const profilePictureUrl = await handleFileUpload(state.image);
 
       const response = await api.put("/profile/edit", {
         ...state,
-        image: profilePictureUrl,
+        // image: profilePictureUrl,
       });
       setErrors({ name: "" });
-      props.history.push("/auth/login");
+      props.history.push("/profile");
     } catch (err) {
       console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response });
     }
   }
 
   return (
     <div style={{ backgroundColor: "#fffdf0" }}>
       <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
-        <h1 className="pt-4">Editar Perfil</h1>
+        <h1 className="pt-4">Editar perfil</h1>
         <hr />
 
         <div className="form-group">
@@ -106,7 +106,7 @@ function EditProfile(props) {
           />
         </div>
 
-        {/*<div>
+        {/* <div>
           <label htmlFor="signupFormProfilePicture" className="form-label mt-3">
             Imagem de perfil
           </label>
@@ -119,14 +119,12 @@ function EditProfile(props) {
             error={errors.image}
             onChange={handleChange}
           />
-        </div>*/}
+        </div> */}
 
         <div className="mt-4">
-          <Link to="/profile">
-            <button type="submit" className="btn btn-primary">
-              Editar!
-            </button>
-          </Link>
+          <button type="submit" className="btn btn-primary">
+            Editar
+          </button>
         </div>
       </form>
     </div>
