@@ -42,6 +42,7 @@ function App() {
             <Route path="/criar-forum" component={CreatePostForum} />
             <Route path="/forum/:id" component={DetailsPost} />
             <Route exact path="/edit-forum/:id" component={EditPost} />
+
             <Route path="/conteudo/:country" component={Contents} />
 
             <Route path="/criar-moradia" component={CreatePostMoradia} />
