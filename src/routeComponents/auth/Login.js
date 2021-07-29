@@ -29,7 +29,7 @@ function Login(props) {
 
     try {
       const response = await api.post("/login", state);
-      console.log(response);
+      // console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(

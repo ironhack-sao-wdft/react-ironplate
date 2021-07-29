@@ -51,7 +51,7 @@ function NewPost(props) {
 
       const response = await api.post("/post", { ...state, image: imageUrl });
       console.log(response);
-      
+
       setErrors({
         title: "",
         content: "",

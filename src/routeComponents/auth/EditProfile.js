@@ -15,7 +15,7 @@ function EditProfile(props) {
     image: null,
   });
   useEffect(() => {
-    async function fecthUser() {
+    async function fetchUser() {
       try {
         const user = await api.get("/profile");
         setState({
@@ -26,7 +26,7 @@ function EditProfile(props) {
         console.log(error);
       }
     }
-    fecthUser();
+    fetchUser();
   }, []);
   function handleChange(event) {
     // if (event.target.files) {
@@ -121,9 +121,9 @@ function EditProfile(props) {
           />
         </div> */}
 
-        <div className="mt-4">
+        <div className="mt-5 pb-5">
           <button type="submit" className="btn btn-primary">
-            Editar
+            Concluir
           </button>
         </div>
       </form>
