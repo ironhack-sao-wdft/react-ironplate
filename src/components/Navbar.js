@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import "../assets/styles/main.scss";
 
+
+
 import icon from "../assets/images/paper-plane-icon.png";
 function Navbar() {
+
+  
+  
+
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-primary shadow-sm">
       <div className="container">
