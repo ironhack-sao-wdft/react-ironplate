@@ -26,14 +26,12 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
           <Route path="/signup" component={Signup} />
-
+          <ProtectedRoute path="/profile/edit" component={EditProfile} />
           <ProtectedRoute path="/profile" component={Profile} />
           <Route exact path="/post/:id" component={PostDetails} />
 
           <ProtectedRoute path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
-
-          <ProtectedRoute path="/profile" component={EditProfile} />
         </Switch>
         <Footer />
       </AuthContextComponent>

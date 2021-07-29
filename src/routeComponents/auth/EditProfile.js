@@ -1,78 +1,138 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import api from "../../apis/api";
 
 function EditProfile(props) {
   const [state, setState] = useState({
     name: "",
     lastName: "",
-    email: "",
     image: "",
   });
-  const [error, setError] = useState(null);
-  useEffect(() => {
-    async function fetchProfile() {
-      try {
-        const response = await api.get("/profile");
 
-        setState({ ...response.data });
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    fetchProfile();
-  }, []);
+  const [errors, setErrors] = useState({
+    name: null,
+    lastName: null,
+    image: null,
+  });
+useEffect(() => {
+  async function fecthUser() {
+   try{
+const user = await api.get("/profile")
+setState({
+    name: user.data.name,
+    lastName: user.data.lastName,
+})
+   }catch(error){
+    console.log(error)
+   }
+  }
+ fecthUser(); 
+})
   function handleChange(event) {
+    if (event.target.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
+    }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
+  async function handleFileUpload(file) {
+    const uploadData = new FormData();
+    uploadData.append("profilePicture", file);
+    const response = await api.post("/upload", uploadData);
+    return response.data.url;
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const response = await api.put("/profile", {
-        ...state,
-      });
+      const profilePictureUrl = await handleFileUpload(state.image);
 
-      setError(null);
-      props.history.push("/profile");
+      const response = await api.put("/profile/edit", {
+        ...state,
+        image: profilePictureUrl,
+      });
+      setErrors({ name: "" });
+      props.history.push("/auth/login");
     } catch (err) {
       console.error(err.response);
-      setError(err.response.data.error);
+      setErrors({ ...err.response.data.errors });
     }
   }
+
   return (
-    <div className="container mt-5">
-      <h1>"Oi"</h1>
-      <h1 className="pt-3">Perfil</h1>
-      <hr />
-      <div className="row d-flex justify-content-sm-start align-items-center">
-        <img
-          className="img-fluid rounded-circle"
-          style={{ maxWidth: "150px" }}
-          src={state.image}
-          alt="Sua foto de perfil"
-        />
+    <div style={{ backgroundColor: "#fffdf0" }}>
+      <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
+        <h1 className="pt-4">Cadastro</h1>
+        <hr />
 
-        <div class="d-flex flex-column bd-highlight mb-3 ml-5">
-          <p>
-            <strong>Nome: </strong>
-            {state.name}
-          </p>
-
-          <p>
-            <strong>Sobrenome: </strong>
-            {state.lastName}
-          </p>
-
-          <p>
-            <strong>E-mail: </strong>
-            {state.email}
-          </p>
+        <div className="form-group">
+          <label htmlFor="signupFormName" className="form-label mt-3">
+            Nome{" "}
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            id="signupFormName"
+            placeholder="Seu nome aqui"
+            style={{ fontFamily: "sans serif" }}
+            value={state.name}
+            error={errors.name}
+            onChange={handleChange}
+          />
         </div>
-      </div>
+
+        <div>
+          <label htmlFor="signupFormLastName" className="form-label mt-3">
+            Sobrenome{" "}
+          </label>
+          <input
+            className="form-control"
+            type="text"
+            name="lastName"
+            id="signupFormLastName"
+            placeholder="Seu sobrenome aqui"
+            style={{ fontFamily: "sans serif" }}
+            value={state.lastName}
+            error={errors.lastName}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="signupFormProfilePicture" className="form-label mt-3">
+            Imagem de perfil
+          </label>
+          <input
+            className="form-control"
+            type="file"
+            name="image"
+            id="signupFormProfilePicture"
+            placeholder="Your profile image here"
+            error={errors.image}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="mt-4">
+          <button type="submit" className="btn btn-primary">
+            Cadastrar!
+          </button>
+        </div>
+
+        <div className="mt-3 pb-5">
+          <Link to="/auth/login">
+            Já possui uma conta? Clique aqui para entrar.
+          </Link>
+        </div>
+      </form>
     </div>
   );
 }

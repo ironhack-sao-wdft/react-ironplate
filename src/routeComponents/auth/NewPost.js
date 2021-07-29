@@ -68,12 +68,12 @@ function NewPost(props) {
       props.history.push("/");
     } catch (err) {
       console.error(err);
-      setErrors({ ...err.response.data.errors });
+      //setErrors({ ...err.response.data.errors });
     }
   }
 
   return (
-    <div style={{backgroundColor: "#fffdf0"}}>
+    <div style={{ backgroundColor: "#fffdf0" }}>
       <form className="container md-me-5 mt-5" onSubmit={handleSubmit}>
         <h1 className="pt-4">Novo Post</h1>
         <hr />
