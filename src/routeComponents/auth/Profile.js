@@ -37,8 +37,7 @@ function Profile() {
         <hr />
         <div className="row d-flex justify-content-sm-start align-items-center">
           <img
-            className="img-fluid rounded-circle mr-2"
-            style={{ maxWidth: "150px" }}
+            className="img-fluid rounded-circle mr-2 imagemProfile"
             src={state.image}
             alt="Sua foto de perfil"
           />
