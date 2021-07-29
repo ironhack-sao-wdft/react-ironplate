@@ -13,6 +13,7 @@ import Allusers from '../components/Allusers'
 import '../assets/styles/index.css'
 import CreatePost from './CreatePost'
 import { AuthContextComponent } from '../contexts/authContext'
+import SendingMessages from '../components/Sendingmessages'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route exact path="/auth" component={AuthRouter} />
             <Route path="/post" component={PostFeed} />
             <Route path="/posting" component={CreatePost} />
+            <Route path="/message" component={SendingMessages} />
             <Route path="/allusers" component={Allusers} />
           </Switch>
         </div>

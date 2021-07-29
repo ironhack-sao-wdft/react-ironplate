@@ -65,6 +65,15 @@ function Menu() {
             <NavLink
               className="nav-link"
               activeClassName="active"
+              to="/message"
+            >
+              Enviar Mensagens
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
               to="/allusers"
             >
               Membros

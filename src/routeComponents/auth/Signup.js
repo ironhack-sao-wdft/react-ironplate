@@ -40,15 +40,18 @@ function Signup(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1
-        className="signup-tilte d-flex justify-content-center"
-        style={{ color: 'white', fontSize: '50px' }}
+      <div
+        className="container white-box fadeInDown"
+        style={{ maxWidth: '400px' }}
       >
-        Cadastre-se
-      </h1>
-      <div className="container white-box" style={{ maxWidth: '400px' }}>
-        <fieldset style={{ color: 'white' }}>
-          <legend className="d-flex justify-content-center">
+        <h1
+          className="signup-tilte d-flex justify-content-center fadeIn"
+          style={{ color: 'black', fontSize: '50px' }}
+        >
+          Cadastrar
+        </h1>
+        <fieldset style={{ color: 'black' }}>
+          <legend className="d-flex justify-content-center fadeIn.second">
             Dados pessoais
           </legend>
           <TextInput
@@ -70,7 +73,7 @@ function Signup(props) {
           />
         </fieldset>
 
-        <fieldset style={{ color: 'white' }}>
+        <fieldset style={{ color: 'black' }}>
           <legend className="d-flex justify-content-center">Geral</legend>
           <TextInput
             label="Ocupação"
@@ -100,7 +103,7 @@ function Signup(props) {
           />
         </fieldset>
 
-        <fieldset style={{ color: 'white' }}>
+        <fieldset style={{ color: 'black' }}>
           <legend className="d-flex justify-content-center">Contato</legend>
           <TextInput
             label="Telefone"

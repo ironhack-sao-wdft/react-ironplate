@@ -38,6 +38,10 @@ function Allusers() {
           placeholder="Procurar..."
           value={input}
         />
+        <h2 className="fadeIn.second text-center text-white fadeInDown">
+          Usuários Cadastrados
+        </h2>
+        <hr></hr>
       </div>
       <div className="row">
         {users.map((user) => {

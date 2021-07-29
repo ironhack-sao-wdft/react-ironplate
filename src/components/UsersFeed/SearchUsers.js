@@ -30,7 +30,7 @@ function SearchUsers() {
   console.log(users)
 
   return (
-    <div className="">
+    <div className="searchUsersbackground">
       <input
         type="text"
         className="input searchUsersbackground"

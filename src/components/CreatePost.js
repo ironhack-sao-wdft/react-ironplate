@@ -31,12 +31,12 @@ function CreatePost() {
 
   return (
     <div
-      className="container mt-5"
-      style={{ maxWidth: '400px', color: 'white' }}
+      className="container mt-5 fadeInDown white-box"
+      style={{ maxWidth: '400px', color: 'black' }}
     >
-      <form onSubmit={handleSubmit}>
+      <h2 className="fadeIn text-center">Envie sua Solicitação</h2>
+      <form className="fadeIn.second" onSubmit={handleSubmit}>
         <TextInput
-          style={{ color: 'white' }}
           label="Digite sua solicitação"
           type="text"
           value={posting.title}

@@ -1,10 +1,39 @@
-.postcards {
-  background-color: transparent;
-  color: white;
+.postcardsbox {
+  color: black;
+  -webkit-border-radius: 20px 20px 20px 20px;
+  border-radius: 20px 20px 20px 20px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+.userscard {
+  color: black;
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
+}
+.SearchbackgroundPost {
+  background-color: transparent;
+  color: white;
+  padding-left: 10px;
+}
+
+.searchUsersbackground {
+  background-color: transparent;
+  color: white;
+  padding-left: 10px;
+}
+
+.navbarbackground {
+  background-color: transparent;
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: auto;
+  min-height: 10vh;
 }
 
 .fadeInDown {
@@ -90,42 +119,7 @@
 }
 
 .fadeIn.second {
-  -webkit-animation-delay: 0.6s;
-  -moz-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-
-.userscard {
-  background-color: transparent;
-  color: white;
-  -webkit-border-radius: 10px 10px 10px 10px;
-  border-radius: 10px 10px 10px 10px;
-  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.5);
-}
-.SearchbackgroundPost {
-  background-color: transparent;
-  color: white;
-}
-
-.searchUsersbackground {
-  background-color: transparent;
-  color: white;
-}
-
-.navbarbackground {
-  background-color: transparent;
-  background-image: url('../images/backparticles.jpg');
-  background-position: center top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  width: 100vw;
-  height: auto;
-  min-height: 10vh;
-}
-
-.loginbox {
-  background-color: transparent;
-  color: white;
+  -webkit-animation-delay: 0.9s;
+  -moz-animation-delay: 0.9s;
+  animation-delay: 0.9s;
 }

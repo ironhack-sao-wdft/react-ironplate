@@ -38,16 +38,18 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="fadeIn" onSubmit={handleSubmit}>
       <div
         style={{ maxWidth: '400px', color: 'black' }}
-        className="container white-box"
+        className="container white-box fadeInDown"
       >
-        <h1 className="d-flex justify-content-center mb-5">Login</h1>
+        <h1 className="d-flex justify-content-center mb-5 fadeIn.second">
+          Login
+        </h1>
 
         <TextInput
           style={{
-            maxWidth: '300px',
+            color: 'black',
           }}
           className="loginbox"
           label="E-mail"
@@ -59,6 +61,9 @@ function Login(props) {
         />
 
         <TextInput
+          style={{
+            color: 'black',
+          }}
           label="Senha"
           type="password"
           name="password"

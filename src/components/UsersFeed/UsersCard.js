@@ -7,7 +7,10 @@ function UsersCard(props) {
   return (
     <>
       <section className="userscard fadeInDown fadeIn">
-        <div className="col userscard ">
+        <div
+          style={{ padding: '0px', margin: '10px' }}
+          className="col userscard "
+        >
           <div className="card h-100  shadow userscard fadeIn.first fadeInDown">
             <Link to={`/usersall/${props._id}`}>
               <img

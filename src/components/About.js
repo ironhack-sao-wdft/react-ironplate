@@ -6,13 +6,29 @@ import '../assets/styles/About.css'
 function About() {
   return (
     <>
-      <section className="headerPost fadeInDown fadeIn">
-        <section>
+      <div className="headerPost fadeInDown fadeIn container">
+        <div>
           <h1 className="text-left fadeIn.first fadeInDown">Sobre nós</h1>
-        </section>
+        </div>
         <hr />
-
-        <section className="contaniner m-5 fadeInDown">
+        <div
+          className="text-center backgroundHome"
+          style={{
+            padding: '10px',
+            color: '#ffffff',
+          }}
+        >
+          <img
+            className="fadeIn fadeIn.first fadeInDown"
+            src={LogoCircle}
+            alt="The Circle"
+            style={{ padding: '50px' }}
+          />
+          <h1 className="fadeIn fadeIn.second fadeInDown">
+            Rede Social The Circle
+          </h1>
+        </div>
+        <div className="contaniner m-5 fadeInDown">
           <h1 className="text-center">Nossa Missão</h1>
           <p className="text-center">
             Decidimos criar uma rede social, onde pessoas, terapeutas e afins,
@@ -24,10 +40,10 @@ function About() {
             então criar assim, um "círculo" de pessoas realizando, criando e
             socializando suas habilidades para o bem maior.
           </p>
-        </section>
+        </div>
 
         <hr />
-        <section className="contaniner m-5 fadeIn.second fadeInDown">
+        <div className="contaniner m-5 fadeIn.second fadeInDown">
           <h1 className="text-center">Ajuda mútua</h1>
           <p className="text-center">
             Nosso objetivo é a ajuda mútua, seja de terapeutas recém-formados ou
@@ -37,8 +53,8 @@ function About() {
             com as redes sociais, utilizando a mesma da melhor forma de ajuda
             mútua.
           </p>
-        </section>
-      </section>
+        </div>
+      </div>
     </>
   )
 }

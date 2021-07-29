@@ -22,10 +22,10 @@ function Home() {
       <h1 className="fadeIn fadeIn.second fadeInDown">
         Rede Social The Circle
       </h1>
-      <p>This is the homepage</p>
+      <p>Cadastre-se em nossa rede abaixo</p>
       <div className="d-flex flex-column align-items-center">
         <Link className="btn btn-lg btn-primary fadeInDown" to="/signup">
-          Signup here!
+          Cadastre-se!
         </Link>
       </div>
     </div>
