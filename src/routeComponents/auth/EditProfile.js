@@ -14,62 +14,62 @@ function EditProfile(props) {
     lastName: null,
     image: null,
   });
-useEffect(() => {
-  async function fecthUser() {
-   try{
-const user = await api.get("/profile")
-setState({
-    name: user.data.name,
-    lastName: user.data.lastName,
-})
-   }catch(error){
-    console.log(error)
-   }
-  }
- fecthUser(); 
-})
-  function handleChange(event) {
-    if (event.target.files) {
-      return setState({
-        ...state,
-        [event.currentTarget.name]: event.currentTarget.files[0],
-      });
+  useEffect(() => {
+    async function fecthUser() {
+      try {
+        const user = await api.get("/profile");
+        setState({
+          name: user.data.name,
+          lastName: user.data.lastName,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fecthUser();
+  }, []);
+  function handleChange(event) {
+    // if (event.target.files) {
+    //   return setState({
+    //     ...state,
+    //     [event.currentTarget.name]: event.currentTarget.files[0],
+    //   });
+    // }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
-  async function handleFileUpload(file) {
-    const uploadData = new FormData();
-    uploadData.append("profilePicture", file);
-    const response = await api.post("/upload", uploadData);
-    return response.data.url;
-  }
+  // async function handleFileUpload(file) {
+  //   const uploadData = new FormData();
+  //   uploadData.append("profilePicture", file);
+  //   const response = await api.post("/upload", uploadData);
+  //   return response.data.url;
+  // }
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const profilePictureUrl = await handleFileUpload(state.image);
+      // const profilePictureUrl = await handleFileUpload(state.image);
 
       const response = await api.put("/profile/edit", {
         ...state,
-        image: profilePictureUrl,
+        // image: profilePictureUrl,
       });
       setErrors({ name: "" });
-      props.history.push("/auth/login");
+      props.history.push("/profile");
     } catch (err) {
       console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response });
     }
   }
 
   return (
     <div style={{ backgroundColor: "#fffdf0" }}>
       <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
-        <h1 className="pt-4">Cadastro</h1>
+        <h1 className="pt-4">Editar perfil</h1>
         <hr />
 
         <div className="form-group">
@@ -106,7 +106,7 @@ setState({
           />
         </div>
 
-        <div>
+        {/* <div>
           <label htmlFor="signupFormProfilePicture" className="form-label mt-3">
             Imagem de perfil
           </label>
@@ -119,18 +119,12 @@ setState({
             error={errors.image}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
 
         <div className="mt-4">
           <button type="submit" className="btn btn-primary">
-            Cadastrar!
+            Editar
           </button>
-        </div>
-
-        <div className="mt-3 pb-5">
-          <Link to="/auth/login">
-            Já possui uma conta? Clique aqui para entrar.
-          </Link>
         </div>
       </form>
     </div>
