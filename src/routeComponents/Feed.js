@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../apis/api";
 
+import { Link } from "react-router-dom";
+
 function Feed() {
   const [posts, setPosts] = useState([]);
 
@@ -56,8 +58,24 @@ function Feed() {
                         <strong>Total gasto: </strong>
                         {post.tripCost}
                       </p>
+                      <Link
+                        className="btn btn-primary m-4 mb-5 text-aligin-right"
+                        to={`/post/${post._id}`}
+                      >
+                        Ver mais
+                      </Link>
                       <p className="card-text">
-                        <small className="text-muted">{post.createdAt}</small>
+                        <small className="text-muted">{`${new Date(
+                          post.createdAt
+                        )
+                          .getDay()
+                          .toString()
+                          .padStart(2, "0")}/${new Date(post.createdAt)
+                          .getMonth()
+                          .toString()
+                          .padStart(2, "0")}/${new Date(
+                          post.createdAt
+                        ).getFullYear()}`}</small>
                       </p>
                     </div>
                   </div>
