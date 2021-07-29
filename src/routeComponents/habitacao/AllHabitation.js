@@ -2,10 +2,9 @@ import { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import axios from "axios";
 import api from "../../apis/api";
 
-function AllMoradias() {
+function AllHabitation() {
   const [moradias, setMoradias] = useState([]);
 
   //buscar e montar todos os posts do back
@@ -28,12 +27,12 @@ function AllMoradias() {
     <div className="container mt-5">
       {moradias.map((moradia) => {
         return (
-          <Link>
+          <Link to={`/moradia/${moradia._id}`}>
             <div className="card mb-3" style={{ maxWidth: "540px" }}>
               <div className="row no-gutters">
                 <div className="col-md-4">
                   <img
-                    src={moradia.pictureUrl}
+                    src={moradia.photo}
                     className="card-img"
                     alt="..."
                   />
@@ -56,4 +55,4 @@ function AllMoradias() {
   );
 }
 
-export default AllMoradias;
+export default AllHabitation;

@@ -34,7 +34,7 @@ function CreatePostForum() {
     const uploadData = new FormData();
 
     uploadData.append("profilePicture", file);
-    console.log(uploadData);
+    
     const response = await api.post("/upload", uploadData);
 
     return response.data.url;
