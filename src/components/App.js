@@ -13,6 +13,7 @@ import { AuthContextComponent } from "../contexts/authContext";
 import Signup from "../routeComponents/auth/Signup";
 import NewPost from "../routeComponents/auth/NewPost";
 import Profile from "../routeComponents/auth/Profile";
+import EditProfile from "../routeComponents/auth/EditProfile";
 
 function App() {
   return (
@@ -22,11 +23,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
-          <Route path="/signup"component={Signup}/>
+          <Route path="/signup" component={Signup} />
           <Route path="/new-post" component={NewPost} />
           <Route path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
           <ProtectedRoute path="/profile" component={Profile} />
+          <ProtectedRoute path="/profile" component={EditProfile} />
         </Switch>
         <Footer />
       </AuthContextComponent>

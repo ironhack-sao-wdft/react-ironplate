@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { userState, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../../apis/api";
 
 function Profile() {
@@ -59,7 +59,7 @@ function Profile() {
           </p>
         </div>
       </div>
-      <Link className="btn btn-primary mt-3" to="/profile/edit">
+      <Link className="btn btn-primary mt-3" to="/EditProfile">
         Editar Perfil
       </Link>
 
