@@ -1,31 +1,42 @@
 import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import LogoCircle from '../assets/images/logo sem fundo.png'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
+import LogoCircle from '../assets/images/logosemfundo2.png'
+import '../assets/styles/transp-back.css'
 import { Link } from 'react-router-dom'
 
 import { NavLink } from 'react-router-dom'
-import { Dropdown } from 'react-bootstrap'
-import { useContext } from 'react'
 
+import { useContext } from 'react'
+import { Navbar } from 'react-bootstrap'
 import { AuthContext } from '../contexts/authContext'
 
-function Navbar() {
+function Menu() {
   const { loggedInUser, setLoggedInUser } = useContext(AuthContext)
 
   return (
     <nav
-      className="navbar navbar-expand-lg navbar-dark bg-primary navbarbackground"
+      className="navbar navbar-expand-lg navbar-dark bg-primary navbarbackground d-flex "
       style={{ opacity: '100%' }}
     >
-      <img
-        src={LogoCircle}
-        style={{ width: '120px', margin: '0px', padding: '0px', border: '0px' }}
-        alt="The Circle"
-      />
+      <Link to="/">
+        <img
+          src={LogoCircle}
+          style={{
+            width: '120px',
+            margin: '0px',
+            padding: '2px',
+            border: '0px',
+          }}
+          alt="The Circle"
+        />
+      </Link>
 
-      <div className="d-flex justify-content-between" id="navbarText">
-        <ul className="navbar-nav mr-auto d-flex">
+      <div
+        className="collapse navbar-collapse d-flex justify-content-between"
+        id="navbarText"
+      >
+        <ul className="navbar-nav mr-auto d-flex " style={{ margin: '15px' }}>
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/">
               Home
@@ -39,6 +50,24 @@ function Navbar() {
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/post">
               Solicitações Trocas
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to="/posting"
+            >
+              Solicitar
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link"
+              activeClassName="active"
+              to="/message"
+            >
+              Enviar Mensagens
             </NavLink>
           </li>
           <li>
@@ -59,10 +88,28 @@ function Navbar() {
               Login
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className="nav-link text-white"
+              activeClassName="active"
+              to="/signup"
+            >
+              Cadastrar
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="nav-link text-white"
+              activeClassName="active"
+              to="/profile"
+            >
+              Perfil
+            </NavLink>
+          </li>
         </ul>
       </div>
     </nav>
   )
 }
 
-export default Navbar
+export default Menu
