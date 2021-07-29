@@ -68,7 +68,7 @@ function NewPost(props) {
       props.history.push("/");
     } catch (err) {
       console.error(err);
-      //setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response.data.errors });
     }
   }
 

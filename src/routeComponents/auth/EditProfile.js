@@ -14,20 +14,20 @@ function EditProfile(props) {
     lastName: null,
     image: null,
   });
-useEffect(() => {
-  async function fecthUser() {
-   try{
-const user = await api.get("/profile")
-setState({
-    name: user.data.name,
-    lastName: user.data.lastName,
-})
-   }catch(error){
-    console.log(error)
-   }
-  }
- fecthUser(); 
-})
+  useEffect(() => {
+    async function fecthUser() {
+      try {
+        const user = await api.get("/profile");
+        setState({
+          name: user.data.name,
+          lastName: user.data.lastName,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fecthUser();
+  }, []);
   function handleChange(event) {
     if (event.target.files) {
       return setState({
@@ -41,12 +41,12 @@ setState({
     });
   }
 
-  async function handleFileUpload(file) {
+    async function handleFileUpload(file) {
     const uploadData = new FormData();
     uploadData.append("profilePicture", file);
     const response = await api.post("/upload", uploadData);
     return response.data.url;
-  }
+   }
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -69,7 +69,7 @@ setState({
   return (
     <div style={{ backgroundColor: "#fffdf0" }}>
       <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
-        <h1 className="pt-4">Cadastro</h1>
+        <h1 className="pt-4">Editar Perfil</h1>
         <hr />
 
         <div className="form-group">
@@ -106,7 +106,7 @@ setState({
           />
         </div>
 
-        <div>
+        {/*<div>
           <label htmlFor="signupFormProfilePicture" className="form-label mt-3">
             Imagem de perfil
           </label>
@@ -119,17 +119,13 @@ setState({
             error={errors.image}
             onChange={handleChange}
           />
-        </div>
+        </div>*/}
 
         <div className="mt-4">
-          <button type="submit" className="btn btn-primary">
-            Cadastrar!
-          </button>
-        </div>
-
-        <div className="mt-3 pb-5">
-          <Link to="/auth/login">
-            Já possui uma conta? Clique aqui para entrar.
+          <Link to="/profile">
+            <button type="submit" className="btn btn-primary">
+              Editar!
+            </button>
           </Link>
         </div>
       </form>
