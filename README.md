@@ -2,30 +2,26 @@
 
 # React IronPlate
 
-Esse boilerplate já inclui:
 
-- Pré-configuração do Axios para injeção de cabeçalhos de autenticação e BaseURL
-- Context para armazenar state de usuário logado
-- Forms de Login e Signup
-- Roteamento básico
-- Componente de rota protegida
 
-## Para Começar
+# About the application
 
-- Faça o fork e clone deste repositório
+# The Requirements
 
-## Instalação
+# The developers:
 
-```shell
-$ npm install
-```
+[Filipe Cintra](https://github.com/filipefcintra)
+[Kamila Nita](https://github.com/kamilanitta)
+[Priscila Veras](https://github.com/PriscilaVeras)
 
-## Deploy no Netlify
+# Repositores:
 
-1. Faça login no Netlify e selecione seu repositório
-2. Em 'Deploy settings > build command' escreva: CI=false npm run build
-3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
-5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
 
-Happy coding! 💙
+# Deploy:
+
+
+# Presentation:
+
+[Presentation link](https://docs.google.com/presentation/d/1NefH7VvvIocs5jetzKndfh9aqMRhNu8j6UmE0C-vGHE/edit?usp=sharing)
+
+This app was made as part of the Ironhack Bootcamp
