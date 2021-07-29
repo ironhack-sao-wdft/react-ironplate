@@ -1,8 +1,8 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
-import Signup from "./Signup";
-import Login from "./Login";
+import Signup from './Signup'
+import Login from './Login'
 
 function AuthRouter(props) {
   return (
@@ -13,7 +13,7 @@ function AuthRouter(props) {
         <Route path={`${props.match.path}/login`} component={Login} />
       </Switch>
     </React.Fragment>
-  );
+  )
 }
 
-export default AuthRouter;
+export default AuthRouter
