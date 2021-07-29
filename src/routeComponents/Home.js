@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Login from "./auth/Login";
 import alemanha from "../img/home/alemanha.png";
 import portugal from "../img/home/portugal.png";
 import uk from "../img/home/uk.png";
@@ -46,39 +47,10 @@ function Home() {
         style={{ size: "8", width: "100vw", height: "10px" }}
       ></div>
 
-      <div className="d-flex ">
+      <div className="d-flex">
         <img src={cadastro} className="margin-footer login-img" alt="..." />
-        <div className="mt-5 mx-5 mb-0">
-          <h5 className="mb-0">Acesse sua container</h5>
-          <small className="mt-0 mb-5">
-            Ainda não tem cadastro? <Link to="/signup">Clique aqui!</Link>
-          </small>
 
-          <div className="my-4 mx-5 d-flex flex-column">
-            <input
-              className="form-control mb-3"
-              type="text"
-              placeholder="Email"
-              aria-label="Disabled input example"
-              disabled
-              style={{ width: "40vw" }}
-            />
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Password"
-              aria-label="Disabled input example"
-              disabled
-            />
-            <button
-              type="button"
-              className="btn yellowTaxi mt-3"
-              style={{ color: "white" }}
-            >
-              Entrar
-            </button>
-          </div>
-        </div>
+        <Login />
       </div>
     </div>
   );

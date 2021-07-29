@@ -66,9 +66,9 @@ function Signup(props) {
   console.log(state);
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 margin-footer">
       <form onSubmit={handleSubmit}>
-        <h1>Cadastro</h1>
+        <h1 className=" mb-4 fontElefant">Cadastro</h1>
 
         <TextInput
           type="text"
@@ -128,15 +128,14 @@ function Signup(props) {
           onChange={handleChange}
         />
 
-        <div>
-          <button className="btn btn-primary mt-3" type="submit">
+        <div className="mt-3">
+          <button className="btn yellowTaxi fontWhite" type="submit">
             Cadastrar
           </button>
-
-          <Link to="/auth/login">
-            Já tem uma conta? Clique aqui para entrar.
-          </Link>
         </div>
+        <Link to="/auth/login" className="align-self-center">
+          <small>Já é cadastrado? Clique aqui.</small>
+        </Link>
       </form>
     </div>
   );

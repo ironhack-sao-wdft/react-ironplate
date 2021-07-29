@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../img/logo_branco.png";
+import { HashLink } from "react-router-hash-link";
 
 export default function Header() {
   return (
@@ -10,15 +11,7 @@ export default function Header() {
         <img src={logo} alt="logo" style={{ height: "90px" }} />
       </Link>
 
-      <Link
-        className="nav-link"
-        to="#"
-        tabindex="-1"
-        aria-disabled="true"
-        style={{ color: "white", textDecoration: "none" }}
-      >
-        Login
-      </Link>
+      <HashLink to="/#login">Login</HashLink>
     </div>
   );
 }

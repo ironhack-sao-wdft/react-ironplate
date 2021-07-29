@@ -7,17 +7,17 @@ import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
 
 function EditHabitation() {
-    const [state, setState] = useState({
-        title: "",
-        website: "",
-        description: "",
-        phone: "",
-        photo: "",
-        companyEmail: "",
-        type: "Apartamento",
-        price: "",
-        room: "Estúdio",
-      });
+  const [state, setState] = useState({
+    title: "",
+    website: "",
+    description: "",
+    phone: "",
+    photo: "",
+    companyEmail: "",
+    type: "Apartamento",
+    price: "",
+    room: "Estúdio",
+  });
 
   const { id } = useParams();
   const history = useHistory();
@@ -54,7 +54,7 @@ function EditHabitation() {
     const uploadData = new FormData();
 
     uploadData.append("profilePicture", file);
-    console.log(uploadData)
+    console.log(uploadData);
     const response = await api.post("/upload", uploadData);
 
     return response.data.url;
@@ -63,10 +63,10 @@ function EditHabitation() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-        const uploadImage = await handleFileUpload(state.photo);
+      const uploadImage = await handleFileUpload(state.photo);
       const response = await api.put(`/moradia/${id}`, {
-        ...state,photo: uploadImage,
-
+        ...state,
+        photo: uploadImage,
       });
       setState({
         title: "",
@@ -86,8 +86,7 @@ function EditHabitation() {
     }
   }
   return (
-    <div className="container mt-5">
-
+    <div className="container mt-5 margin-footer">
       <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
@@ -129,13 +128,13 @@ function EditHabitation() {
           value={state.price}
         />
 
-       <TextInput
-         label="Imagem"
-         type="file"
-         name="photo"
-         id="signupFormPhoto"
-         onChange={handleChange}
-       />
+        <TextInput
+          label="Imagem"
+          type="file"
+          name="photo"
+          id="signupFormPhoto"
+          onChange={handleChange}
+        />
 
         <TextInput
           type="text"
@@ -170,7 +169,6 @@ function EditHabitation() {
         </div>
       </form>
     </div>
-
   );
 }
 

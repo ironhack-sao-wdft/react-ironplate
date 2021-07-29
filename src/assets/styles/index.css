@@ -1,12 +1,13 @@
 /* Seus estilos globais vão aqui */
 .elefantBlue {
-  background-color: rgb(71, 96, 114);
+  background-color: #476072;
 }
+
 .darkerBlue {
-  background-color: rgb(51, 66, 87);
+  background-color: #334257;
 }
 .yellowTaxi {
-  background-color: rgb(247, 182, 51);
+  background-color: #f7b633;
 }
 .darkGrey {
   background-color: rgb(51, 66, 87);
@@ -14,11 +15,19 @@
 .whiteLayer {
   background-color: rgb(255, 255, 255);
 }
+.fontElefant {
+  color: #476072;
+}
+
+.fontWhite {
+  color: rgb(255, 255, 255);
+}
+
 .margin-footer {
   margin-bottom: 24vh;
 }
 .container-rotas {
-  margin-bottom: 23vh;
+  margin-bottom: 24vh;
 }
 
 /* .page-wrap {

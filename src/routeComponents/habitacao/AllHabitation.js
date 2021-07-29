@@ -24,29 +24,22 @@ function AllHabitation() {
   }, []);
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 margin-footer">
       {moradias.map((moradia) => {
         return (
-  
           <Link to={`/moradia/${moradia._id}`}>
-     
-            <div className="card mb-3" style={{ maxWidth: "540px" }}>
-              <div className="row no-gutters">
-                <div className="col-md-4">
-                  <img
-                    src={moradia.photo}
-                    className="card-img"
-                    alt="..."
-                  />
-                </div>
-                <div className="col-md-8">
-                  <div className="card-body">
-                    <h5 className="card-title">{moradia.title}</h5>
-                    <p className="card-text">{moradia.description}</p>
-                    <p className="card-text">
-                      <small className="text-muted">{moradia.price}</small>
-                    </p>
-                  </div>
+            <div className="card mb-3 no-gutters d-flex flex-row">
+              <img
+                src={moradia.photo}
+                className="card-img"
+                style={{ width: "25vw", height: "auto" }}
+                alt="..."
+              />
+              <div className="d-flex col-8">
+                <div className="card-body">
+                  <h5 className="card-title fontElefant">{moradia.title}</h5>
+                  <p className="card-text fontElefant">{moradia.description}</p>
+                  <p className="card-text fontElefant">{moradia.price}€</p>
                 </div>
               </div>
             </div>
