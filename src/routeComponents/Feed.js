@@ -21,51 +21,54 @@ function Feed() {
   }, []);
 
   return (
-    <div>
-      {" "}
-      {posts.length
-        ? posts.map((post) => {
-            return (
-              <div
-                key={post._id}
-                className="card mb-3"
-                style={{ maxWidth: "50wv" }}
-              >
-                <div className="row g-0">
-                  <div className="col-md-4">
-                    <img
-                      src={post.image}
-                      className="img-fluid rounded-start"
-                      alt="Destiny"
-                    />
-                  </div>
-                  <div className="col-md-8">
-                    <div className="card-body">
-                      <h5 className="card-title">
-                        <strong>Destino:</strong> {post.title}
-                      </h5>
-                      <p className="card-text">{post.content}</p>
-                      <p className="card-text">
-                        <strong>Prós: </strong> {post.pros}
-                      </p>
-                      <p className="card-text">
-                        <strong>Contras: </strong>
-                        {post.cons}
-                      </p>
-                      <p className="card-text">
-                        <strong>Total gasto: </strong>
-                        {post.tripCost}
-                      </p>
-                      <p className="card-text">
-                        <small className="text-muted">{post.createdAt}</small>
-                      </p>
+    <div style={{backgroundColor: "#fffdf0"}}>
+      <div className="container pb-5">
+        <h1 className="text-center m-5 pt-5">Viagens da comunidade</h1>
+        {" "}
+        {posts.length
+          ? posts.map((post) => {
+              return (
+                <div
+                  key={post._id}
+                  className=" card m-5"
+                  style={{ maxWidth: "50wv" }}
+                >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img
+                        src={post.image}
+                        className="img-fluid rounded-start"
+                        alt="Destiny"
+                      />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">
+                          <strong>Destino:</strong> {post.title}
+                        </h5>
+                        <p className="card-text">{post.content}</p>
+                        <p className="card-text">
+                          <strong>Prós: </strong> {post.pros}
+                        </p>
+                        <p className="card-text">
+                          <strong>Contras: </strong>
+                          {post.cons}
+                        </p>
+                        <p className="card-text">
+                          <strong>Total gasto: </strong>
+                          {post.tripCost}
+                        </p>
+                        <p className="card-text">
+                          <small className="text-muted">{post.createdAt}</small>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })
-        : null}
+              );
+            })
+          : null}
+      </div>  
     </div>
     // <div class="container p-5" style={{ backgroundColor: "#fffdf0" }}>
     //   <div class="row">
