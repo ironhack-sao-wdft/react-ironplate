@@ -31,13 +31,21 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="toggleMobileMenu">
           <ul className="navbar-nav ms-auto text-center me-5">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/feed">
-                Home
+              <NavLink
+                className="nav-link active"
+                aria-current="page"
+                to="/feed"
+              >
+                Feed
               </NavLink>
             </li>
 
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/new-post">
+              <NavLink
+                className="nav-link active"
+                aria-current="page"
+                to="/new-post"
+              >
                 Novo Post
               </NavLink>
             </li>
@@ -68,7 +76,7 @@ function Navbar() {
                   <hr className="dropdown-divider" />
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="#">
+                  <Link className="dropdown-item" to="/">
                     Sair
                   </Link>
                 </li>

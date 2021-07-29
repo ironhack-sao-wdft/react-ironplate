@@ -114,6 +114,9 @@ function Profile() {
                               post.createdAt
                             ).getFullYear()}`}</small>
                           </p>
+                          <Link className="btn btn-primary mt-3 mb-3" to={`/post/${post._id}/DeletePost`}>
+          Deletar Post
+        </Link>
                         </div>
                       </div>
                     </div>
