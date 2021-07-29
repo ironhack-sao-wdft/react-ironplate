@@ -1,4 +1,5 @@
 /* Seus estilos globais vão aqui */
+<<<<<<< HEAD
 * {
   font-family: sans-serif;
 }
@@ -35,6 +36,39 @@
 .headerBg {
   position: absolute;
   height: 75px;
+=======
+.elefantBlue {
+  background-color: rgb(71, 96, 114);
+}
+.darkerBlue {
+  background-color: rgb(51, 66, 87);
+}
+.yellowTaxi {
+  background-color: rgb(247, 182, 51);
+}
+.darkGrey {
+  background-color: rgb(51, 66, 87);
+}
+.whiteLayer {
+  background-color: rgb(255, 255, 255);
+}
+.margin-footer {
+  margin-bottom: 24vh;
+}
+.container-rotas {
+  margin-bottom: 23vh;
+}
+
+/* .page-wrap {
+  width: 800px;
+  margin: 0 auto;
+} */
+
+/* Header */
+.headerBg {
+  position: absolute;
+  height: 60px;
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
   width: 100vw;
   opacity: 30%;
   background-color: black;
@@ -42,6 +76,11 @@
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
+=======
+
+/* Footer */
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 .nav-mae {
   color: white;
   width: 100vw;
@@ -63,10 +102,39 @@
 
   text-align: center;
 }
+/* Homepage */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  background-repeat: repeat-x;
+}
+.country-img {
+  height: 40vh;
+}
 
+<<<<<<< HEAD
 .container-rotas {
   margin-bottom: 20vh;
+=======
+.country-title {
+  text-decoration: none;
+  color: white;
+  font-size: 18pt;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 }
+
+.login-img {
+  width: 50vw;
+  height: auto;
+}
+
+/* AAAA */
 
 .allLinks {
   text-decoration: none;

@@ -3,6 +3,7 @@ import logo from "../img/logo_branco.png";
 
 export default function Header() {
   return (
+<<<<<<< HEAD
     <div
       className="navbar"
       style={{ height: "75px", opacity: "30%", backgroundColor: "black" }}
@@ -80,6 +81,18 @@ export default function Header() {
       <Link
         className="nav-link"
         to={"/auth/login"}
+=======
+    <div className="navbar">
+      <div className="headerBg"></div>
+
+      <Link className="nav-link active" aria-current="page" to="/">
+        <img src={logo} alt="logo" style={{ height: "90px" }} />
+      </Link>
+
+      <Link
+        className="nav-link"
+        to="#"
+>>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
         tabindex="-1"
         aria-disabled="true"
         style={{ color: "white", textDecoration: "none" }}
