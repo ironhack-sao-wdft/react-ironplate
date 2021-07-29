@@ -37,3 +37,16 @@ html {
     font-size: 1rem;
   }
 }
+
+.imagem {
+  max-width: 100%;
+
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagemProfile {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}

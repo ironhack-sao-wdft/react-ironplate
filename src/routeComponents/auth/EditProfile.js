@@ -121,9 +121,9 @@ function EditProfile(props) {
           />
         </div> */}
 
-        <div className="mt-4">
+        <div className="mt-5 pb-5">
           <button type="submit" className="btn btn-primary">
-            Editar
+            Concluir
           </button>
         </div>
       </form>
