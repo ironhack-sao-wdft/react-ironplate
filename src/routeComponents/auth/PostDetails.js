@@ -76,21 +76,21 @@ function PostDetails(props) {
               <div className="col-md-4">
                 <img
                   src={state.image}
-                  className="img-fluid rounded-start"
+                  className="img-fluid rounded-start imagem"
                   alt="Destiny"
                 />
               </div>
               <div className="col-md-8">
                 <div className="card-body">
-                <img
-                src={state.profilePicture}
-                className="img-fluid rounded-circle mb-2"
-                alt="profile pic"
-                style={{ maxWidth: "50px" }}
-              />
-              <h4 className="card-title">
-                {state.name} {state.lastName}
-              </h4>
+                  <img
+                    src={state.profilePicture}
+                    className="img-fluid rounded-circle mb-2 imagemProfile"
+                    alt="profile pic"
+                    style={{ maxWidth: "50px" }}
+                  />
+                  <h4 className="card-title">
+                    {state.name} {state.lastName}
+                  </h4>
                   <h5 className="card-title">
                     <strong>Destino:</strong> {state.title}
                   </h5>
@@ -121,50 +121,47 @@ function PostDetails(props) {
               </div>
             </div>
           </div>
-      
 
-      <div className="mt-4">
-        <label htmlFor="postFormContent">
-          <strong>Novo comentário</strong>
-        </label>
-        <textarea
-          className="form-control mt-3 mb-3"
-          type="text"
-          name="content"
-          id="comment"
-          value={comment.content}
-          onChange={handleChange}
-          rows="3"
-        ></textarea>
+          <div className="mt-4">
+            <label htmlFor="postFormContent">
+              <strong>Novo comentário</strong>
+            </label>
+            <textarea
+              className="form-control mt-3 mb-3"
+              type="text"
+              name="content"
+              id="comment"
+              value={comment.content}
+              onChange={handleChange}
+              rows="3"
+            ></textarea>
 
-          <button
-            className=" self-align-right btn btn-primary mt-4 mb-5 "
-            type="submit"
-            onClick={handleSubmit}
-          >
-            Enviar
-          </button>
-      </div>
-
+            <button
+              className=" self-align-right btn btn-primary mt-4 mb-5 "
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Enviar
+            </button>
+          </div>
 
           <div>
             <strong>Comentários:</strong>
-              <hr/>
-              <div>{state.comments.map((comment) => {return(
+            <hr />
+            <div>
+              {state.comments.map((comment) => {
+                return (
                   <>
-                  <div>{comment.content}
-                  </div>
-                  <hr/>
-                  </>)})}
-              </div>
+                    <div>{comment.content}</div>
+                    <hr />
+                  </>
+                );
+              })}
+            </div>
           </div>
         </div>
-        
       </div>
-      
     </div>
-
-    
   );
 }
 
