@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
 
-
 function Signup(props) {
   const [state, setState] = useState({
     name: "",
@@ -59,13 +58,15 @@ function Signup(props) {
   }
 
   return (
-    <div style={{backgroundColor: "#fffdf0"}}>
+    <div style={{ backgroundColor: "#fffdf0" }}>
       <form onSubmit={handleSubmit} className="container md-me-5 mt-5">
         <h1 className="pt-4">Cadastro</h1>
         <hr />
 
         <div className="form-group">
-          <label htmlFor="signupFormName" className="form-label mt-3">Nome </label>
+          <label htmlFor="signupFormName" className="form-label mt-3">
+            Nome{" "}
+          </label>
           <input
             className="form-control"
             type="text"
@@ -80,7 +81,9 @@ function Signup(props) {
         </div>
 
         <div>
-          <label htmlFor="signupFormLastName" className="form-label mt-3">Sobrenome </label>
+          <label htmlFor="signupFormLastName" className="form-label mt-3">
+            Sobrenome{" "}
+          </label>
           <input
             className="form-control"
             type="text"
@@ -95,7 +98,9 @@ function Signup(props) {
         </div>
 
         <div>
-          <label htmlFor="signupFormEmail" className="form-label mt-3">E-mail </label>
+          <label htmlFor="signupFormEmail" className="form-label mt-3">
+            E-mail{" "}
+          </label>
           <input
             className="form-control"
             type="email"
@@ -109,13 +114,15 @@ function Signup(props) {
         </div>
 
         <div>
-          <label htmlFor="signupFormPassword" className="form-label mt-3">Senha </label>
+          <label htmlFor="signupFormPassword" className="form-label mt-3">
+            Senha{" "}
+          </label>
           <input
             className="form-control"
             type="password"
             name="password"
             id="signupFormPassword"
-            placeholder="********"
+            placeholder="8 dígitos, sendo no mínimo 1 letra maícula, 1 número e um caracter especial"
             value={state.password}
             error={errors.password}
             onChange={handleChange}
@@ -123,7 +130,9 @@ function Signup(props) {
         </div>
 
         <div>
-          <label htmlFor="signupFormProfilePicture" className="form-label mt-3">Imagem de perfil</label>
+          <label htmlFor="signupFormProfilePicture" className="form-label mt-3">
+            Imagem de perfil
+          </label>
           <input
             className="form-control"
             type="file"
@@ -136,9 +145,7 @@ function Signup(props) {
         </div>
 
         <div className="mt-4">
-          <button
-            type="submit"
-            className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Cadastrar!
           </button>
         </div>
@@ -148,7 +155,6 @@ function Signup(props) {
             Já possui uma conta? Clique aqui para entrar.
           </Link>
         </div>
-
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { userState, useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../../apis/api";
 
 function Profile() {
