@@ -33,7 +33,6 @@ function Feed() {
                 <div
                   key={post._id}
                   className=" card mt-5 mb-5"
-
                 >
                   
                   <div className="row g-0">

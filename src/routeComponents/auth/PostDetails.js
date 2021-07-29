@@ -88,9 +88,9 @@ function PostDetails(props) {
                     alt="profile pic"
                     style={{ maxWidth: "50px" }}
                   />
-                  <h4 className="card-title">
+                  <strong className="card-title">
                     {state.name} {state.lastName}
-                  </h4>
+                  </strong>
                   <h5 className="card-title">
                     <strong>Destino:</strong> {state.title}
                   </h5>
