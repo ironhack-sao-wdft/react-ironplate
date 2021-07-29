@@ -27,6 +27,7 @@ export default function Contents() {
 
       <h3 className="countryDoc">{contents.country}</h3>
       <hr className="docHr" />
+      <p></p>
     </div>
   );
 }
