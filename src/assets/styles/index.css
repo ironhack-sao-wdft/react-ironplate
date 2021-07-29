@@ -83,7 +83,48 @@
 }
 
 .docHr {
-  color: #f7b633;
-  width: 40vw;
-  size: 20;
+  margin-top: 40px;
+  height: 4px;
+  width: 70vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+}
+
+.titleHr {
+  height: 2px;
+  width: 15vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+  margin-left: 3vw;
+}
+
+.text-area {
+  height: 10vh;
+  width: 20vw;
+  display: block;
+  border-radius: 10px;
+}
+
+.botao {
+  width: 7vw;
+  height: 4vh;
+  border-radius: 10px;
+  color: white;
+}
+
+.iconComment {
+  color: #070d59;
+}
+
+.commentTitle {
+  display: inline;
+  margin: 20px;
+}
+
+.card {
+  border-radius: 30px;
+}
+
+.deleteComments {
+  margin-left: 100vh;
 }

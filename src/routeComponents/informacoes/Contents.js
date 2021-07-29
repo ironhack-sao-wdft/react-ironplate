@@ -7,10 +7,11 @@ export default function Contents() {
   const [contents, setContents] = useState([]);
 
   const { country } = useParams();
+
   useEffect(() => {
     async function fetchContents() {
       try {
-        const response = await api.get(`/conteudo/${country}`);
+        const response = await api.get(`/${country}/conteudo`);
         setContents({ ...response.data });
         console.log(response);
       } catch (err) {
@@ -23,11 +24,9 @@ export default function Contents() {
   return (
     <div className="textDoc">
       <div className="heroImageDoc"></div>
-      <h2>{contents.category.toUpperCase()}</h2>
+
       <h3 className="countryDoc">{contents.country}</h3>
       <hr className="docHr" />
-      <p>{contents.content[0].content}</p>
-      <p>{contents.content[1].content}</p>
     </div>
   );
 }

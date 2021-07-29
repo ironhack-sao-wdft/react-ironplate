@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import api from "../../apis/api";
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
+
+  // const { country } = useParams();
 
   //buscar e montar todos os posts do back
   useEffect(() => {
@@ -14,7 +16,6 @@ function AllPosts() {
         const response = await api.get("/forum");
         // console.log(response);
 
-        console.log("oi");
         setPosts([...response.data]);
       } catch (err) {
         console.log(err);

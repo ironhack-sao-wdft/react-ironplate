@@ -11,6 +11,7 @@ function DetailsPost() {
     pictureUrl: "",
     tags: "",
     answersId: [],
+    userId: "",
   });
 
   const [comment, setComment] = useState({
@@ -76,11 +77,20 @@ function DetailsPost() {
   return (
     <div>
       <div
-        className="mt-5 ml-5 "
-        style={{ maxHeight: "40vh", maxWidth: "60vw" }}
+        className="container mt-5 "
+        style={{ maxHeight: "50vh", maxWidth: "80vw" }}
       >
-        <div className="row no-gutters">
-          <div className="col-md-3">
+        <Link
+          to={"/forum"}
+          style={{ color: "#F7B633", textDecoration: "none" }}
+        >
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+        <h3 className="card-title ml-5 mt-3">{post.title}</h3>
+        <hr className="titleHr mb-5 " />
+
+        <div className="d-flex justify-content-center">
+          <div className="col-md-3 ml-5">
             <img
               src={post.pictureUrl}
               className="card-img "
@@ -90,7 +100,6 @@ function DetailsPost() {
           </div>
           <div className="col-md-8">
             <div className="card-body " style={{ maxHeight: "30vh" }}>
-              <h5 className="card-title ">{post.title}</h5>
               <p>{post.link}</p>
               <p className="card-text post-description">{post.description}</p>
               <p className="card-text">
@@ -101,53 +110,83 @@ function DetailsPost() {
             </div>
           </div>
 
-          <button className="btn btn-primary mb-3">
-            <Link to={`/edit-forum/${post._id}`} className="linksTextWhite">
-              Editar
-            </Link>
-          </button>
-          <button className="btn btn-danger" onClick={handlePostDelete}>
-            Excluir
-          </button>
-          <div className="mt-5">
+          <div>
             {" "}
-            <textarea value={comment.description} onChange={handleChange}>
-              {post.answersId}
-            </textarea>
-            <button className="btn btn-success" onClick={handleSubmit}>
-              Comentar
+            <button
+              className="botao  mb-3"
+              style={{ backgroundColor: "#5893D4" }}
+            >
+              <Link to={`/edit-forum/${post._id}`} className="linksTextWhite">
+                Editar
+              </Link>
             </button>
+            <button
+              className="botao "
+              style={{ backgroundColor: "#EB4C41" }}
+              onClick={handlePostDelete}
+            >
+              Excluir
+            </button>{" "}
           </div>
         </div>
-        <hr />
       </div>
+      <hr className="docHr" />
 
-      {post.answersId.map((comentario) => {
-        return (
-          <div>
-            <div className="row no-gutters">
-              <div className="col-md-4"></div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">{comentario.name}</h5>
-                  <p className="card-text">{comentario.description}</p>
+      <div className="container mt-5">
+        <textarea
+          className="text-area my-1 mr-sm-2"
+          value={comment.description}
+          onChange={handleChange}
+        >
+          {post.answersId}
+        </textarea>
+        <button
+          className="botao mt-3"
+          style={{ backgroundColor: "#1F3C88" }}
+          onClick={handleSubmit}
+        >
+          Comentar
+        </button>
+        <div>
+          <i className="far fa-comments fa-2x iconComment mt-5"></i>
+          <h4 className="commentTitle ">Comentários:</h4>
+        </div>
 
-                  <p className="card-text">
-                    <small className="text-muted">{comentario.tags}</small>
-                  </p>
+        {post.answersId.map((comentario) => {
+          return (
+            <div>
+              <div className="card mt-3 row no-gutters">
+                <div className="col-md-4 mt-4">
+                  <div className="col-md-8 ">
+                    <div className="card-body  ">
+                      <img
+                        src={comentario.userId.profilePictureUrl}
+                        className="card-img "
+                        alt="..."
+                        style={{ maxHeight: "20vh" }}
+                      />
+                      <h5 className="card-title">{comentario.name}</h5>
+                      <p className="card-text">{comentario.description}</p>
+
+                      <p className="card-text">
+                        <small className="text-muted">{comentario.tags}</small>
+                      </p>
+                      <button
+                        className="botao deleteComments"
+                        style={{ backgroundColor: "#EB4C41" }}
+                        onClick={() => handleDelete(comentario._id)}
+                      >
+                        {" "}
+                        Deletar
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <button
-              className="btn btn-danger"
-              onClick={() => handleDelete(comentario._id)}
-            >
-              {" "}
-              Deletar
-            </button>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
