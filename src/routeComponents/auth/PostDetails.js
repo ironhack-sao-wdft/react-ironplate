@@ -76,7 +76,7 @@ function PostDetails(props) {
               <div className="col-md-4">
                 <img
                   src={state.image}
-                  className="img-fluid rounded-start"
+                  className="img-fluid rounded-start imagem"
                   alt="Destiny"
                 />
               </div>
