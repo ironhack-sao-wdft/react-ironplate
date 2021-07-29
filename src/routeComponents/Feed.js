@@ -59,12 +59,7 @@ function Feed() {
                           <strong>Total gasto: </strong>
                           {post.tripCost}
                         </p>
-                        <Link
-                          className="btn btn-primary m-4 mb-5 float-right"
-                          to={`/post/${post._id}`}
-                        >
-                          Ver mais
-                        </Link>
+
                         <p className="card-text">
                           <small className="text-muted">{`${new Date(
                             post.createdAt
@@ -78,6 +73,12 @@ function Feed() {
                             post.createdAt
                           ).getFullYear()}`}</small>
                         </p>
+                        <Link
+                          className="btn btn-primary m-4 mb-5 float-right"
+                          to={`/post/${post._id}`}
+                        >
+                          Ver mais
+                        </Link>
                       </div>
                     </div>
                   </div>

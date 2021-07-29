@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 import api from "../../apis/api";
@@ -15,7 +15,9 @@ function PostDetails(props) {
     comments: [],
   });
 
-  const [comment, setComment] = useState({});
+  const [comment, setComment] = useState({ content: "" });
+
+  const history = useHistory();
 
   function handleChange(event) {
     setComment({
@@ -31,6 +33,7 @@ function PostDetails(props) {
       const response = await api.post(`/post/${state._id}/new-comment`, {
         ...comment,
       });
+      history.go(0);
 
       //   props.history.push("/auth/login");
     } catch (err) {
@@ -44,6 +47,8 @@ function PostDetails(props) {
     async function fetchPost() {
       try {
         const postResponse = await api.get(`/post/${id}`);
+
+        console.log(postResponse);
 
         setState({ ...postResponse.data });
       } catch (err) {
@@ -97,6 +102,7 @@ function PostDetails(props) {
         </div>
       </div>
 
+      <div>{state.comments.map((comment) => comment.content)}</div>
       <div className="mt-3">
         <label htmlFor="postFormContent">
           <strong>Novo comentário</strong>
@@ -104,9 +110,9 @@ function PostDetails(props) {
         <textarea
           className="form-control"
           type="text"
-          name="comment"
+          name="content"
           id="comment"
-          value={comment.comment}
+          value={comment.content}
           onChange={handleChange}
           rows="3"
         ></textarea>
