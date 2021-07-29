@@ -23,9 +23,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/new-post" component={NewPost} />
-          <Route path="/feed" component={Feed} />
+          <Route path="/signup"component={Signup}/>
+          <ProtectedRoute path="/feed" component={Feed} />
           <ProtectedRoute path="/new-post" component={NewPost} />
           <ProtectedRoute path="/profile" component={Profile} />
           <ProtectedRoute path="/profile" component={EditProfile} />

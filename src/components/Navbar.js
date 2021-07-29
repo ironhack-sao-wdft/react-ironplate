@@ -9,7 +9,7 @@ function Navbar() {
         <img
           src={icon}
           alt="paper airplane icon"
-          style={{ maxWidth: "50px" }}
+          style={{ maxWidth: "40px" }}
           className="mx-1"
         />
         <Link className="navbar-brand" to="/">
@@ -31,8 +31,14 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="toggleMobileMenu">
           <ul className="navbar-nav ms-auto text-center me-5">
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">
+              <NavLink className="nav-link active" aria-current="page" to="/feed">
                 Home
+              </NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/new-post">
+                Novo Post
               </NavLink>
             </li>
 
