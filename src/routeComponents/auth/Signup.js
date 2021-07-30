@@ -45,8 +45,8 @@ function Signup(props) {
         style={{ maxWidth: '400px' }}
       >
         <h1
-          className="signup-tilte d-flex justify-content-center fadeIn"
-          style={{ color: 'black', fontSize: '50px' }}
+          className="signup-title d-flex justify-content-center fadeIn"
+          style={{ color: 'black', fontSize: '40px' }}
         >
           Cadastrar
         </h1>
@@ -136,7 +136,7 @@ function Signup(props) {
 
           <div className="d-flex justify-content-center">
             <button className="btn btn-primary" type="submit">
-              Enviar!
+              Enviar
             </button>
           </div>
         </fieldset>

@@ -40,7 +40,7 @@ function Profile() {
       className="container white-box"
       style={{ maxWidth: '400px', color: 'black' }}
     >
-      <h1 className="d-flex justify-content-center">Perfil</h1>
+      <h2 className="d-flex justify-content-center">Perfil</h2>
       <hr />
 
       <img
@@ -69,7 +69,7 @@ function Profile() {
         {state.occupation}
       </p>
 
-      <h3 className="d-flex justify-content-center">Contato</h3>
+      <h5 className="d-flex justify-content-center">Contato</h5>
       <hr />
 
       <p>
@@ -82,35 +82,46 @@ function Profile() {
         {state.email}
       </p>
 
-      <h3 className="d-flex justify-content-center">Mensagens</h3>
+      <h5 className="d-flex justify-content-center">Mensagens</h5>
       <hr />
 
-      <p>
-        <strong>Mensagens:</strong>
-        {messages.map((message) => {
-          return (
-            <div>
-              <p>{message.userName_sending}:</p>
-              <p>{message.messagebody}</p>
-              <div className="d-flex justify-content-flex-end">
-                <Link
-                  type="submit"
-                  className="btn btn-outline-primary  fadeIn.second"
-                  to={`/message/?id=${message.userId_sending}`}
-                  style={{
-                    height: '25px',
-                    width: '110px',
-                    paddingBottom: '10px',
-                    paddingTop: '0px',
-                  }}
-                >
-                  Responder
-                </Link>
+      <div>
+        <p>
+          <strong>Mensagens Recebidas:</strong>
+          {messages.map((message) => {
+            return (
+              <div
+                className="card border-dark mb-3"
+                style={{ maxWidth: '28rem' }}
+              >
+                <p>
+                  <div className="card-header">
+                    <strong>Autor: </strong>
+                    {message.userName_sending}:
+                  </div>
+                </p>
+
+                <p className="card-text">{message.messagebody}</p>
+                <div className="d-flex justify-content-flex-center">
+                  <Link
+                    type="submit"
+                    className="btn btn-outline-primary  fadeIn.second"
+                    to={`/message/?id=${message.userId_sending}`}
+                    style={{
+                      height: '25px',
+                      width: '110px',
+                      paddingBottom: '10px',
+                      paddingTop: '0px',
+                    }}
+                  >
+                    Responder
+                  </Link>
+                </div>
               </div>
-            </div>
-          )
-        })}
-      </p>
+            )
+          })}
+        </p>
+      </div>
     </div>
   )
 }
