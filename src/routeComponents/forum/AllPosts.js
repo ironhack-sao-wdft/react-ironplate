@@ -25,19 +25,30 @@ function AllPosts() {
   }, []);
 
   return (
-    <div>
+    <div className>
       <div className="heroImageForum">
         <h1 className="titleHero"> Fórum </h1>
       </div>
+      <hr className="docHr " />
       <div className="botoes-forum mt-5">
-        <button className="btn botao-criarForum mb-3">
+        <Link
+          to={`/${country}`}
+          style={{
+            color: "#F7B633",
+            textDecoration: "none",
+            marginLeft: "15vw",
+          }}
+        >
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+        <button className=" botao-criarForum ">
           <Link to={`/${country}/criar-forum`} className="linksTextWhite">
             Criar um novo post
           </Link>
         </button>
       </div>
 
-      <div className="container mt-5 ">
+      <div className="container mt-5 allPage">
         {posts.map((post) => {
           return (
             <Link to={`/${country}/forum/${post._id}`} className="allLinks">
@@ -47,6 +58,7 @@ function AllPosts() {
               >
                 <div className="row no-gutters ">
                   <div className="col-md-2">
+                    <h5 className="card-title mt-4 ml-3">{post.title}</h5>
                     <img
                       src={post.pictureUrl}
                       className="card-img "
@@ -56,18 +68,18 @@ function AllPosts() {
                   </div>
                   <div className="col-md-8">
                     <div className="card-body " style={{ maxHeight: "30vh" }}>
-                      <h5 className="card-title ">{post.title}</h5>
-                      <p className="card-text post-description">
-                        {post.description}
+                      <p className="card-text mt-4 post-description">
+                        Descrição: {post.description}
                       </p>
+                      <p className="card-text">{post.link}</p>
                       <p className="card-text">
-                        <small className="text-muted">{post.tags}</small>
+                        <small className="text-muted">Tag: {post.tags}</small>
                       </p>
-                      <hr className="postHr" />
                     </div>
                   </div>
                 </div>
               </div>
+              <hr className="postHr" />
             </Link>
           );
         })}

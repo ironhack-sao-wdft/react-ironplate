@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
-//import { useHistory } from "react-router";
+import { useHistory, useParams, Link } from "react-router-dom";
+
 import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
@@ -22,20 +22,18 @@ function EditHabitation() {
   const { id, country } = useParams();
   const history = useHistory();
   useEffect(() => {
-    async function fetchEditPost() {
+    async function fetchEditHabitation() {
       try {
         const response = await api.get(`/${country}/moradia/${id}`);
 
         const { _id, ...rest } = response.data;
 
         setState({ ...rest });
-
-        history.push(`/${country}/moradia`);
       } catch (err) {
         console.error(err);
       }
     }
-    fetchEditPost();
+    fetchEditHabitation();
   }, []);
 
   function handleChange(event) {
@@ -87,9 +85,17 @@ function EditHabitation() {
       console.log(err);
     }
   }
+
   return (
-    <div className="container mt-5">
-      <form onSubmit={handleSubmit}>
+    <div className="container mt-5 allPage">
+      <Link
+        to={`/${country}/moradia/${id}`}
+        style={{ color: "#F7B633", textDecoration: "none" }}
+        className="mt-5"
+      >
+        <i class="fas fa-arrow-left"></i> Voltar
+      </Link>
+      <form onSubmit={handleSubmit} className="mt-5">
         <TextInput
           type="text"
           label="Título:"
