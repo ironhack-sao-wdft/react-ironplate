@@ -1,5 +1,4 @@
 /* Seus estilos globais vão aqui */
-<<<<<<< HEAD
 * {
   font-family: sans-serif;
 }
@@ -36,39 +35,6 @@
 .headerBg {
   position: absolute;
   height: 75px;
-=======
-.elefantBlue {
-  background-color: rgb(71, 96, 114);
-}
-.darkerBlue {
-  background-color: rgb(51, 66, 87);
-}
-.yellowTaxi {
-  background-color: rgb(247, 182, 51);
-}
-.darkGrey {
-  background-color: rgb(51, 66, 87);
-}
-.whiteLayer {
-  background-color: rgb(255, 255, 255);
-}
-.margin-footer {
-  margin-bottom: 24vh;
-}
-.container-rotas {
-  margin-bottom: 23vh;
-}
-
-/* .page-wrap {
-  width: 800px;
-  margin: 0 auto;
-} */
-
-/* Header */
-.headerBg {
-  position: absolute;
-  height: 60px;
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
   width: 100vw;
   opacity: 30%;
   background-color: black;
@@ -76,11 +42,8 @@
   margin: 0;
   padding: 0;
 }
-<<<<<<< HEAD
-=======
 
 /* Footer */
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 .nav-mae {
   color: white;
   width: 100vw;
@@ -115,10 +78,9 @@
   height: 40vh;
 }
 
-<<<<<<< HEAD
 .container-rotas {
   margin-bottom: 20vh;
-=======
+}
 .country-title {
   text-decoration: none;
   color: white;
@@ -126,7 +88,6 @@
   position: absolute;
   left: 50%;
   bottom: 20%;
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 }
 
 .login-img {
