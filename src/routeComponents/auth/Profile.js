@@ -29,6 +29,12 @@ function Profile() {
       } catch (err) {
         console.error(err)
       }
+      // try {
+      //   const message = await api.delete('/message/delete')
+      //   setMessages(message.data)
+      // } catch (err) {
+      //   console.error(err)
+      // }
     }
     fetchProfile()
   }, [])
@@ -116,6 +122,21 @@ function Profile() {
                   >
                     Responder
                   </Link>
+                  {/* <div>
+                    <Link
+                      type="submit"
+                      className="btn btn-outline-primary  fadeIn.second"
+                      to={`/message/delete/?id=${message.messengerID}`}
+                      style={{
+                        height: '25px',
+                        width: '110px',
+                        paddingBottom: '10px',
+                        paddingTop: '0px',
+                      }}
+                    >
+                      Deletar
+                    </Link>
+                  </div> */}
                 </div>
               </div>
             )
