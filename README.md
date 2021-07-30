@@ -27,7 +27,7 @@ Responsive design is not a requirement.
 - [Priscila Veras](https://github.com/PriscilaVeras)
 
 # Server Respository:
-Link(https://github.com/filipefcintra/finalproject)
+[Link](https://github.com/filipefcintra/finalproject)
 
 # Deploy:
 [Link](https://mala-cuia.netlify.app/)
