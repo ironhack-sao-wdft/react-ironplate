@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
 import TextInput from "../../components/TextInput";
@@ -12,11 +12,11 @@ function Signup(props) {
     country: "",
     city: "",
   });
-  const [errors, setErrors] = useState(null);
+  const [error, setError] = useState(null);
 
   function handleChange(event) {
     if (event.target.files) {
-      setState({
+      return setState({
         ...state,
         [event.currentTarget.name]: event.currentTarget.files[0],
       });
@@ -31,8 +31,8 @@ function Signup(props) {
   async function handleFileUpload(file) {
     const uploadData = new FormData();
 
-    uploadData.append("profilePictureUrl", file);
-
+    uploadData.append("profilePicture", file);
+    console.log(uploadData);
     const response = await api.post("/upload", uploadData);
 
     return response.data.url;
@@ -42,11 +42,12 @@ function Signup(props) {
     event.preventDefault();
 
     try {
-      const profilePicture = await handleFileUpload(state.profilePictureUrl);
-
+      const uploadImageProfile = await handleFileUpload(
+        state.profilePictureUrl
+      );
       const response = await api.post("/signup", {
         ...state,
-        profilePicture,
+        profilePictureUrl: uploadImageProfile,
       });
       setState({
         name: "",
@@ -56,88 +57,109 @@ function Signup(props) {
         country: "",
         city: "",
       });
-      setErrors(null);
+      setError(null);
       props.history.push("/auth/login");
     } catch (err) {
       console.error(err.response);
-      //setErrors({ ...err.response.data.errors });
+      // setError(err.response.data.error);
     }
   }
   console.log(state);
 
   return (
-    <div className="container mt-5">
-      <form onSubmit={handleSubmit}>
-        <h1>Cadastro</h1>
+    <div className="allPage">
+      <div className="heroImageSignup">
+        <h1 className="titleHero">Signup</h1>
+        <hr className="docHr mt-5" />
 
-        <TextInput
-          type="text"
-          label="Nome"
-          name="name"
-          value={state.name}
-          error={errors}
-          onChange={handleChange}
-          required
-        />
+        <Link
+          to={`/`}
+          style={{
+            color: "#F7B633",
+            textDecoration: "none",
+            marginLeft: "15vw",
+          }}
+        >
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+      </div>
+      <div className="container mt-5 margin-footer">
+        <form onSubmit={handleSubmit}>
+          <h1 className="mt-5">Cadastro</h1>
 
-        <TextInput
-          type="email"
-          label="E-mail"
-          name="email"
-          value={state.email}
-          error={errors}
-          onChange={handleChange}
-          required
-        />
+          <TextInput
+            type="text"
+            label="Nome"
+            name="name"
+            value={state.name}
+            error={error}
+            onChange={handleChange}
+            required
+          />
 
-        <TextInput
-          type="password"
-          label="Senha"
-          name="password"
-          value={state.password}
-          error={errors}
-          onChange={handleChange}
-          required
-        />
+          <TextInput
+            type="email"
+            label="E-mail"
+            name="email"
+            value={state.email}
+            error={error}
+            onChange={handleChange}
+            required
+          />
 
-        <TextInput
-          type="country"
-          label="País"
-          name="country"
-          value={state.country}
-          error={errors}
-          onChange={handleChange}
-          required
-        />
+          <TextInput
+            type="password"
+            label="Senha"
+            name="password"
+            value={state.password}
+            error={error}
+            onChange={handleChange}
+            required
+          />
 
-        <TextInput
-          type="city"
-          label="Cidade"
-          name="city"
-          value={state.city}
-          error={errors}
-          onChange={handleChange}
-          required
-        />
-        <TextInput
-          type="file"
-          label="Foto"
-          name="profilePictureUrl"
-          value={state.profilePictureUrl}
-          error={errors}
-          onChange={handleChange}
-        />
+          <TextInput
+            type="country"
+            label="País"
+            name="country"
+            value={state.country}
+            error={error}
+            onChange={handleChange}
+            required
+          />
 
-        <div>
-          <button className="btn btn-primary mt-3" type="submit">
-            Cadastrar
-          </button>
+          <TextInput
+            type="city"
+            label="Cidade"
+            name="city"
+            value={state.city}
+            error={error}
+            onChange={handleChange}
+            required
+          />
+          <TextInput
+            type="file"
+            label="Foto do Perfil"
+            name="profilePictureUrl"
+            error={error}
+            onChange={handleChange}
+          />
 
-          <Link to="/auth/login">
-            Já tem uma conta? Clique aqui para entrar.
-          </Link>
-        </div>
-      </form>
+          {error ? <div className="alert alert-danger">{error}</div> : null}
+          <div>
+            <button
+              type="submit"
+              className="btn yellowTaxi mt-3"
+              style={{ color: "white" }}
+            >
+              Cadastrar
+            </button>
+
+            <Link to="/auth/login" className="ml-4">
+              Já tem uma conta? Clique aqui para entrar.
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 export default function CardInfos(props) {
+  console.log("oi");
   return (
     <div className="row no-gutters">
       <div className="col-md-4">
