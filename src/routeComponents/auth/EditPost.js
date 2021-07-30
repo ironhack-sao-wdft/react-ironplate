@@ -1,9 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import api from "../../apis/api";
+import { useParams } from "react-router-dom";
 
 import { AuthContext } from "../../contexts/authContext";
 
-function NewPost(props) {
+function EditPost(props) {
   const authContext = useContext(AuthContext);
 
   const [state, setState] = useState({
@@ -22,34 +23,53 @@ function NewPost(props) {
     cons: null,
     image: null,
   });
-
-  function handleChange(event) {
-    if (event.target.files) {
-      return setState({
-        ...state,
-        [event.currentTarget.name]: event.currentTarget.files[0],
-      });
+  const { id } = useParams();
+  useEffect(() => {
+    async function fetchPost() {
+      try {
+        const post = await api.get(`/post/${id}`);
+        setState({
+          ...post.data,
+          //   title: post.data.title,
+          //   content: post.data.content,
+          //   tripCost: post.data.tripCost,
+          //   pros: post.data.pros,
+          //   cons: post.data.cons,
+          //   image: post.data.image,
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
+    fetchPost();
+  }, []);
+  function handleChange(event) {
+    // if (event.target.files) {
+    //   return setState({
+    //     ...state,
+    //     [event.currentTarget.name]: //event.currentTarget.files[0],
+    //   });
+    // }
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
 
-  async function handleFileUpload(file) {
-    const uploadData = new FormData();
-    uploadData.append("image", file);
-    const response = await api.post("/image-post-upload", uploadData);
-    return response.data.url;
-  }
+  //   async function handleFileUpload(file) {
+  //     const uploadData = new FormData();
+  //     uploadData.append("image", file);
+  //     const response = await api.post("/image-post-upload", uploadData);
+  //     return response.data.url;
+  //   }
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const imageUrl = await handleFileUpload(state.image);
+      //   const imageUrl = await handleFileUpload(state.image);
 
-      const response = await api.post("/post", { ...state, image: imageUrl });
+      const response = await api.put(`/post/${id}`, { ...state });
       console.log(response);
 
       setErrors({
@@ -60,7 +80,7 @@ function NewPost(props) {
         cons: "",
         image: "",
       });
-      props.history.push("/");
+      props.history.push("/post");
     } catch (err) {
       console.error(err);
       setErrors({ ...err.response });
@@ -70,7 +90,7 @@ function NewPost(props) {
   return (
     <div style={{ backgroundColor: "#fffdf0" }}>
       <form className="container md-me-5 mt-5" onSubmit={handleSubmit}>
-        <h1 className="pt-4">Novo Post</h1>
+        <h1 className="pt-4">Editar Post</h1>
         <hr />
 
         <div className="form-group mt-4">
@@ -143,7 +163,7 @@ function NewPost(props) {
           />
         </div>
 
-        <div className="mt-3">
+        {/*<div className="mt-3">
           <label htmlFor="postFormImage">Imagem:</label>
           <input
             className="ml-2"
@@ -153,11 +173,11 @@ function NewPost(props) {
             error={errors.image}
             onChange={handleChange}
           />
-        </div>
+  </div>*/}
 
         <div className="mt-3 pb-5">
           <button className="btn btn-primary mt-2" type="submit">
-            Publicar
+            Concluir
           </button>
         </div>
       </form>
@@ -165,4 +185,4 @@ function NewPost(props) {
   );
 }
 
-export default NewPost;
+export default EditPost;

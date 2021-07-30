@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
 
+
 function EditProfile(props) {
   const [state, setState] = useState({
     name: "",
@@ -14,6 +15,7 @@ function EditProfile(props) {
     lastName: null,
     image: null,
   });
+
   useEffect(() => {
     async function fetchUser() {
       try {
