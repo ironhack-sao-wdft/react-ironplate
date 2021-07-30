@@ -62,19 +62,26 @@ function Home() {
           </p>
         </div>
 
-        <div style={{ marginTop: "25vh", marginBottom: "15vh" }}>
+        <div
+          style={{
+            marginTop: "25vh",
+            marginBottom: "15vh",
+            marginLeft: "5vw",
+            marginRight: "10vw",
+          }}
+        >
           <h5 className="mb-5 mx-3 mt-5 ml-5" style={{ textAlign: "left" }}>
             Escolha o país:
           </h5>
 
           <div className="d-flex flex-row justify-content-center page-wrap mt-5">
             <Link className="col-4" to="/alemanha">
-              <h5 className="country-title align-self-end ">Alemanha</h5>
+              <h5 className="country-title">Alemanha</h5>
               <img src={alemanha} className="country-img" alt="..." />
             </Link>
 
             <Link className="col-4" to="/portugal">
-              <h5 className="align-self-end country-title">Portugal</h5>
+              <h5 className="country-title">Portugal</h5>
               <img src={portugal} className="country-img" alt="..." />
             </Link>
 
