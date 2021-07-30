@@ -18,7 +18,7 @@ function UsersCard(props) {
                 style={{ width: '50px' }}
                 alt="The Circle"
               />
-              Autor
+              {props.user.name}
             </Link>
             <div className="cardBody m-3">
               <strong>Nome:</strong>
@@ -28,9 +28,10 @@ function UsersCard(props) {
               <strong>Terapias Certificados:</strong>
               <p className="cardText">{props.user.certificatesTerapies}</p>
               <div>
-                <button
-                  type="button"
+                <Link
+                  type="submit"
                   className="btn btn-outline-primary text-align-center fadeIn.second"
+                  to={`/message/?id=${props.user.userId_sending}`}
                   style={{
                     height: '25px',
                     width: '110px',
@@ -39,7 +40,7 @@ function UsersCard(props) {
                   }}
                 >
                   Mensagem
-                </button>
+                </Link>
               </div>
             </div>
           </div>

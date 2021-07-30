@@ -49,7 +49,7 @@ function Menu() {
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" activeClassName="active" to="/post">
-              Solicitações Trocas
+              Mural Trocas
             </NavLink>
           </li>
           <li className="nav-item">

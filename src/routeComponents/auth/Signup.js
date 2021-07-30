@@ -31,7 +31,7 @@ function Signup(props) {
     try {
       await api.post('/signup', state)
       setError(null)
-      props.history.push('/')
+      props.history.push('/login')
     } catch (err) {
       console.error(err.response)
       setError(err.response.data.error)

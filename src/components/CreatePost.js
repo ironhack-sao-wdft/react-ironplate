@@ -37,14 +37,14 @@ function CreatePost() {
       <h2 className="fadeIn text-center">Envie sua Solicitação</h2>
       <form className="fadeIn.second" onSubmit={handleSubmit}>
         <TextInput
-          label="Digite sua solicitação"
+          label="Digite o título da mensagem"
           type="text"
           value={posting.title}
           name="title"
           onChange={handleChange}
         />
         <TextInput
-          label="Descreva sua solicitação"
+          label="Descreva o motivo da sua solicitação"
           type="text"
           value={posting.description}
           name="description"
