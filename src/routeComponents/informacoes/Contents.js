@@ -8,6 +8,7 @@ export default function Contents() {
 
   const { country } = useParams();
 
+
   useEffect(() => {
     async function fetchContents() {
       try {
