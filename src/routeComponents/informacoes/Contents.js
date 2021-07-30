@@ -15,6 +15,7 @@ export default function Contents() {
   const { country } = useParams();
 
   console.log(country);
+  console.log("oi");
 
   useEffect(() => {
     async function fetchPosts() {
