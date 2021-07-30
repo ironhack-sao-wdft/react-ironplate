@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams, Link } from "react-router-dom";
-
+import { useHistory, useParams } from "react-router-dom";
+//import { useHistory } from "react-router";
 import api from "../../apis/api";
 
 import TextInput from "../../components/TextInput";
@@ -33,37 +33,15 @@ function EditPost() {
   }, []);
 
   function handleChange(event) {
-    if (event.target.files) {
-      return setState({
-        ...state,
-        [event.currentTarget.name]: event.currentTarget.files[0],
-      });
-    }
-
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
-  }
-
-  async function handleFileUpload(file) {
-    const uploadData = new FormData();
-
-    uploadData.append("profilePicture", file);
-
-    const response = await api.post("/upload", uploadData);
-
-    return response.data.url;
+    setState({ ...state, [event.target.name]: event.target.value });
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const uploadImage = await handleFileUpload(state.pictureUrl);
       const response = await api.put(`/${country}/forum/${id}`, {
         ...state,
         tags: state.tags.toLowerCase(),
-        pictureUrl: uploadImage,
       });
       setState({
         title: "",
@@ -79,15 +57,8 @@ function EditPost() {
     }
   }
   return (
-    <div className="container mt-5 allPage">
-      <Link
-        to={`/${country}/forum/${id}`}
-        style={{ color: "#F7B633", textDecoration: "none" }}
-        className="mt-5"
-      >
-        <i class="fas fa-arrow-left"></i> Voltar
-      </Link>
-      <form onSubmit={handleSubmit} className="mt-5">
+    <div className="container mt-5">
+      <form onSubmit={handleSubmit}>
         <TextInput
           type="text"
           label="Título:"
@@ -115,11 +86,11 @@ function EditPost() {
           ]}
         />
         <TextInput
-          label="Imagem"
-          type="file"
+          type="text"
+          label="Url Imagem:"
           name="pictureUrl"
-          id="signupFormPictureUrl"
           onChange={handleChange}
+          value={state.pictureUrl}
         />
 
         <TextInput
@@ -141,11 +112,7 @@ function EditPost() {
         </div>
 
         <div className="form-group">
-          <button
-            className="btn yellowTaxi mt-3"
-            type="submit"
-            style={{ color: "white" }}
-          >
+          <button className="btn btn-primary mt-3" type="submit">
             Enviar
           </button>
         </div>
