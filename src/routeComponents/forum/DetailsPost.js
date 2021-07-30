@@ -11,7 +11,6 @@ function DetailsPost() {
     pictureUrl: "",
     tags: "",
     answersId: [],
-    userId: "",
   });
 
   const [comment, setComment] = useState({
@@ -27,7 +26,6 @@ function DetailsPost() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        //console.log(id);
         const response = await api.get(`/${country}/forum/${id}`);
         setCommentsSize(response.data.answersId.length);
         setPosts({ ...response.data });
@@ -74,17 +72,18 @@ function DetailsPost() {
       const response = await api.delete(
         `/${country}/forum/${commentId}/comments`
       );
-      history.push(`${country}/forum`);
+
+      history.push(`/${country}/forum/${commentId}`);
     } catch (err) {
       console.error(err.response);
     }
   };
 
   return (
-    <div>
+    <div className="allPage">
       <div
         className="container mt-5 "
-        style={{ maxHeight: "50vh", maxWidth: "80vw" }}
+        style={{ maxHeight: "60vh", maxWidth: "90vw" }}
       >
         <Link
           to={`/${country}/forum`}
@@ -101,11 +100,11 @@ function DetailsPost() {
               src={post.pictureUrl}
               className="card-img "
               alt="..."
-              style={{ maxHeight: "20vh" }}
+              style={{ maxHeight: "40vh" }}
             />
           </div>
           <div className="col-md-8">
-            <div className="card-body " style={{ maxHeight: "30vh" }}>
+            <div className="card-body " style={{ maxHeight: "40vh" }}>
               <p>{post.link}</p>
               <p className="card-text post-description">{post.description}</p>
               <p className="card-text">
@@ -141,25 +140,28 @@ function DetailsPost() {
       </div>
       <hr className="docHr" />
 
-      <div className="container mt-5 cardComments">
+      <div className="container mt-3 cardComments">
+        <div className="row">
+          <textarea
+            className="text-area mt-4 col my-1 mr-sm-2"
+            value={comment.description}
+            onChange={handleChange}
+          >
+            {post.answersId}
+          </textarea>
+          <button
+            className="botao mt-5"
+            style={{ backgroundColor: "#1F3C88" }}
+            onClick={handleSubmit}
+          >
+            Comentar
+          </button>
+        </div>
+
         <div>
           <i className="far fa-comments fa-2x iconComment mt-5"></i>
           <h4 className="commentTitle ">Comentários:</h4>
         </div>
-        <textarea
-          className="text-area my-1 mr-sm-2"
-          value={comment.description}
-          onChange={handleChange}
-        >
-          {post.answersId}
-        </textarea>
-        <button
-          className="botao mt-3"
-          style={{ backgroundColor: "#1F3C88" }}
-          onClick={handleSubmit}
-        >
-          Comentar
-        </button>
 
         {post.answersId.map((comentario) => {
           return (
@@ -168,12 +170,6 @@ function DetailsPost() {
                 <div className="col-md-4 mt-4">
                   <div className="col-md-8 ">
                     <div className="card-body  ">
-                      <img
-                        src={comentario.userId.profilePictureUrl}
-                        className="card-img "
-                        alt="..."
-                        style={{ maxHeight: "20vh" }}
-                      />
                       <h5 className="card-title">{comentario.name}</h5>
                       <p className="card-text">{comentario.description}</p>
 

@@ -3,6 +3,12 @@ import { useParams } from "react-router-dom";
 
 import api from "../../apis/api";
 
+/* {
+    category: "",
+    country: "",
+    content: [{ type: "", conteudo: "" }],
+  }*/
+
 export default function Contents() {
   const [contents, setContents] = useState([]);
 
@@ -22,12 +28,14 @@ export default function Contents() {
   }, []);
 
   return (
-    <div className="textDoc">
+    <div className="textDoc allPage">
       <div className="heroImageDoc"></div>
-
-      <h3 className="countryDoc">{contents.country}</h3>
       <hr className="docHr" />
-      <p></p>
+      <div>
+        <p>{contents.category}</p>
+        <h3>{contents.country}</h3>
+        <p>{contents.content[0].conteudo}</p>
+      </div>
     </div>
   );
 }

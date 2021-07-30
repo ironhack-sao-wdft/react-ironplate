@@ -1,14 +1,10 @@
 import { useState } from "react";
 import api from "../../apis/api";
+import { useHistory, useParams, Link } from "react-router-dom";
 
 import TextInput from "../../components/TextInput";
 import SelectInput from "../../components/SelectInput";
 
-<<<<<<< HEAD
-import { useParams } from "react-router-dom";
-
-=======
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
 function AddHabitation() {
   const [state, setState] = useState({
     title: "",
@@ -22,11 +18,9 @@ function AddHabitation() {
     room: "Estúdio",
   });
 
-<<<<<<< HEAD
   const { country } = useParams();
+  const history = useHistory();
 
-=======
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
   function handleChange(event) {
     if (event.target.files) {
       return setState({
@@ -54,11 +48,7 @@ function AddHabitation() {
     event.preventDefault();
     try {
       const uploadImage = await handleFileUpload(state.photo);
-<<<<<<< HEAD
       const response = await api.post(`/${country}/moradia`, {
-=======
-      const response = await api.post("/moradia", {
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
         ...state,
         photo: uploadImage,
       });
@@ -74,106 +64,111 @@ function AddHabitation() {
         price: "",
         room: "",
       });
+
+      history.push(`/${country}/moradia`);
     } catch (err) {
       console.log(err);
     }
   }
   return (
-<<<<<<< HEAD
-    <div className="container mt-5">
-=======
-    <div className="container mt-5 margin-footer">
-      <h1 className="">Cadastre o seu imóvel</h1>
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
-      <form onSubmit={handleSubmit}>
-        <TextInput
-          type="text"
-          label="Título:"
-          name="title"
-          onChange={handleChange}
-          value={state.title}
-        />
-
-        <TextInput
-          type="text"
-          label="Website:"
-          name="website"
-          onChange={handleChange}
-          value={state.website}
-        />
-
-        <SelectInput
-          label="Tipo: "
-          name="type"
-          onChange={handleChange}
-          value={state.type}
-          items={["Apartamento", "Casa", "Quarto", "Loja", "Outro"]}
-        />
-
-        <SelectInput
-          label="Quantidade de quartos: "
-          name="room"
-          onChange={handleChange}
-          value={state.room}
-          items={["Estúdio", "1", "2", "3", "4+"]}
-        />
-
-        <TextInput
-          type="text"
-          label="Preço:"
-          name="price"
-          onChange={handleChange}
-          value={state.price}
-        />
-
-        <TextInput
-          label="Imagem"
-          type="file"
-          name="photo"
-          id="signupFormPhoto"
-          onChange={handleChange}
-        />
-
-        <TextInput
-          type="text"
-          label="Telefone:"
-          name="phone"
-          onChange={handleChange}
-          value={state.phone}
-        />
-        <TextInput
-          type="text"
-          label="E-mail:"
-          name="companyEmail"
-          onChange={handleChange}
-          value={state.companyEmail}
-        />
-
-        <div>
-          <label>Descrição</label>
-          <textarea
-            className="form-control"
-            aria-label="Descrição"
-            name="description"
+    <div className="allPage">
+      <div className="heroImageAddMoradia"></div>
+      <hr className="docHr mt-5" />
+      <div className="container mt-5 ">
+        <Link
+          to={`/${country}/moradia`}
+          style={{ color: "#F7B633", textDecoration: "none" }}
+          className="mt-5"
+        >
+          <i class="fas fa-arrow-left"></i> Voltar
+        </Link>
+        <h1 className="mt-5">Cadastre o seu imóvel</h1>
+        <form onSubmit={handleSubmit}>
+          <TextInput
+            type="text"
+            label="Título:"
+            name="title"
             onChange={handleChange}
-            value={state.description}
-          ></textarea>
-        </div>
+            value={state.title}
+          />
 
-        <div className="form-group">
-<<<<<<< HEAD
-          <button className="btn btn-primary mt-3" type="submit">
-=======
-          <button
-            className="btn yellowTaxi mt-3"
-            type="submit"
-            style={{ color: "white" }}
-          >
->>>>>>> 1763716ba128a3379d7708fb1003ec4a2bfc13b4
-            Enviar
-          </button>
-        </div>
-      </form>
+          <TextInput
+            type="text"
+            label="Website:"
+            name="website"
+            onChange={handleChange}
+            value={state.website}
+          />
+
+          <SelectInput
+            label="Tipo: "
+            name="type"
+            onChange={handleChange}
+            value={state.type}
+            items={["Apartamento", "Casa", "Quarto", "Loja", "Outro"]}
+          />
+
+          <SelectInput
+            label="Quantidade de quartos: "
+            name="room"
+            onChange={handleChange}
+            value={state.room}
+            items={["Estúdio", "1", "2", "3", "4+"]}
+          />
+
+          <TextInput
+            type="text"
+            label="Preço:"
+            name="price"
+            onChange={handleChange}
+            value={state.price}
+          />
+
+          <TextInput
+            label="Imagem"
+            type="file"
+            name="photo"
+            id="signupFormPhoto"
+            onChange={handleChange}
+          />
+
+          <TextInput
+            type="text"
+            label="Telefone:"
+            name="phone"
+            onChange={handleChange}
+            value={state.phone}
+          />
+          <TextInput
+            type="text"
+            label="E-mail:"
+            name="companyEmail"
+            onChange={handleChange}
+            value={state.companyEmail}
+          />
+
+          <div>
+            <label>Descrição</label>
+            <textarea
+              className="form-control"
+              aria-label="Descrição"
+              name="description"
+              onChange={handleChange}
+              value={state.description}
+            ></textarea>
+          </div>
+
+          <div className="form-group">
+            <button
+              className="btn yellowTaxi mt-3"
+              type="submit"
+              style={{ color: "white" }}
+            >
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
