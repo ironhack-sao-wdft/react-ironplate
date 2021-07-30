@@ -26,9 +26,10 @@ Responsive design is not a requirement.
 [Kamila Nita](https://github.com/kamilanitta)
 [Priscila Veras](https://github.com/PriscilaVeras)
 
-# Repositores:
+
 
 # Deploy:
+[Link](https://mala-cuia.netlify.app/)
 
 # Presentation:
 
