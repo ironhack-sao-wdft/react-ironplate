@@ -4,12 +4,12 @@
 <h2>
   Sobre o App:
 </h2>
-<p>TRIPPERS é uma rede social tem como intuito oferecer a troca de informações entre viajantes, a fim de proporcinoar a melhor experiência para todos com o menor custo possível</p>
+<p>TRIPPERS é uma rede social e tem como intuito oferecer a troca de informações entre viajantes, a fim de proporcinoar a melhor experiência para todos com o menor custo possível</p>
 <p><a href="https://docs.google.com/presentation/d/1lyFAsuDIlzkyMOJmZpw1o8sjjkVqsItPatuaOC86g-A/edit?usp=sharing">Apresentação</p>
 <h2>
   Funcionalidades:
 </h2>
-<p>Na aplicação é possível o criar um usuário, inserindo as informações e imagem de perfil, editar o perfil, fazer login e logoff, criar publicações, editar e excluir as mesmas e publicar comentários nas postagens.</p>
+<p>Na aplicação é possível criar um usuário, inserindo as informações e imagem de perfil, editar o perfil, fazer login e logoff, criar publicações, editar e excluir as mesmas e publicar comentários nas postagens.</p>
 <h2>
   Tecnologias utilizadas:
 </h2>
