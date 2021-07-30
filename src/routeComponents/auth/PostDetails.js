@@ -95,7 +95,7 @@ function PostDetails(props) {
                 <div className="card-body">
                   <img
                     src={state.profilePicture}
-                    className="img-fluid rounded-circle mb-2 imagemProfile"
+                    className="img-fluid mb-2 imagemProfile"
                     alt="profile pic"
                     style={{ maxWidth: "50px" }}
                   />
@@ -164,17 +164,19 @@ function PostDetails(props) {
                 ? state.comments.map((comment) => {
                     return (
                       <>
-                        <div className="row">
+                        <div>
+
+
                           <img
-                            src={state.commentUserPhoto}
-                            className="img-fluid rounded-circle mb-2"
+                            src={state.profilePicture}
+                            className=" mb-2 imagemProfile"
                             alt="profile pic"
                             style={{ maxWidth: "50px" }}
                           />
-                          <div>
-                            {state.commentUserName} {state.commentUserLastName}:
-                            <div>{comment.content}</div>
-                          </div>
+                          <strong className="card-title">
+                            {state.commentUserName} {state.commentUserLastName}
+                          </strong>
+                          <div>{comment.content}</div>
 
                           <hr />
                         </div>
