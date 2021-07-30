@@ -41,62 +41,43 @@ export default function DetailsHabitation() {
   };
 
   return (
-    <div className="allPage">
+    <div>
       <div
         className="mt-5 ml-5 "
-        style={{ maxHeight: "90vh", maxWidth: "100vw" }}
+        style={{ maxHeight: "40vh", maxWidth: "60vw" }}
       >
-        <Link
-          to={`/${country}/moradia`}
-          style={{ color: "#F7B633", textDecoration: "none" }}
-        >
-          <i class="fas fa-arrow-left"></i> Voltar
-        </Link>
-
-        <div className="container mt-5">
-          <div className="row no-gutters">
-            <div className="mb-5">
-              <img
-                src={state.photo}
-                className="card-img "
-                alt="..."
-                style={{ maxHeight: "60vh" }}
-              />
-            </div>
-            <div className="col-md-8">
-              <h5 className="card-title ml-5">{state.title}</h5>
-              <hr className="titleHr  " />
-              <div
-                className="card-body ml-5 mb-5"
-                style={{ maxHeight: "60vh" }}
-              >
-                <p className="card-text ">Descrição: {state.description}</p>
-                <p>Aluguel: {state.price}€</p>
-                <p>Categoria: {state.type}</p>
-                <p>Quartos: {state.room}</p>
-                <p>Telefone: {state.phone}</p>
-                <p>Website: {state.website}</p>
-                <p>Email: {state.companyEmail}</p>
-              </div>
-            </div>
-
-            <button className="botao " style={{ backgroundColor: "#5893D4" }}>
-              <Link
-                to={`/${country}/editar-moradia/${id}`}
-                className="linksTextWhite"
-              >
-                Editar
-              </Link>
-            </button>
-            <button
-              className="botao ml-2 "
-              style={{ backgroundColor: "#EB4C41" }}
-              onClick={handleHabitationDelete}
-            >
-              Excluir
-            </button>
+        <div className="row no-gutters">
+          <div className="col-md-3">
+            <img
+              src={state.photo}
+              className="card-img "
+              alt="..."
+              style={{ maxHeight: "20vh" }}
+            />
           </div>
+          <div className="col-md-8">
+            <div className="card-body " style={{ maxHeight: "30vh" }}>
+              <h5 className="card-title ">{state.title}</h5>
+              <p className="card-text ">Descrição: {state.description}</p>
+              <p>Aluguel: {state.price}€</p>
+              <p>Categoria: {state.type}</p>
+              <p>Quartos: {state.room}</p>
+            </div>
+          </div>
+
+          <button className="btn btn-primary mb-3">
+            <Link
+              to={`/${country}/editar-moradia/${id}`}
+              className="linksTextWhite"
+            >
+              Editar
+            </Link>
+          </button>
+          <button className="btn btn-danger" onClick={handleHabitationDelete}>
+            Excluir
+          </button>
         </div>
+        <hr />
       </div>
     </div>
   );
