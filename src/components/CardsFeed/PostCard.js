@@ -22,7 +22,7 @@ function PostCard(props) {
                 alt="The Circle"
                 style={{ width: '50px', opacity: '100%' }}
               />
-              Autor{props._id}
+              {props.post.userName}
             </Link>
             <div className="cardBody m-3">
               <strong>Título:</strong>
