@@ -25,59 +25,31 @@ function AllHabitation() {
   }, []);
 
   return (
-    <div className="allPage">
-      <div className="heroImageHabitation ">
+    <div>
+      <div className="heroImageHabitation">
         <h1 className="titleHero"> Moradia </h1>
-        <hr className="docHr mt-5" />
-
-        <Link
-          to={`/${country}`}
-          style={{
-            color: "#F7B633",
-            textDecoration: "none",
-            marginLeft: "15vw",
-          }}
-        >
-          <i class="fas fa-arrow-left"></i> Voltar
-        </Link>
-
-        <button className=" mt-4 botao-criarForum ">
-          <Link to={`/${country}/adicionar-moradia`} className="linksTextWhite">
-            Criar uma moradia
-          </Link>
-        </button>
       </div>
 
-      <div className="container-moradia ">
+      <div className="container mt-5">
         {moradias.map((moradia) => {
           return (
-            <Link
-              to={`/${country}/moradia/${moradia._id}`}
-              className="allLinks"
-            >
-              <h4 className="card-title">{moradia.title}</h4>
-              <div className=" mb-3" style={{ maxWidth: "540px" }}>
+            <Link to={`/${country}/moradia/${moradia._id}`}>
+              <div className="card mb-3" style={{ maxWidth: "540px" }}>
                 <div className="row no-gutters">
-                  <div className="col-md-3">
-                    <img
-                      src={moradia.photo}
-                      className="card-img "
-                      alt="..."
-                      style={{ maxHeight: "20vh" }}
-                    />
+                  <div className="col-md-4">
+                    <img src={moradia.photo} className="card-img" alt="..." />
                   </div>
                   <div className="col-md-8">
-                    <div className="card-body " style={{ maxHeight: "30vh" }}>
-                      <p className="card-title ">{moradia.website}</p>
-
-                      <p>Aluguel: {moradia.price}€</p>
-
-                      <p className="card-text">Categoria: {moradia.type}</p>
+                    <div className="card-body">
+                      <h5 className="card-title">{moradia.title}</h5>
+                      <p className="card-text">{moradia.description}</p>
+                      <p className="card-text">
+                        <small className="text-muted">{moradia.price}</small>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              <hr className="moradiaHr" />
             </Link>
           );
         })}

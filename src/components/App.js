@@ -35,7 +35,7 @@ import AllJobs from "../routeComponents/jobs/AllJobs";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <AuthContextComponent>
         <Switch>
           <div className="container-rotas">
@@ -81,7 +81,6 @@ function App() {
           </div>
         </Switch>
       </AuthContextComponent>
-      <Footer />
     </BrowserRouter>
   );
 }
