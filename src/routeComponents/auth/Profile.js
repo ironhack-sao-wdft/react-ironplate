@@ -92,17 +92,25 @@ function Profile() {
             <div>
               <p>{message.userName_sending}:</p>
               <p>{message.messagebody}</p>
+              <div className="d-flex justify-content-flex-end">
+                <Link
+                  type="submit"
+                  className="btn btn-outline-primary  fadeIn.second"
+                  to={`/message/?id=${message.userId_sending}`}
+                  style={{
+                    height: '25px',
+                    width: '110px',
+                    paddingBottom: '10px',
+                    paddingTop: '0px',
+                  }}
+                >
+                  Responder
+                </Link>
+              </div>
             </div>
           )
         })}
       </p>
-
-      <Link
-        className="btn btn-primary d-flex justify-content-center"
-        to="/api/profile/edit"
-      >
-        Editar Perfil
-      </Link>
     </div>
   )
 }
