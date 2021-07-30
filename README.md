@@ -23,4 +23,4 @@
 </h2>
 <p>
   Entre agora no app e faça seu próprio perfil e publicações!
-  <a href="https://trippers-ironhack.netlify.app//">Confira o app aqui!</a>
+  <a href="https://trippers-ironhack.netlify.app/">Confira o app aqui!</a>
