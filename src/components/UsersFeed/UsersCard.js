@@ -31,7 +31,7 @@ function UsersCard(props) {
                 <Link
                   type="submit"
                   className="btn btn-outline-primary text-align-center fadeIn.second"
-                  to={`/message/?id=${props.user.userId_sending}`}
+                  to={`/message/?id=${props.user._id}`}
                   style={{
                     height: '25px',
                     width: '110px',
