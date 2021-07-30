@@ -53,15 +53,24 @@ function PostDetails(props) {
 
         console.log(postResponse);
 
-        setState({
-          ...postResponse.data,
-          name: postResponse.data.userId.name,
-          lastName: postResponse.data.userId.lastName,
-          profilePicture: postResponse.data.userId.image,
-          commentUserName: postResponse.data.comments[0].userId.name,
-          commentUserLastName: postResponse.data.comments[0].userId.lastName,
-          commentUserPhoto: postResponse.data.comments[0].userId.image,
-        });
+        if (postResponse.data.comments.length > 0) {
+          setState({
+            ...postResponse.data,
+            name: postResponse.data.userId.name,
+            lastName: postResponse.data.userId.lastName,
+            profilePicture: postResponse.data.userId.image,
+            commentUserName: postResponse.data.comments[0].userId.name,
+            commentUserLastName: postResponse.data.comments[0].userId.lastName,
+            commentUserPhoto: postResponse.data.comments[0].userId.image,
+          });
+        } else {
+          setState({
+            ...postResponse.data,
+            name: postResponse.data.userId.name,
+            lastName: postResponse.data.userId.lastName,
+            profilePicture: postResponse.data.userId.image,
+          });
+        }
       } catch (err) {
         console.error(err);
       }
@@ -151,26 +160,28 @@ function PostDetails(props) {
             <strong>Comentários:</strong>
             <hr />
             <div>
-              {state.comments.map((comment) => {
-                return (
-                  <>
-                    <div className="row">
-                      <img
-                        src={state.commentUserPhoto}
-                        className="img-fluid rounded-circle mb-2"
-                        alt="profile pic"
-                        style={{ maxWidth: "50px" }}
-                      />
-                      <div>
-                        {state.commentUserName} {state.commentUserLastName}:
-                        <div>{comment.content}</div>
-                      </div>
+              {state.comments.length
+                ? state.comments.map((comment) => {
+                    return (
+                      <>
+                        <div className="row">
+                          <img
+                            src={state.commentUserPhoto}
+                            className="img-fluid rounded-circle mb-2"
+                            alt="profile pic"
+                            style={{ maxWidth: "50px" }}
+                          />
+                          <div>
+                            {state.commentUserName} {state.commentUserLastName}:
+                            <div>{comment.content}</div>
+                          </div>
 
-                      <hr />
-                    </div>
-                  </>
-                );
-              })}
+                          <hr />
+                        </div>
+                      </>
+                    );
+                  })
+                : null}
             </div>
           </div>
         </div>
