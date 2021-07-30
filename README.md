@@ -22,9 +22,9 @@ Responsive design is not a requirement.
 
 # The developers:
 
-[Filipe Cintra](https://github.com/filipefcintra)
-[Kamila Nita](https://github.com/kamilanitta)
-[Priscila Veras](https://github.com/PriscilaVeras)
+- [Filipe Cintra](https://github.com/filipefcintra)
+- [Kamila Nita](https://github.com/kamilanitta)
+- [Priscila Veras](https://github.com/PriscilaVeras)
 
 
 
