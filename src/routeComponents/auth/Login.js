@@ -7,7 +7,11 @@ import { AuthContext } from "../../contexts/authContext";
 function Login(props) {
   const authContext = useContext(AuthContext);
 
-  const [state, setState] = useState({ password: "", email: "" });
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -25,7 +29,7 @@ function Login(props) {
 
     try {
       const response = await api.post("/login", state);
-      console.log(response);
+      // console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
@@ -33,49 +37,64 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+      props.history.push("/feed");
     } catch (err) {
-      console.error(err.response);
+      console.error(err);
       setErrors({ ...err.response.data.errors });
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div style={{ backgroundColor: "#fffdf0" }}>
+      <form className="container md-me-5 mt-5" onSubmit={handleSubmit}>
+        <h1 className="pt-4">Login</h1>
+        <hr />
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group mt-4">
+          <label htmlFor="signupFormEmail" className="form-label mt-3">
+            E-mail
+          </label>
+          <input
+            className="form-control"
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            placeholder="Seu e-mail aqui"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="form-group mt-4">
+          <label htmlFor="signupFormPassword" className="form-label">
+            Senha
+          </label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            placeholder="********"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <button type="submit">Login!</button>
+        <div className="form-group mt-4">
+          <button className="btn btn-primary" type="submit">
+            Entrar
+          </button>
+        </div>
 
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
-      </div>
-    </form>
+        <div className="mt-3 pb-5">
+          <Link to="/auth/signup">
+            Não possui uma conta? Clique aqui para criar.
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
 
