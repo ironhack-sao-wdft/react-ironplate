@@ -11,12 +11,12 @@ Por isso foi criado com base em nossas habilidades com back-end e front-end, par
 ]
 ## Link do Site:
 
-(https://thecircle-network.netlify.app/)
+[The Circle](https://thecircle-network.netlify.app/)
 
 
 ## Mais sobre nosso projeto:
 
-(https://docs.google.com/presentation/d/1JTr2w3lk3iQj8CIOkSuuMey4bxR5dQnYv_cYHDoMMRU/edit#slide=id.gc6f80d1ff_0_36)
+[Slides](https://docs.google.com/presentation/d/1JTr2w3lk3iQj8CIOkSuuMey4bxR5dQnYv_cYHDoMMRU/edit#slide=id.gc6f80d1ff_0_36)
 
 Happy coding! 💙
 # the-circle-front-end
