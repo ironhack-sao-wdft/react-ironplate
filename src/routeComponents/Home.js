@@ -19,10 +19,10 @@ function Home() {
         alt="The Circle"
         style={{ padding: '50px' }}
       />
-      <h1 className="fadeIn fadeIn.second fadeInDown">
+      <h1 className="fadeIn fadeIn.second fadeInDown" style={{ fontSize: '55px'}}>
         Rede Social The Circle
       </h1>
-      <p>Cadastre-se em nossa rede abaixo</p>
+      <p style={{ marginTop: '30px' , fontSize: '22px'}}>Cadastre-se em nossa rede abaixo</p>
       <div className="d-flex flex-column align-items-center">
         <Link className="btn btn-lg btn-primary fadeInDown" to="/signup">
           Cadastre-se!

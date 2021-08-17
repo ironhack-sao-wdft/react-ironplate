@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-import LogoCircle from '../../assets/images/logo-thecircle-removebg.png'
 import '../../assets/styles/transp-back.css'
 
 function PostCard(props) {
@@ -17,12 +16,14 @@ function PostCard(props) {
         >
           <div className="card h-100  postcards fadeIn.first fadeInDown">
             <Link to={`/allusers/${props._id}`}>
-              <img
-                src={LogoCircle}
-                alt="The Circle"
-                style={{ width: '50px', opacity: '100%' }}
-              />
-              {props.post.userName}
+            <div style={{display: 'flex', justifyContent:'center', padding:'10px'}}>
+            <img
+             className="img-fluid rounded-circle"
+             src={props.post.profilePictureUrl}
+             alt="Sua foto de perfil"
+             style={{marginBottom: '15px'}}
+            />
+            </div>    
             </Link>
             <div className="cardBody m-3">
               <strong>Título:</strong>
@@ -33,7 +34,7 @@ function PostCard(props) {
               <p className="cardText">{props.post.description}</p>
               <strong>Quero Trocar:</strong>
               <p className="cardText">{props.post.terapiesfinding}</p>
-              <div>
+              <div style={{display: 'flex', justifyContent: 'center'}}>
                 <Link
                   type="submit"
                   className="btn btn-outline-primary text-align-center fadeIn.second"

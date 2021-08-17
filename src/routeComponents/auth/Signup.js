@@ -14,22 +14,45 @@ function Signup(props) {
     certificatesTerapies: '',
     age: '',
     phoneNumber: '',
+    profilePicture: "",
   })
 
   const [error, setError] = useState(null)
 
   function handleChange(event) {
+
+    if (event.target.files) {
+      return setState({
+        ...state,
+        [event.currentTarget.name]: event.currentTarget.files[0],
+      });
+    }
+
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
-    })
+    });
+  }
+
+  async function handleFileUpload(file) {
+
+    const uploadData = new FormData();
+
+    uploadData.append("profilePicture", file);
+
+    const response = await api.post('/upload', uploadData);
+
+    return response.data.url;
   }
 
   async function handleSubmit(event) {
     event.preventDefault()
 
     try {
-      await api.post('/signup', state)
+
+      const profilePictureUrl = await handleFileUpload(state.profilePicture);
+
+      await api.post('/signup', {...state, profilePictureUrl});
       setError(null)
       props.history.push('/login')
     } catch (err) {
@@ -38,11 +61,13 @@ function Signup(props) {
     }
   }
 
+  console.log(state);
+
   return (
     <form onSubmit={handleSubmit}>
       <div
         className="container white-box fadeInDown"
-        style={{ maxWidth: '400px' }}
+        style={{ maxWidth: '400px'}}
       >
         <h1
           className="signup-title d-flex justify-content-center fadeIn"
@@ -71,6 +96,24 @@ function Signup(props) {
             value={state.age}
             onChange={handleChange}
           />
+
+          <TextInput
+            label="Localização"
+            type="text"
+            name="location"
+            id="signupFormLocation"
+            value={state.location}
+            onChange={handleChange}
+          />
+
+          <TextInput
+            label="Foto do perfil"
+            type="file"
+            name="profilePicture"
+            id="signupFormProfilePicture"
+            onChange={handleChange}
+          />
+
         </fieldset>
 
         <fieldset style={{ color: 'black' }}>
@@ -81,15 +124,6 @@ function Signup(props) {
             name="occupation"
             id="signupFormOccupation"
             value={state.occupation}
-            onChange={handleChange}
-          />
-
-          <TextInput
-            label="Localização"
-            type="text"
-            name="location"
-            id="signupFormLocation"
-            value={state.location}
             onChange={handleChange}
           />
 

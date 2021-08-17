@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import api from '../apis/api'
 
@@ -7,6 +7,7 @@ import TextInput from '../components/TextInput'
 
 function CreatePost() {
   const [posting, setposting] = useState({
+    profilePicture: '',
     title: '',
     description: '',
     terapiesfinding: '',
@@ -23,6 +24,8 @@ function CreatePost() {
 
       const response = await api.post('/post', posting)
 
+      console.log(response)
+
       history.push('/post')
     } catch (err) {
       console.error(err.response.data)
@@ -36,6 +39,15 @@ function CreatePost() {
     >
       <h2 className="fadeIn text-center">Envie sua Solicitação</h2>
       <form className="fadeIn.second" onSubmit={handleSubmit}>
+        
+          <TextInput
+            label="Foto do perfil"
+            type="file"
+            name="profilePicture"
+            id="signupFormProfilePicture"
+            onChange={handleChange}
+          />
+        
         <TextInput
           label="Digite o título da mensagem"
           type="text"
@@ -58,7 +70,7 @@ function CreatePost() {
           onChange={handleChange}
         />
 
-        <div className="form-group">
+        <div className="form-group d-flex justify-content-center">
           <button type="submit" className="btn btn-primary">
             Enviar
           </button>
