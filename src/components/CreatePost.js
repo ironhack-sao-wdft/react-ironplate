@@ -40,14 +40,6 @@ function CreatePost() {
       <h2 className="fadeIn text-center">Envie sua Solicitação</h2>
       <form className="fadeIn.second" onSubmit={handleSubmit}>
         
-          <TextInput
-            label="Foto do perfil"
-            type="file"
-            name="profilePicture"
-            id="signupFormProfilePicture"
-            onChange={handleChange}
-          />
-        
         <TextInput
           label="Digite o título da mensagem"
           type="text"
