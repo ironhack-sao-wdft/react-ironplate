@@ -1,1 +1,24 @@
-/* Seus estilos globais vão aqui */
+.backgroundfix {
+  background-image: url('../images/backparticles.jpg');
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: smaller;
+}
+.white-box {
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 24px 32px;
+  margin-top: 32px;
+}
+
+legend {
+  color: black;
+  font-weight: 500;
+}
