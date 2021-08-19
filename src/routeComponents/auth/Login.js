@@ -1,82 +1,91 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
-import api from "../../apis/api";
-
-import { AuthContext } from "../../contexts/authContext";
+import '../../assets/styles/index.css'
+import '../../assets/styles/transp-back.css'
+import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import api from '../../apis/api'
+import { AuthContext } from '../../contexts/authContext'
+import TextInput from '../../components/TextInput'
 
 function Login(props) {
-  const authContext = useContext(AuthContext);
+  const authContext = useContext(AuthContext)
 
-  const [state, setState] = useState({ password: "", email: "" });
-  const [errors, setErrors] = useState({
-    email: null,
-    password: null,
-  });
+  const [state, setState] = useState({ password: '', email: '' })
+  const [error, setError] = useState(null)
 
   function handleChange(event) {
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
-    });
+    })
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     try {
-      const response = await api.post("/login", state);
-      console.log(response);
+      const response = await api.post('/login', state)
+      console.log(response)
 
-      authContext.setLoggedInUser({ ...response.data });
-      localStorage.setItem(
-        "loggedInUser",
-        JSON.stringify({ ...response.data })
-      );
-      setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+      authContext.setLoggedInUser({ ...response.data })
+      localStorage.setItem('loggedInUser', JSON.stringify({ ...response.data }))
+      setError(null)
+
+      props.history.push('/profile')
     } catch (err) {
-      console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      console.log({ err })
+      setError(err.message)
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <form className="fadeIn" onSubmit={handleSubmit}>
+      <div
+        style={{ maxWidth: '400px', color: 'black' }}
+        className="container white-box fadeInDown"
+      >
+        <h1 className="d-flex justify-content-center mb-5 fadeIn.second">
+          Login
+        </h1>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
+        <TextInput
+          style={{
+            color: 'black',
+          }}
+          className="loginbox"
+          label="E-mail"
           type="email"
           name="email"
           id="signupFormEmail"
           value={state.email}
-          error={errors.email}
           onChange={handleChange}
         />
-      </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
+        <TextInput
+          style={{
+            color: 'black',
+          }}
+          label="Senha"
           type="password"
           name="password"
           id="signupFormPassword"
           value={state.password}
-          error={errors.password}
           onChange={handleChange}
         />
-      </div>
 
-      <div>
-        <button type="submit">Login!</button>
+        {error ? <div className="alert alert-danger">{error}</div> : null}
 
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
+        <div className="d-flex justify-content-center mt-5 mb-4">
+          <button className="btn btn-primary" type="submit">
+            Entrar!
+          </button>
+        </div>
+
+        <Link className="d-flex justify-content-center" to="/signup">
+          Não possui uma conta ainda? Clique aqui para se cadastrar!
         </Link>
       </div>
     </form>
-  );
+  )
 }
 
-export default Login;
+export default Login

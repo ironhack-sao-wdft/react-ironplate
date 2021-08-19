@@ -1,31 +1,22 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+![logo the Circle](https://thecircle-network.netlify.app/static/media/logosemfundo2.891a89c0.png)
 
-# React IronPlate
+# Sobre o site The Circle
 
-Esse boilerplate já inclui:
+Decidimos criar uma rede social, onde pessoas, terapeutas e afins, possam realizar suas trocas de terapias ou serviços. Afim de que troquem suas experiências, terapias e outras habilidades, contribuindo uns com os outros. Desta forma decidimos, em um espaço virtual, criar um "círculo" de pessoas que estejam dispostas em oferecer suas habilidades, mas também receber de outros. Podemos então criar assim, um "círculo" de pessoas realizando, criando e socializando suas habilidades para o bem maior.
 
-- Pré-configuração do Axios para injeção de cabeçalhos de autenticação e BaseURL
-- Context para armazenar state de usuário logado
-- Forms de Login e Signup
-- Roteamento básico
-- Componente de rota protegida
+## Sobre o Projeto:
 
-## Para Começar
+Nosso objetivo é a ajuda mútua, seja de terapeutas recém-formados ou mais experientes, para que possam trocar suas experiências e habilidades como profissionais. "The Circle" surgiu da idéia de dois desenvolvedores, capacitados em enriquecer e contribuir ainda mais com as redes sociais, utilizando a mesma da melhor forma de ajuda mútua.
+Por isso foi criado com base em nossas habilidades com back-end e front-end, para testarmos nossos conhecimentos aprendidos até aqui ao finalizar o curso pela Iron Hack.
+]
+## Link do Site:
 
-- Faça o fork e clone deste repositório
+[The Circle](https://thecircle-network.netlify.app/)
 
-## Instalação
 
-```shell
-$ npm install
-```
+## Mais sobre nosso projeto:
 
-## Deploy no Netlify
-
-1. Faça login no Netlify e selecione seu repositório
-2. Em 'Deploy settings > build command' escreva: CI=false npm run build
-3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
-5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
+[Slides](https://docs.google.com/presentation/d/1JTr2w3lk3iQj8CIOkSuuMey4bxR5dQnYv_cYHDoMMRU/edit#slide=id.gc6f80d1ff_0_36)
 
 Happy coding! 💙
+# the-circle-front-end
