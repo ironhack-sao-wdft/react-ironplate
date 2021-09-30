@@ -1,1 +1,61 @@
-/* Seus estilos globais vão aqui */
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(-45deg, #74e657, #e8d314, #073dd0, #d837e7);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 25vh;
+  align-self: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644), 0 6px 20px 0 rgba(0, 0, 0, 0.377);
+}
+
+.card p{
+    font-size: large;
+}
+
+.card h1 {
+    text-shadow: 2px 2px 5px rgba(83, 83, 83, 0.801);
+  }
+
+form {
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 25vh;
+    margin-left: 25vw;
+    margin-right: 25vw;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644), 0 6px 20px 0 rgba(0, 0, 0, 0.377);
+    display: flex;
+    flex-direction: column;
+  }
+
+  form input{
+    margin-left: 10px;
+  }
+
+  form button{
+    margin-top: 10px;
+  }
