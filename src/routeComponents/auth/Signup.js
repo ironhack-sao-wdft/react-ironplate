@@ -33,7 +33,7 @@ function Signup(props) {
   return (
     <form onSubmit={handleSubmit}>
       <h1>Signup!</h1>
-
+      <br />
       <div>
         <label htmlFor="signupFormName">Name</label>
         <input
@@ -70,13 +70,13 @@ function Signup(props) {
         />
       </div>
 
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/auth/login">
-          Already have an account? Click here to login.
-        </Link>
-      </div>
+      <button className="btn btn-primary btn-lg rounded-pill" type="submit">
+        Signup!
+      </button>
+      <br />
+      <Link to="/auth/login">
+        Already have an account? Click here to login.
+      </Link>
     </form>
   );
 }

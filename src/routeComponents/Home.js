@@ -1,19 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "../assets/styles/index.css";
 
 function Home() {
   return (
-    <div className="text-center">
-      <img
-        src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/84/original/logo-ironhack-blue.png"
-        alt="ironhack logo"
-      />
-      <h1>React IronPlate</h1>
-      <p>This is the homepage</p>
-      <div className="d-flex flex-column align-items-center">
-        <Link className="btn btn-lg btn-primary" to="/auth/signup">
-          Signup here!
-        </Link>
+    <div className="container card">
+      <div className="row p-3">
+        <div className="col">
+          <img
+          className="img-fluid"
+            src="https://res.cloudinary.com/df3hkyurq/image/upload/v1632988947/user_pictures/home_xbg6bm.jpg"
+            alt="cat"
+          />
+        </div>
+        <div className="col d-flex flex-column justify-content-around">
+          {" "}
+          <h1>One moment can change everything.</h1>
+          <p>
+            Have a good trip or better say good trips, good times, good company,
+            good laughs, good days and good nights... May the new be present in
+            your life in a special way, just as you are. And may your
+            adventurous and pioneering spirit scare away any solitude. Life
+            passes and another cycle of life ends, and the good moments are
+            eternalized forever, whether in memory or in a simple photograph!
+          </p>
+        </div>
       </div>
     </div>
   );
