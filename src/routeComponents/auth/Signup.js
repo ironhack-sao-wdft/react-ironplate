@@ -31,6 +31,7 @@ function Signup(props) {
   }
 
   return (
+    <div className="container d-flex justify-content-center align-itens-center">
     <form onSubmit={handleSubmit}>
       <h1>Signup!</h1>
       <br />
@@ -79,6 +80,7 @@ function Signup(props) {
       </Link>
       <br/>
     </form>
+    </div>
   );
 }
 
