@@ -41,7 +41,8 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="container d-flex justify-content-center align-itens-center">
+<form onSubmit={handleSubmit}>
       <h1>Login</h1>
       <br />
       <div>
@@ -75,6 +76,8 @@ function Login(props) {
       </Link>
       <br/>
     </form>
+    </div>
+    
   );
 }
 

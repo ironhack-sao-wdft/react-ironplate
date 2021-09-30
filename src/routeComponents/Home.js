@@ -4,10 +4,10 @@ import "../assets/styles/index.css";
 function Home() {
   return (
     <div className="container card">
-      <div className="row p-3">
-        <div className="col">
+      <div className="row p-3 d-flex justify-content-around flex-wrap">
+        <div className="col p-0">
           <img
-            className="img-fluid"
+            className="img-fluid rounded "
             src="https://res.cloudinary.com/df3hkyurq/image/upload/v1632988947/user_pictures/home_xbg6bm.jpg"
             alt="cat"
           />
