@@ -73,6 +73,7 @@ function Login(props) {
       <Link to="/auth/signup">
         Don't have an account? Click here to signup!
       </Link>
+      <br/>
     </form>
   );
 }

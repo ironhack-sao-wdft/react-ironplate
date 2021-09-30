@@ -77,6 +77,7 @@ function Signup(props) {
       <Link to="/auth/login">
         Already have an account? Click here to login.
       </Link>
+      <br/>
     </form>
   );
 }
