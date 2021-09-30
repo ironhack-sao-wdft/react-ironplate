@@ -7,13 +7,12 @@ function Home() {
       <div className="row p-3">
         <div className="col">
           <img
-          className="img-fluid"
+            className="img-fluid"
             src="https://res.cloudinary.com/df3hkyurq/image/upload/v1632988947/user_pictures/home_xbg6bm.jpg"
             alt="cat"
           />
         </div>
         <div className="col d-flex flex-column justify-content-around">
-          {" "}
           <h1>One moment can change everything.</h1>
           <p>
             Have a good trip or better say good trips, good times, good company,
