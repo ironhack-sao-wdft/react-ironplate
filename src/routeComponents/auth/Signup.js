@@ -29,11 +29,6 @@ function Signup(props) {
         [event.target.name]: event.target.value,
       });
     }
-  
-    //TESTE --------------------------------------------------------------------------------------------------------
-    console.log(event.target.files);
-    console.log(state);
-    //--------------------------------------------------------------------------------------------------------------
   }
 
   async function handleUpload(file) {

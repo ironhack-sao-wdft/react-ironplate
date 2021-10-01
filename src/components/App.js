@@ -4,6 +4,7 @@ import Home from "../routeComponents/Home";
 import AuthRouter from "../routeComponents/auth/AuthRouter";
 import { AuthContextComponent } from "../contexts/authContext";
 import Navbar from "./Navbar"
+import Post from "./Post"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
+          <Route path="/book/all" component={Post}/>
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
