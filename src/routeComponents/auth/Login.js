@@ -41,9 +41,10 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="container d-flex justify-content-center align-itens-center">
+<form onSubmit={handleSubmit}>
       <h1>Login</h1>
-
+      <br />
       <div>
         <label htmlFor="signupFormEmail">E-mail Address</label>
         <input
@@ -55,7 +56,6 @@ function Login(props) {
           onChange={handleChange}
         />
       </div>
-
       <div>
         <label htmlFor="signupFormPassword">Password</label>
         <input
@@ -67,15 +67,17 @@ function Login(props) {
           onChange={handleChange}
         />
       </div>
-
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
-      </div>
+      <button className="btn btn-primary btn-lg rounded-pill" type="submit">
+        Sign in
+      </button>
+      <br />
+      <Link to="/auth/signup">
+        Don't have an account? Click here to signup!
+      </Link>
+      <br/>
     </form>
+    </div>
+    
   );
 }
 
