@@ -1,7 +1,7 @@
 .post {
   border: 1px solid lightgray;
   width: fit-content;
-  margin-bottom: 45px;
+  margin: 15px;
   background-color: #ffffff;
   max-width: 500px;
   margin-left: 30vw; /*aqui*/
@@ -30,6 +30,7 @@
 .post_text {
   padding: 10px;
   text-align: left;
+  line-height:0.5px
 }
 
 .post_comments {
@@ -58,4 +59,12 @@
   color: #6082a3;
   background-color: transparent;
   flex: 0;
+}
+
+.postOverview{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  justify-content: center;
 }
