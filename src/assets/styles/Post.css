@@ -4,10 +4,6 @@
   margin: 15px;
   background-color: #ffffff;
   max-width: 500px;
-  margin-left: 30vw; /*aqui*/
-  margin-right: 30vw; /*aqui*/
-  margin-top:1vw;
-  text-align: center;
 }
 
 .post_image {
@@ -30,7 +26,7 @@
 .post_text {
   padding: 10px;
   text-align: left;
-  line-height:0.5px
+  line-height: 0.5px;
 }
 
 .post_comments {
@@ -61,10 +57,10 @@
   flex: 0;
 }
 
-.postOverview{
+.postOverview {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
 }
