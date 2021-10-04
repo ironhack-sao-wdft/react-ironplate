@@ -33,36 +33,37 @@ function Navbar() {
           id="navbarNav"
         >
           <ul className="navbar-nav">
-          
+            {!loggedInUser.user._id ? (
+              <>
+                <li className="nav-item">
+                  <NavLink className="nav-link active" to="/auth/login">
+                    Login
+                  </NavLink>
+                </li>
 
-            {!loggedInUser.user._id ? (<>
-            <li className="nav-item">
-              <NavLink className="nav-link active" to="/auth/login">
-                Login
-              </NavLink>
-            </li>
+                <li className="nav-item">
+                  <button className="btn btn-warning">
+                    <NavLink to="/auth/signup">
+                      <strong className="text-light">SIGN UP FOR FREE</strong>
+                    </NavLink>
+                  </button>
+                </li>
+              </>
+            ) : null}
 
-            <li className="nav-item">
-              <button className="btn btn-warning">
-                <NavLink to="/auth/signup">
-                  <strong className="text-light">SIGN UP FOR FREE</strong>
-                </NavLink>
-              </button>
-            </li></>) : null}       
+            {loggedInUser.user._id ? (
+              <div>
+                <span className="me-4">Olá, {loggedInUser.user.name}</span>
+                <img
+                  style={{ width: "45px", height: "45px", objectFit: "cover" }}
+                  className="img-fluid rounded-circle ml-3"
+                  src={loggedInUser.user.pictureUrl}
+                  alt="foto"
+                />
+              </div>
+            ) : null}
 
-          {loggedInUser.user._id ? (
-            <div>
-              <span className="me-4">Olá, {loggedInUser.user.name}</span>
-              <img
-                style={{ width: "45px", height: "45px", objectFit: "cover" }}
-                className="img-fluid rounded-circle ml-3"
-                src={loggedInUser.user.pictureUrl}
-                alt="foto"
-              />
-            </div>
-          ) : null}
-
-          {loggedInUser.user._id ? (
+            {loggedInUser.user._id ? (
               <li
                 className="nav-item d-flex align-items-center ml-3"
                 onClick={logout}
@@ -71,22 +72,23 @@ function Navbar() {
                 <span>Sair</span>
               </li>
             ) : null}
-            </ul>
-            {!loggedInUser.user._id ? (
-          <div>
-            <a
-              className="btn"
-              href="https://github.com/Nogueira998/capture-client"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
-                width="30"
-                height="30"
-                className="img-fluid"
-                alt="github"
-              />
-            </a>
-          </div>) : null}
+          </ul>
+          {!loggedInUser.user._id ? (
+            <div>
+              <a
+                className="btn"
+                href="https://github.com/Nogueira998/capture-client"
+              >
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"
+                  width="30"
+                  height="30"
+                  className="img-fluid"
+                  alt="github"
+                />
+              </a>
+            </div>
+          ) : null}
         </div>
       </div>
     </nav>
