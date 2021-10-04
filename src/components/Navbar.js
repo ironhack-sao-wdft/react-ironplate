@@ -30,7 +30,7 @@ function Navbar() {
         </button>
         <div
           className="collapse navbar-collapse justify-content-end"
-          id="navbarNav"
+          id="navbarSupportedContent"
         >
           <ul className="navbar-nav">
             {!loggedInUser.user._id ? (
