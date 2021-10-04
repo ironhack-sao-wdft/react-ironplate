@@ -1,27 +1,89 @@
-import "../assets/Post.css";
+import { useState, useEffect, useContext } from "react";
+import api from "../apis/api";
+import "../assets/styles/Post.css";
 import Avatar from "@material-ui/core/Avatar";
+import LoadingSpinner from "../components/LoadingSpinner";
+import { AuthContext } from "../contexts/authContext";
 
 function Post() {
+  const [postDetails, setPostDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const { loggedInUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const response = await api.get("/sync");
+        setPostDetails([...response.data]);
+        setLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchData();
+  }, []);
+
+  console.log(postDetails);
+
+//WIP
+
   return (
-    <div className="post">
-      <div className="post_header">      <Avatar
-        className="post_avatar"
-        alt="Filipe Diniz"
-        src="/static/images/avatar/1.jpg"
-      />
-      <h6>Username</h6></div>
-
-
-      <img
-        className="post_image"
-        src="https://s2.glbimg.com/sdmrMgmAU3F1tuLyONzprsH4aew=/0x0:695x479/984x0/smart/filters:strip_icc()/s.glbimg.com/po/tt2/f/original/2014/06/16/inteligencia-artificial.jpg"
-        alt="fotoPost"
-      />
-
-      <h6 className="post_text">
-        <strong>Caio Nogueira: </strong>Excelente Post Filipe!
-      </h6>
-    </div>
+    <>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <div className="postOverview">
+          {postDetails.map((obj) => {
+            return (
+              <div key={obj._id} className="post">
+                <div className="post_header">
+                  <Avatar
+                    className="post_avatar"
+                    alt={obj.userOwner[0].name}
+                    src={obj.userOwner[0].pictureUrl}
+                  />
+                  <h6>{obj.userOwner[0].name}</h6>
+                </div>
+                <img className="post_image" src={obj.image} alt="fotoPost" />
+                <h6 className="post_text">
+                  <strong>{obj.userOwner[0].name}:</strong>
+                  {obj.caption}
+                </h6>
+                <div>
+                  {obj.comments.map((comment) => {
+                    return (
+                      <h6 key={comment._id} className="post_text">
+                        <strong>{comment.author}:</strong>
+                        {comment.description}
+                      </h6>
+                    );
+                  })}
+                  {!loggedInUser ? null : (
+                    <form>
+                      <input
+                        type="text"
+                        placeholder="Add a comment..."
+                        value=""
+                        onChange=""
+                      />
+                      <button
+                        disabled=""
+                        className="post__button"
+                        type="submit"
+                        onClick=""
+                      >
+                        Post
+                      </button>
+                    </form>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 }
 

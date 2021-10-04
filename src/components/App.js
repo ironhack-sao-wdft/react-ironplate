@@ -16,7 +16,6 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/auth" component={AuthRouter} />
           <Route path="/book/all" component={Post} />
-          <div className="app"></div>
         </Switch>
       </AuthContextComponent>
     </BrowserRouter>
