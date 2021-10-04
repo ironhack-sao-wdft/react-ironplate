@@ -9,6 +9,10 @@ function Post() {
   const [postDetails, setPostDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const { loggedInUser } = useContext(AuthContext);
+  const [stateComment, setStateComment] = useState({
+    description: "",
+    postId: "",
+  });
 
   useEffect(() => {
     async function fetchData() {
@@ -22,11 +26,46 @@ function Post() {
       }
     }
     fetchData();
-  }, []);
+  }, [setLoading]);
 
-  console.log(postDetails);
+  function handleChange(event) {
+    setStateComment({
+      ...stateComment,
+      [event.target.name]: event.target.value,
+      postId: event.target.id,
+    });
+  }
 
-//WIP
+  async function handleSubmit(event) {
+    try {
+      setLoading(true);
+      const response = await api.post("/addComment", {
+        ...stateComment,
+      });
+      console.log(response.data);
+      // Limpando o formulário após a criação
+      setStateComment({
+        description: "",
+        postId: "",
+      });
+      setLoading(false);
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function handleClickDelete(event) {
+    try {
+      setLoading(true);
+      const response = await api.delete(`/deleteComment/${event.target.id}`);
+      console.log(response.data);
+      setLoading(false);
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   return (
     <>
@@ -56,23 +95,24 @@ function Post() {
                       <h6 key={comment._id} className="post_text">
                         <strong>{comment.author}:</strong>
                         {comment.description}
+                        {loggedInUser.user._id === comment.commentOwner ? (
+                          <button id={comment._id} onClick={handleClickDelete}>
+                            Deletar
+                          </button>
+                        ) : null}
                       </h6>
                     );
                   })}
                   {!loggedInUser ? null : (
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <input
                         type="text"
                         placeholder="Add a comment..."
-                        value=""
-                        onChange=""
+                        onChange={handleChange}
+                        id={obj._id}
+                        name="description"
                       />
-                      <button
-                        disabled=""
-                        className="post__button"
-                        type="submit"
-                        onClick=""
-                      >
+                      <button className="post__button" type="submit">
                         Post
                       </button>
                     </form>
