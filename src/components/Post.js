@@ -1,16 +1,17 @@
-import "../assets/Post.css";
+import "../assets/styles/Post.css";
 import Avatar from "@material-ui/core/Avatar";
 
 function Post() {
   return (
     <div className="post">
-      <div className="post_header"></div>
-      <Avatar
-        className="post_avatar"
-        alt="Filipe Diniz"
-        src="/static/images/avatar/1.jpg"
-      />
-      <h6>Username</h6>
+      <div className="post_header">
+        <Avatar
+          className="post_avatar"
+          alt="Filipe Diniz"
+          src="/static/images/avatar/1.jpg"
+        />
+        <h6>Username</h6>
+      </div>
 
       <img
         className="post_image"
