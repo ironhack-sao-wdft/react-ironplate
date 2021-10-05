@@ -74,6 +74,7 @@ function Post() {
         <LoadingSpinner />
       ) : (
         <div className="postOverview">
+          <i className="fa-solid fa-mug"></i>
           {postDetails.map((obj) => {
             return (
               <div key={obj._id} className="post">
@@ -90,30 +91,37 @@ function Post() {
                   <strong>{obj.userOwner[0].name}:</strong>
                   {obj.caption}
                 </h6>
+                <hr />
                 <div>
                   {obj.comments.map((comment) => {
                     return (
-                      <h6 key={comment._id} className="post_text">
+                      <h6 key={comment._id} className="post_subtext">
                         <strong>{comment.author}:</strong>
                         {comment.description}
                         {loggedInUser.user._id === comment.commentOwner ? (
-                          <button className="btn btn-danger" id={comment._id} onClick={handleClickDelete}>
-                            Deletar
+                          <button
+                            className="btn_delete"
+                            id={comment._id}
+                            onClick={handleClickDelete}
+                          >
+                            <i className="fa-solid fa-trash"></i>
+                            <> Delete </>
                           </button>
                         ) : null}
                       </h6>
                     );
                   })}
                   {!loggedInUser ? null : (
-                    <form onSubmit={handleSubmit}>
+                    <form className="post_comments" onSubmit={handleSubmit}>
                       <input
+                        className="post_form"
                         type="text"
                         placeholder="Add a comment..."
                         onChange={handleChange}
                         id={obj._id}
                         name="description"
                       />
-                      <button className="post__button" type="submit">
+                      <button className="post_button" type="submit">
                         Post
                       </button>
                     </form>
@@ -124,7 +132,7 @@ function Post() {
           }).reverse()}
         </div>
       )}
-      <ImageUpload/>
+      <ImageUpload />
     </>
   );
 }
