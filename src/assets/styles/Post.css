@@ -101,3 +101,7 @@ hr {
 .btn_delete:hover {
   color: rgb(255, 0, 0);
 }
+
+.bottom_rest {
+  height: 80px;
+}
