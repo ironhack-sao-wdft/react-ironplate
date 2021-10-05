@@ -139,14 +139,15 @@ function Post() {
                                 <i className="fa-solid fa-trash"></i>
                                 <> Delete </>
                               </button>
-                              <Button
-                                variant="primary"
+                              <button
+                                className="edit_button"
                                 id={comment._id}
                                 onClick={handleClickEdit}
                                 type="button"
                               >
-                                Edit
-                              </Button>{" "}
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <> Edit </>
+                              </button>
                               <Modal show={show} onHide={handleClose}>
                                 <Modal.Header closeButton>
                                   <Modal.Title>Edit your comment</Modal.Title>
