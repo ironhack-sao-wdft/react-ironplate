@@ -97,8 +97,6 @@ function Post() {
     }
   }
 
-  console.log(stateComment)
-
   return (
     <>
       {loading ? (
