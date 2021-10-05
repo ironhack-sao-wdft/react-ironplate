@@ -75,39 +75,29 @@ function Post() {
   }
 
   async function handleClickEdit(event) {
-    console.log(event.target.id);
-    setShow(true)
-    return (
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Edit you comment</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input
-            type="text"
-            name="description"
-            onChange={handleChange}
-            id={event._id}
-          />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button
-            variant="primary"
-            onClick={handleClickEdit}
-            id={event.postId}
-          >
-            Save Changes
-          </Button>
-          <input value={event._id} />
-        </Modal.Footer>
-      </Modal>
-    );
+    handleShow();
+    setStateComment({
+      ...stateComment,
+      _id: event.target.id,
+    });
   }
 
-  console.log(stateComment);
+  async function handleSubmitEdit() {
+    try {
+      setLoading(true);
+      handleClose()
+      const response = await api.patch(`/editComment/${stateComment._id}`, {
+        description: stateComment.description
+      });
+      console.log(response.data);
+      setLoading(false);
+      window.location.reload();
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  console.log(stateComment)
 
   return (
     <>
@@ -132,44 +122,77 @@ function Post() {
                     <strong>{obj.userOwner[0].name}:</strong>
                     {obj.caption}
                   </h6>
+                  <hr />
                   <div>
                     {obj.comments.map((comment) => {
                       return (
-                        <h6 key={comment._id} className="post_text">
+                        <h6 key={comment._id} className="post_subtext">
                           <strong>{comment.author}:</strong>
                           {comment.description}
                           {loggedInUser.user._id === comment.commentOwner ? (
                             <>
                               <button
-                                className="btn btn-danger"
+                                className="btn_delete"
                                 id={comment._id}
                                 onClick={handleClickDelete}
+                                type="button"
                               >
-                                Delete
+                                <i className="fa-solid fa-trash"></i>
+                                <> Delete </>
                               </button>
-
                               <Button
                                 variant="primary"
                                 id={comment._id}
                                 onClick={handleClickEdit}
+                                type="button"
                               >
                                 Edit
-                              </Button>
+                              </Button>{" "}
+                              <Modal show={show} onHide={handleClose}>
+                                <Modal.Header closeButton>
+                                  <Modal.Title>Edit you comment</Modal.Title>
+                                </Modal.Header>
+                                <Modal.Body>
+                                  <input
+                                    type="text"
+                                    name="description"
+                                    onChange={handleChange}
+                                    id={comment._id}
+                                  />
+                                </Modal.Body>
+                                <Modal.Footer>
+                                  <Button
+                                    variant="secondary"
+                                    onClick={handleClose}
+                                    type="button"
+                                  >
+                                    Close
+                                  </Button>
+                                  <Button
+                                    variant="primary"
+                                    onClick={handleSubmitEdit}
+                                    type="button"
+                                  >
+                                    Save Changes
+                                  </Button>
+                                </Modal.Footer>
+                              </Modal>
                             </>
                           ) : null}
                         </h6>
                       );
                     })}
                     {!loggedInUser ? null : (
-                      <form onSubmit={handleSubmit}>
+                      <form className="post_comments" onSubmit={handleSubmit}>
                         <input
+                          className="post_form"
                           type="text"
                           placeholder="Add a comment..."
                           onChange={handleChange}
                           id={obj._id}
                           name="description"
                         />
-                        <button className="post__button" type="submit">
+                        <button className="post_button" type="submit">
                           Post
                         </button>
                       </form>

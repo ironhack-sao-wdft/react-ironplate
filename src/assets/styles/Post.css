@@ -4,6 +4,7 @@
   margin: 15px;
   background-color: #ffffff;
   max-width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .post_image {
@@ -24,13 +25,38 @@
 }
 
 .post_text {
-  padding: 10px;
+  padding: 15px;
+  padding-top: 20px;
+  padding-bottom: 0px;
   text-align: left;
-  line-height:0.5px
+  line-height: 0.1px;
+  font-size: 17px;
+}
+.post_subtext {
+  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 0px;
+  text-align: left;
+  line-height: 0.1px;
+  font-size: 15px;
+}
+
+hr {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+.post_form {
+  border: none;
+  width: 400px;
 }
 
 .post_comments {
-  padding: 10px;
+  padding: 0;
+  margin-bottom: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  display: inline-block;
+  box-shadow: none;
 }
 
 .post_caption {
@@ -51,16 +77,26 @@
 
 .post_button {
   border: none;
-  border-top: 1px solid lightgray;
-  color: #6082a3;
-  background-color: transparent;
-  flex: 0;
+  color: white;
+  background-color: rgb(72, 75, 255);
+  margin: 10px;
+  border-radius: 5px;
 }
 
-.postOverview{
+.btn_delete {
+  border: none;
+  background-color: transparent;
+  color: rgb(207, 206, 206);
+}
+
+.postOverview {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items:flex-start;
+  align-items: flex-start;
   justify-content: center;
+}
+
+button:hover {
+  color: rgb(255, 0, 0);
 }
