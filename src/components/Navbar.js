@@ -6,7 +6,7 @@ function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between ">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
       <div className="container-fluid">
         <NavLink className="navbar-brand" to="/">
           <img
@@ -55,7 +55,11 @@ function Navbar() {
               <div>
                 <span className="me-4">Olá, {loggedInUser.user.name}</span>
                 <img
-                  style={{ width: "45px", height: "45px", objectFit: "cover" }}
+                  style={{
+                    width: "45px",
+                    height: "45px",
+                    objectFit: "cover",
+                  }}
                   className="img-fluid rounded-circle ml-3"
                   src={loggedInUser.user.pictureUrl}
                   alt="foto"
