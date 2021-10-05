@@ -149,7 +149,7 @@ function Post() {
                               </Button>{" "}
                               <Modal show={show} onHide={handleClose}>
                                 <Modal.Header closeButton>
-                                  <Modal.Title>Edit you comment</Modal.Title>
+                                  <Modal.Title>Edit your comment</Modal.Title>
                                 </Modal.Header>
                                 <Modal.Body>
                                   <input
