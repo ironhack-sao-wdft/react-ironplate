@@ -54,16 +54,21 @@ function ImageUpload() {
           value={state.caption}
           onChange={handleChange}
           className="form_text"
-          placeholder="Add your photo description"
+          placeholder="Add your description"
         />
         <input
           type="file"
           name="image"
+          id="upload"
           onChange={handleChange}
           className="form_file"
         />
+        <label for="fileInput">
+          <i class="fa-solid fa-circle-plus"></i>
+        </label>
         <button type="sumbit" className="form_button">
-          Capture!
+          <i class="fa-solid fa-camera"></i>
+          <> Capture! </>
         </button>
       </form>
     </div>
