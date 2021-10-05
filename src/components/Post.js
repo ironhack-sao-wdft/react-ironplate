@@ -4,6 +4,7 @@ import "../assets/styles/Post.css";
 import Avatar from "@material-ui/core/Avatar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import { AuthContext } from "../contexts/authContext";
+import ImageUpload from "./ImageUpload";
 
 function Post() {
   const [postDetails, setPostDetails] = useState([]);
@@ -96,7 +97,7 @@ function Post() {
                         <strong>{comment.author}:</strong>
                         {comment.description}
                         {loggedInUser.user._id === comment.commentOwner ? (
-                          <button id={comment._id} onClick={handleClickDelete}>
+                          <button className="btn btn-danger" id={comment._id} onClick={handleClickDelete}>
                             Deletar
                           </button>
                         ) : null}
@@ -123,6 +124,7 @@ function Post() {
           })}
         </div>
       )}
+      <ImageUpload/>
     </>
   );
 }
