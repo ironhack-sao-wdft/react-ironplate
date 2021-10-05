@@ -27,15 +27,16 @@ body {
 }
 
 .text-strong {
-  color:black;
-  font-weight:500
+  color: black;
+  font-weight: 500;
 }
 
 .card {
   background-color: white;
   border-radius: 25px;
   margin-top: 25vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644), 0 6px 20px 0 rgba(0, 0, 0, 0.377);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644),
+    0 6px 20px 0 rgba(0, 0, 0, 0.377);
 }
 
 .card p {
@@ -85,4 +86,3 @@ form button {
   margin: 10px;
   height: 30px;
 }
-
