@@ -86,9 +86,9 @@ function Post() {
   async function handleSubmitEdit() {
     try {
       setLoading(true);
-      handleClose()
+      handleClose();
       const response = await api.patch(`/editComment/${stateComment._id}`, {
-        description: stateComment.description
+        description: stateComment.description,
       });
       console.log(response.data);
       setLoading(false);
@@ -203,6 +203,7 @@ function Post() {
             .reverse()}
         </div>
       )}
+      <div className="bottom_rest"></div>
       <ImageUpload />
     </>
   );
