@@ -105,3 +105,13 @@ hr {
 .bottom_rest {
   height: 80px;
 }
+
+.edit_button {
+  border: none;
+  background-color: transparent;
+  color: rgb(207, 206, 206);
+}
+
+.edit_button:hover {
+  color: blue;
+}
