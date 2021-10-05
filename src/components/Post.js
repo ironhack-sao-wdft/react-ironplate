@@ -121,7 +121,7 @@ function Post() {
                 </div>
               </div>
             );
-          })}
+          }).reverse()}
         </div>
       )}
       <ImageUpload/>
