@@ -8,7 +8,6 @@ function Home() {
 
   const { loggedInUser } = useContext(AuthContext);
   const history = useHistory(); 
-  console.log(loggedInUser.user._id)
   
   return (
     <>{loggedInUser.user._id ? <>{history.push("/book/all")}</> : <div className="container card">

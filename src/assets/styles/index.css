@@ -22,8 +22,13 @@ body {
   }
 }
 
-nav strong {
+.text-light {
   text-shadow: 2px 2px 2px black;
+}
+
+.text-strong {
+  color:black;
+  font-weight:500
 }
 
 .card {
