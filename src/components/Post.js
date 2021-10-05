@@ -57,6 +57,7 @@ function Post() {
       window.location.reload();
     } catch (err) {
       console.error(err);
+      window.location.reload();
     }
   }
 
