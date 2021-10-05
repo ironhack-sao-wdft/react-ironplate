@@ -15,7 +15,7 @@ function Home() {
     <div className="row p-3 d-flex justify-content-around flex-wrap">
       <div className="col p-0">
         <img
-          className="img-fluid rounded "
+          className="img-fluid rounded"
           src="https://res.cloudinary.com/df3hkyurq/image/upload/v1632988947/user_pictures/home_xbg6bm.jpg"
           alt="cat"
         />
