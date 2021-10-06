@@ -86,3 +86,12 @@ form button {
   margin: 10px;
   height: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  .cat_photo {
+    max-width: 90vw;
+  }
+  .card {
+    margin-top: 3vh;
+  }
+}
