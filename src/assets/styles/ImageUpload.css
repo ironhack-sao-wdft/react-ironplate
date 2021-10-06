@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+@media only screen and (max-width: 600px) {
+  .form input[type="text"] {
+    width: 35vw;
+  }
+}
+
 .form_text {
   border-radius: 10px;
 }
@@ -19,7 +25,8 @@
   margin-left: 10px;
   background-color: transparent;
   color: black;
-  border: transparent;
+
+  font-size: 20px;
 }
 
 .form_button:hover {
@@ -28,10 +35,11 @@
 
 .form_file {
   color: black;
+  display: none;
 }
 
 i.fa-circle-plus {
   margin: 10px;
   cursor: pointer;
-  font-size: 30px;
+  font-size: 45px;
 }
