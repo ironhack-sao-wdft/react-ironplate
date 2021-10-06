@@ -60,14 +60,16 @@ function ImageUpload() {
           type="file"
           name="image"
           id="upload"
+          value=""
           onChange={handleChange}
           className="form_file"
+          file="Select your photo"
         />
-        <label for="fileInput">
-          <i class="fa-solid fa-circle-plus"></i>
+        <label htmlFor="upload">
+          <i className="fa-solid fa-circle-plus"></i>
         </label>
         <button type="sumbit" className="form_button">
-          <i class="fa-solid fa-camera"></i>
+          <i className="fa-solid fa-camera"></i>
           <> Capture! </>
         </button>
       </form>
