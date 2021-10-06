@@ -8,6 +8,15 @@
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 600px) {
+  .post {
+    max-width: 90vw;
+  }
+  .post_form {
+    max-width: 85vw;
+  }
+}
+
 .post_image {
   width: 100%;
   object-fit: contain;
@@ -114,4 +123,8 @@ hr {
 
 .edit_button:hover {
   color: blue;
+}
+
+.modal_text {
+  width: 100%;
 }
