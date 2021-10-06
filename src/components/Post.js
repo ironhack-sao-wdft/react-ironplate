@@ -145,7 +145,7 @@ function Post() {
                                 onClick={handleClickEdit}
                                 type="button"
                               >
-                                <i class="fa-solid fa-pen-to-square"></i>
+                                <i className="fa-solid fa-pen-to-square"></i>
                                 <> Edit </>
                               </button>
                               <Modal show={show} onHide={handleClose}>
@@ -154,6 +154,7 @@ function Post() {
                                 </Modal.Header>
                                 <Modal.Body>
                                   <input
+                                    className="modal_text"
                                     type="text"
                                     name="description"
                                     onChange={handleChange}
