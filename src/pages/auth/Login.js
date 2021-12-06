@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -12,6 +12,8 @@ function Login(props) {
     email: null,
     password: null,
   });
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setState({
@@ -33,7 +35,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+      navigate("/");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
@@ -71,9 +73,7 @@ function Login(props) {
       <div>
         <button type="submit">Login!</button>
 
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
+        <Link to="/signup">Don't have an account? Click here to signup!</Link>
       </div>
     </form>
   );

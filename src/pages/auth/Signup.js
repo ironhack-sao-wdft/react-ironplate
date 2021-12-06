@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 function Signup(props) {
@@ -9,6 +9,8 @@ function Signup(props) {
     email: null,
     password: null,
   });
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setState({
@@ -23,10 +25,14 @@ function Signup(props) {
     try {
       const response = await api.post("/signup", state);
       setErrors({ name: "", password: "", email: "" });
-      props.history.push("/auth/login");
+      navigate("/login");
     } catch (err) {
-      console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      if (err.response) {
+        console.error(err.response);
+        return setErrors({ ...err.response.data.errors });
+      }
+
+      console.error(err);
     }
   }
 
@@ -73,9 +79,7 @@ function Signup(props) {
       <div>
         <button type="submit">Signup!</button>
 
-        <Link to="/auth/login">
-          Already have an account? Click here to login.
-        </Link>
+        <Link to="/login">Already have an account? Click here to login.</Link>
       </div>
     </form>
   );
