@@ -25,7 +25,7 @@ $ npm install
 1. Faça login no Netlify e selecione seu repositório
 2. Em 'Deploy settings > build command' escreva: CI=false npm run build
 3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
+4. No arquivo `apis/api.js`, preencha a URL do seu servidor Express deployado no objeto `apis`, chave `production`
 5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
 
 Happy coding! 💙
