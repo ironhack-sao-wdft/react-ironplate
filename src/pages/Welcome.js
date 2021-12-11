@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
+import pause from "../assets/styles/pause.png";
 
 export default function Welcome() {
   const props = useSpring({
@@ -9,11 +10,15 @@ export default function Welcome() {
     delay: 200,
   });
   return (
-    <div>
+    <div className="container">
       <animated.div style={props}>
-        <Link style={{ textDecoration: "none" }} to="/">
+        <Link style={{ textDecoration: "none" }} to="/description">
+          <img
+            src={pause}
+            alt="pause symbol"
+            style={{ height: "50px", width: "auto" }}
+          />
           <h1
-            className="container"
             style={{
               fontSize: "70px",
               color: "#FBF8F3",
