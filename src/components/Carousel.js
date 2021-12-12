@@ -1,4 +1,5 @@
 import backgroundcard from "../assets/img/backgroundcard.png";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   return (
@@ -64,13 +65,17 @@ export default function Carousel() {
           <img src={backgroundcard} className="w-100" alt="..." />
           <div className="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
             <h2 className="p-3">where do you want to start?</h2>
-            <button type="button" className="btn btn-light p-3">
-              Create a new account
-            </button>
+            <Link to="/signup">
+              <button type="button" className="btn btn-light p-3">
+                Create a new account
+              </button>
+            </Link>
             <p className="pt-3">or</p>
-            <button type="button" className="btn btn-light p-3">
-              Login an existent account
-            </button>
+            <Link to="/login">
+              <button type="button" className="btn btn-light p-3">
+                Login an existing account
+              </button>
+            </Link>
           </div>
         </div>
       </div>

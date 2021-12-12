@@ -43,39 +43,45 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div className="entry-card m-4 shadow-lg p-1 mb-5">
+      <form onSubmit={handleSubmit}>
+        <div className="p-2">
+          <label htmlFor="signupFormEmail">E-mail: </label>
+          <input
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="p-2">
+          <label htmlFor="signupFormPassword">Password: </label>
+          <input
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/signup">Don't have an account? Click here to signup!</Link>
-      </div>
-    </form>
+        <div className="p-4">
+          <button className="btn btn-light btn-lg" type="submit">
+            Login
+          </button>
+        </div>
+        <div className="p-4">
+          <Link to="/signup" style={{ textDecoration: "none", color: "white" }}>
+            <p>Don't have an account?</p>
+            <p> Click here to signup!</p>
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
 
