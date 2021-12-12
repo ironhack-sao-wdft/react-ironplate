@@ -4,7 +4,8 @@ body {
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Arima Madurai", cursive;
+  font-family: "PT Sans", sans-serif;
+  font-size: 24px;
 }
 
 .container {

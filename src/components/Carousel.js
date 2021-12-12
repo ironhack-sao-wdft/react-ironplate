@@ -6,6 +6,7 @@ export default function Carousel() {
       id="carouselExampleCaptions"
       className="carousel slide m-4 shadow-lg p-1 mb-5"
       data-bs-ride="carousel"
+      data-bs-interval="false"
     >
       <div className="carousel-indicators">
         <button
@@ -32,23 +33,44 @@ export default function Carousel() {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img src={backgroundcard} className="w-100" alt="..." />
-          <div className="carousel-caption">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+          <div className="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+            <h1>
+              welcome to{" "}
+              <span style={{ fontFamily: "Arima Madurai, cursive" }}>
+                PAUSE
+              </span>
+            </h1>
+            <p className="p-5">
+              we are here to help you to take a moment for yourself.
+            </p>
+            <button type="button" className="btn btn-light btn-lg">
+              next
+            </button>
           </div>
         </div>
         <div className="carousel-item">
           <img src={backgroundcard} className="w-100" alt="..." />
-          <div className="carousel-caption">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+          <div className="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+            <p className="pb-5">
+              no matter if you are at home or outdoors, we always have a
+              suggestion for you.
+            </p>
+            <button type="button" className="btn btn-light btn-lg">
+              let's start
+            </button>
           </div>
         </div>
         <div className="carousel-item">
           <img src={backgroundcard} className="w-100" alt="..." />
-          <div className="carousel-caption">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+          <div className="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center">
+            <h2 className="p-3">where do you want to start?</h2>
+            <button type="button" className="btn btn-light p-3">
+              Create a new account
+            </button>
+            <p className="pt-3">or</p>
+            <button type="button" className="btn btn-light p-3">
+              Login an existent account
+            </button>
           </div>
         </div>
       </div>

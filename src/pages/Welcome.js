@@ -4,7 +4,7 @@ import pause from "../assets/styles/pause.png";
 
 export default function Welcome() {
   const props = useSpring({
-    config: { duration: 8000 },
+    config: { duration: 6000 },
     to: { opacity: 1 },
     from: { opacity: 0 },
     delay: 200,
@@ -22,6 +22,8 @@ export default function Welcome() {
             style={{
               fontSize: "70px",
               color: "#FBF8F3",
+              marginTop: "30px",
+              fontFamily: "Arima Madurai, cursive",
             }}
           >
             PAUSE
