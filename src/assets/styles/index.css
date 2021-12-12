@@ -16,6 +16,10 @@ body {
   text-align: center;
 }
 
-.invisible {
+.invisibleAccount {
+  visibility: hidden;
+}
+
+.invisibleClose {
   visibility: hidden;
 }

@@ -1,0 +1,10 @@
+{
+  "name": "Meditation",
+  "creatorName": "PAUSE",
+  "type": "indoors",
+  "duration": 15,
+  "description": "Sit back and relax with some meditation",
+  "instructions": "Find a quiet place inside your house where you can find a comfortable sitting position. Close your eyes and pay attention only to your breathing, relaxing your body with each breath.",
+  "media": "image",
+  "mediaURL": "https://images.unsplash.com/photo-1541795021-f8b60a1a456d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+}
