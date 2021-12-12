@@ -37,51 +37,57 @@ function Signup(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+    <div className="entry-card m-4 shadow-lg p-1 mb-5">
+      <form onSubmit={handleSubmit}>
+        <div className="p-2">
+          <label htmlFor="signupFormName">Name:</label>
+          <input
+            type="text"
+            name="name"
+            id="signupFormName"
+            value={state.name}
+            error={errors.name}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="p-2">
+          <label htmlFor="signupFormEmail">E-mail:</label>
+          <input
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="p-2">
+          <label htmlFor="signupFormPassword">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/login">Already have an account? Click here to login.</Link>
-      </div>
-    </form>
+        <div className="p-4">
+          <button className="btn btn-light btn-lg" type="submit">
+            Signup
+          </button>
+        </div>
+        <div className="p-4">
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            <p>Already have an account?</p>
+            <p> Click here to login.</p>
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
 

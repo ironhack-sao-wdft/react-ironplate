@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
-import pause from "../assets/img/pause.png";
+import logo from "../assets/img/logo.svg";
 
 export default function Welcome() {
   const props = useSpring({
@@ -14,7 +14,7 @@ export default function Welcome() {
       <animated.div style={props}>
         <Link style={{ textDecoration: "none" }} to="/description">
           <img
-            src={pause}
+            src={logo}
             alt="pause symbol"
             style={{ height: "50px", width: "auto" }}
           />
