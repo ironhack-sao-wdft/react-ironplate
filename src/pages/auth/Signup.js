@@ -83,7 +83,7 @@ function Signup(props) {
         <div className="p-4">
           <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
             <p>Already have an account?</p>
-            <p> Click here to login.</p>
+            <p> Click here to login!</p>
           </Link>
         </div>
       </form>
