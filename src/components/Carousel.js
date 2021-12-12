@@ -1,4 +1,4 @@
-import backgroundcard from "../assets/styles/backgroundcard.png";
+import backgroundcard from "../assets/img/backgroundcard.png";
 
 export default function Carousel() {
   return (

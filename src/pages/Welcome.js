@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
-import pause from "../assets/styles/pause.png";
+import pause from "../assets/img/pause.png";
 
 export default function Welcome() {
   const props = useSpring({
