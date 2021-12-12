@@ -15,3 +15,11 @@ body {
   align-items: center;
   text-align: center;
 }
+
+.invisibleAccount {
+  visibility: hidden;
+}
+
+.invisibleClose {
+  visibility: hidden;
+}
