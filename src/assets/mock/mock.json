@@ -1,10 +1,74 @@
-{
-  "name": "Meditation",
-  "creatorName": "PAUSE",
-  "type": "indoors",
-  "duration": 15,
-  "description": "Sit back and relax with some meditation",
-  "instructions": "Find a quiet place inside your house where you can find a comfortable sitting position. Close your eyes and pay attention only to your breathing, relaxing your body with each breath.",
-  "media": "image",
-  "mediaURL": "https://images.unsplash.com/photo-1541795021-f8b60a1a456d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-}
+[
+  {
+    "id": 43,
+
+    "name": "Meditation",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 15,
+    "description": "Sit back and relax with some meditation",
+    "instructions": "Find a quiet place inside your house where you can find a comfortable sitting position. Close your eyes and pay attention only to your breathing, relaxing your body with each breath.",
+    "media": "image",
+    "mediaURL": "https://images.unsplash.com/photo-1541795021-f8b60a1a456d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  },
+  {
+    "id": 24,
+
+    "name": "Creative Drawing",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 20,
+    "description": "Let your creative juices flow with us",
+    "instructions": "You will need a piece of paper and anything you can mark it with. Inside your house, find somewhere you can put your paper on, like a table or a working desk. Make a beautiful drawing, inspired on something you already know, like a house, a few trees or your favorite celebrity.",
+    "media": "image",
+    "mediaURL": "https://www.candaceroserardon.com/wp-content/uploads/2017/03/IMG_4015-2.jpg"
+  },
+  {
+    "id": 12,
+
+    "name": "Freeform Writing",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 25,
+    "description": "Express yourself with words",
+    "instructions": "You will need a piece of paper and anything you can mark it with.Write about anything you might be feeling at the moment. It can be an entry in a journal, or a piece of poetry.",
+    "media": "image",
+    "mediaURL": "https://img.freepik.com/fotos-gratis/closeup-of-person-writing-in-notebook-at-table_1262-8274.jpg?size=626&ext=jpg"
+  },
+  {
+    "id": 1,
+
+    "name": "Yoga",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 15,
+    "description": "Yoga is a powerful tool for promoting relaxation and wellness, practice some of it with us",
+    "instructions": "In a comfortable and quiet place, where you have room to stretch your body, play our video and follow along with the instructor.",
+    "media": "video",
+    "mediaURL": "https://www.youtube.com/watch?v=zm1fivI4QFE"
+  },
+  {
+    "id": 4,
+
+    "name": "Stretching",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 10,
+    "description": "Stretching a great way to wake up your body and bringing peace of mind",
+    "instructions": "In a comfortable and quiet place, where you have room to stretch your body, play our video and follow along with the instructor.",
+    "media": "video",
+    "mediaURL": "https://www.youtube.com/watch?v=ATXlJ5RPOxI"
+  },
+  {
+    "id": 6,
+
+    "name": "Meditation",
+    "creatorName": "PAUSE",
+    "type": "indoors",
+    "duration": 15,
+    "description": "Sit back and relax with some meditation",
+    "instructions": "Find a quiet place inside your house where you can find a comfortable sitting position. Close your eyes and pay attention only to your breathing, relaxing your body with each breath.",
+    "media": "image",
+    "mediaURL": "https://images.unsplash.com/photo-1541795021-f8b60a1a456d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+  }
+]
