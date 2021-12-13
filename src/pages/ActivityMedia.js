@@ -1,6 +1,6 @@
 import mock from "../assets/mock/mock.json";
 
-export default function ActivityMedia() {
+export default function ActivityMedia(props) {
   const timer = mock.duration;
 
   return (
