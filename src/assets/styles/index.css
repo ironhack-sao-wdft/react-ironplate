@@ -32,3 +32,39 @@ body {
   text-align: center;
   color: #fff;
 }
+
+.home-container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-card-top {
+  background-image: url(../img/card-top.svg);
+  background-size: 270px;
+  background-repeat: no-repeat;
+  height: 270px;
+  width: 270px;
+  margin-bottom: -12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.home-card-bot {
+  background-image: url(../img/card-bot.svg);
+  background-size: 270px;
+  background-repeat: no-repeat;
+  height: 270px;
+  width: 270px;
+  margin-top: -3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}

@@ -35,7 +35,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
