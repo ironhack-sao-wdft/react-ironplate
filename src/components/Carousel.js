@@ -45,7 +45,6 @@ export default function Carousel() {
               we are here to help you to take a moment for yourself.
             </p>
             <button
-              role="button"
               data-bs-slide="next"
               data-bs-target="#carouselExampleCaptions"
               type="button"

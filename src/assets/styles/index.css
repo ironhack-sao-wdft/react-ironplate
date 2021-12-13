@@ -32,3 +32,9 @@ body {
   text-align: center;
   color: #fff;
 }
+
+.activity-card {
+  background-color: #fff;
+  height: 200px;
+  width: 200px;
+}
