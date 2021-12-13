@@ -44,7 +44,13 @@ export default function Carousel() {
             <p className="p-5">
               we are here to help you to take a moment for yourself.
             </p>
-            <button type="button" className="btn btn-light btn-lg">
+            <button
+              role="button"
+              data-bs-slide="next"
+              data-bs-target="#carouselExampleCaptions"
+              type="button"
+              className="btn btn-light btn-lg"
+            >
               next
             </button>
           </div>
@@ -56,7 +62,12 @@ export default function Carousel() {
               no matter if you are at home or outdoors, we always have a
               suggestion for you.
             </p>
-            <button type="button" className="btn btn-light btn-lg">
+            <button
+              type="button"
+              className="btn btn-light btn-lg"
+              data-bs-slide="next"
+              data-bs-target="#carouselExampleCaptions"
+            >
               let's start
             </button>
           </div>
