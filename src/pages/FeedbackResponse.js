@@ -5,7 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 export default function FeedbackResponse(props) {
-  if (props.response !== "bad") {
+  if (props.response === "bad") {
     return (
       <div>
         <Navbar />
