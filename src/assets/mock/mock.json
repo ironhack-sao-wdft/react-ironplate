@@ -19,7 +19,7 @@
     "type": "indoors",
     "duration": 20,
     "description": "Let your creative juices flow with us",
-    "instructions": "You will need a piece of paper and anything you can mark it with. Inside your house, find somewhere you can put your paper on, like a table or a working desk. Make a beautiful drawing, inspired on something you already know, like a house, a few trees or your favorite celebrity.",
+    "instructions": "You will need a piece of paper and anything you can mark it with. Draw anything, inspired on something you already know, like a house, a few trees or your favorite celebrity.",
     "media": "image",
     "mediaURL": "https://www.candaceroserardon.com/wp-content/uploads/2017/03/IMG_4015-2.jpg"
   },
@@ -31,7 +31,7 @@
     "type": "indoors",
     "duration": 25,
     "description": "Express yourself with words",
-    "instructions": "You will need a piece of paper and anything you can mark it with.Write about anything you might be feeling at the moment. It can be an entry in a journal, or a piece of poetry.",
+    "instructions": "You will need a piece of paper and anything you can mark it with. Write about anything you might be feeling at the moment.",
     "media": "image",
     "mediaURL": "https://img.freepik.com/fotos-gratis/closeup-of-person-writing-in-notebook-at-table_1262-8274.jpg?size=626&ext=jpg"
   },
@@ -43,7 +43,7 @@
     "type": "indoors",
     "duration": 15,
     "description": "Yoga is a powerful tool for promoting relaxation and wellness, practice some of it with us",
-    "instructions": "In a comfortable and quiet place, where you have room to stretch your body, play our video and follow along with the instructor.",
+    "instructions": "In a comfortable and quiet place, play our video and follow along with the instructor.",
     "media": "video",
     "mediaURL": "https://www.youtube.com/watch?v=zm1fivI4QFE"
   },
@@ -55,7 +55,7 @@
     "type": "indoors",
     "duration": 10,
     "description": "Stretching a great way to wake up your body and bringing peace of mind",
-    "instructions": "In a comfortable and quiet place, where you have room to stretch your body, play our video and follow along with the instructor.",
+    "instructions": "In a comfortable and quiet place, play our video and follow along with the instructor.",
     "media": "video",
     "mediaURL": "https://www.youtube.com/watch?v=ATXlJ5RPOxI"
   },

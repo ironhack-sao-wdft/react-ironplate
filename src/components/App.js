@@ -8,10 +8,15 @@ import Login from "../pages/auth/Login";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import Welcome from "../pages/Welcome";
 import Description from "../pages/Description";
+import ActivityDetail from "../pages/ActivityDetail";
 import ActivityDescription from "../pages/ActivityDescription";
+<<<<<<< HEAD
+import FeedbackEmoji from "../pages/FeedbackEmoji";
+=======
 import ActivityMedia from "../pages/ActivityMedia";
 import AdminPainel from "../pages/admin/AdminPainel";
 
+>>>>>>> 913d6085abeac250f63b35f2e61dbbbfce2a59cd
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
@@ -25,7 +30,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/activity" element={<ActivityDescription />} />
-        <Route path="/activity/:id" element={<ActivityMedia />} />
+        <Route path="/activity/:id" element={<ActivityDetail />} />
+        <Route path="/feedback" element={<FeedbackEmoji />} />
       </Routes>
     </AuthContextComponent>
   );
