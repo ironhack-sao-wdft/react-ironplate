@@ -11,8 +11,10 @@ import Description from "../pages/Description";
 import ActivityDetail from "../pages/ActivityDetail";
 import ActivityDescription from "../pages/ActivityDescription";
 import FeedbackEmoji from "../pages/FeedbackEmoji";
-import AdminPainel from "../pages/admin/AdminPainel";
 import Profile from "../pages/Profile";
+import ActivityMedia from "../pages/ActivityMedia";
+import AdminPanel from "../pages/admin/AdminPanel";
+import ActivityEdit from "../pages/admin/ActivityEdit";
 
 import { AuthContextComponent } from "../contexts/authContext";
 
@@ -20,7 +22,8 @@ function App() {
   return (
     <AuthContextComponent>
       <Routes>
-        <Route path="/adminpanel" element={<AdminPainel />} />
+        <Route path="/activityedit" element={<ActivityEdit />} />
+        <Route path="/adminpanel" element={<AdminPanel />} />
         <Route path="/home" element={<ProtectedRoute component={Home} />} />
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Welcome />} />
