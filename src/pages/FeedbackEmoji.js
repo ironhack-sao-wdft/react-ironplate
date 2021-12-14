@@ -1,43 +1,112 @@
 import mock from "../assets/mock/mock.json";
+import Navbar from "../components/Navbar";
 import emojiHeartEyes from "../assets/images/emojiHeartEyes.png";
 import emojiHappy from "../assets/images/emojiHappy.png";
 import emojiSad from "../assets/images/emojiSad.png";
+import { useState } from "react";
+import FeedbackResponse from "../components/FeedbackResponse";
 
 export default function FeedbackEmoji() {
   const pauseType = mock.type === "indoors" ? "INDOOR PAUSE" : "OUTDOOR PAUSE";
+  const [response, setResponse] = useState("");
+  const [showResponse, setShowResponse] = useState(false);
 
   return (
     <div>
-      <section>
-        <h2>congratulations!</h2>
-        <p>you just finished your {pauseType}</p>
-      </section>
-      <section>
-        <p>how did that feel like?</p>
-      </section>
-      <section>
-        <div style={{ width: "90px", height: "90px" }}>
-          <img
-            style={{ width: "50px", height: "50px" }}
-            src={emojiHeartEyes}
-            alt="Very good"
-          />
+      <Navbar invisibleAccount={"invisible"} />
+      {!showResponse ? (
+        <div className="d-flex flex-column align-items-center">
+          <div
+            className="mb-4 pb-4 d-flex flex-column align-items-center justify-content-between"
+            style={{
+              backgroundColor: "#FFF9F0",
+              boxShadow: "0px 4px 20px 4px rgba(0, 0, 0, 0.25)",
+              borderRadius: "15px",
+              width: "90%",
+              height: "70vh",
+            }}
+          >
+            <section className="d-flex flex-column justify-content-center align-items-center pt-5 mt-5">
+              <h2
+                className="text-center"
+                style={{ fontSize: "1.85rem", fontWeight: "700" }}
+              >
+                congratulations!
+              </h2>
+              <p className="text-center" style={{ fontSize: "1.85rem" }}>
+                you just finished your {pauseType}.
+              </p>
+            </section>
+            <section>
+              <p style={{ fontSize: "1.85rem" }}>how did that feel like?</p>
+            </section>
+            <section className="d-flex flex-row justify-content-around mb-4">
+              <div
+                onClick={() => {
+                  setResponse("good");
+                  setShowResponse(true);
+                }}
+                className="d-flex justify-content-center align-items-center"
+                style={{
+                  background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
+                  borderRadius: "10px",
+                  width: "23vw",
+                  height: "12.3vh",
+                  boxShadow: "-5px 5px 4px 0px rgba(0, 0, 0, 0.4)",
+                }}
+              >
+                <img
+                  style={{ width: "12vw", height: "7vh", maxWidth: "50px" }}
+                  src={emojiHeartEyes}
+                  alt="Very good"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setResponse("good");
+                  setShowResponse(true);
+                }}
+                className="d-flex justify-content-center align-items-center mx-4"
+                style={{
+                  background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
+                  borderRadius: "10px",
+                  width: "23vw",
+                  height: "12.3vh",
+                  boxShadow: "-5px 5px 4px 0px rgba(0, 0, 0, 0.4)",
+                }}
+              >
+                <img
+                  style={{ width: "12vw", height: "7vh", maxWidth: "50px" }}
+                  src={emojiHappy}
+                  alt="Good"
+                />
+              </div>
+              <div
+                onClick={() => {
+                  setResponse("bad");
+                  setShowResponse(true);
+                }}
+                className="d-flex justify-content-center align-items-center"
+                style={{
+                  background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
+                  borderRadius: "10px",
+                  width: "23vw",
+                  height: "12.3vh",
+                  boxShadow: "-5px 5px 4px 0px rgba(0, 0, 0, 0.4)",
+                }}
+              >
+                <img
+                  style={{ width: "12vw", height: "7vh", maxWidth: "50px" }}
+                  src={emojiSad}
+                  alt="Not good"
+                />
+              </div>
+            </section>
+          </div>
         </div>
-        <div style={{ width: "90px", height: "90px" }}>
-          <img
-            style={{ width: "50px", height: "50px" }}
-            src={emojiHappy}
-            alt="Good"
-          />
-        </div>
-        <div style={{ width: "90px", height: "90px" }}>
-          <img
-            style={{ width: "50px", height: "50px" }}
-            src={emojiSad}
-            alt="Not good"
-          />
-        </div>
-      </section>
+      ) : (
+        <FeedbackResponse response={response} />
+      )}
     </div>
   );
 }
