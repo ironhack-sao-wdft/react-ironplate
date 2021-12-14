@@ -9,7 +9,7 @@ export default function Navbar() {
   const [invisibleClose, setInvisibleClose] = useState("");
 
   return (
-    <div className="my-5 mx-2 d-flex justify-content-between">
+    <div className="m-4 d-flex justify-content-between">
       <div className={`${invisibleAccount}`}>
         {/* <img src={AccountCircle} alt="User account" /> */}
         <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />
