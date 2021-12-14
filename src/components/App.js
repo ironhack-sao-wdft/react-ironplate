@@ -12,7 +12,6 @@ import ActivityDetail from "../pages/ActivityDetail";
 import ActivityDescription from "../pages/ActivityDescription";
 import FeedbackEmoji from "../pages/FeedbackEmoji";
 import Profile from "../pages/Profile";
-import ActivityMedia from "../pages/ActivityMedia";
 import AdminPanel from "../pages/admin/AdminPanel";
 import ActivityEdit from "../pages/admin/ActivityEdit";
 
