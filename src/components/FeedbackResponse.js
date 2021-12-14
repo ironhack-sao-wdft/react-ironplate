@@ -1,8 +1,7 @@
-import Navbar from "./Navbar";
 import emojiPopper from "../assets/images/emojiPopper.png";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "../assets/images/facebookIcon.png";
+import InstagramIcon from "../assets/images/instagramIcon.png";
+import TwitterIcon from "../assets/images/twitterIcon.png";
 
 export default function FeedbackResponse(props) {
   if (props.response === "bad") {
@@ -29,7 +28,7 @@ export default function FeedbackResponse(props) {
           <button
             className="px-5 py-3 mb-4"
             style={{
-              background: "linear-gradient(0deg, #FFF9F0, #FFF9F0);",
+              background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
               border: 0,
               borderRadius: "10px",
               color: "#3A3938",
@@ -54,23 +53,38 @@ export default function FeedbackResponse(props) {
     );
   } else {
     return (
-      <div style={{ color: "#FBF8F3" }}>
-        <section>
-          <img src={emojiPopper} alt="Positive feedback" />
-          <h1>good job!</h1>
-          <p>it's great to hear you enjoyed your PAUSE.</p>
-          <p>how about sharing it with some friends?</p>
+      <div className="" style={{ color: "#FBF8F3" }}>
+        <section className="d-flex flex-column justify-content-center align-items-center text-center py-5 mx-5 px-4">
+          <div>
+            <img
+              style={{ width: "12vw", height: "7vh" }}
+              src={emojiPopper}
+              alt="Positive feedback"
+            />
+          </div>
+          <h1
+            className=" mb-5 pt-3"
+            style={{ fontSize: "1.7rem", fontWeight: "700" }}
+          >
+            good job!
+          </h1>
+          <p style={{ fontSize: "1.5rem" }}>
+            it's great to hear you enjoyed your PAUSE.
+          </p>
+          <p style={{ fontSize: "1.5rem" }}>
+            how about sharing it with some friends?
+          </p>
         </section>
-        <section className="d-flex mx-2 justify-content-between">
-          <button>
-            <FacebookIcon />
-          </button>
-          <button>
-            <InstagramIcon />
-          </button>
-          <button>
-            <TwitterIcon />
-          </button>
+        <section className="d-flex mx-3 justify-content-around">
+          <div>
+            <img alt="Facebook" src={FacebookIcon} />
+          </div>
+          <div>
+            <img alt="Instagram" src={InstagramIcon} />
+          </div>
+          <div>
+            <img alt="Twitter" src={TwitterIcon} />
+          </div>
         </section>
       </div>
     );

@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 export default function ActivityDetail() {
-  const params = useParams();
+  // const params = useParams();
 
   return <div></div>;
 }
