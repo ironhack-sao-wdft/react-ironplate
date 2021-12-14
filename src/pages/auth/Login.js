@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
@@ -14,6 +14,16 @@ function Login(props) {
   });
 
   const navigate = useNavigate();
+
+  const { loggedInUser, setLoggedInUser } = authContext;
+
+  useEffect(() => {
+    if (loggedInUser.token && loggedInUser.user.role === "ADMIN") {
+      navigate("/adminpanel");
+    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
+      navigate("/home");
+    }
+  }, [loggedInUser, navigate]);
 
   function handleChange(event) {
     setState({
@@ -34,8 +44,17 @@ function Login(props) {
         "loggedInUser",
         JSON.stringify({ ...response.data })
       );
+
       setErrors({ password: "", email: "" });
-      navigate("/home");
+
+      if (setLoggedInUser.token && setLoggedInUser.user.role === "ADMIN") {
+        navigate("/adminpanel");
+      } else if (
+        setLoggedInUser.token &&
+        setLoggedInUser.user.role === "USER"
+      ) {
+        navigate("/home");
+      }
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
