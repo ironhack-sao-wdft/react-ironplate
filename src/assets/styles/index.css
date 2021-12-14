@@ -34,7 +34,7 @@ body {
 }
 
 .home-container {
-  height: 90vh;
+  height: 82vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -67,4 +67,35 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+}
+
+.admin-container {
+  height: 90vh;
+}
+
+.admin-content {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  color: white;
+}
+
+.admin-perfil {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+
+hr {
+  border: 3px solid white;
+  margin-top: 50px;
 }

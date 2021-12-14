@@ -10,6 +10,7 @@ import Welcome from "../pages/Welcome";
 import Description from "../pages/Description";
 import ActivityDescription from "../pages/ActivityDescription";
 import ActivityMedia from "../pages/ActivityMedia";
+import AdminPainel from "../pages/admin/AdminPainel";
 
 import { AuthContextComponent } from "../contexts/authContext";
 
@@ -17,7 +18,8 @@ function App() {
   return (
     <AuthContextComponent>
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/adminpainel" element={<AdminPainel />} />
+        <Route path="/home" element={<ProtectedRoute component={Home} />} />
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Welcome />} />
         <Route path="/signup" element={<Signup />} />
