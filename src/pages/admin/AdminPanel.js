@@ -17,9 +17,11 @@ export default function AdminPainel() {
       </div>
       <hr />
       <div className="admin-content mt-5">
-        <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
-          register new activity
-        </button>
+        <Link to="/activityedit">
+          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+            register new activity
+          </button>
+        </Link>
       </div>
       <hr />
       <div className="admin-list mt-5">
