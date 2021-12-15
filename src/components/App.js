@@ -12,19 +12,35 @@ import ActivityDetail from "../pages/ActivityDetail";
 import FeedbackEmoji from "../pages/FeedbackEmoji";
 import Profile from "../pages/Profile";
 import AdminPanel from "../pages/admin/AdminPanel";
-import ActivityEdit from "../pages/admin/ActivityEdit";
+import ActivityCreate from "../pages/admin/ActivityCreate";
 
 import { AuthContextComponent } from "../contexts/authContext";
 import SubmissionComplete from "../pages/admin/SubmissionComplete";
 import ActivityList from "../pages/admin/ActivityList";
+import DetailsFromActivity from "../pages/admin/DetailsFromActivity";
+import ActivityEdit from "../pages/admin/ActivityEdit";
+import ActivityDelete from "../pages/admin/ActivityDelete";
 
 function App() {
   return (
     <AuthContextComponent>
       <Routes>
         <Route
-          path="/activityedit"
+          path="/activitydelete/:id"
+          element={<ProtectedRoute component={ActivityDelete} />}
+        />
+        <Route
+          path="/activityedit/:id"
           element={<ProtectedRoute component={ActivityEdit} />}
+        />
+
+        <Route
+          path="/detailsfromactivity/:id"
+          element={<ProtectedRoute component={DetailsFromActivity} />}
+        />
+        <Route
+          path="/activitycreate"
+          element={<ProtectedRoute component={ActivityCreate} />}
         />
         <Route
           path="/adminpanel"

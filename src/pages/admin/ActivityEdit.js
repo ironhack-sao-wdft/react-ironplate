@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import api from "../../apis/api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function ActivityEdit() {
   const [activityData, setActivityData] = useState({
@@ -9,11 +9,26 @@ export default function ActivityEdit() {
     duration: 0,
     description: "",
     instructions: "",
-    video: new File([], ""),
-    videoURL: "",
+    media: new File([], ""),
+    mediaURL: "",
+    mediaType: "",
   });
 
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    async function fetchSession() {
+      try {
+        const response = await api.get(`/activities/${id}`);
+        delete response.data._id;
+        setActivityData({ ...response.data });
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchSession();
+  }, [id]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -28,7 +43,7 @@ export default function ActivityEdit() {
     try {
       const uploadData = new FormData();
 
-      uploadData.append("video", file);
+      uploadData.append("media", file);
 
       const response = await api.post("/upload", uploadData);
 
@@ -44,11 +59,13 @@ export default function ActivityEdit() {
     e.preventDefault();
 
     try {
-      const videoURL = await handleFileUpload(activityData.video);
+      const mediaURL = await handleFileUpload(activityData.media);
+      const formData = { ...activityData };
+      delete formData.media;
 
-      const response = await api.post("/activities", {
-        ...activityData,
-        videoURL,
+      const response = await api.patch(`/activities/${id}`, {
+        ...formData,
+        mediaURL,
       });
 
       console.log(response);
@@ -102,7 +119,7 @@ export default function ActivityEdit() {
             <option value="30">30 minutes</option>
           </select>
         </div>
-        <hr />
+
         <div className="input-group">
           <textarea
             className="form-control"
@@ -125,19 +142,34 @@ export default function ActivityEdit() {
             required
           />
         </div>
+        <div className="col-auto my-1">
+          <select
+            className="custom-select mr-sm-2"
+            name="mediaType"
+            id="mediaType"
+            onChange={handleChange}
+            value={activityData.mediaType}
+            required
+          >
+            <option selected>Media Type</option>
+            <option value="video">Video</option>
+            <option value="audio">Audio</option>
+            <option value="image">Image</option>
+          </select>
+        </div>
         <div className="input-group mb-3">
           <input
             type="file"
             className="form-control"
-            id="video"
-            name="video"
+            id="media"
+            name="media"
             onChange={handleChange}
           />
-          <label className="input-group-text" htmlFor="video">
-            Video
+          <label className="input-group-text" htmlFor="media">
+            Media
           </label>
         </div>
-        <hr />
+
         <button
           type="submit"
           onClick={handleSubmit}

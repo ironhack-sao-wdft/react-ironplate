@@ -12,7 +12,7 @@ export default function Navbar(props) {
         {/* <img src={AccountCircle} alt="User account" /> */}
         <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />{" "}
         <span style={{ color: "white", fontSize: "16px" }}>
-          Bem-vindo, {loggedInUser.user.name}!
+          Welcome {loggedInUser.user.name}!
         </span>
       </div>{" "}
       <div className={`${props.invisibleClose}`}>
