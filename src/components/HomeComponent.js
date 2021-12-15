@@ -4,7 +4,7 @@ export default function HomeComponent(props) {
       <div
         onClick={() => {
           props.selectRandomOption(props.indoorsArr);
-          props.setPageState("activities");
+          props.setPageState("indoors");
         }}
         className="home-card-top"
       >
@@ -15,7 +15,7 @@ export default function HomeComponent(props) {
       <div
         onClick={() => {
           props.selectRandomOption(props.outdoorsArr);
-          props.setPageState("activities");
+          props.setPageState("outdoors");
         }}
         className="home-card-bot"
       >
