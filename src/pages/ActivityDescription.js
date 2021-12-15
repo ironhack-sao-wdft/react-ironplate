@@ -2,8 +2,8 @@ import mock from "../assets/mock/mock.json";
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 
-import ActivityCard from "../components/ActivityCard";
-import ActivityMedia from "../components/ActivityMedia";
+import ActivityCard from "../components/Activity/ActivityCard";
+import ActivityInfo from "../components/Activity/ActivityInfo";
 
 export default function ActivityDescription() {
   const cardArr = [];
@@ -96,7 +96,7 @@ export default function ActivityDescription() {
           </div>{" "}
         </div>
       ) : (
-        <ActivityMedia
+        <ActivityInfo
           setDescriptionToggle={setDescriptionToggle}
           currentActivity={currentActivity}
           currentActivityIndex={currentActivityIndex}
