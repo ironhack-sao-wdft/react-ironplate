@@ -4,8 +4,10 @@ import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
 
-function Login(props) {
+function Login() {
   const authContext = useContext(AuthContext);
+
+  const { loggedInUser } = useContext(AuthContext);
 
   const [state, setState] = useState({ password: "", email: "" });
   const [errors, setErrors] = useState({
@@ -15,13 +17,11 @@ function Login(props) {
 
   const navigate = useNavigate();
 
-  const { loggedInUser, setLoggedInUser } = authContext;
-
   useEffect(() => {
     if (loggedInUser.token && loggedInUser.user.role === "ADMIN") {
-      navigate("/adminpanel");
-    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
       navigate("/home");
+    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
+      navigate("/adminpanel");
     }
   }, [loggedInUser, navigate]);
 
@@ -44,17 +44,7 @@ function Login(props) {
         "loggedInUser",
         JSON.stringify({ ...response.data })
       );
-
       setErrors({ password: "", email: "" });
-
-      if (setLoggedInUser.token && setLoggedInUser.user.role === "ADMIN") {
-        navigate("/adminpanel");
-      } else if (
-        setLoggedInUser.token &&
-        setLoggedInUser.user.role === "USER"
-      ) {
-        navigate("/home");
-      }
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });

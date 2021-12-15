@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../../apis/api";
+import { useNavigate } from "react-router-dom";
 
 export default function ActivityEdit() {
   const [activityData, setActivityData] = useState({
@@ -11,6 +12,9 @@ export default function ActivityEdit() {
     video: new File([], ""),
     videoURL: "",
   });
+
+  const navigate = useNavigate();
+
   function handleChange(e) {
     if (e.target.files) {
       return setActivityData({
@@ -48,6 +52,7 @@ export default function ActivityEdit() {
       });
 
       console.log(response);
+      navigate("/submissioncomplete");
     } catch (err) {
       console.error(err);
     }
@@ -59,7 +64,7 @@ export default function ActivityEdit() {
         <div className="p-2">
           <input
             name="name"
-            id="activityTitle"
+            id="name"
             placeholder="Insert a new title"
             onChange={handleChange}
             value={activityData.name}
@@ -70,7 +75,7 @@ export default function ActivityEdit() {
           <select
             className="custom-select mr-sm-2"
             name="type"
-            id="activityType"
+            id="type"
             onChange={handleChange}
             value={activityData.type}
             required
@@ -84,7 +89,7 @@ export default function ActivityEdit() {
           <select
             type="number"
             className="custom-select mr-sm-2"
-            id="activityDuration"
+            id="duration"
             name="duration"
             onChange={handleChange}
             value={activityData.duration}
@@ -101,7 +106,7 @@ export default function ActivityEdit() {
         <div className="input-group">
           <textarea
             className="form-control"
-            id="activityDescription"
+            id="description"
             placeholder="describe the activity"
             name="description"
             onChange={handleChange}
@@ -112,7 +117,7 @@ export default function ActivityEdit() {
         <div className="input-group">
           <textarea
             className="form-control"
-            id="activityInstructions"
+            id="instructions"
             placeholder="provide the necessary instructions"
             name="instructions"
             onChange={handleChange}
@@ -124,11 +129,11 @@ export default function ActivityEdit() {
           <input
             type="file"
             className="form-control"
-            id="activityVideo"
+            id="video"
             name="video"
             onChange={handleChange}
           />
-          <label className="input-group-text" for="inputGroupFile02">
+          <label className="input-group-text" htmlFor="video">
             Video
           </label>
         </div>

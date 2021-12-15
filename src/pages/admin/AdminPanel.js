@@ -12,7 +12,7 @@ export default function AdminPainel() {
             alt="pause logo"
           />
 
-          <h1>Admin Painel</h1>
+          <h1>Admin Panel</h1>
         </div>
       </div>
       <hr />
