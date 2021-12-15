@@ -21,20 +21,29 @@ export default function ActivityList() {
   console.log(activityList);
 
   return (
-    <div className="admin-list mt-5">
-      <h1>Activities List</h1>
+    <div>
+      <div className="buttons-to mt-5">
+        <Link to={`/adminpanel`}>
+          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+            Back to Admin Panel
+          </button>
+        </Link>
+      </div>
+      <div className="admin-list mt-5">
+        <h1>Activities List</h1>
 
-      <ul className="list-group list-group-flush mt-5">
-        {activityList.map((activity) => (
-          <Link
-            key={activity._id}
-            style={{ textDecoration: "none" }}
-            to={`/detailsfromactivity/${activity._id}`}
-          >
-            <li className="list-group-item">{activity.name}</li>{" "}
-          </Link>
-        ))}
-      </ul>
+        <ul className="list-group list-group-flush mt-5">
+          {activityList.map((activity) => (
+            <Link
+              key={activity._id}
+              style={{ textDecoration: "none" }}
+              to={`/detailsfromactivity/${activity._id}`}
+            >
+              <li className="list-group-item">{activity.name}</li>{" "}
+            </Link>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
