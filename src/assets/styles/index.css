@@ -25,7 +25,7 @@ body {
 }
 
 .entry-card {
-  height: 90vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,6 +102,7 @@ hr {
 
 ::-webkit-input-placeholder {
   text-align: center;
+  color: #965353;
 }
 
 textarea {

@@ -16,6 +16,8 @@ export default function DetailsFromActivity() {
     media: new File([], ""),
     mediaURL: "",
     mediaType: "",
+    creatorName: "",
+    creatorURL: "",
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -61,6 +63,13 @@ export default function DetailsFromActivity() {
           <h1 className="m-5">{activityData.name}</h1>
           <h2>{activityData.type}</h2>
           <h2>{activityData.duration} min</h2>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={`https://${activityData.creatorURL}`}
+          >
+            <h4>{activityData.creatorName}</h4>
+          </a>
           <p className="mt-5" style={{ fontSize: "18px" }}>
             {activityData.description}
           </p>
