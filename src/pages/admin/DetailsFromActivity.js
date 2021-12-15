@@ -1,9 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
+import DeleteModal from "../../components/DeleteModal";
 
 export default function DetailsFromActivity() {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const [activityData, setActivityData] = useState({
     name: "",
@@ -15,6 +17,8 @@ export default function DetailsFromActivity() {
     mediaURL: "",
     mediaType: "",
   });
+
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function fetchActivity() {
@@ -32,10 +36,23 @@ export default function DetailsFromActivity() {
   return (
     <div>
       <div className="buttons-to mt-5">
-        <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
-          Edit
-        </button>
-        <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+        <Link to={`/activitylist`}>
+          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+            Back to Activities List
+          </button>
+        </Link>
+      </div>
+      <div className="buttons-to mt-5">
+        <Link to={`/activityedit/${activityData._id}`}>
+          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+            Edit
+          </button>
+        </Link>
+        <button
+          onClick={() => setShowModal(true)}
+          className="btn btn-light btn-lg"
+          style={{ color: "#965353" }}
+        >
           Delete
         </button>
       </div>
@@ -55,6 +72,20 @@ export default function DetailsFromActivity() {
           </a>
         </div>
       </div>
+      <DeleteModal
+        title="Are you sure you would like to delete this activity?"
+        variant="danger"
+        confirmationText="Delete"
+        show={showModal}
+        handleClose={() => setShowModal(false)}
+        handleConfirmation={() => {
+          navigate(`/activitydelete/${id}`);
+          setShowModal(false);
+        }}
+      >
+        This action is irreversible. Data from this activity cannot be
+        retrieved.
+      </DeleteModal>
     </div>
   );
 }
