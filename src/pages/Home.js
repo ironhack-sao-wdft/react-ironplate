@@ -1,20 +1,109 @@
 import Navbar from "../components/Navbar";
+import api from "../apis/api";
+import HomeComponent from "../components/HomeComponent";
+import ActivityDescription from "../components/Activity/ActivityDescription";
+import { AuthContext } from "../contexts/authContext";
+import { useContext } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [allActivities, setAllActivities] = useState([]);
+  const { loggedInUser } = useContext(AuthContext);
+  const [pageState, setPageState] = useState("home");
+
+  // Acessar o banco de dados para pegar todas as atividades
+  useEffect(() => {
+    async function fetchActivities() {
+      try {
+        const response = await api.get("/activities");
+        setAllActivities([...response.data]);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchActivities();
+  }, []);
+
+  // Acessar o usuário para descobrir quais são as atividades bloqueadas para retirá-las da array
+
+  const blockedActivities = loggedInUser.user.blockedActivities;
+  const activitiesToSort = allActivities.filter((currentActivity) => {
+    if (blockedActivities.includes(currentActivity)) {
+      return null;
+    } else {
+      return currentActivity;
+    }
+  });
+
+  // Acessar o usuário para descobrir quais são as atividades favoritas e duplicá-las na array
+
+  const favoriteActivities = loggedInUser.user.favorites;
+  for (let i in favoriteActivities) {
+    activitiesToSort.push(favoriteActivities[i]);
+  }
+
+  // Criar duas arrays: "indoors" e "outdoors", para sortear as atividades de maneira aleatória de acordo com o tipo
+
+  const indoorsArr = activitiesToSort.filter((currentActivity) => {
+    if (currentActivity.type === "indoors") {
+      return currentActivity;
+    } else {
+      return null;
+    }
+  });
+
+  const outdoorsArr = activitiesToSort.filter((currentActivity) => {
+    if (currentActivity.type === "outdoors") {
+      return currentActivity;
+    } else {
+      return null;
+    }
+  });
+
+  // Função para selecionar aleatoriamente as atividades em cada array
+
+  function selectRandomOption(typeArr) {
+    const activitiesToShow = [];
+
+    for (let i = 0; activitiesToShow.length < 3; i++) {
+      let randomOption = typeArr[Math.floor(Math.random() * typeArr.length)];
+      if (
+        !activitiesToShow.includes(randomOption) &&
+        randomOption !== undefined &&
+        !blockedActivities.includes(randomOption.id)
+      ) {
+        activitiesToShow.push(randomOption);
+        console.log(activitiesToShow);
+      }
+    }
+    return activitiesToShow;
+  }
+
   return (
     <div>
       <Navbar />
-      <div className="home-container m-4 shadow-lg p-1 mb-5">
-        <div className="home-card-top">
-          <p style={{ fontSize: "16px" }}>suggestions to do</p>
-          <p style={{ fontSize: "36px" }}>at home</p>
-        </div>
-        <div style={{ color: "white" }}>let’s pause for a bit?</div>
-        <div className="home-card-bot">
-          <p style={{ fontSize: "16px" }}>suggestions to go</p>
-          <p style={{ fontSize: "36px" }}>outdoors</p>
-        </div>
-      </div>
+      {pageState === "home" ? (
+        <HomeComponent
+          setPageState={setPageState}
+          selectRandomOption={selectRandomOption}
+          indoorsArr={indoorsArr}
+          outdoorsArr={outdoorsArr}
+        />
+      ) : null}
+      {pageState === "indoors" ? (
+        <ActivityDescription
+          activitiesToShow={selectRandomOption(indoorsArr)}
+          blockedActivities={blockedActivities}
+          favoriteActivities={favoriteActivities}
+        />
+      ) : null}
+      {pageState === "outdoors" ? (
+        <ActivityDescription
+          activitiesToShow={selectRandomOption(outdoorsArr)}
+          blockedActivities={blockedActivities}
+          favoriteActivities={favoriteActivities}
+        />
+      ) : null}
     </div>
   );
 }

@@ -1,48 +1,18 @@
-import mock from "../assets/mock/mock.json";
-import Navbar from "../components/Navbar";
 import { useState } from "react";
+import ActivityCard from "./ActivityCard";
+import ActivityInfo from "./ActivityInfo";
 
-import ActivityCard from "../components/ActivityCard";
-import ActivityMedia from "../components/ActivityMedia";
-
-export default function ActivityDescription() {
-  const cardArr = [];
-  const [blockedActivities, setBlockedActivities] = useState([1, 0, 2, 999]);
+export default function ActivityDescription(props) {
   const [descriptionToggle, setDescriptionToggle] = useState(false);
   const [currentActivity, setCurrentActivity] = useState({});
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
 
-  function handleBlock(currentOption) {
-    if (!blockedActivities.includes(currentOption.id)) {
-      setBlockedActivities([...blockedActivities, currentOption.id]);
-    }
-    selectRandomOption();
-    console.log(blockedActivities);
-  }
-
-  function selectRandomOption() {
-    for (let i = 0; cardArr.length < 3; i++) {
-      let randomOption = mock[Math.floor(Math.random() * mock.length)];
-      if (
-        !cardArr.includes(randomOption) &&
-        randomOption !== undefined &&
-        !blockedActivities.includes(randomOption.id)
-      ) {
-        cardArr.push(randomOption);
-        console.log(cardArr);
-      }
-    }
-  }
-
-  selectRandomOption();
+  console.log(props.blockedActivities);
 
   return (
     <div>
       {!descriptionToggle ? (
         <div>
-          <div className="mx-3">
-            <Navbar />
-          </div>
           <section className="d-flex flex-column justify-content-center align-items-center pb-5">
             <span
               style={{
@@ -51,7 +21,7 @@ export default function ActivityDescription() {
                 color: "#FBF8F3",
               }}
             >
-              today's{" "}
+              today's
             </span>
             <span
               style={{
@@ -90,16 +60,17 @@ export default function ActivityDescription() {
               setDescriptionToggle={setDescriptionToggle}
               setCurrentActivity={setCurrentActivity}
               setCurrentActivityIndex={setCurrentActivityIndex}
-              cardArr={cardArr}
-              handleBlock={handleBlock}
+              cardsArr={props.activitiesToShow}
             />
           </div>{" "}
         </div>
       ) : (
-        <ActivityMedia
+        <ActivityInfo
           setDescriptionToggle={setDescriptionToggle}
           currentActivity={currentActivity}
+          cardsArr={props.activitiesToShow}
           currentActivityIndex={currentActivityIndex}
+          blockedActivities={props.blockedActivities}
         />
       )}
     </div>

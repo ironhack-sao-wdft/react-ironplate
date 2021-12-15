@@ -1,7 +1,28 @@
 import Carousel from "react-material-ui-carousel";
 import { Button } from "@mui/material";
+import api from "../../apis/api";
+import { AuthContext } from "../../contexts/authContext";
+import { useState, useEffect, useContext } from "react";
 
 export default function ActivityCard(props) {
+  const { loggedInUser } = useContext(AuthContext);
+
+  console.log(loggedInUser.user);
+
+  function handleBlock(currentOption) {
+    if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
+      api.patch(`/profile/${loggedInUser.user._id}`, async (req, res) => {
+        try {
+          const result = await req.body.blockedActivities;
+          console.log(result);
+          res.json(...result, currentOption._id);
+        } catch (err) {
+          console.error(err);
+        }
+      });
+    }
+  }
+
   return (
     <Carousel
       navButtonsAlwaysInvisible={true}
@@ -36,8 +57,7 @@ export default function ActivityCard(props) {
         );
       }}
     >
-      {props.cardArr.map((currentOption, index) => {
-        props.setCurrentActivity(currentOption);
+      {props.cardsArr.map((currentOption, index) => {
         return (
           <div className="" key={currentOption.name}>
             <div className="d-flex flex-column justify-content-center align-items-center">
@@ -51,7 +71,6 @@ export default function ActivityCard(props) {
                   height: "50vh",
                 }}
               >
-                {props.setCurrentActivityIndex(index + 1)}
                 <div className="mb-5 pb-5">
                   <section className="d-flex flex-column justify-content-center align-items-center pt-4 pb-3">
                     <strong
@@ -74,7 +93,11 @@ export default function ActivityCard(props) {
 
                   <section className="d-flex flex-column justify-content-center align-items-center">
                     <button
-                      onClick={props.setDescriptionToggle}
+                      onClick={() => {
+                        props.setDescriptionToggle(true);
+                        props.setCurrentActivity(currentOption);
+                        props.setCurrentActivityIndex(index + 1);
+                      }}
                       className="px-4 py-3 mt-3"
                       style={{
                         background: "linear-gradient(0deg, #965353, #965353)",
@@ -96,7 +119,7 @@ export default function ActivityCard(props) {
                         fontSize: "1.2rem",
                       }}
                       onClick={() => {
-                        props.handleBlock(currentOption);
+                        handleBlock(currentOption);
                       }}
                     >
                       block
