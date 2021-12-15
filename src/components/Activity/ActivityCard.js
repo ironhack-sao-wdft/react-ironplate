@@ -1,7 +1,19 @@
 import Carousel from "react-material-ui-carousel";
 import { Button } from "@mui/material";
+import { useState, useEffect } from "react";
 
 export default function ActivityCard(props) {
+  useEffect(() => {
+    async function loadActivities() {
+      try {
+        const loadedActivities = await props.cardsArr;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    loadActivities();
+  }, []);
+
   return (
     <Carousel
       navButtonsAlwaysInvisible={true}
