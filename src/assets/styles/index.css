@@ -183,7 +183,15 @@ textarea {
 
 .list-group-item {
   background-color: transparent;
-
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid white;
   border-radius: 0;
   color: #fff;
+}
+
+.buttons-to {
+  display: flex;
+  justify-content: space-around;
 }

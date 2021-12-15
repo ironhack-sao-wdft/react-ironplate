@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
+import { Link } from "react-router-dom";
 
 export default function ActivityList() {
   const [activityList, setActivityList] = useState([]);
@@ -23,9 +24,15 @@ export default function ActivityList() {
     <div className="admin-list mt-5">
       <h1>Activities List</h1>
 
-      <ul class="list-group list-group-flush mt-5">
+      <ul className="list-group list-group-flush mt-5">
         {activityList.map((activity) => (
-          <li class="list-group-item">{activity.name}</li>
+          <Link
+            key={activity._id}
+            style={{ textDecoration: "none" }}
+            to={`/detailsfromactivity/${activity._id}`}
+          >
+            <li className="list-group-item">{activity.name}</li>{" "}
+          </Link>
         ))}
       </ul>
     </div>
