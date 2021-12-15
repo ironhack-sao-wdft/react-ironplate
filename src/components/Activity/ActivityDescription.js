@@ -1,48 +1,48 @@
-import mock from "../assets/mock/mock.json";
-import Navbar from "../components/Navbar";
 import { useState } from "react";
+import api from "../../apis/api";
+import { useEffect } from "react";
+import ActivityCard from "./ActivityCard";
+import ActivityInfo from "./ActivityInfo";
+import { AuthContext } from "../../contexts/authContext";
 
-import ActivityCard from "../components/ActivityCard";
-import ActivityMedia from "../components/ActivityMedia";
-
-export default function ActivityDescription() {
-  const cardArr = [];
-  const [blockedActivities, setBlockedActivities] = useState([1, 0, 2, 999]);
+export default function ActivityDescription(props) {
   const [descriptionToggle, setDescriptionToggle] = useState(false);
   const [currentActivity, setCurrentActivity] = useState({});
   const [currentActivityIndex, setCurrentActivityIndex] = useState(0);
 
-  function handleBlock(currentOption) {
-    if (!blockedActivities.includes(currentOption.id)) {
-      setBlockedActivities([...blockedActivities, currentOption.id]);
+  // useEffect(() => {
+  //   async function loadActivities() {
+  //     try {
+  //       const loadedActivities = await props.activitiesToShow;
+  //       console.log(loadedActivities);
+  //       return loadedActivities;
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   }
+  //   loadActivities();
+  // }, []);
+
+  async function handleBlock(currentOption) {
+    if (!props.blockedActivities.includes(currentOption)) {
+      api.patch("/profile/:id", async (req, res) => {
+        const result = await req.body.blockedActivities;
+        res.json(...result, currentOption._id);
+      });
     }
-    selectRandomOption();
-    console.log(blockedActivities);
   }
 
-  function selectRandomOption() {
-    for (let i = 0; cardArr.length < 3; i++) {
-      let randomOption = mock[Math.floor(Math.random() * mock.length)];
-      if (
-        !cardArr.includes(randomOption) &&
-        randomOption !== undefined &&
-        !blockedActivities.includes(randomOption.id)
-      ) {
-        cardArr.push(randomOption);
-        console.log(cardArr);
-      }
-    }
-  }
-
-  selectRandomOption();
+  // function handleBlock(currentOption) {
+  //   if (!blockedActivities.includes(currentOption.id)) {
+  //     setBlockedActivities([...blockedActivities, currentOption.id]);
+  //   }
+  //   console.log(blockedActivities);
+  // }
 
   return (
     <div>
       {!descriptionToggle ? (
         <div>
-          <div className="mx-3">
-            <Navbar />
-          </div>
           <section className="d-flex flex-column justify-content-center align-items-center pb-5">
             <span
               style={{
@@ -51,7 +51,7 @@ export default function ActivityDescription() {
                 color: "#FBF8F3",
               }}
             >
-              today's{" "}
+              today's
             </span>
             <span
               style={{
@@ -90,13 +90,13 @@ export default function ActivityDescription() {
               setDescriptionToggle={setDescriptionToggle}
               setCurrentActivity={setCurrentActivity}
               setCurrentActivityIndex={setCurrentActivityIndex}
-              cardArr={cardArr}
+              cardArr={props.activitiesToShow}
               handleBlock={handleBlock}
             />
           </div>{" "}
         </div>
       ) : (
-        <ActivityMedia
+        <ActivityInfo
           setDescriptionToggle={setDescriptionToggle}
           currentActivity={currentActivity}
           currentActivityIndex={currentActivityIndex}

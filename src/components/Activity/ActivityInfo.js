@@ -1,6 +1,6 @@
-import NavbarActivity from "./NavbarActivity";
+import NavbarActivity from "../NavbarActivity";
 
-export default function ActivityMedia(props) {
+export default function ActivityInfo(props) {
   // const timer = mock.duration;
 
   console.log(props.currentActivity);
