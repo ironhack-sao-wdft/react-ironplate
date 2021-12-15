@@ -1,11 +1,13 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
 
-function Login(props) {
+function Login() {
   const authContext = useContext(AuthContext);
+
+  const { loggedInUser } = useContext(AuthContext);
 
   const [state, setState] = useState({ password: "", email: "" });
   const [errors, setErrors] = useState({
@@ -14,6 +16,14 @@ function Login(props) {
   });
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (loggedInUser.token && loggedInUser.user.role === "ADMIN") {
+      navigate("/home");
+    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
+      navigate("/adminpanel");
+    }
+  }, [loggedInUser, navigate]);
 
   function handleChange(event) {
     setState({
@@ -35,7 +45,6 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/home");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
