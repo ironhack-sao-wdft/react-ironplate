@@ -75,7 +75,7 @@ body {
 
 .admin-content {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
   color: white;
 }
@@ -98,6 +98,15 @@ body {
 hr {
   border: 3px solid white;
   margin-top: 50px;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+}
+
+textarea {
+  width: 300px;
+  height: 150px;
 }
 
 .profileUnderline {
