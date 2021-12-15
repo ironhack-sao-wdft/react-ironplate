@@ -2,7 +2,7 @@ import { useState } from "react";
 import api from "../../apis/api";
 import { useNavigate } from "react-router-dom";
 
-export default function ActivityEdit() {
+export default function ActivityCreate() {
   const [activityData, setActivityData] = useState({
     name: "",
     type: "",

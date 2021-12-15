@@ -17,7 +17,7 @@ export default function AdminPainel() {
       </div>
       <hr />
       <div className="admin-content mt-5">
-        <Link to="/activityedit">
+        <Link to="/activitycreate">
           <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
             register new activity
           </button>

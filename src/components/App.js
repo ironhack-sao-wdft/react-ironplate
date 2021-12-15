@@ -13,7 +13,7 @@ import ActivityDescription from "../pages/ActivityDescription";
 import FeedbackEmoji from "../pages/FeedbackEmoji";
 import Profile from "../pages/Profile";
 import AdminPanel from "../pages/admin/AdminPanel";
-import ActivityEdit from "../pages/admin/ActivityEdit";
+import ActivityCreate from "../pages/admin/ActivityCreate";
 
 import { AuthContextComponent } from "../contexts/authContext";
 import SubmissionComplete from "../pages/admin/SubmissionComplete";
@@ -24,8 +24,8 @@ function App() {
     <AuthContextComponent>
       <Routes>
         <Route
-          path="/activityedit"
-          element={<ProtectedRoute component={ActivityEdit} />}
+          path="/activitycreate"
+          element={<ProtectedRoute component={ActivityCreate} />}
         />
         <Route
           path="/adminpanel"

@@ -180,3 +180,10 @@ textarea {
 .react-calendar__month-view__days__day--neighboringMonth {
   color: #757575;
 }
+
+.list-group-item {
+  background-color: transparent;
+
+  border-radius: 0;
+  color: #fff;
+}

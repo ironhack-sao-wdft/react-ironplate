@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function SubmissionComplete() {
   return (
     <div>
-      <div className="admin-list mt-5">
+      <div>
         <div className="mt-5">Submission Complete!</div>
         <Link to="/adminpanel">
           <button
