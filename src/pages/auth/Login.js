@@ -19,9 +19,9 @@ function Login() {
 
   useEffect(() => {
     if (loggedInUser.token && loggedInUser.user.role === "ADMIN") {
-      navigate("/home");
-    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
       navigate("/adminpanel");
+    } else if (loggedInUser.token && loggedInUser.user.role === "USER") {
+      navigate("/home");
     }
   }, [loggedInUser, navigate]);
 
