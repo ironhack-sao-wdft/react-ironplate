@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const [allActivities, setAllActivities] = useState([]);
   const { loggedInUser } = useContext(AuthContext);
-  const [activitiesState, setActivitiesState] = useState([]);
   const [pageState, setPageState] = useState("home");
 
   // Acessar o banco de dados para pegar todas as atividades
@@ -63,9 +62,9 @@ export default function Home() {
 
   // Função para selecionar aleatoriamente as atividades em cada array
 
-  const activitiesToShow = [];
-
   function selectRandomOption(typeArr) {
+    const activitiesToShow = [];
+
     for (let i = 0; activitiesToShow.length < 3; i++) {
       let randomOption = typeArr[Math.floor(Math.random() * typeArr.length)];
       if (
@@ -77,15 +76,8 @@ export default function Home() {
         console.log(activitiesToShow);
       }
     }
+    return activitiesToShow;
   }
-
-  // useEffect(() => {
-  //   Promise.all(activitiesToShow).then((activities) =>
-  //     setActivitiesState(activitiesToShow)
-  //   );
-
-  //   console.log(activitiesState);
-  // }, []);
 
   return (
     <div>
@@ -98,9 +90,16 @@ export default function Home() {
           outdoorsArr={outdoorsArr}
         />
       ) : null}
-      {pageState === "activities" ? (
+      {pageState === "indoors" ? (
         <ActivityDescription
-          activitiesToShow={activitiesToShow}
+          activitiesToShow={selectRandomOption(indoorsArr)}
+          blockedActivities={blockedActivities}
+          favoriteActivities={favoriteActivities}
+        />
+      ) : null}
+      {pageState === "outdoors" ? (
+        <ActivityDescription
+          activitiesToShow={selectRandomOption(outdoorsArr)}
           blockedActivities={blockedActivities}
           favoriteActivities={favoriteActivities}
         />

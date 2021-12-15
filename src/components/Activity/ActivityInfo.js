@@ -1,9 +1,6 @@
 import NavbarActivity from "../NavbarActivity";
 
 export default function ActivityInfo(props) {
-  // const timer = mock.duration;
-
-  console.log(props.currentActivity);
   return (
     <div>
       <NavbarActivity setDescriptionToggle={props.setDescriptionToggle} />
