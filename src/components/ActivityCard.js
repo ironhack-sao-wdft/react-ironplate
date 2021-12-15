@@ -37,40 +37,45 @@ export default function ActivityCard(props) {
       }}
     >
       {props.cardArr.map((currentOption, index) => {
+        props.setCurrentActivity(currentOption);
         return (
           <div className="" key={currentOption.name}>
             <div className="d-flex flex-column justify-content-center align-items-center">
               <div
-                className="mb-5 pb-5"
+                className="mb-4 pb-4"
                 style={{
                   backgroundColor: "#FFF9F0",
                   boxShadow: "0px 4px 20px 4px rgba(0, 0, 0, 0.25)",
                   borderRadius: "15px",
                   width: "90%",
-                  height: "390px",
+                  height: "50vh",
                 }}
               >
+                {props.setCurrentActivityIndex(index + 1)}
                 <div className="mb-5 pb-5">
                   <section className="d-flex flex-column justify-content-center align-items-center pt-4 pb-3">
                     <strong
-                      style={{ fontSize: "1.5rem", fontWeight: "bold" }}
-                      className="d-flex justify-content-center align-items-center pb-4"
+                      style={{ fontSize: "1.2rem", fontWeight: "bold" }}
+                      className="d-flex justify-content-center align-items-center pb-5"
                     >
                       option {index + 1}
                     </strong>
                     <h3>
-                      <strong style={{ fontSize: "2rem", fontWeight: "bold" }}>
+                      <strong
+                        style={{ fontSize: "1.5rem", fontWeight: "bold" }}
+                      >
                         {currentOption.name}
                       </strong>
                     </h3>
-                    <p style={{ fontSize: "1.5rem" }}>
+                    <p style={{ fontSize: "1.2rem" }}>
                       {currentOption.duration} min
                     </p>
                   </section>
 
                   <section className="d-flex flex-column justify-content-center align-items-center">
                     <button
-                      className="px-4 py-2"
+                      onClick={props.setDescriptionToggle}
+                      className="px-4 py-3 mt-3"
                       style={{
                         background: "linear-gradient(0deg, #965353, #965353)",
                         border: 0,
@@ -82,13 +87,13 @@ export default function ActivityCard(props) {
                     </button>
                   </section>
 
-                  <section className="d-flex mx-3 mt-5 justify-content-between align-items-center">
+                  <section className="d-flex mx-3 mt-4 justify-content-between align-items-center">
                     <button
                       style={{
                         background: "none",
                         border: "none",
                         color: "#3A3938",
-                        fontSize: "1.5rem",
+                        fontSize: "1.2rem",
                       }}
                       onClick={() => {
                         props.handleBlock(currentOption);
@@ -99,14 +104,6 @@ export default function ActivityCard(props) {
                     <button className="d-none">next card</button>
                   </section>
                 </div>
-
-                {/* <section className="d-flex justify-content-center align-items-center">
-              <p>{currentOption.description}</p>
-              <p>{currentOption.instructions}</p>
-            </section>
-            <section className="d-flex justify-content-center align-items-center">
-              <button>start activity</button>
-            </section> */}
               </div>
             </div>
           </div>

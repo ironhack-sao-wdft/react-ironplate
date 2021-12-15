@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../../apis/api";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -23,7 +22,6 @@ function Signup(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/signup", state);
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
     } catch (err) {
