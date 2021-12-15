@@ -17,6 +17,7 @@ import ActivityEdit from "../pages/admin/ActivityEdit";
 
 import { AuthContextComponent } from "../contexts/authContext";
 import SubmissionComplete from "../pages/admin/SubmissionComplete";
+import ActivityList from "../pages/admin/ActivityList";
 
 function App() {
   return (
@@ -30,10 +31,8 @@ function App() {
           path="/adminpanel"
           element={<ProtectedRoute component={AdminPanel} />}
         />
-        <Route
-          path="/submissioncomplete"
-          element={<ProtectedRoute component={SubmissionComplete} />}
-        />
+        <Route path="/submissioncomplete" element={<SubmissionComplete />} />
+        <Route path="/activitylist" element={<ActivityList />} />
         <Route path="/home" element={<ProtectedRoute component={Home} />} />
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Welcome />} />
