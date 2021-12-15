@@ -25,7 +25,7 @@ body {
 }
 
 .entry-card {
-  height: 90vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   align-items: center;
