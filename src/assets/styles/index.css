@@ -102,6 +102,7 @@ hr {
 
 ::-webkit-input-placeholder {
   text-align: center;
+  color: #965353;
 }
 
 textarea {
