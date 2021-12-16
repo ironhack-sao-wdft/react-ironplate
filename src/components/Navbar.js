@@ -10,15 +10,18 @@ export default function Navbar(props) {
   return (
     <div className="m-4 pt-3 d-flex justify-content-between">
       <div className={`${props.invisibleAccount}`}>
-        {/* <img src={AccountCircle} alt="User account" /> */}
-        <Link to="/profile" style={{ textDecoration: "none" }}>
-          {" "}
+        <Link
+          to={props.invisibleAccount === "invisible" ? "" : "/profile"}
+          style={{ textDecoration: "none" }}
+        >
+          {/* <img src={AccountCircle} alt="User account" /> */}
           <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />{" "}
-          <span style={{ color: "white", fontSize: "16px" }}>
-            Welcome {loggedInUser.user.name}!
-          </span>
         </Link>
-      </div>{" "}
+
+        <span style={{ color: "white", fontSize: "16px" }}>
+          Welcome, {loggedInUser.user.name}!
+        </span>
+      </div>
       <div className={`${props.invisibleClose}`}>
         <CloseIcon sx={{ color: "white" }} fontSize="large" onClick={logout} />
       </div>{" "}
