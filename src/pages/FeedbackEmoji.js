@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+import NavbarFeedback from "../components/NavbarFeedback";
 import emojiHeartEyes from "../assets/images/emojiHeartEyes.png";
 import emojiHappy from "../assets/images/emojiHappy.png";
 import emojiSad from "../assets/images/emojiSad.png";
@@ -12,6 +12,37 @@ export default function FeedbackEmoji() {
   const [currentActivityObj, setCurrentActivityObj] = useState([]);
   const params = useParams();
   const { loggedInUser } = useContext(AuthContext);
+
+  async function handleBlock(currentOption) {
+    try {
+      if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
+        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
+          blockedActivities: [
+            ...loggedInUser.user.blockedActivities,
+            currentOption._id,
+          ],
+        });
+        console.log(response.data.blockedActivities);
+      }
+      console.log(loggedInUser.user.blockedActivities);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function handleFavorite(currentOption) {
+    try {
+      if (!loggedInUser.user.favorites.includes(currentOption._id)) {
+        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
+          favorites: [...loggedInUser.user.favorites, currentOption._id],
+        });
+        console.log(response.data.favorites);
+      }
+      console.log(loggedInUser.user.favorites);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   useEffect(() => {
     function fetchActivity() {
@@ -35,7 +66,7 @@ export default function FeedbackEmoji() {
 
   return (
     <div>
-      <Navbar invisibleAccount={"invisible"} />
+      <NavbarFeedback invisibleClose="invisible" />
       {!showResponse ? (
         <div className="d-flex flex-column align-items-center">
           <div
@@ -67,6 +98,7 @@ export default function FeedbackEmoji() {
                 onClick={() => {
                   setResponse("good");
                   setShowResponse(true);
+                  handleFavorite(currentActivityObj);
                 }}
                 className="d-flex justify-content-center align-items-center"
                 style={{
@@ -107,6 +139,7 @@ export default function FeedbackEmoji() {
                 onClick={() => {
                   setResponse("bad");
                   setShowResponse(true);
+                  handleBlock(currentActivityObj);
                 }}
                 className="d-flex justify-content-center align-items-center"
                 style={{

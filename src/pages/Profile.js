@@ -1,19 +1,40 @@
-import Navbar from "../components/Navbar.js";
+import NavbarFeedback from "../components/NavbarFeedback.js";
 import ProfileSettings from "../components/Profile/ProfileSettings";
 import ProfileOverview from "../components/Profile/ProfileOverview";
 import ProfileBlocked from "../components/Profile/ProfileBlocked";
+import api from "../apis/api";
 import { AuthContext } from "../contexts/authContext";
+<<<<<<< HEAD
 import { useState, useContext } from "react";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
+=======
+import { useState, useContext, useEffect } from "react";
+>>>>>>> 2c1d1f39fefb21f5f02068e80bd6cdf3d1416b98
 
 export default function Profile() {
   const [profileState, setProfileState] = useState("settings");
+  const [currentUserObj, setCurrentUserObj] = useState([]);
   const { loggedInUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    function fetchUser() {
+      api
+        .get(`/profile/`)
+        .then((response) => {
+          const currentUser = response.data;
+          setCurrentUserObj(currentUser);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+    fetchUser();
+  }, []);
 
   return (
     <div>
       <div>
-        <Navbar invisibleAccount={"invisible"} />
+        <NavbarFeedback invisibleAccount={"invisible"} />
       </div>
       <section className="d-flex flex-column align-items-center mx-5 px-2">
         <div className="rounded-circle" style={{}}>
@@ -69,7 +90,9 @@ export default function Profile() {
       </section>
       {profileState === "settings" ? <ProfileSettings /> : null}
       {profileState === "overview" ? <ProfileOverview /> : null}
-      {profileState === "blocked" ? <ProfileBlocked /> : null}
+      {profileState === "blocked" ? (
+        <ProfileBlocked currentUserObj={currentUserObj} />
+      ) : null}
     </div>
   );
 }
