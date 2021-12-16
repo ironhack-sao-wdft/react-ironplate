@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 import DeleteModal from "../../components/DeleteModal";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 export default function DetailsFromActivity() {
   const { id } = useParams();
@@ -39,9 +40,7 @@ export default function DetailsFromActivity() {
     <div>
       <div className="buttons-to mt-5">
         <Link to={`/activitylist`}>
-          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
-            Back to Activities List
-          </button>
+          <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />
         </Link>
       </div>
       <div className="buttons-to mt-5">

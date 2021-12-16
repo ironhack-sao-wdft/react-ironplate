@@ -9,14 +9,6 @@ export default function ProfileSettings() {
             Change your info
           </button>
         </Link>
-        <Link to="">
-          <button
-            className="btn btn-light btn-lg mt-5"
-            style={{ color: "#965353" }}
-          >
-            Change password
-          </button>
-        </Link>
       </div>
     </div>
   );

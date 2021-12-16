@@ -37,7 +37,7 @@ function Signup(props) {
   }
 
   return (
-    <div className="entry-card m-4 shadow-lg p-1 mb-5">
+    <div className="login-container m-4 shadow-lg p-1 mb-5">
       <form onSubmit={handleSubmit}>
         <div className="p-2">
           <label htmlFor="signupFormName" />

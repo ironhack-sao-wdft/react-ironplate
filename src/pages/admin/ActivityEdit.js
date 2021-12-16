@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 export default function ActivityEdit() {
   const [activityData, setActivityData] = useState({
@@ -81,9 +82,7 @@ export default function ActivityEdit() {
     <div>
       <div className="buttons-to mt-5">
         <Link to={`/activitylist`}>
-          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
-            Back to Activities List
-          </button>
+          <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />
         </Link>
       </div>
       <div className="entry-card m-4 shadow-lg p-1 mb-5">

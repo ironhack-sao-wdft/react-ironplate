@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
 import { Link } from "react-router-dom";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 export default function ActivityList() {
   const [activityList, setActivityList] = useState([]);
@@ -24,9 +25,7 @@ export default function ActivityList() {
     <div>
       <div className="buttons-to mt-5">
         <Link to={`/adminpanel`}>
-          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
-            Back to Admin Panel
-          </button>
+          <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />
         </Link>
       </div>
       <div className="admin-list mt-5">

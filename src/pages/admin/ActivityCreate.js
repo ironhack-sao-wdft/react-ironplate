@@ -7,6 +7,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 import Select from "@mui/material/Select";
 
@@ -57,7 +58,6 @@ export default function ActivityCreate() {
     }
     setActivityData({ ...activityData, [e.target.name]: e.target.value });
   }
-
   async function handleFileUpload(file) {
     try {
       const uploadData = new FormData();
@@ -97,13 +97,8 @@ export default function ActivityCreate() {
   return (
     <div>
       <div className="buttons-to mt-5">
-        <Link to={`/adminpanel`}>
-          <button
-            className="btn btn-light btn-lg"
-            style={{ color: "rgba(150, 83, 83, 1)" }}
-          >
-            Back to Admin Panel
-          </button>
+        <Link to={`/activitylist`}>
+          <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />
         </Link>
       </div>
       <div className="entry-card shadow-lg m-5">
@@ -258,44 +253,19 @@ export default function ActivityCreate() {
             />
           </div>
           <div className="col-auto my-1">
-            {/* <select
+            <select
               className="custom-select mr-sm-2"
               name="mediaType"
               id="mediaType"
               onChange={handleChange}
               value={activityData.mediaType}
               required
-            > */}
-            <FormLabel style={{ color: "#FFF9F0" }} component="legend">
-              Media Type
-            </FormLabel>
-            <RadioGroup
-              className="d-flex justify-content-center"
-              row
-              aria-label="gender"
-              name="row-radio-buttons-group"
             >
-              <FormControlLabel
-                value="audio"
-                control={<Radio />}
-                label="audio"
-              />
-              <FormControlLabel
-                value="image"
-                control={<Radio />}
-                label="image"
-              />
-              <FormControlLabel
-                value="video"
-                control={<Radio />}
-                label="video"
-              />
-            </RadioGroup>
-            {/* <option selected>Media Type</option>
+              <option selected>Media Type</option>
               <option value="video">Video</option>
               <option value="audio">Audio</option>
               <option value="image">Image</option>
-            </select> */}
+            </select>
           </div>
           <div className="input-group mb-3">
             <input

@@ -25,7 +25,16 @@ body {
 }
 
 .entry-card {
-  height: 110vh;
+  height: 125vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.login-container {
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,14 +204,4 @@ textarea {
 .buttons-to {
   display: flex;
   justify-content: space-around;
-}
-
-.head-text {
-  position: relative;
-}
-.text-on-image {
-  position: absolute;
-  right: 50%;
-  left: 55%;
-  bottom: 35%;
 }
