@@ -41,16 +41,6 @@ export default function AdminPainel() {
               my cards
             </p>
           </Link>
-          <Link style={{ textDecoration: "none" }} to="">
-            <p
-              style={{
-                color: "#FBF8F3",
-              }}
-            >
-              {" "}
-              analytics
-            </p>{" "}
-          </Link>
         </div>
       </div>
     </>

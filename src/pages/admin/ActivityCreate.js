@@ -3,10 +3,7 @@ import api from "../../apis/api";
 import { useNavigate, Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
+
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 import Select from "@mui/material/Select";
@@ -47,6 +44,8 @@ export default function ActivityCreate() {
     creatorURL: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   function handleChange(e) {
@@ -78,6 +77,7 @@ export default function ActivityCreate() {
     e.preventDefault();
 
     try {
+      setLoading(true);
       const mediaURL = await handleFileUpload(activityData.media);
       const formData = { ...activityData };
       delete formData.media;
@@ -88,16 +88,19 @@ export default function ActivityCreate() {
       });
 
       console.log(response);
+      setLoading(false);
       navigate("/submissioncomplete");
     } catch (err) {
       console.error(err);
+      setLoading(false);
     }
   }
 
   return (
     <div>
+      {loading && navigate("/loadingpage")}
       <div className="buttons-to mt-5">
-        <Link to={`/activitylist`}>
+        <Link to={`/adminpanel`}>
           <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />
         </Link>
       </div>
@@ -253,20 +256,31 @@ export default function ActivityCreate() {
             />
           </div>
           <div className="col-auto my-1">
-            <select
-              className="custom-select mr-sm-2"
+            <Select
+              displayEmpty
               name="mediaType"
               id="mediaType"
               onChange={handleChange}
+              style={{
+                backgroundColor: "#FFF9F0",
+                borderRadius: "10px",
+                color: "rgba(150, 83, 83, 1)",
+              }}
+              MenuProps={MenuProps}
+              inputProps={{ "aria-label": "Without label" }}
               value={activityData.mediaType}
+              label="Media Type"
               required
             >
-              <option selected>Media Type</option>
-              <option value="video">Video</option>
-              <option value="audio">Audio</option>
-              <option value="image">Image</option>
-            </select>
+              <MenuItem disabled value="">
+                <em>Media Type</em>
+              </MenuItem>
+              <MenuItem value="video">Video</MenuItem>
+              <MenuItem value="audio">Audio</MenuItem>
+              <MenuItem value="image">Image</MenuItem>
+            </Select>
           </div>
+
           <div className="input-group mb-3">
             <input
               type="file"
@@ -287,7 +301,7 @@ export default function ActivityCreate() {
               background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
               border: 0,
               borderRadius: "10px",
-              color: "#3A3938",
+              color: "#965353",
               fontSize: "1.2rem",
               fontWeight: "bold",
             }}

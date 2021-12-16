@@ -7,12 +7,14 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 export default function ChangeUserInfo() {
   const navigate = useNavigate();
   const { loggedInUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
   const [state, setState] = useState({
     name: `${loggedInUser.user.name}`,
     media: new File([], ""),
     pictureURL: "",
   });
+
   const [errors, setErrors] = useState({
     name: null,
     email: null,
@@ -49,6 +51,7 @@ export default function ChangeUserInfo() {
     event.preventDefault();
 
     try {
+      setLoading(true);
       const pictureURL = await handleFileUpload(state.media);
       const formData = { ...state };
       delete formData.media;
@@ -57,25 +60,26 @@ export default function ChangeUserInfo() {
         ...formData,
         pictureURL,
       });
-      console.log(
-        "esse aqui é responde, porque a gente está com bastante console",
-        response
-      );
+
       setState({ ...state });
       setErrors({ name: "" });
-      navigate("/profile");
+      setLoading(false);
+      navigate("/submissioneditcomplete");
     } catch (err) {
       if (err.response) {
         console.error(err.response);
+        setLoading(false);
         return setErrors({ ...err.response.data.errors });
       }
 
       console.error(err);
+      setLoading(false);
     }
   }
 
   return (
     <div>
+      {loading && navigate("/loadingpage")}
       <div className="buttons-to mt-5">
         <Link to={`/profile`}>
           <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />

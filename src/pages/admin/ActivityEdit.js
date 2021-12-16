@@ -19,6 +19,7 @@ export default function ActivityEdit() {
 
   const navigate = useNavigate();
   const { id } = useParams();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchSession() {
@@ -62,6 +63,7 @@ export default function ActivityEdit() {
     e.preventDefault();
 
     try {
+      setLoading(true);
       const mediaURL = await handleFileUpload(activityData.media);
       const formData = { ...activityData };
       delete formData.media;
@@ -72,14 +74,18 @@ export default function ActivityEdit() {
       });
 
       console.log(response);
+      setLoading(false);
+
       navigate("/submissioncomplete");
     } catch (err) {
       console.error(err);
+      setLoading(false);
     }
   }
 
   return (
     <div>
+      {loading && navigate("/loadingpage")}
       <div className="buttons-to mt-5">
         <Link to={`/activitylist`}>
           <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />

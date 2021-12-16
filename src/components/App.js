@@ -22,11 +22,17 @@ import DetailsFromActivity from "../pages/admin/DetailsFromActivity";
 import ActivityEdit from "../pages/admin/ActivityEdit";
 import ActivityDelete from "../pages/admin/ActivityDelete";
 import ChangeUserInfo from "./Profile/ChangeUserInfo";
+import SubmissionEditComplete from "./Profile/SubmissionEditComplete";
+import LoadingPage from "./LoadingPage";
 
 function App() {
   return (
     <AuthContextComponent>
       <Routes>
+        <Route
+          path="/submissioneditcomplete"
+          element={<ProtectedRoute component={SubmissionEditComplete} />}
+        />
         <Route
           path="/activitydelete/:id"
           element={<ProtectedRoute component={ActivityDelete} />}
@@ -57,6 +63,7 @@ function App() {
           element={<ProtectedRoute component={ChangeUserInfo} />}
         />
 
+        <Route path="/loadingpage" element={<LoadingPage />} />
         <Route path="/submissioncomplete" element={<SubmissionComplete />} />
         <Route path="/activitylist" element={<ActivityList />} />
         <Route path="/activity/refresh" element={<ActivityRefresh />} />
