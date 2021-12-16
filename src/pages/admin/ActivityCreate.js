@@ -27,6 +27,7 @@ export default function ActivityCreate() {
     }
     setActivityData({ ...activityData, [e.target.name]: e.target.value });
   }
+
   async function handleFileUpload(file) {
     try {
       const uploadData = new FormData();

@@ -1,27 +1,22 @@
+import { Link } from "react-router-dom";
+
 export default function ProfileSettings() {
   return (
     <div>
-      <div className="mt-5">
-        <h3
-          style={{ fontSize: "1.5rem", textAlign: "center", color: "#FBF8F3" }}
-        >
-          change your profile picture
-        </h3>
-      </div>
-      <div className="d-flex justify-content-center">
-        <button
-          className="px-4 py-2 mt-4"
-          style={{
-            background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
-            border: 0,
-            borderRadius: "10px",
-            color: "#3A3938",
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-          }}
-        >
-          upload
-        </button>
+      <div className="admin-list mt-5">
+        <Link to="/changeuserinfo">
+          <button className="btn btn-light btn-lg" style={{ color: "#965353" }}>
+            Change your info
+          </button>
+        </Link>
+        <Link to="">
+          <button
+            className="btn btn-light btn-lg mt-5"
+            style={{ color: "#965353" }}
+          >
+            Change password
+          </button>
+        </Link>
       </div>
     </div>
   );

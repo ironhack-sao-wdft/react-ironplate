@@ -1,4 +1,3 @@
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import CloseIcon from "@mui/icons-material/Close";
 import { AuthContext } from "../contexts/authContext";
 import { useContext } from "react";
@@ -6,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const { loggedInUser, logout } = useContext(AuthContext);
+  console.log(loggedInUser);
 
   return (
     <div className="m-4 pt-3 d-flex justify-content-between">
@@ -13,7 +13,16 @@ export default function Navbar(props) {
         {/* <img src={AccountCircle} alt="User account" /> */}
         <Link to="/profile" style={{ textDecoration: "none" }}>
           {" "}
-          <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />{" "}
+          <img
+            style={{
+              width: "38px",
+              height: "38px",
+              borderRadius: "50%",
+              border: "1px solid white",
+            }}
+            alt="User"
+            src={loggedInUser.user.pictureURL}
+          ></img>{" "}
           <span style={{ color: "white", fontSize: "16px" }}>
             Welcome {loggedInUser.user.name}!
           </span>

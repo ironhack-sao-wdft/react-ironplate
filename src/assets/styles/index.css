@@ -196,3 +196,13 @@ textarea {
   display: flex;
   justify-content: space-around;
 }
+
+.head-text {
+  position: relative;
+}
+.text-on-image {
+  position: absolute;
+  right: 50%;
+  left: 55%;
+  bottom: 35%;
+}

@@ -3,8 +3,8 @@ import ProfileSettings from "../components/Profile/ProfileSettings";
 import ProfileOverview from "../components/Profile/ProfileOverview";
 import ProfileBlocked from "../components/Profile/ProfileBlocked";
 import { AuthContext } from "../contexts/authContext";
-import temporaryUserIcon from "../assets/images/defaultUserIcon.png";
 import { useState, useContext } from "react";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
 
 export default function Profile() {
   const [profileState, setProfileState] = useState("settings");
@@ -15,17 +15,23 @@ export default function Profile() {
       <div>
         <Navbar invisibleAccount={"invisible"} />
       </div>
-      <section className="d-flex flex-row align-items-center justify-content-around mx-5 px-2">
+      <section className="d-flex flex-column align-items-center mx-5 px-2">
         <div className="rounded-circle" style={{}}>
           <img
-            style={{ width: "20.5vw", height: "11.5vh" }}
+            style={{
+              width: "84px",
+              height: "84px",
+              borderRadius: "50%",
+              border: "2px solid white",
+            }}
             alt="User"
             src={loggedInUser.user.pictureURL}
           ></img>
         </div>
-        <div style={{ width: "50vw", maxWidth: "240px" }}>
+
+        <div>
           <h2
-            className="ps-4"
+            className="mt-1"
             style={{ fontSize: "2.1rem", color: "#FBF8F3", fontWeight: "bold" }}
           >
             {loggedInUser.user.name}
