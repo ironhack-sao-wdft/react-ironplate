@@ -7,9 +7,10 @@ import { useContext } from "react";
 export default function NavbarFeedback(props) {
   const { loggedInUser, logout } = useContext(AuthContext);
 
+  console.log(loggedInUser.user);
   return (
     <div className="my-5 mx-4 d-flex justify-content-between">
-      <Link to={loggedInUser.role === "user" ? "/home" : "/adminpanel"}>
+      <Link to={loggedInUser.user.role === "USER" ? "/home" : "/adminpanel"}>
         <div sx={{ color: "white" }} fontSize="large">
           {/* <img src={AccountCircle} alt="User account" /> */}
           <ArrowBackIosNewIcon sx={{ color: "white" }} fontSize="large" />

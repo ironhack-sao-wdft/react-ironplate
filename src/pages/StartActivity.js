@@ -59,7 +59,11 @@ export default function StartActivity() {
             {currentActivityObj.media === "image" ? (
               <img
                 className=""
-                style={{ height: "29vh", borderRadius: "15px" }}
+                style={{
+                  // height: "29vh",
+                  width: "79vw",
+                  borderRadius: "15px",
+                }}
                 src={currentActivityObj.mediaURL}
                 alt={currentActivityObj.name}
               />
