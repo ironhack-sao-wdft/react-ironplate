@@ -2,24 +2,27 @@ import Carousel from "react-material-ui-carousel";
 import { Button } from "@mui/material";
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 
 export default function ActivityCard(props) {
   const { loggedInUser } = useContext(AuthContext);
 
   console.log(loggedInUser.user);
 
-  function handleBlock(currentOption) {
-    if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
-      api.patch(`/profile/${loggedInUser.user._id}`, async (req, res) => {
-        try {
-          const result = await req.body.blockedActivities;
-          console.log(result);
-          res.json(...result, currentOption._id);
-        } catch (err) {
-          console.error(err);
-        }
-      });
+  async function handleBlock(currentOption) {
+    try {
+      if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
+        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
+          blockedActivities: [
+            ...loggedInUser.user.blockedActivities,
+            currentOption._id,
+          ],
+        });
+        console.log(response.data.blockedActivities);
+      }
+      console.log(loggedInUser.user.blockedActivities);
+    } catch (err) {
+      console.error(err);
     }
   }
 
