@@ -46,6 +46,7 @@ function App() {
           path="/adminpanel"
           element={<ProtectedRoute component={AdminPanel} />}
         />
+
         <Route path="/submissioncomplete" element={<SubmissionComplete />} />
         <Route path="/activitylist" element={<ActivityList />} />
         <Route path="/home" element={<ProtectedRoute component={Home} />} />
