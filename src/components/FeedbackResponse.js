@@ -2,6 +2,7 @@ import emojiPopper from "../assets/images/emojiPopper.png";
 import FacebookIcon from "../assets/images/facebookIcon.png";
 import InstagramIcon from "../assets/images/instagramIcon.png";
 import TwitterIcon from "../assets/images/twitterIcon.png";
+import { Link } from "react-router-dom";
 
 export default function FeedbackResponse(props) {
   if (props.response === "bad") {
@@ -25,29 +26,34 @@ export default function FeedbackResponse(props) {
           </p>
         </section>
         <section className="d-flex flex-column justify-content-center align-items-center">
-          <button
-            className="px-5 py-3 mb-4"
-            style={{
-              background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
-              border: 0,
-              borderRadius: "10px",
-              color: "#3A3938",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-            }}
-          >
-            yes, please!
-          </button>
-          <button
-            style={{
-              background: "none",
-              border: "none",
-              color: "#FFF9F0",
-              fontSize: "1.5rem",
-            }}
-          >
-            no, thanks.
-          </button>
+          <Link to="/home">
+            <button
+              className="px-5 py-3 mb-4"
+              style={{
+                background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
+                border: 0,
+                borderRadius: "10px",
+                color: "#3A3938",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+              }}
+            >
+              yes, please!
+            </button>
+          </Link>
+
+          <Link to="/profile">
+            <button
+              style={{
+                background: "none",
+                border: "none",
+                color: "#FFF9F0",
+                fontSize: "1.5rem",
+              }}
+            >
+              no, thanks.
+            </button>
+          </Link>
         </section>
       </div>
     );

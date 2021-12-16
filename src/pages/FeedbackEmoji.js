@@ -1,13 +1,35 @@
-import mock from "../assets/mock/mock.json";
 import Navbar from "../components/Navbar";
 import emojiHeartEyes from "../assets/images/emojiHeartEyes.png";
 import emojiHappy from "../assets/images/emojiHappy.png";
 import emojiSad from "../assets/images/emojiSad.png";
-import { useState } from "react";
+import api from "../apis/api";
+import { useState, useContext, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { AuthContext } from "../contexts/authContext";
 import FeedbackResponse from "../components/FeedbackResponse";
 
 export default function FeedbackEmoji() {
-  const pauseType = mock.type === "indoors" ? "INDOOR PAUSE" : "OUTDOOR PAUSE";
+  const [currentActivityObj, setCurrentActivityObj] = useState([]);
+  const params = useParams();
+  const { loggedInUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    function fetchActivity() {
+      api
+        .get(`/activities/${params.id}`)
+        .then((response) => {
+          const currentActivity = response.data;
+          setCurrentActivityObj(currentActivity);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+    fetchActivity();
+  }, []);
+
+  const pauseType =
+    currentActivityObj.type === "indoors" ? "INDOOR PAUSE" : "OUTDOOR PAUSE";
   const [response, setResponse] = useState("");
   const [showResponse, setShowResponse] = useState(false);
 
