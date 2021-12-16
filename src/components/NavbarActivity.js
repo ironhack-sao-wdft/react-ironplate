@@ -1,9 +1,9 @@
 import CloseIcon from "@mui/icons-material/Close";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
-export default function Navbar(props) {
+export default function NavbarActivity(props) {
   return (
-    <div className="my-5 mx-4 d-flex justify-content-between">
+    <div className="my-3 mx-4 d-flex justify-content-between">
       <div
         onClick={() => {
           props.setDescriptionToggle(false);

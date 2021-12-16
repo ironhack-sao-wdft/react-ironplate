@@ -1,4 +1,5 @@
 import NavbarActivity from "../NavbarActivity";
+import { Link } from "react-router-dom";
 
 export default function ActivityInfo(props) {
   return (
@@ -47,34 +48,20 @@ export default function ActivityInfo(props) {
             </p>
           </section>
           <section className="">
-            <button
-              className="px-4 py-3 mb-4"
-              style={{
-                background: "linear-gradient(0deg, #965353, #965353)",
-                border: 0,
-                borderRadius: "10px",
-                color: "#FBF8F3",
-              }}
-            >
-              start activity
-            </button>
+            <Link to={`/activity/${props.currentActivity._id}`}>
+              <button
+                className="px-4 py-3 mb-4"
+                style={{
+                  background: "linear-gradient(0deg, #965353, #965353)",
+                  border: 0,
+                  borderRadius: "10px",
+                  color: "#FBF8F3",
+                }}
+              >
+                start activity
+              </button>
+            </Link>
           </section>
-
-          {/* <section>
-            <p>you are currently in</p>
-            <h1>{mock.name}</h1>
-          </section> */}
-
-          {/* <section>
-            <img
-              style={{ width: "205px" }}
-              src={mock.mediaURL}
-              alt={mock.name}
-            />
-          </section> */}
-          {/* <footer>
-            <small>end activity</small>
-          </footer> */}
         </div>
       </div>
     </div>
