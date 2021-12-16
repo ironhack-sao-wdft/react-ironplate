@@ -8,16 +8,13 @@ export default function StartActivity() {
   const [currentActivityObj, setCurrentActivityObj] = useState([]);
   const params = useParams();
 
-  const videoIndex = currentActivityObj.mediaURL.indexOf("/pause/");
-
-  const id = currentActivityObj.mediaURL.slice(videoIndex + 7).split(".")[0];
-
   useEffect(() => {
     function fetchActivity() {
       api
         .get(`/activities/${params.id}`)
         .then((response) => {
           const currentActivity = response.data;
+          console.log(currentActivity);
           setCurrentActivityObj(currentActivity);
         })
         .catch((error) => {
@@ -27,9 +24,15 @@ export default function StartActivity() {
     fetchActivity();
   }, []);
 
+  // const videoIndex = currentActivityObj.mediaURL.indexOf("/pause/");
+
+  // const id = currentActivityObj.mediaURL.slice(videoIndex + 7).split(".")[0];
+
+  console.log(currentActivityObj);
+
   return (
     <div className="d-flex flex-column">
-      <Navbar invisibleAccount={"invisible"} />
+      <Navbar invisibleAccount={"invisible"} invisibleClose={"invisible"} />
 
       <div className="d-flex justify-content-center">
         <div
@@ -64,7 +67,7 @@ export default function StartActivity() {
             {currentActivityObj.media === "video" ? (
               <Video
                 cloudName="igor-stefano"
-                publicId={`${id}`}
+                // publicId={`${id}`}
                 controls="true"
                 style={{ height: "26vh", borderRadius: "15px" }}
               />
@@ -77,9 +80,16 @@ export default function StartActivity() {
               follow the instructions and enjoy your pause.
             </p>
           </section>
-          <Link to={`/feedback/${params.id}`}>
+          <Link
+            style={{ textDecoration: "none" }}
+            to={`/feedback/${params.id}`}
+          >
             <footer className="d-flex flex-column justify-end align-items-center pt-3">
-              <small style={{ fontSize: "1.1rem" }}>end activity</small>
+              <small
+                style={{ fontSize: "1.1rem", color: "rgba(59, 59, 51, 1)" }}
+              >
+                end activity
+              </small>
             </footer>
           </Link>
         </div>

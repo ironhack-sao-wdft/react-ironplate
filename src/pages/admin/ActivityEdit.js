@@ -216,6 +216,14 @@ export default function ActivityEdit() {
             type="submit"
             onClick={handleSubmit}
             className="btn btn-light btn-lg"
+            style={{
+              background: "linear-gradient(0deg, #FFF9F0, #FFF9F0)",
+              border: 0,
+              borderRadius: "10px",
+              color: "#3A3938",
+              fontSize: "1.2rem",
+              fontWeight: "bold",
+            }}
           >
             Submit
           </button>
