@@ -2,16 +2,30 @@ import Navbar from "../components/Navbar";
 import api from "../apis/api";
 import HomeComponent from "../components/HomeComponent";
 import ActivityDescription from "../components/Activity/ActivityDescription";
-import { AuthContext } from "../contexts/authContext";
-import { useContext } from "react";
 import { useState, useEffect } from "react";
 
 export default function Home() {
   const [allActivities, setAllActivities] = useState([]);
-  const { loggedInUser } = useContext(AuthContext);
+  const [currentUserObj, setCurrentUserObj] = useState([]);
   const [pageState, setPageState] = useState("home");
 
+  useEffect(() => {
+    function fetchUser() {
+      api
+        .get(`/profile/`)
+        .then((response) => {
+          const currentUser = response.data;
+          setCurrentUserObj(currentUser);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+    fetchUser();
+  }, []);
+
   // Acessar o banco de dados para pegar todas as atividades
+
   useEffect(() => {
     async function fetchActivities() {
       try {
@@ -26,9 +40,14 @@ export default function Home() {
 
   // Acessar o usuário para descobrir quais são as atividades bloqueadas para retirá-las da array
 
-  const blockedActivities = loggedInUser.user.blockedActivities;
+  const blockedActivities = currentUserObj?.blockedActivities?.map(
+    (currentActivity) => {
+      return currentActivity._id;
+    }
+  );
+
   const activitiesToSort = allActivities.filter((currentActivity) => {
-    if (blockedActivities.includes(currentActivity)) {
+    if (blockedActivities?.includes(currentActivity._id)) {
       return null;
     } else {
       return currentActivity;
@@ -37,7 +56,7 @@ export default function Home() {
 
   // Acessar o usuário para descobrir quais são as atividades favoritas e duplicá-las na array
 
-  const favoriteActivities = loggedInUser.user.favorites;
+  const favoriteActivities = currentUserObj.favorites;
   for (let i in favoriteActivities) {
     activitiesToSort.push(favoriteActivities[i]);
   }
@@ -94,14 +113,20 @@ export default function Home() {
         <ActivityDescription
           activitiesToShow={selectRandomOption(indoorsArr)}
           blockedActivities={blockedActivities}
+          selectRandomOption={selectRandomOption}
+          pageState={pageState}
           favoriteActivities={favoriteActivities}
+          setPageState={setPageState}
         />
       ) : null}
       {pageState === "outdoors" ? (
         <ActivityDescription
           activitiesToShow={selectRandomOption(outdoorsArr)}
+          selectRandomOption={selectRandomOption}
+          pageState={pageState}
           blockedActivities={blockedActivities}
           favoriteActivities={favoriteActivities}
+          setPageState={setPageState}
         />
       ) : null}
     </div>

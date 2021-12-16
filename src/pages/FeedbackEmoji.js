@@ -12,52 +12,73 @@ export default function FeedbackEmoji() {
   const [currentActivityObj, setCurrentActivityObj] = useState([]);
   const params = useParams();
   const { loggedInUser } = useContext(AuthContext);
-
-  async function handleBlock(currentOption) {
-    try {
-      if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
-        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
-          blockedActivities: [
-            ...loggedInUser.user.blockedActivities,
-            currentOption._id,
-          ],
-        });
-        console.log(response.data.blockedActivities);
-      }
-      console.log(loggedInUser.user.blockedActivities);
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-  async function handleFavorite(currentOption) {
-    try {
-      if (!loggedInUser.user.favorites.includes(currentOption._id)) {
-        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
-          favorites: [...loggedInUser.user.favorites, currentOption._id],
-        });
-        console.log(response.data.favorites);
-      }
-      console.log(loggedInUser.user.favorites);
-    } catch (err) {
-      console.error(err);
-    }
-  }
+  const [currentUserObj, setCurrentUserObj] = useState([]);
 
   useEffect(() => {
-    function fetchActivity() {
+    async function fetchActivity() {
+      try {
+        const response = await api.get(`/activities/${params.id}`);
+        setCurrentActivityObj(response.data);
+        console.log(currentActivityObj);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchActivity();
+  }, []);
+
+  useEffect(() => {
+    function fetchUser() {
       api
-        .get(`/activities/${params.id}`)
+        .get(`/profile/`)
         .then((response) => {
-          const currentActivity = response.data;
-          setCurrentActivityObj(currentActivity);
+          const currentUser = response.data;
+          setCurrentUserObj(currentUser);
         })
         .catch((error) => {
           console.error(error);
         });
     }
-    fetchActivity();
+    fetchUser();
   }, []);
+
+  const blockedActivities = currentUserObj?.blockedActivities?.map(
+    (currentActivity) => {
+      return currentActivity._id;
+    }
+  );
+
+  async function handleBlock(currentOption) {
+    try {
+      if (!blockedActivities.includes(currentOption._id)) {
+        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
+          blockedActivities: [...blockedActivities, currentOption._id],
+        });
+        console.log(response.data.blockedActivities);
+      }
+      console.log(blockedActivities);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  const favorites = currentUserObj?.favorites?.map((currentActivity) => {
+    return currentActivity._id;
+  });
+
+  async function handleFavorite(currentOption) {
+    try {
+      if (!favorites.includes(currentOption._id)) {
+        const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
+          favorites: [...favorites, currentOption._id],
+        });
+        console.log(response.data.favorites);
+      }
+      console.log(favorites);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   const pauseType =
     currentActivityObj.type === "indoors" ? "INDOOR PAUSE" : "OUTDOOR PAUSE";

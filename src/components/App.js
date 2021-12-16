@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../assets/styles/index.css";
 
 import Home from "../pages/Home";
+import ActivityRefresh from "./Activity/ActivityRefresh";
 import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
@@ -58,6 +59,7 @@ function App() {
 
         <Route path="/submissioncomplete" element={<SubmissionComplete />} />
         <Route path="/activitylist" element={<ActivityList />} />
+        <Route path="/activity/refresh" element={<ActivityRefresh />} />
         <Route path="/home" element={<ProtectedRoute component={Home} />} />
         <Route path="/description" element={<Description />} />
         <Route path="/" element={<Welcome />} />

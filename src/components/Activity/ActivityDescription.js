@@ -61,6 +61,10 @@ export default function ActivityDescription(props) {
               setCurrentActivity={setCurrentActivity}
               setCurrentActivityIndex={setCurrentActivityIndex}
               cardsArr={props.activitiesToShow}
+              selectRandomOption={props.selectRandomOption}
+              pageState={props.pageState}
+              blockedActivities={props.blockedActivities}
+              setPageState={props.setPageState}
             />
           </div>{" "}
         </div>

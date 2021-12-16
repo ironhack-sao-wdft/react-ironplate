@@ -19,9 +19,13 @@ export default function ProfiledBlocked(props) {
           }}
         >
           <div className="pt-4">
-            {props.currentUserObj.blockedActivities.map(
-              (currentActivity, index) => {
-                if (index + 1 < props.currentUserObj.blockedActivities.length) {
+            {props.currentUserObj.blockedActivities
+              .slice(0, 7)
+              .map((currentActivity, index) => {
+                if (
+                  index + 1 <
+                  props.currentUserObj.blockedActivities.slice(0, 7).length
+                ) {
                   return (
                     <h3
                       className="ms-4"
@@ -53,8 +57,7 @@ export default function ProfiledBlocked(props) {
                     </h3>
                   );
                 }
-              }
-            )}
+              })}
           </div>
         </div>
       </section>
