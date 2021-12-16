@@ -2,25 +2,22 @@ import Carousel from "react-material-ui-carousel";
 import { Button } from "@mui/material";
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 
 export default function ActivityCard(props) {
   const { loggedInUser } = useContext(AuthContext);
 
-  console.log(loggedInUser.user);
-
   async function handleBlock(currentOption) {
     try {
-      if (!loggedInUser.user.blockedActivities.includes(currentOption._id)) {
+      if (!props.blockedActivities.includes(currentOption._id)) {
         const response = await api.patch(`/profile/${loggedInUser.user._id}`, {
-          blockedActivities: [
-            ...loggedInUser.user.blockedActivities,
-            currentOption._id,
-          ],
+          blockedActivities: [...props.blockedActivities, currentOption._id],
         });
+        props.selectRandomOption(`${props.pageState}Arr`);
         console.log(response.data.blockedActivities);
       }
-      console.log(loggedInUser.user.blockedActivities);
+      console.log(props.blockedActivities);
     } catch (err) {
       console.error(err);
     }
@@ -114,19 +111,21 @@ export default function ActivityCard(props) {
                   </section>
 
                   <section className="d-flex mx-3 mt-4 justify-content-between align-items-center">
-                    <button
-                      style={{
-                        background: "none",
-                        border: "none",
-                        color: "#3A3938",
-                        fontSize: "1.2rem",
-                      }}
-                      onClick={() => {
-                        handleBlock(currentOption);
-                      }}
-                    >
-                      block
-                    </button>
+                    <Link to="/activity/refresh">
+                      <button
+                        style={{
+                          background: "none",
+                          border: "none",
+                          color: "#3A3938",
+                          fontSize: "1.2rem",
+                        }}
+                        onClick={() => {
+                          handleBlock(currentOption);
+                        }}
+                      >
+                        block
+                      </button>
+                    </Link>
                     <button className="d-none">next card</button>
                   </section>
                 </div>
