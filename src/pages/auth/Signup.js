@@ -38,7 +38,7 @@ function Signup(props) {
     <div className="entry-card m-4 shadow-lg p-1 mb-5">
       <form onSubmit={handleSubmit}>
         <div className="p-2">
-          <label htmlFor="signupFormName">Name:</label>
+          <label htmlFor="signupFormName" />
           <input
             type="text"
             name="name"
@@ -46,11 +46,12 @@ function Signup(props) {
             value={state.name}
             error={errors.name}
             onChange={handleChange}
+            placeholder="Your name"
           />
         </div>
 
         <div className="p-2">
-          <label htmlFor="signupFormEmail">E-mail:</label>
+          <label htmlFor="signupFormEmail" />
           <input
             type="email"
             name="email"
@@ -58,11 +59,12 @@ function Signup(props) {
             value={state.email}
             error={errors.email}
             onChange={handleChange}
+            placeholder="Your e-mail"
           />
         </div>
 
         <div className="p-2">
-          <label htmlFor="signupFormPassword">Password:</label>
+          <label htmlFor="signupFormPassword" />
           <input
             type="password"
             name="password"
@@ -70,11 +72,16 @@ function Signup(props) {
             value={state.password}
             error={errors.password}
             onChange={handleChange}
+            placeholder="Your password"
           />
         </div>
 
         <div className="p-4">
-          <button className="btn btn-light btn-lg" type="submit">
+          <button
+            className="btn btn-light btn-lg"
+            type="submit"
+            style={{ color: "#965353" }}
+          >
             Signup
           </button>
         </div>

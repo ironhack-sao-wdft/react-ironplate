@@ -12,6 +12,8 @@ export default function ActivityCreate() {
     media: new File([], ""),
     mediaURL: "",
     mediaType: "",
+    creatorName: "",
+    creatorURL: "",
   });
 
   const navigate = useNavigate();
@@ -70,7 +72,7 @@ export default function ActivityCreate() {
           </button>
         </Link>
       </div>
-      <div className="entry-card m-4 shadow-lg p-1 mb-5">
+      <div className="entry-card shadow-lg m-5">
         <form>
           <div className="p-2">
             <input
@@ -81,6 +83,38 @@ export default function ActivityCreate() {
               value={activityData.name}
               required
             />
+          </div>
+          <div className="p-2">
+            <input
+              name="creatorName"
+              id="creatorName"
+              placeholder="Pause partner"
+              onChange={handleChange}
+              value={activityData.creatorName}
+            />
+            *
+          </div>
+          <div className="p-2">
+            <input
+              name="creatorURL"
+              id="creatorURL"
+              placeholder="Pause partner website"
+              onChange={handleChange}
+              value={activityData.creatorURL}
+            />
+            *
+          </div>
+          <div
+            style={{
+              fontSize: "12px",
+              lineHeight: "12px",
+              marginBottom: "20px",
+            }}
+          >
+            <span>
+              * These fields do not need to be answered. When empty they will
+              automatically be converted to system default values.
+            </span>
           </div>
           <div className="col-auto my-1">
             <select
@@ -163,7 +197,6 @@ export default function ActivityCreate() {
               Media
             </label>
           </div>
-
           <button
             type="submit"
             onClick={handleSubmit}
