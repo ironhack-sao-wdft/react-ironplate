@@ -10,8 +10,10 @@ export default function Navbar(props) {
   return (
     <div className="m-4 pt-3 d-flex justify-content-between">
       <div className={`${props.invisibleAccount}`}>
-        
-        <Link {props.invisibleAccount === "invisible" ? "" : "/profile"} style={{ textDecoration: "none" }}>
+        <Link
+          to={props.invisibleAccount === "invisible" ? "" : "/profile"}
+          style={{ textDecoration: "none" }}
+        >
           {" "}
           <img
             style={{

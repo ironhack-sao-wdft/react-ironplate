@@ -4,12 +4,7 @@ import ProfileOverview from "../components/Profile/ProfileOverview";
 import ProfileBlocked from "../components/Profile/ProfileBlocked";
 import api from "../apis/api";
 import { AuthContext } from "../contexts/authContext";
-<<<<<<< HEAD
-import { useState, useContext } from "react";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
-=======
 import { useState, useContext, useEffect } from "react";
->>>>>>> 2c1d1f39fefb21f5f02068e80bd6cdf3d1416b98
 
 export default function Profile() {
   const [profileState, setProfileState] = useState("settings");
