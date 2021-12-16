@@ -20,7 +20,6 @@ import ActivityList from "../pages/admin/ActivityList";
 import DetailsFromActivity from "../pages/admin/DetailsFromActivity";
 import ActivityEdit from "../pages/admin/ActivityEdit";
 import ActivityDelete from "../pages/admin/ActivityDelete";
-import UserProfile from "../pages/user/UserProfile";
 
 function App() {
   return (
@@ -47,10 +46,7 @@ function App() {
           path="/adminpanel"
           element={<ProtectedRoute component={AdminPanel} />}
         />
-        <Route
-          path="/userprofile"
-          element={<ProtectedRoute component={UserProfile} />}
-        />
+
         <Route path="/submissioncomplete" element={<SubmissionComplete />} />
         <Route path="/activitylist" element={<ActivityList />} />
         <Route path="/home" element={<ProtectedRoute component={Home} />} />

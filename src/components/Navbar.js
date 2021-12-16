@@ -11,7 +11,7 @@ export default function Navbar(props) {
     <div className="m-4 pt-3 d-flex justify-content-between">
       <div className={`${props.invisibleAccount}`}>
         {/* <img src={AccountCircle} alt="User account" /> */}
-        <Link to="/userprofile" style={{ textDecoration: "none" }}>
+        <Link to="/profile" style={{ textDecoration: "none" }}>
           {" "}
           <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />{" "}
           <span style={{ color: "white", fontSize: "16px" }}>
