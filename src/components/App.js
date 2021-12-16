@@ -54,7 +54,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/activity/:id" element={<StartActivity />} />
-        <Route path="/feedback" element={<FeedbackEmoji />} />
+        <Route path="/feedback/:id" element={<FeedbackEmoji />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </AuthContextComponent>

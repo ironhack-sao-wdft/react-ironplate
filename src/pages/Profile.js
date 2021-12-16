@@ -2,11 +2,13 @@ import Navbar from "../components/Navbar.js";
 import ProfileSettings from "../components/Profile/ProfileSettings";
 import ProfileOverview from "../components/Profile/ProfileOverview";
 import ProfileBlocked from "../components/Profile/ProfileBlocked";
+import { AuthContext } from "../contexts/authContext";
 import temporaryUserIcon from "../assets/images/defaultUserIcon.png";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 export default function Profile() {
   const [profileState, setProfileState] = useState("settings");
+  const { loggedInUser } = useContext(AuthContext);
 
   return (
     <div>
@@ -18,7 +20,7 @@ export default function Profile() {
           <img
             style={{ width: "20.5vw", height: "11.5vh" }}
             alt="User"
-            src={temporaryUserIcon}
+            src={loggedInUser.user.pictureURL}
           ></img>
         </div>
         <div style={{ width: "50vw", maxWidth: "240px" }}>
@@ -26,7 +28,7 @@ export default function Profile() {
             className="ps-4"
             style={{ fontSize: "2.1rem", color: "#FBF8F3", fontWeight: "bold" }}
           >
-            Pedro Ipsum
+            {loggedInUser.user.name}
           </h2>
         </div>
       </section>
