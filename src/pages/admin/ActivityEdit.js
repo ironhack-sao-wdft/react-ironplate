@@ -90,16 +90,24 @@ export default function ActivityEdit() {
 
     try {
       setLoading(true);
-      const mediaURL = await handleFileUpload(activityData.media);
-      const formData = { ...activityData };
-      delete formData.media;
 
-      const response = await api.patch(`/activities/${id}`, {
-        ...formData,
-        mediaURL,
-      });
+      if (activityData.media) {
+        const mediaURL = await handleFileUpload(activityData.media);
+        const formData = { ...activityData };
+        delete formData.media;
 
-      console.log(response);
+        const response = await api.patch(`/activities/${id}`, {
+          ...formData,
+          mediaURL,
+        });
+      } else {
+        const formData = { ...activityData };
+
+        delete formData.mediaURL;
+        delete formData.media;
+        const response = await api.patch(`/activities/${id}`, { ...formData });
+      }
+
       setLoading(false);
       navigate("/submissioncomplete");
     } catch (err) {
