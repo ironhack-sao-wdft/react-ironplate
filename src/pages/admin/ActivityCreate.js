@@ -128,6 +128,7 @@ export default function ActivityCreate() {
                 backgroundColor: "#FFF9F0",
                 borderRadius: "10px",
                 border: "none",
+                color: "rgba(150, 83, 83, 1)",
               }}
               name="creatorName"
               id="creatorName"
