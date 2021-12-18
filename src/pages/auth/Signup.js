@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import validator from "validator";
+import ReactTooltip from "react-tooltip";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -111,18 +112,10 @@ function Signup(props) {
             error={errors.password}
             onChange={handleChangePW}
             placeholder="Your password"
+            data-tip={errorMessage}
           />
         </div>
-        {
-          <span
-            style={{
-              color: "white",
-              fontSize: "14px",
-            }}
-          >
-            {errorMessage}
-          </span>
-        }
+        {errorMessage !== "" && <ReactTooltip />}
 
         <button
           class="btn btn-white"
@@ -134,7 +127,7 @@ function Signup(props) {
 
         <div className="p-4">
           <button
-            className="btn btn-light btn-lg"
+            className="btn btn-light btn-lg mt-4"
             type="submit"
             style={{ color: "#965353" }}
           >
