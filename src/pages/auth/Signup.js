@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -9,6 +10,12 @@ function Signup(props) {
     email: null,
     password: null,
   });
+
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
 
   const navigate = useNavigate();
 
@@ -68,7 +75,7 @@ function Signup(props) {
         <div className="p-2">
           <label htmlFor="signupFormPassword" />
           <input
-            type="password"
+            type={passwordShown ? "text" : "password"}
             name="password"
             id="signupFormPassword"
             value={state.password}
@@ -77,6 +84,13 @@ function Signup(props) {
             placeholder="Your password"
           />
         </div>
+        <button
+          class="btn btn-white"
+          style={{ marginTop: "-99px", marginLeft: "230px", border: "none" }}
+          onClick={togglePassword}
+        >
+          <VisibilityIcon sx={{ color: "#965353" }} />
+        </button>
 
         <div className="p-4">
           <button

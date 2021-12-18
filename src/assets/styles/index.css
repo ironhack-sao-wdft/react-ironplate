@@ -205,3 +205,8 @@ textarea {
   display: flex;
   justify-content: space-around;
 }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
