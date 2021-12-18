@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import VisibilityIcon from "@mui/icons-material/Visibility";
+import validator from "validator";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -10,6 +11,26 @@ function Signup(props) {
     email: null,
     password: null,
   });
+
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const validate = (value) => {
+    if (
+      validator.isStrongPassword(value, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+    ) {
+      setErrorMessage("");
+    } else {
+      setErrorMessage(
+        "Your password must have at least 8 characters with uppercase, numeric and special."
+      );
+    }
+  };
 
   const [passwordShown, setPasswordShown] = useState(false);
 
@@ -20,6 +41,14 @@ function Signup(props) {
   const navigate = useNavigate();
 
   function handleChange(event) {
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  }
+
+  function handleChangePW(event) {
+    validate(event.target.value);
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
@@ -80,10 +109,21 @@ function Signup(props) {
             id="signupFormPassword"
             value={state.password}
             error={errors.password}
-            onChange={handleChange}
+            onChange={handleChangePW}
             placeholder="Your password"
           />
         </div>
+        {
+          <span
+            style={{
+              color: "white",
+              fontSize: "14px",
+            }}
+          >
+            {errorMessage}
+          </span>
+        }
+
         <button
           class="btn btn-white"
           style={{ marginTop: "-99px", marginLeft: "230px", border: "none" }}
