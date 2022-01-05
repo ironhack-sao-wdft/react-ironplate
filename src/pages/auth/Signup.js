@@ -37,51 +37,53 @@ function Signup(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <h1>Cadastre-se</h1>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormName">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="signupFormName"
+            value={state.name}
+            error={errors.name}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormEmail">E-mail Address</label>
+          <input
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormPassword">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <button type="submit">Signup!</button>
+        <div>
+          <button type="submit">Signup!</button>
 
-        <Link to="/login">Already have an account? Click here to login.</Link>
-      </div>
-    </form>
+          <Link to="/login">Already have an account? Click here to login.</Link>
+        </div>
+      </form>
+    </div>
   );
 }
 
