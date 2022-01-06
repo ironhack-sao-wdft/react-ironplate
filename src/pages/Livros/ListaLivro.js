@@ -1,30 +1,28 @@
 import { useState, useEffect } from "react";
-import CardPost from "./CardPost";
 import api from "../../apis/api";
-import "../../assets/styles/postlist.css";
-
-function PostList() {
-  const [postList, setPostList] = useState([]);
+import CardLivro from "../../pages/Livros/CardLivro"
+function ListaLivro() {
+  const [listaLivro, setListaLivro] = useState([]);
 
   useEffect(() => {
-    async function fetchPost() {
+    async function fetchLivro() {
       try {
-        const response = await api.get("/lista-post");
+        const response = await api.get("/lista-livro");
 
-        setPostList([...response.data]);
+        setListaLivro([...response.data]);
       } catch (err) {
         console.error(err);
       }
     }
-    fetchPost();
+    fetchLivro();
   }, []);
 
   return (
-    <div className="postdiv">
-      {postList.map((postObj) => (
-        <CardPost key={postObj._id} {...postObj} />
+    <div className="container">
+      {listaLivro.map((livroObj) => (
+        <CardLivro key={livroObj._id} {...livroObj} />
       ))}
     </div>
   );
 }
-export default PostList;
+export default ListaLivro;

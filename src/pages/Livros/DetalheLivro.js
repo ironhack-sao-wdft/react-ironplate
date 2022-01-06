@@ -3,67 +3,70 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import api from "../../apis/api";
 
-import ConfirmationModal from "../../components/ConfimationModal";
+//import ConfirmationModal from "../../components/ConfimationModal";
 
-function PosttDetail() {
-  const [postDetails, setPostDetails] = useState({
-    nickName: "",
-    idade: "",
-    estado: "",
-    cidade: "",
-    descricao: "",
+function DetalheLivro() {
+  const [livroDetalhe, setLivroDetalhe] = useState({
+    title: "",
+    author: "",
+    synopsis: "",
+    releaseYear: 0,
+    genre: "",
+    coverImage: "",
   });
-  const [showModal, setShowModal] = useState(false);
+  //const [showModal, setShowModal] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function fetchPost() {
+    async function fetchLivro() {
       try {
-        const response = await api.get(`/detalhe-post/${id}`);
+        const response = await api.get(`/detalhe-livro/${id}`);
 
-        setPostDetails({ ...response.data });
+        setLivroDetalhe({ ...response.data });
       } catch (err) {
         console.error(err);
       }
     }
-    fetchPost();
+    fetchLivro();
   }, [id]);
 
   return (
     <div>
       <div className="img-container d-flex justify-content-between">
+        <div className="img-fluid">
+          <img 
+          alt={livroDetalhe.title}
+           src={livroDetalhe.coverImage} />
+        </div>
+
         <div>
           <button className="btn btn-warning me-2">Editar</button>
-          <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+          {/* <button className="btn btn-danger" onClick={() => setShowModal(true)}>
             Deletar
-          </button>
+          </button> */}
         </div>
       </div>
 
       <h3>
-        <strong>Nome: </strong>
-        {postDetails.nickName}
+        <strong>Título: </strong>
+        {livroDetalhe.title}
       </h3>
       <h4>
-        <strong>idade: </strong>
-        {postDetails.idade}
+        <strong>Author: </strong>
+        {livroDetalhe.author}
       </h4>
       <h4>
-        <strong>estado: </strong>
-        {postDetails.estado}
+        <strong>Sinopse: </strong>
+        {livroDetalhe.synopsis}
       </h4>
       <h4>
-        <strong>Cidade: </strong>
-        {postDetails.cidade}
-      </h4>
-      <h4>
-        <strong>Descrição: </strong>
-        {postDetails.descricao}
+        <strong>Ano: </strong>
+        {livroDetalhe.releaseYear}
       </h4>
 
-      <ConfirmationModal
+      {/* <ConfirmationModal
         title="Tem certeza?"
         variant="danger"
         confirmationText="Deletar"
@@ -75,9 +78,9 @@ function PosttDetail() {
         }}
       >
         Tem certeza que quer deletar?
-      </ConfirmationModal>
+      </ConfirmationModal> */}
     </div>
   );
 }
 
-export default PosttDetail;
+export default DetalheLivro;

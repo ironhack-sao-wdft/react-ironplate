@@ -5,23 +5,23 @@ import "../../assets/styles/permissionDelete.css";
 
 import api from "../../apis/api";
 
-function PostDelete() {
+function DeleteLivro() {
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function deletePost() {
+    async function deleteLivro() {
       try {
-        await api.delete(`/delete-post/${id}`);
+        await api.delete(`/delete-livro/${id}`);
         navigate("/");
       } catch (err) {
         console.error(err);
       }
     }
-    deletePost();
+    deleteLivro();
   }, [id, navigate]);
 
   return <PermissionDelete />;
 }
 
-export default PostDelete;
+export default DeleteLivro;

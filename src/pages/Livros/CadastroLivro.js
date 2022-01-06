@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/Navbar"
 import api from "../../apis/api";
+import FormField from "../../components/Form/FormField"
 
 function CadastrarLivro() {
 
@@ -49,18 +49,15 @@ function CadastrarLivro() {
 
   return (
     <div>
-      <Navbar />
-      <div className="container bg-danger d-flex justify-content-center w-50 mt-5">
+      <div className="container cadastro">
         <form onSubmit={handleSubmit}>
           <div className="titulo">
             <h1>Cadastro</h1>
           </div>
           {/* campo do titulo */}
-          <div className="input-group mb-3 ">
-            <label htmlFor="livroFormTitulo" className="mr-3">
-              Título
-            </label>
-            <input
+          <div className=" mb-3 ">
+              <FormField
+              label="Título"
               type="text"
               id="title"
               name="title"
@@ -72,11 +69,10 @@ function CadastrarLivro() {
           </div>
 
           {/* campo do Author */}
-          <div className="input-group mb-3">
-            <label htmlFor="livroFormAuthor" className="mr-3">
-              Author
-            </label>
-            <input
+          <div className=" mb-3">
+            
+            <FormField
+            label="Author"
               type="text"
               id="author"
               name="author"
@@ -88,13 +84,11 @@ function CadastrarLivro() {
           </div>
 
           {/* campo sinopse do livro */}
-          <div className="input-group mb-3">
+          <div className=" mb-3">
             <div>
-              <label htmlFor="livroFormSynopsis" className="mr-3">
-                Sinopse
-              </label>
             </div>
-            <input
+            <FormField
+            label="Sinopse"
               type="text"
               id="synopsis"
               name="synopsis"
@@ -106,11 +100,10 @@ function CadastrarLivro() {
           </div>
 
           {/* campo Ano do livro */}
-          <div className="input-group mb-3">
-            <label htmlFor="livroFormAno" className="mr-3">
-              Ano
-            </label>
-            <input
+          <div className="mb-3">
+           
+            <FormField
+            label="Ano"
               id="releaseYear"
               name="releaseYear"
               onChange={handleChange}
@@ -121,12 +114,9 @@ function CadastrarLivro() {
           </div>
 
           {/* campo Gênero do livro */}
-          <div className="input-group mb-3">
-            <label htmlFor="livroFormGenero" className="mr-3">
-              Genero
-            </label>
-
-            <input
+          <div className=" mb-3">
+             <FormField
+             label="Gênero"
               id="genre"
               name="genre"
               onChange={handleChange}
@@ -135,16 +125,15 @@ function CadastrarLivro() {
               readOnly={loading}
             />
           </div>
-          <div class="input-group mb-3">
-            <input
+          <div class=" mb-3">
+            <FormField
+            label="Imagem"
               type="file"
               name="coverImage"
               className="form-control"
               id="inputGroupFile02"
             />
-            <label className="input-group-text" for="inputGroupFile02">
-              Imagem
-            </label>
+
           </div>
 
           <div>
