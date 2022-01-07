@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import PermissionDelete from "../../components/permission.delete";
-import "../../assets/styles/permissionDelete.css";
 
 import api from "../../apis/api";
 
 function DeleteLivro() {
+
   const { id } = useParams();
+  
   const navigate = useNavigate();
 
   useEffect(() => {
     async function deleteLivro() {
       try {
         await api.delete(`/delete-livro/${id}`);
-        navigate("/");
+        navigate("/livro");
       } catch (err) {
         console.error(err);
       }
@@ -21,7 +21,7 @@ function DeleteLivro() {
     deleteLivro();
   }, [id, navigate]);
 
-  return <PermissionDelete />;
+  return <div>Deletando...</div>;
 }
 
 export default DeleteLivro;

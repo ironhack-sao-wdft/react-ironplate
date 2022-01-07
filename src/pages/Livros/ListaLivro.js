@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import api from "../../apis/api";
-import CardLivro from "../../pages/Livros/CardLivro"
+import CardLivro from "../../pages/Livros/CardLivro";
+
+
 function ListaLivro() {
   const [listaLivro, setListaLivro] = useState([]);
 
@@ -19,9 +21,13 @@ function ListaLivro() {
 
   return (
     <div className="container">
-      {listaLivro.map((livroObj) => (
-        <CardLivro key={livroObj._id} {...livroObj} />
-      ))}
+      <div className="row">
+        <div className="col-4 d-flex justify-content-between">
+          {listaLivro.map((currentLivroObj) => (
+            <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

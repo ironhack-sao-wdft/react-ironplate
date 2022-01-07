@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-
+import { useParams, useNavigate, Link } from "react-router-dom";
 import api from "../../apis/api";
 
-//import ConfirmationModal from "../../components/ConfimationModal";
+import ConfirmationModal from "../../components/ConfirmationModal";
 
-function DetalheLivro() {
+function DetalheLivro(props) {
+
   const [livroDetalhe, setLivroDetalhe] = useState({
-    title: "",
-    author: "",
-    synopsis: "",
+    title: '',
+    author: '',
+    synopsis: '',
     releaseYear: 0,
     genre: "",
-    coverImage: "",
+    coverImage: '',
   });
-  //const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const { id } = useParams();
   const navigate = useNavigate();
@@ -34,18 +34,24 @@ function DetalheLivro() {
 
   return (
     <div>
-      <div className="img-container d-flex justify-content-between">
-        <div className="img-fluid">
-          <img 
+      <div className="container d-flex justify-content-between">
+        <img
+          className="img-fluid"
           alt={livroDetalhe.title}
-           src={livroDetalhe.coverImage} />
-        </div>
+          src={livroDetalhe.coverImage}
+        />
 
         <div>
-          <button className="btn btn-warning me-2">Editar</button>
-          {/* <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+           <Link
+            to={`/edit-livro/${id}`}
+            type="button"
+            className="btn btn-link  btn-warning mr-3"
+          >
+            Editar
+          </Link> 
+              <button className="btn btn-danger" onClick={() => setShowModal(true)}>
             Deletar
-          </button> */}
+          </button>
         </div>
       </div>
 
@@ -57,28 +63,29 @@ function DetalheLivro() {
         <strong>Author: </strong>
         {livroDetalhe.author}
       </h4>
-      <h4>
-        <strong>Sinopse: </strong>
-        {livroDetalhe.synopsis}
-      </h4>
+
       <h4>
         <strong>Ano: </strong>
         {livroDetalhe.releaseYear}
       </h4>
+      <h4>
+        <strong>Sinopse: </strong>
+        {livroDetalhe.synopsis}
+      </h4>
 
-      {/* <ConfirmationModal
-        title="Tem certeza?"
+      <ConfirmationModal
+        title="Tem certeza que quer deletar?"
         variant="danger"
         confirmationText="Deletar"
         show={showModal}
         handleClose={() => setShowModal(false)}
         handleConfirmation={() => {
-          navigate(`/delete-post/${id}`);
+          navigate(`/livro/delete/${id}`);
           setShowModal(false);
         }}
       >
-        Tem certeza que quer deletar?
-      </ConfirmationModal> */}
+        Esta ação é irreversível!
+      </ConfirmationModal>
     </div>
   );
 }

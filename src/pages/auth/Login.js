@@ -74,9 +74,14 @@ function Login(props) {
         </div>
 
         <div className="mb-3 d-flex justify-content-center">
-          <button type="submit" className="btn btn-primary mr">Entrar</button>
-
-          <Link to="/signup">Não tem uma conta? Clique aqui e cadastre!</Link>
+          <button type="submit" className="btn btn-primary mr-3">
+            Entrar
+          </button>
+          <div>
+              <Link className="btn btn-primary " to="/signup">
+                Não tem uma conta? Clique aqui e cadastre!
+              </Link>
+           </div>
         </div>
       </form>
     </div>

@@ -1,14 +1,22 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import ListaLivro from "../pages/Livros/ListaLivro";
+import Rodape from "../components/Rodape";
+import { Link } from "react-router-dom";
+
 
 
 function Home() {
   return (
     <div>
-      <Navbar />
-
-      <div className="container">
-        Esta é a pagina principal</div>
+      <div className=" container d-block justify-content-between">
+        <div class="row align-items-center">
+          <div className="g-col-4">
+            <ListaLivro />
+          </div>
+        
+        </div>
+      </div>
+      <Rodape />
     </div>
   );
 }

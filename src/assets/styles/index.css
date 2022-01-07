@@ -3,13 +3,13 @@
 body {
     background-color:aquamarine
 }
-.cadastro{
-    width: 900px;
-    background-color:dark;
+.rodape{
+    background-color:black;
+    margin: 0px;
 
+    height: 50px;
+    width:auto;
 }
-
-
 
 
 

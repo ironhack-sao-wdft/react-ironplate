@@ -3,30 +3,35 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 import api from "../../apis/api";
-import FormField from "../../components/forms/FormField";
+import FormField from "../../components/Form/FormField";
 
-function EditPost(props) {
+function EditLivro(props) {
   const [userData, setUserData] = useState({
-    nickName: "",
-    idade: "",
-    estado: "",
-    cidade: "",
-    descricao: "",
+    title: "",
+    author: "",
+    synopsis: "",
+    releaseYear: "",
+    genre: "",
+    picture: new File([], ""),
+    coverImage: "",
   });
 
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { id } = useParams(props);
+  const { id } = useParams();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     async function user() {
       try {
-        const response = await api.get(`/detalhe-post/${id}`);
-
-        setUserData({ ...userData, ...response.data });
+        const response = await api.get(`/detalhe-livro/${id}`);
+          const coverImage = await handleFileUpload(userData.picture);
+ 
+        setUserData({ ...userData,
+              coverImage,
+           ...response.data });
       } catch (e) {
         console.log(e);
       }
@@ -35,22 +40,49 @@ function EditPost(props) {
   }, [id]);
 
   function handleChange(e) {
+    if (e.target.files) {
+      return setUserData({
+        ...userData,
+        [e.target.name]: e.target.files[0],
+      });
+    }
     setUserData({ ...userData, [e.target.name]: e.target.value });
   }
+
+async function handleFileUpload(file) {
+  try {
+    const uploadData = new FormData();
+
+    uploadData.append("picture", file);
+
+    const response = await api.post("/upload", uploadData);
+
+    console.log(response);
+
+    return response.data.url;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setLoading(true);
+            const coverImage = await handleFileUpload(userData.picture);
 
-      const response = await api.patch(`/atualiza-post/${id}`, userData);
+      const response = await api.patch(`/atualizar-livro/${id}`,
+       userData,
+       coverImage
+       );
 
       console.log(response);
 
       setLoading(false);
 
-      navigate("/");
+      navigate("/livro");
     } catch (err) {
       setLoading(false);
       console.error(err);
@@ -61,62 +93,88 @@ function EditPost(props) {
   }
 
   return (
-    <div className="w-50 d-flex flex-column m-auto">
-      <h1 className="text-center mt-5 mb-4">Editar cadastro</h1>
-
+    <div className="container cadastro">
       <form onSubmit={handleSubmit}>
-        <FormField
-          label="NickName"
-          id="sobrenome"
-          required
-          name="nickName"
-          onChange={handleChange}
-          value={userData.nickName}
-          readOnly={loading}
-        />
+        <div className="titulo">
+          <h1>Novo Livro</h1>
+        </div>
+        {/* campo do titulo */}
+        <div className=" mb-3 ">
+          <FormField
+            label="Título"
+            type="text"
+            id="title"
+            name="title"
+            onChange={handleChange}
+            value={userData.title}
+            required
+            readOnly={loading}
+          />
+        </div>
 
-        <FormField
-          type="text"
-          label="Idade"
-          id="idade"
-          required
-          name="idade"
-          onChange={handleChange}
-          value={userData.idade}
-          readOnly={loading}
-        />
+        {/* campo do Author */}
+        <div className=" mb-3">
+          <FormField
+            label="Author"
+            type="text"
+            id="author"
+            name="author"
+            onChange={handleChange}
+            value={userData.author}
+            required
+            readOnly={loading}
+          />
+        </div>
 
-        <FormField
-          type="text"
-          label="Estado"
-          id="estado"
-          required
-          name="estado"
-          onChange={handleChange}
-          value={userData.estado}
-          readOnly={loading}
-        />
+        {/* campo sinopse do livro */}
+        <div className=" mb-3">
+          <FormField
+            label="Sinopse"
+            type="text"
+            id="synopsis"
+            name="synopsis"
+            onChange={handleChange}
+            value={userData.synopsis}
+            required
+            readOnly={loading}
+          />
+        </div>
 
-        <FormField
-          type="text"
-          label="Cidade"
-          id="cidade"
-          required
-          name="cidade"
-          onChange={handleChange}
-          value={userData.cidade}
-          readOnly={loading}
-        />
-        <FormField
-          type="textarea"
-          label="Descricao"
-          id="cidade"
-          required
-          name="descricao"
-          onChange={handleChange}
-          value={userData.descricao}
-          readOnly={loading}
-        />
+        {/* campo Ano do livro */}
+        <div className="mb-3">
+          <FormField
+            label="Ano"
+            id="releaseYear"
+            name="releaseYear"
+            onChange={handleChange}
+            value={userData.releaseYear}
+            required
+            readOnly={loading}
+          />
+        </div>
+
+        {/* campo Gênero do livro */}
+        <div className=" mb-3">
+          <FormField
+            label="Gênero"
+            id="genre"
+            name="genre"
+            onChange={handleChange}
+            value={userData.genre}
+            required
+            readOnly={loading}
+          />
+        </div>
+        <div class=" mb-3">
+          <FormField
+            type="file"
+            label="Imagem"
+            id="productFormPicture"
+            name="picture"
+            onChange={handleChange}
+            readOnly={loading}
+          />
+        </div>
         <div className="mb-3 text-end">
           <button disabled={loading} type="submit" className="btn btn-primary">
             {loading ? (
@@ -126,7 +184,7 @@ function EditPost(props) {
                 aria-hidden="true"
               ></span>
             ) : null}
-            AtualizarPost
+            Atualizar
           </button>
         </div>
       </form>
@@ -134,4 +192,6 @@ function EditPost(props) {
   );
 }
 
-export default EditPost;
+export default EditLivro;
+
+

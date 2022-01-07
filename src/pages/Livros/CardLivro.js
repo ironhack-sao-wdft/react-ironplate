@@ -1,30 +1,41 @@
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../contexts/authContext";
-import { useContext } from "react";
-
 
 function CardLivro(props) {
-  const { loggedInUser } = useContext(AuthContext);
   return (
-    <Link to={`/livro/${props.id}`}>
-      <div className="card" style={{ width: "70rem", height: "20rem" }}>
-        <div className="card-body">
-          <h3 className="title">{props.title}</h3>
-          <h3 className="author">{props.author}</h3>
-          <h3 className="estado">
-            {"Estado:"} {props.estado}
-          </h3>
-          <p className="card-text cols=6 rows=4">{props.descricao}</p>
-          {loggedInUser.user._id === props.userId ? (
-            <>
-              <div className="editar">
-                <Link to={`/editar-post/${props._id}`}>Editar</Link>
-              </div>
-              <div className="deletar">
-                <Link to={`/delete/${props._id}`}>Deletar</Link>
-              </div>
-            </>
-          ) : null}
+    <Link
+      to={`/livro/detalhe/${props._id}`}
+      className="list-group-item list-group-item-action"
+    >
+      <div class="card" style={{ width: "18rem" }}>
+        <img src={props.coverImage} class="card-img-top" alt={props.title} />
+        <div class="card-body">
+          <p class="card-text">
+            <h2>Título</h2>
+            <p>
+              <strong>{props.title}</strong>
+            </p>
+          </p>
+          <p>
+            <h2>Author</h2>
+            <p>
+              <strong>{props.author}</strong>
+            </p>
+          </p>
+          <h2>Gênero</h2>
+          <p>
+            <strong>{props.genre}</strong>
+          </p>
+          <h2>Ano</h2>
+          <p>
+            <strong>{props.releaseYear}</strong>
+          </p>
+          <h2>Sinopse</h2>
+          <p>
+            <strong>{props.synopsis}</strong>
+          </p>
+        </div>
+        <div className="btn btn-primary">
+          <Link to={`/livro/detalhe`}> Ver Detalhe</Link>
         </div>
       </div>
     </Link>

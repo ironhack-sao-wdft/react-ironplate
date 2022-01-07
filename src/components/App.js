@@ -7,6 +7,10 @@ import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
 import DetalheLivro from "../pages/Livros/DetalheLivro";
 import ListaLivro from "../pages/Livros/ListaLivro";
+import Navbar from "../components/Navbar"
+import DeleteLivro from "../pages/Livros/DeleteLivro";
+import EditLivro from "../pages/Livros/EditLivro";
+
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 
 import { AuthContextComponent } from "../contexts/authContext";
@@ -15,27 +19,39 @@ function App() {
   return (
     <div>
       <AuthContextComponent>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<ProtectedRoute component={Home} />} />
-            <Route
-              path="/cadastrarLivro"
-              element={<ProtectedRoute component={CadastrarLivro} />}
-            />
-            <Route
-              path="/lista/livro"
-              element={<ProtectedRoute component={ListaLivro} />}
-            />
-            <Route
-              path="/livro/:id"
-              element={<ProtectedRoute component={DetalheLivro} />}
-            />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
+        <div>
+          <Navbar />
+          <div className="container mt-5">
+            <Routes>
+              <Route path="/" element={<ProtectedRoute component={Home} />} />
+              <Route
+                path="/cadastrarLivro"
+                element={<ProtectedRoute component={CadastrarLivro} />}
+              />
+              <Route
+                path="/livro"
+                element={<ProtectedRoute component={ListaLivro} />}
+              />
+              <Route
+                path="/livro/detalhe/:id"
+                element={<ProtectedRoute component={DetalheLivro} />}
+              />
+              <Route
+                path="/livro/delete/:id"
+                element={<ProtectedRoute component={DeleteLivro} />}
+              />
+              <Route
+                Route
+                path="/edit-livro/:id"
+                element={<ProtectedRoute component={EditLivro} />}
+              />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </div>
         </div>
-
       </AuthContextComponent>
+
     </div>
   );
 }
