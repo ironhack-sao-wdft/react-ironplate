@@ -27,7 +27,7 @@ function EditLivro(props) {
     async function user() {
       try {
         const response = await api.get(`/detalhe-livro/${id}`);
-          const coverImage = await handleFileUpload(userData.picture);
+                  const coverImage = await handleFileUpload(userData.picture);
  
         setUserData({ ...userData,
               coverImage,

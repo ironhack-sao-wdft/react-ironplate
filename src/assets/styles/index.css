@@ -3,14 +3,34 @@
 body {
     background-color:aquamarine
 }
-.rodape{
-    background-color:black;
-    margin: 0px;
 
-    height: 50px;
-    width:auto;
+
+.img{
+    height: 300px;
+    width: auto;
 }
 
+.img-detalhe{
+    width: 500px;
+    height: auto;
+}
+.link-detalhe{
+    color:white;
+}
+
+.btn-edit{
+    width: 35px;
+    color:danger;
+padding: 5px;
+}
+.home{
+    width:  900px;
+    margin-right: 20px;
+}
+.lista{
+    width: auto;
+    display: inline-block;
+}
 
 
 
