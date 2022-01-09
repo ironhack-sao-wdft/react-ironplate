@@ -82,7 +82,7 @@ async function handleFileUpload(file) {
 
       setLoading(false);
 
-      navigate("/livro");
+      navigate("/");
     } catch (err) {
       setLoading(false);
       console.error(err);

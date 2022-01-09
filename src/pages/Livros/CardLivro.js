@@ -1,51 +1,41 @@
 import { useState } from "react";
 
-import { Link,useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
 import ConfirmationModal from "../../components/ConfirmationModal";
+import index from "../../assets/styles/index.css"
+
+
 
 function CardLivro(props) {
   const [showModal, setShowModal] = useState(false);
 
-   const { id } = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   return (
     <div className="list-group-item ">
       <div class="img-fluid card" style={{ width: "18rem" }}>
         <img
           src={props.coverImage}
-          class="card-img-top img"
+          class="card-img-top img-card"
           alt={props.title}
         />
         <div class="card-body">
-          <p class="card-text">
-            {/* <h2>Título</h2> */}
-            <h2>
+             <h2>
               <strong>{props.title}</strong>
             </h2>
-          </p>
-          <p>
-            {/* <h2>Author</h2> */}
             <h3>
               <strong>{props.author}</strong>
             </h3>
-          </p>
-          {/* <h2>Gênero</h2>
-          <p>
-            <strong>{props.genre}</strong>
-          </p> */}
-          {/* <h2>Ano</h2> */}
+          
           <h3>
             <strong>{props.releaseYear}</strong>
           </h3>
-          {/* <h2>Sinopse</h2> */}
-          {/* <p>
-            <strong>{props.synopsis}</strong>
-          </p> */}
+
         </div>
-        <div className="container d-flex justify-content-between">
+        <div className="container-fluid d-flex justify-content-between">
           <div className="btn btn-primary detalhe">
             <Link className="link-detalhe" to={`/livro/detalhe/${props._id}`}>
               {" "}

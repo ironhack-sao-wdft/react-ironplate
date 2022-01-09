@@ -6,7 +6,6 @@ import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
 import DetalheLivro from "../pages/Livros/DetalheLivro";
-import ListaLivro from "../pages/Livros/ListaLivro";
 import Navbar from "../components/Navbar"
 import DeleteLivro from "../pages/Livros/DeleteLivro";
 import EditLivro from "../pages/Livros/EditLivro";
@@ -21,17 +20,14 @@ function App() {
       <AuthContextComponent>
         <div>
           <Navbar />
-          <div className="container mt-5">
+          <div className="container-fluid mt-3 row-col-md-4">
             <Routes>
               <Route path="/" element={<ProtectedRoute component={Home} />} />
               <Route
                 path="/cadastrarLivro"
                 element={<ProtectedRoute component={CadastrarLivro} />}
               />
-              <Route
-                path="/livro"
-                element={<ProtectedRoute component={ListaLivro} />}
-              />
+              
               <Route
                 path="/livro/detalhe/:id"
                 element={<ProtectedRoute component={DetalheLivro} />}

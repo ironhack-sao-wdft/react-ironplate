@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "../../components/Form/FormField"
-import Rodape from "../../components/Rodape";
 
 
 function CadastrarLivro() {
@@ -181,7 +180,6 @@ async function handleFileUpload(file) {
           </form>
         </div>
       </div>
-      <Rodape />
     </div>
   );
 }

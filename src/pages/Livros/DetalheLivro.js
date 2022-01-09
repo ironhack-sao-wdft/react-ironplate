@@ -35,8 +35,12 @@ function DetalheLivro(props) {
   return (
     <div className="container">
       <div className=" d-flex justify-content-between">
-        <div className="img-fluid img-detalhe">
-          <img alt={livroDetalhe.title} src={livroDetalhe.coverImage} />
+        <div className="img-fluid">
+          <img
+            className="img-detalhe"
+            alt={livroDetalhe.title}
+            src={livroDetalhe.coverImage}
+          />
         </div>
         <div>
           <Link
