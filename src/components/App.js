@@ -11,7 +11,6 @@ import DeleteLivro from "../pages/Livros/DeleteLivro";
 import EditLivro from "../pages/Livros/EditLivro";
 import Rodape from "../components/Rodape";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
-
 import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {

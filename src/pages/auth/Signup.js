@@ -34,18 +34,16 @@ function Signup() {
       setLoading(true);
       setError(null);
 
-      const response = await api.post("/signup",
-        userData
-      );
+      const response = await api.post("/signup", userData);
 
       console.log(response);
 
-       setLoading(false);
+      setLoading(false);
 
       navigate("/login");
     } catch (err) {
       setLoading(false);
-     // console.error(err);
+      console.error(err);
       if (err.response) {
         console.error(err.response);
         setError(err.response.data);

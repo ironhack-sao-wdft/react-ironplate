@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
-
 import FormField from "../../components/Form/FormField";
 import { AuthContext } from "../../contexts/authContext";
 
@@ -78,10 +77,10 @@ function Login(props) {
             Entrar
           </button>
           <div>
-              <Link className="btn btn-primary " to="/signup">
-                Não tem uma conta? Clique aqui e cadastre!
-              </Link>
-           </div>
+            <Link className="btn btn-primary " to="/signup">
+              Não tem uma conta? Clique aqui e cadastre!
+            </Link>
+          </div>
         </div>
       </form>
     </div>
