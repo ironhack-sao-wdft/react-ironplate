@@ -45,7 +45,7 @@ function Signup() {
       navigate("/login");
     } catch (err) {
       setLoading(false);
-      console.error(err);
+     // console.error(err);
       if (err.response) {
         console.error(err.response);
         setError(err.response.data);
