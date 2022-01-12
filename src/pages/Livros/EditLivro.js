@@ -55,7 +55,7 @@ async function handleFileUpload(file) {
 
     uploadData.append("picture", file);
 
-    const response = await api.post("/upload", uploadData);
+    const response = await api.get("/upload", uploadData);
 
     console.log(response);
 
