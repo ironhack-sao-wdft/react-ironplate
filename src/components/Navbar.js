@@ -22,28 +22,7 @@ function Navbar() {
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/cadastrarLivro"
-              >
-                Criar Livro
-              </NavLink>
-            </li>
-          </ul>
+         
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
