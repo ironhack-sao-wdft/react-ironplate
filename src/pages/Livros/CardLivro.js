@@ -26,9 +26,9 @@ function CardLivro(props) {
              <h3>
               <strong>{props.title}</strong>
             </h3>
-            <h4>
+            <h5>
               <strong>{props.author}</strong>
-            </h4>
+            </h5>
           
           <h4>
             <p>{props.releaseYear}</p>
