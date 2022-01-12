@@ -8,7 +8,7 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid d-flex justify-content-between align-items-center text-light">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
         <NavLink className="navbar-brand" to="/">
           System Books
         </NavLink>
