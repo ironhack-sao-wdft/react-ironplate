@@ -11,7 +11,7 @@ import index from "../../assets/styles/index.css"
 function CardLivro(props) {
   const [showModal, setShowModal] = useState(false);
 
-  const { id } = useParams();
+  const {id } = useParams();
   const navigate = useNavigate();
 
   return (
@@ -36,7 +36,7 @@ function CardLivro(props) {
 
         </div>
         <div className="container-fluid d-flex justify-content-between">
-          <div className="btn btn-primary detalhe">
+          <div className="btn btn-primary">
             <Link className="link-detalhe" to={`/livro/detalhe/${props._id}`}>
               
               Detalhe
