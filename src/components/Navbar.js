@@ -15,18 +15,7 @@ function Navbar() {
         </NavLink>
        
        
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-target="#menuPrincipal"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      
+
       
         <div className="collapse navbar-collapse" id="#menuPrincipal">
           <ul className="navbar-nav">
