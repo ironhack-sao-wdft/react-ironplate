@@ -23,22 +23,22 @@ function CardLivro(props) {
           alt={props.title}
         />
         <div class="card-body">
-             <h2>
+             <h3>
               <strong>{props.title}</strong>
-            </h2>
-            <h3>
-              <strong>{props.author}</strong>
             </h3>
+            <h4>
+              <strong>{props.author}</strong>
+            </h4>
           
-          <h3>
-            <strong>{props.releaseYear}</strong>
-          </h3>
+          <h4>
+            <p>{props.releaseYear}</p>
+          </h4>
 
         </div>
         <div className="container-fluid d-flex justify-content-between">
           <div className="btn btn-primary detalhe">
             <Link className="link-detalhe" to={`/livro/detalhe/${props._id}`}>
-              {" "}
+              
               Detalhe
             </Link>
           </div>
