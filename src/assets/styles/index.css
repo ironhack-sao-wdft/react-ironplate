@@ -1,1 +1,6 @@
 /* Seus estilos globais vão aqui */
+
+body {
+  background-color: rgb(196, 220, 241);
+  margin: 0px;
+}
