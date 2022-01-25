@@ -1,1 +1,6 @@
 /* Seus estilos globais vão aqui */
+
+#container {
+    flex-direction: column;
+  }
+  

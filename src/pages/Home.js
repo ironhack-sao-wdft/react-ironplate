@@ -1,13 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect , useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
+
 function Home() {
+  const [userData, setUserData] = useState({name: "", email: "", books: []})
+
+  useEffect(() => {
+    async function fetchUser(){
+      try{
+
+        const response = await axios.get('http://localhost:4000/api/profile')
+
+        console.log(response)
+
+        setUserData({...response.data});
+
+      } catch(err) {
+        console.error(err)
+      }
+    }
+    fetchUser()
+  }, [])
+
   return (
     <div className="text-center">
-      <img
-        src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/84/original/logo-ironhack-blue.png"
-        alt="ironhack logo"
-      />
+      
       <h1>React IronPlate</h1>
       <p>This is the homepage</p>
       <div className="d-flex flex-column align-items-center">

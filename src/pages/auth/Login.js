@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
-
+import axios from 'axios'
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -26,7 +26,7 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/login", state);
+      const response = await axios.post("http://localhost:4000/api/login", state);
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -43,12 +43,13 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       <h1>Login</h1>
 
       <div>
         <label htmlFor="signupFormEmail">E-mail Address</label>
         <input
+          className="form-control"
           type="email"
           name="email"
           id="signupFormEmail"
@@ -61,6 +62,7 @@ function Login(props) {
       <div>
         <label htmlFor="signupFormPassword">Password</label>
         <input
+          className="form-control"
           type="password"
           name="password"
           id="signupFormPassword"
@@ -69,14 +71,14 @@ function Login(props) {
           onChange={handleChange}
         />
       </div>
-
+      <br></br>
       <div>
-        <button type="submit">Login!</button>
-
+        <button type="submit" className="btn btn-primary">Login!</button>
+        <br></br>
         <Link to="/signup">Don't have an account? Click here to signup!</Link>
       </div>
     </form>
   );
 }
 
-export default Login;
+export default Login; 
