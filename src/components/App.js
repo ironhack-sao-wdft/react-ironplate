@@ -9,7 +9,6 @@ import BookDetail from "../pages/books/BookDetail";
 import BookDelete from "../pages/books/BookDelete";
 import BookEdit from "../pages/books/BookEdit";
 
-
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import { AuthContextComponent } from "../contexts/authContext";
 import Navbar from "../components/Navbar";
@@ -21,26 +20,11 @@ function App() {
         <div>
           <Navbar />
           <div className="container-fluid mt-3 row-col-md-4">
-            <Routes>
-              <Route path="/" element={<ProtectedRoute component={Home} />} />
-              <Route
-                path="/cadastrarBook"
-                element={<ProtectedRoute component={BookCadastro} />}
-              />
-              
-              <Route
-                path="/book/detail/:id"
-                element={<ProtectedRoute component={BookDetail} />}
-              />
-              <Route
-                path="/book/delete/:id"
-                element={<ProtectedRoute component={BookDelete} />}
-              />
-              <Route
-                Route
-                path="/edit-book/:id"
-                element={<ProtectedRoute component={BookEdit} />}
-              />
+            <Routes><Route path="/" element={<ProtectedRoute component={Home} />} />
+              <Route path="/Bookcreate" element={<ProtectedRoute component={BookCadastro} />} />
+              <Route path="/book/detail/:id" element={<ProtectedRoute component={BookDetail} />} />
+              <Route path="/book/delete/:id" element={<ProtectedRoute component={BookDelete} />} />
+              <Route Route path="/edit-book/:id" element={<ProtectedRoute component={BookEdit} />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
             </Routes>

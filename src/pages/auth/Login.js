@@ -5,7 +5,7 @@ import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import FormField from "../../components/formulários/FormField";
 
-function Login(props) {
+function Login() {
   const authContext = useContext(AuthContext);
 
   const [state, setState] = useState({ password: "", email: "" });
@@ -44,7 +44,7 @@ function Login(props) {
   }
 
   return (
-    <div className="register">
+    <div className="container cadastro">
       <form onSubmit={handleSubmit}>
         <h1>Entre na sua conta</h1>
 

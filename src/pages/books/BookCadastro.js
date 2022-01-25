@@ -4,7 +4,7 @@ import api from "../../apis/api";
 import FormField from "../../components/formulários/FormField";
 
 function BookCadastro() {
-  const [book, setbook] = useState({
+  const [book, setBook] = useState({
     title: "",
     author: "",
     synopsis: "",
@@ -19,12 +19,12 @@ function BookCadastro() {
 
   function handleChange(e) {
     if (e.target.files) {
-      return setbook({
+      return setBook({
         ...book,
         [e.target.name]: e.target.files[0],
       });
     }
-    setbook({ ...book, [e.target.name]: e.target.value });
+    setBook({ ...book, [e.target.name]: e.target.value });
   }
 
   //Upload de arquivo
@@ -48,7 +48,7 @@ function BookCadastro() {
     try {
       setLoading(true);
       const coverImage = await handleFileUpload(book.picture);
-      const response = await api.post("/book-cadastro", {
+      const response = await api.post("/Bookcreate", {
         ...book,
         coverImage,
       });
@@ -115,7 +115,7 @@ function BookCadastro() {
             {/* Ano */}
             <div className="mb-3">
               <FormField
-                label="Ano"
+                label="Ano de Lançamento"
                 id="releaseYear"
                 name="releaseYear"
                 onChange={handleChange}
@@ -141,7 +141,7 @@ function BookCadastro() {
             <div class=" mb-3">
               <FormField
                 type="file"
-                label="Imagem"
+                label="Imagem da Capa"
                 id="productFormPicture"
                 name="picture"
                 onChange={handleChange}
