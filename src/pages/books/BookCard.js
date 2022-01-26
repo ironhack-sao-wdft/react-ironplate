@@ -30,15 +30,16 @@ function BookCard(props) {
         <div className="container-fluid d-flex justify-content-between">
           <div className="btn btn-primary">
             <Link className="link-detail" to={`/book/detail/${props._id}`}>
-              Detalhe
+              Detalhes
             </Link>
           </div>
 
           <button className="btn btn-warning">
             <Link to={`/edit-book/${props._id}`}>
-              
+              Editar
             </Link>
           </button>
+
           <button
             className="btn btn-danger btn-link"
             onClick={() => setShowModal(true)}

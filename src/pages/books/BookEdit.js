@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "../../components/formulários/FormField";
 
-function BookEdit(props) {
+function BookEdit() {
   const [userData, setUserData] = useState({
     title: "",
     author: "",
@@ -33,7 +33,7 @@ function BookEdit(props) {
       }
     }
     user();
-  }, );
+  }, [id]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -66,8 +66,7 @@ function BookEdit(props) {
       setLoading(true);
 
       const coverImage = await handleFileUpload(userData.picture);
-      const response = await api.patch(
-        `/update-book/${id}`,
+      const response = await api.patch(`/update-book/${id}`,
         userData,
         coverImage
       );
@@ -182,7 +181,7 @@ function BookEdit(props) {
                 ></span>
               </>
             ) : null} 
-              Update
+              Atualizar
           </button>
         </div>
       </form>

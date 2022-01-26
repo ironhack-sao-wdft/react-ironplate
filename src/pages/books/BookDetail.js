@@ -7,12 +7,12 @@ import ConfirmationModal from "../../components/ConfirmationModal";
 
 function BookDetail() {
   const [bookDetail, setBookDetail] = useState({
-    title: '',
-    author: '',
-    synopsis: '',
+    title: "",
+    author: "",
+    synopsis: "",
     releaseYear: 0,
     genre: "",
-    coverImage: '',
+    coverImage: "",
   });
   const [showModal, setShowModal] = useState(false);
 
