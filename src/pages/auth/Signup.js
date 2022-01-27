@@ -1,87 +1,119 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
-function Signup(props) {
-  const [state, setState] = useState({ name: "", password: "", email: "" });
-  const [errors, setErrors] = useState({
-    name: null,
-    email: null,
-    password: null,
+import FormField from "../../components/formulários/FormField";
+import ErrorAlert from "../../components/ErrorAlert";
+
+function Signup() {
+  const [userData, setUserData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
-  function handleChange(event) {
-    setState({
-      ...state,
-      [event.currentTarget.name]: event.currentTarget.value,
-    });
+  function handleChange(e) {
+    setUserData({ ...userData, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (userData.password !== userData.confirmPassword) {
+      return setError("Senha não conferem.");
+    }
 
     try {
-      const response = await api.post("/signup", state);
-      setErrors({ name: "", password: "", email: "" });
+      setLoading(true);
+      setError(null);
+
+      const response = await api.post("/signup", userData);
+
+      console.log(response);
+
+      setLoading(false);
+
       navigate("/login");
     } catch (err) {
+      setLoading(false);
+      console.error(err);
       if (err.response) {
         console.error(err.response);
-        return setErrors({ ...err.response.data.errors });
+        setError(err.response.data);
       }
-
-      console.error(err);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+    <div>
+      <h1>Cadastre-se</h1>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
+      <form onSubmit={handleSubmit}>
+        <FormField
+          label="Nome"
           id="signupFormName"
-          value={state.name}
-          error={errors.name}
+          required
+          name="name"
           onChange={handleChange}
+          value={userData.name}
+          readOnly={loading}
         />
-      </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
+        <FormField
           type="email"
-          name="email"
+          label="E-mail"
           id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
+          required
+          name="email"
           onChange={handleChange}
+          value={userData.email}
+          readOnly={loading}
         />
-      </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
+        <FormField
           type="password"
-          name="password"
+          label="Senha"
           id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
+          required
+          name="password"
           onChange={handleChange}
+          value={userData.password}
+          pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$"
+          readOnly={loading}
         />
-      </div>
 
-      <div>
-        <button type="submit">Signup!</button>
+        <FormField
+          type="password"
+          label="Confirmar Senha"
+          id="signupFormConfirmPassword"
+          required
+          name="confirmPassword"
+          onChange={handleChange}
+          value={userData.confirmPassword}
+          readOnly={loading}
+        />
 
-        <Link to="/login">Already have an account? Click here to login.</Link>
-      </div>
-    </form>
+        <div className="mb-3">
+          <button disabled={loading} type="submit" className="btn btn-primary">
+            {loading ? (
+              <span
+                className="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+              ></span>
+            ) : null}
+            Cadastrar
+          </button>
+        </div>
+        {error ? <ErrorAlert>{error}</ErrorAlert> : null}
+      </form>
+    </div>
   );
 }
 
