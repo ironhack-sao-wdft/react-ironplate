@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 import FormField from "../../components/formulários/FormField";
@@ -15,6 +15,8 @@ function Signup() {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -37,7 +39,7 @@ function Signup() {
 
       setLoading(false);
 
-      Navigate("/login");
+      navigate("/login");
     } catch (err) {
       setLoading(false);
       console.error(err);

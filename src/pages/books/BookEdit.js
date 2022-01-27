@@ -170,16 +170,14 @@ function BookEdit() {
           />
         </div>
 
-        <div>
-          <button disabled={loading} type="submit" className="btn-primary mb-3">
+        <div className="mb-3 text-end">
+          <button disabled={loading} type="submit" className="btn btn-primary">
             {loading ? (
-              <>
                 <span
-                  className="spinner-border spinner-border-sm"
+                  className="spinner-border spinner-border-sm me-2"
                   role="status"
                   aria-hidden="true"
                 ></span>
-              </>
             ) : null} 
               Atualizar
           </button>
