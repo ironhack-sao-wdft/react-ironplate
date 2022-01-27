@@ -22,7 +22,6 @@ function BookCard(props) {
           <h5>
             <strong>{props.author}</strong>
           </h5>
-
           <h4>
             <p>{props.releaseYear}</p>
           </h4>
@@ -44,7 +43,7 @@ function BookCard(props) {
             className="btn btn-danger btn-link"
             onClick={() => setShowModal(true)}
           >
-            
+            Deletar
           </button>
           <ConfirmationModal
             title="Tem certeza que quer deletar esse livro?"

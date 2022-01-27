@@ -13,7 +13,7 @@ function BookEdit() {
     releaseYear: "",
     genre: "",
     picture: new File([], ""),
-    coverimage: "",
+    coverImage: "",
   });
 
   //Loading
@@ -27,7 +27,9 @@ function BookEdit() {
         const response = await api.get(`/detail-book/${id}`);
         const coverImage = await handleFileUpload(userData.picture);
 
-        setUserData({ ...userData, coverImage, ...response.data });
+        setUserData({ ...userData, 
+        coverImage, 
+        ...response.data });
       } catch (e) {
         console.log(e);
       }

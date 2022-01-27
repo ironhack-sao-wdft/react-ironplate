@@ -12,9 +12,9 @@ body {
 
 .card {
   box-shadow: inset 0 0 5em rgb(169, 223, 236), 0 0 1em rgb(163, 168, 231);
-  padding: 5px;
   margin: 10px;
-  height: 430px;
+  height: 500px;
+  padding: 10px;
 }
 
 .link-detail {
@@ -24,5 +24,6 @@ body {
 .img-detalhe {
   width: 380px;
   height: 380px;
+  border: 5px solid rgb(166, 174, 180);
   margin-bottom: 20px;
 }
