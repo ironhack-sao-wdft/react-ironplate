@@ -29,11 +29,22 @@ function Navbar() {
                     className={({ IsActive }) => 
                         `nav-link ${IsActive ? "active" : ""}`
                     }
-                    to="/book/create"
+                    to="/book"
                     >
-                    Criar Livro
+                    Novo Livro
                 </NavLink>
             </li>
+            {/* <li className='nav-item'>
+                <NavLink 
+                    className={({IsActive}) => 
+                        `nav-link ${IsActive ? 'active' : ''}`
+                    }
+                    to="/book/list"
+                    >
+                    Livros
+                </NavLink>
+
+                </li> */}
             </ul>
         </div>
         <div>

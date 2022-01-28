@@ -1,72 +1,98 @@
-import {useState} from 'react'
-import axios from 'axios'
-import api from '../../apis/api'
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import api from "../../apis/api";
 
-function CreateBook(){
 
-    const [bookData, setBookData] = useState({
-        title: "",
-        author: "",
-        synopsis: "",
-        year: 0,
-        genre: "",
-        picture: new File ([], ""),
-        pictures: "",
-    });
+function BookEdit(props) {
+  const [userData, setUserData] = useState({
+    title: "",
+    author: "",
+    synopsis: "",
+    year: "",
+    genre: "",
+    picture: new File([], ""),
+    pictures: "",
+  });
 
-    const [loading, setLoading] = useState(false)
-    const navigate = useNavigate();
+  // Loading
+  const [loading, setLoading] = useState(false);
 
-    function handleChange(e){
-        
-        if(e.target.files) {
-            return setBookData({...bookData, [e.target.name]: e.target.files[0],})
-        }
-        
-        setBookData({ ...bookData, [e.target.name]: e.target.value });}
-        
+  const { id } = useParams();
 
-//picture = newfile
-    async function handleFileUpload(file) {
-        try {
+  const navigate = useNavigate();
 
-            const uploadData = new FormData()
-
-            uploadData.append('picture', file)
-
-            const response = await api.post('/upload', uploadData)
-
-            console.log(response)
-
-            return response.data.url
-
-        } catch (err) {
-            console.error(err)
-        }
-    }    
-    
-    async function handleSubmit(e) {
-        
-        e.preventDefault();
-        
-        try {
-            setLoading(true);
-
-            const pictures = await handleFileUpload(bookData.picture)
-            const response = await api.post("/book", { ...bookData, pictures})
-            
-            console.log(response)
-            setLoading(false)
-            navigate("/")
-        } catch (err) {
-            console.error(err)
-            setLoading(false)
-        }
+  useEffect(() => {
+    async function user() {
+      try {
+        const response = await api.get(`/book/${id}`);
+                  const pictures = await handleFileUpload(userData.picture);
+ 
+        setUserData({ ...userData,
+            pictures,
+           ...response.data });
+      } catch (e) {
+        console.log(e);
+      }
     }
-      
+    user();
+  }, [id]);
 
-    return (
+  function handleChange(e) {
+    if (e.target.files) {
+      return setUserData({
+        ...userData,
+        [e.target.name]: e.target.files[0],
+      });
+    }
+    setUserData({ ...userData, [e.target.name]: e.target.value });
+  }
+
+async function handleFileUpload(file) {
+  try {
+    const uploadData = new FormData();
+
+    uploadData.append("picture", file);
+
+    const response = await api.post("/upload", uploadData);
+
+    console.log(response);
+
+    return response.data.url;
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+            const pictures = await handleFileUpload(userData.picture);
+
+      const response = await api.patch(`/update/${id}`,
+       userData,
+       pictures
+       );
+
+      console.log(response);
+
+      setLoading(false);
+
+      navigate("/");
+    } catch (err) {
+      setLoading(false);
+      console.error(err);
+      if (err.response) {
+        console.error(err.response);
+      }
+    }
+  }
+
+  return (
     <form onSubmit={handleSubmit} className="container" className="form-label">
         <h1>Novo Livro</h1>
         <div>
@@ -78,7 +104,7 @@ function CreateBook(){
             id="bookFormTitle" 
             name="title" 
             onChange={handleChange} 
-            value={bookData.title} 
+            value={userData.title} 
             required
             readOnly={loading}
         />
@@ -93,7 +119,7 @@ function CreateBook(){
                 id="bookFormAuthor" 
                 name='author' 
                 onChange={handleChange} 
-                value={bookData.author} 
+                value={userData.author} 
                 required
                 readOnly={loading}
             />
@@ -107,7 +133,7 @@ function CreateBook(){
                 id="bookFormSynopsis" 
                 name='synopsis' 
                 onChange={handleChange} 
-                value={bookData.synopsis} 
+                value={userData.synopsis} 
                 readOnly={loading}
             />
         </div>
@@ -121,7 +147,7 @@ function CreateBook(){
                 id="bookFormYear" 
                 name='year' 
                 onChange={handleChange} 
-                value={bookData.year} 
+                value={userData.year} 
                 required
                 readOnly={loading}
             />
@@ -137,7 +163,7 @@ function CreateBook(){
                 id="bookFormGenre" 
                 name='genre' 
                 onChange={handleChange} 
-                value={bookData.genre} 
+                value={userData.genre} 
                 required
                 readOnly={loading}
             />
@@ -159,7 +185,7 @@ function CreateBook(){
         </div>
         <br></br>
         <div>
-        <button to="/" disabled={loading} type="submit" className="btn btn-primary" >
+        <Link to="/" disabled={loading} type="submit" className="btn btn-primary" >
         {loading ? ( <> <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> <span>Carregando</span> {" "}
         </> 
 
@@ -168,13 +194,14 @@ function CreateBook(){
             "Enviar"
         )}
             
-            </button> 
+            </Link> 
         <br></br>
         
       </div>
 
 
-    </form>)
+    </form>
+  );
 }
 
-export default CreateBook
+export default BookEdit;

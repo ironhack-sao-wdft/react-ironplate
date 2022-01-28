@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import api from "../../apis/api";
+
 import axios from 'axios'
-import userEvent from "@testing-library/user-event";
-//import Style from "../../assets/styles/index.css"
+
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -41,6 +40,7 @@ function Signup(props) {
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
       setLoading(false)
+      console.log(response)
     } catch (err) {
       if (err.response) {
         console.error(err.response);

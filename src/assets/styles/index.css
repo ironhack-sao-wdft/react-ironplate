@@ -1,6 +1,6 @@
 /* Seus estilos globais vão aqui */
-
-#container {
-    flex-direction: column;
-  }
+.img-container {
+  width: auto;
+  height: 100px;
+}
   
