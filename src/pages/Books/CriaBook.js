@@ -54,6 +54,7 @@ function CreateBook() {
     try {
       setLoading(true);
       const imageUrl = await handleFileUpload(bookData.picture);
+      console.log(imageUrl);
       const response = await api.post("/api/book/create-book", {
         ...bookData,
         imageUrl,
@@ -150,7 +151,7 @@ function CreateBook() {
               label="Imagem"
               type="file"
               id="bookForPicture"
-              name="coverImage"
+              name="image"
               onChange={handleChange}
               readOnly={loading}
             />
