@@ -6,7 +6,7 @@ import api from "../../apis/api";
 import FormField from "../../components/Form/FormField";
 
 function EditBook(props) {
-  const [userData, setUserData] = useState({
+  const [bookData, setBookData] = useState({
     title: "",
     author: "",
     synopsis: "",
@@ -28,9 +28,9 @@ function EditBook(props) {
     async function user() {
       try {
         const response = await api.get(`/api/book/detail-book/${id}`);
-        const coverImage = await handleFileUpload(userData.picture);
+        const coverImage = await handleFileUpload(bookData.picture);
 
-        setUserData({ ...userData, coverImage, ...response.data });
+        setBookData({ ...bookData, coverImage, ...response.data });
       } catch (e) {
         console.log(e);
       }
@@ -40,12 +40,12 @@ function EditBook(props) {
 
   function handleChange(e) {
     if (e.target.files) {
-      return setUserData({
-        ...userData,
+      return setBookData({
+        ...bookData,
         [e.target.name]: e.target.files[0],
       });
     }
-    setUserData({ ...userData, [e.target.name]: e.target.value });
+    setBookData({ ...bookData, [e.target.name]: e.target.value });
   }
 
   async function handleFileUpload(file) {
@@ -69,13 +69,12 @@ function EditBook(props) {
 
     try {
       setLoading(true);
-      const coverImage = await handleFileUpload(userData.picture);
+      const coverImage = await handleFileUpload(bookData.picture);
 
-      const response = await api.patch(
-        `/api/book/update-book/${id}`,
-        userData,
-        coverImage
-      );
+      const response = await api.patch(`/api/book/update-book/${id}`, {
+        ...bookData,
+        coverImage,
+      });
       console.log(response);
       setLoading(false);
 
@@ -103,7 +102,7 @@ function EditBook(props) {
             id="title"
             name="title"
             onChange={handleChange}
-            value={userData.title}
+            value={bookData.title}
             readOnly={loading}
           />
         </div>
@@ -116,7 +115,7 @@ function EditBook(props) {
             id="author"
             name="author"
             onChange={handleChange}
-            value={userData.author}
+            value={bookData.author}
             readOnly={loading}
           />
         </div>
@@ -129,7 +128,7 @@ function EditBook(props) {
             id="synopsis"
             name="synopsis"
             onChange={handleChange}
-            value={userData.synopsis}
+            value={bookData.synopsis}
             readOnly={loading}
           />
         </div>
@@ -141,7 +140,7 @@ function EditBook(props) {
             id="releaseYear"
             name="releaseYear"
             onChange={handleChange}
-            value={userData.releaseYear}
+            value={bookData.releaseYear}
             readOnly={loading}
           />
         </div>
@@ -153,7 +152,7 @@ function EditBook(props) {
             id="genre"
             name="genre"
             onChange={handleChange}
-            value={userData.genre}
+            value={bookData.genre}
             readOnly={loading}
           />
         </div>
