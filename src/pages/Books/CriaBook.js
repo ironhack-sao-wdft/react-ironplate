@@ -15,6 +15,7 @@ function CreateBook() {
     releaseYear: "",
     genre: "",
     picture: new File([], ""),
+    pictureUrl: "",
     coverImage: "",
   });
 
@@ -23,6 +24,12 @@ function CreateBook() {
   const navigate = useNavigate();
 
   function handleChange(e) {
+    if (e.target.files) {
+      return setBookData({
+        ...bookData,
+        [e.target.name]: e.target.files[0],
+      });
+    }
     setBookData({ ...bookData, [e.target.name]: e.target.value });
   }
   async function handleFileUpload(file) {
@@ -40,28 +47,17 @@ function CreateBook() {
       console.error(err);
     }
   }
-  async function handleFileUpload(file) {
-    try {
-      const uploadData = new FormData();
 
-      uploadData.append("picture", file);
-
-      const response = await api.post("/upload", uploadData);
-
-      console.log(response);
-
-      return response.data.url;
-    } catch (err) {
-      console.error(err);
-    }
-  }
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setLoading(true);
-      const coverImage = await handleFileUpload(bookData.picture);
-      const response = await api.post("/api/book/create-book", bookData);
+      const imageUrl = await handleFileUpload(bookData.picture);
+      const response = await api.post("/api/book/create-book", {
+        ...bookData,
+        imageUrl,
+      });
       setLoading(false);
       console.log(response);
     } catch (err) {
