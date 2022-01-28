@@ -13,7 +13,7 @@ function DetailBook(props) {
 
   async function fetchData() {
     try {
-      const response = await axios.get(`/api/book/detail-book/${id}`);
+      const response = await api.get(`/api/book/detail-book/${id}`);
       setBook(response.data);
       console.log(response);
     } catch (err) {}
