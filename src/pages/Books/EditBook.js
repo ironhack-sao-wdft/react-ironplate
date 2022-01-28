@@ -12,6 +12,8 @@ function EditBook(props) {
     synopsis: "",
     releaseYear: "",
     genre: "",
+    picture: new File([], ""),
+    pictureUrl: "",
     coverImage: "",
   });
 

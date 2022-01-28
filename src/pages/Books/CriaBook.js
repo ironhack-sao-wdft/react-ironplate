@@ -65,7 +65,7 @@ function CreateBook() {
       console.error(err);
       setLoading(false);
     }
-    // navigate("/");
+    navigate("/");
   }
 
   return (
