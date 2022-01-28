@@ -36,7 +36,7 @@ function Login(props) {
       navigate("/");
     } catch (err) {
       console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+      setErrors({ ...err.response.data.errors});
     }
   }
 
