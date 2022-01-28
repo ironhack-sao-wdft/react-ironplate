@@ -32,11 +32,7 @@ function App() {
         {/*<Route path="/book/list" element={<ProtectedRoute component={BooksList} />}/>*/}
         <Route path="/book/:id" element={<ProtectedRoute component={BookDetail} />}/>
         <Route path="/book/delete/:id" element={<ProtectedRoute component={BookDelete} />}/>
-        <Route
-                Route
-                path="/update/:id"
-                element={<ProtectedRoute component={Update} />}
-              />
+        <Route path="/update/:id" element={<ProtectedRoute component={Update} />}/>
       </Routes>
       </div>
       </div>
