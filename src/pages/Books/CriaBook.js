@@ -151,7 +151,7 @@ function CreateBook() {
               label="Imagem"
               type="file"
               id="bookForPicture"
-              name="image"
+              name="picture"
               onChange={handleChange}
               readOnly={loading}
             />
