@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import axios from 'axios'
+import api from '../../apis/api'
 
 
 function Signup(props) {
@@ -36,7 +36,7 @@ function Signup(props) {
 
       setLoading(true)
 
-      const response = await axios.post('http://localhost:4000/api/signup', state);    
+      const response = await api.post('/signup', state);    
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
       setLoading(false)

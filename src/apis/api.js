@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "";
 
 const apis = {
   development: "http://localhost:4000/api",

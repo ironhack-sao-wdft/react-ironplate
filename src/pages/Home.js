@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../apis";
 import React, { useEffect , useState, useContext } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ function Home() {
     async function fetchUser(){
       try{
 
-        const response = await axios.get('http://localhost:4000/api/profile')
+        const response = await api.get('/profile')
 
         console.log(response)
 

@@ -1,7 +1,5 @@
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
-import axios from 'axios'
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -26,7 +24,7 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/api/login", state);
+      const response = await api.post("/login", state);
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });

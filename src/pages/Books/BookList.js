@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import axios from "axios"
+import api from "../../apis/api"
 
 import BookCard from "./BookCard"
 
@@ -10,7 +10,7 @@ function BooksList() {
     useEffect(() => {
         async function fetchBooks() {
             try {
-                const response = await axios.get("http://localhost:4000/api/book")
+                const response = await api.get('/book')
 
                 setBooksList([...response.data]);
                 
