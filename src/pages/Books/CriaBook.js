@@ -60,7 +60,7 @@ function CreateBook() {
 
     try {
       setLoading(true);
-      const coverImage = await handleFileUpload(book.picture);
+      const coverImage = await handleFileUpload(bookData.picture);
       const response = await api.post("/api/book/create-book", bookData);
       setLoading(false);
       console.log(response);
