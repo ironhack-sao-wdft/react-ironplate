@@ -1,22 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import { useState, useEffect } from "react";
+import api from "../apis/api";
+import CardBook from "./Books/CardBook";
 
-function Home() {
+function ListBook() {
+  const [listBook, setListBook] = useState([]);
+
+  useEffect(() => {
+    async function fetchBook() {
+      try {
+        const response = await api.get(
+          "http://localhost:4000/api/book/list-book"
+        );
+
+        setListBook([...response.data]);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    fetchBook();
+  }, []);
   return (
-    <div className="text-center">
-      <img
-        src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/84/original/logo-ironhack-blue.png"
-        alt="ironhack logo"
-      />
-      <h1>React IronPlate</h1>
-      <p>This is the homepage</p>
-      <div className="d-flex flex-column align-items-center">
-        <Link className="btn btn-lg btn-primary" to="/auth/signup">
-          Signup here!
-        </Link>
+    <div>
+      <div>
+        <Navbar />
+      </div>
+      <div className="container d-flex justify-content-between">
+        <div className="row">
+          {listBook.map((currentBookObj) => (
+            <CardBook key={currentBookObj._id} {...currentBookObj} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-export default Home;
+export default ListBook;

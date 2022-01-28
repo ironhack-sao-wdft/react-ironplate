@@ -1,0 +1,18 @@
+.list-group-item {
+  margin-top: 2%;
+}
+.img-fluid.card {
+  margin-bottom: 1%;
+}
+.editar {
+  width: 5px;
+}
+a.link-detail {
+  color: aliceblue;
+}
+div.btn.btn-warning {
+  height: 39px;
+}
+.btn.btn-danger.btn-link {
+  color: aliceblue;
+}

@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
+import Navbar from "../../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
-
+import FormField from "../../components/Form/FormField";
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -26,7 +27,7 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/login", state);
+      const response = await api.post("http://localhost:4000/api/login", state);
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -43,39 +44,49 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div>
+      <Navbar />
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <h1>Entre na sua conta</h1>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
+          <div>
+            <FormField
+              label="Email"
+              type="email"
+              name="email"
+              id="signupFormEmail"
+              value={state.email}
+              error={errors.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div>
+            <FormField
+              label="Senha"
+              type="password"
+              name="password"
+              id="signupFormPassword"
+              value={state.password}
+              error={errors.password}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-3 d-flex justify-content-center">
+            <button type="submit" className="btn btn-primary mr-3">
+              Entrar
+            </button>
+            <div>
+              <Link className="btn btn-primary " to="/signup">
+                Não tem uma conta? Clique aqui e cadastre!
+              </Link>
+            </div>
+          </div>
+        </form>
       </div>
-
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/signup">Don't have an account? Click here to signup!</Link>
-      </div>
-    </form>
+    </div>
   );
 }
 
