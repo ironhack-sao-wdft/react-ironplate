@@ -52,7 +52,7 @@ function EditBook(props) {
 
       uploadData.append("picture", file);
 
-      const response = await api.post("/upload", uploadData);
+      const response = await api.post("/api/book/upload", uploadData);
 
       console.log(response);
 
