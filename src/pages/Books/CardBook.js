@@ -6,7 +6,7 @@ import ConfirmationModal from "../../components/ConfirmationModal";
 function CardBook(props) {
   const [showModal, setShowModal] = useState(false);
 
-  const { _id } = useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
   return (

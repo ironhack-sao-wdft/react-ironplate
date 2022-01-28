@@ -30,7 +30,7 @@ function Signup(props) {
       setLoading(false);
       const response = await api.post("/api/signup", state);
       setLoading(true);
-      navigate("/");
+      navigate("/api/login");
     } catch (err) {
       if (err.response) {
         console.error(err.response);

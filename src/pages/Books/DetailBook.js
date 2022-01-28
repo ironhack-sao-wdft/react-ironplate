@@ -83,7 +83,7 @@ function DetailBook(props) {
           {book.title}
         </h3>
         <h4>
-          <strong>Author: </strong>
+          <strong>Autor: </strong>
           {book.author}
         </h4>
 
