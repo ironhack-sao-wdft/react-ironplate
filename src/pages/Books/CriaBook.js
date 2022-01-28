@@ -40,12 +40,27 @@ function CreateBook() {
       console.error(err);
     }
   }
+  async function handleFileUpload(file) {
+    try {
+      const uploadData = new FormData();
+
+      uploadData.append("picture", file);
+
+      const response = await api.post("/upload", uploadData);
+
+      console.log(response);
+
+      return response.data.url;
+    } catch (err) {
+      console.error(err);
+    }
+  }
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setLoading(true);
-      const coverImage = await handleFileUpload(livro.picture);
+      const coverImage = await handleFileUpload(book.picture);
       const response = await api.post("/api/book/create-book", bookData);
       setLoading(false);
       console.log(response);
