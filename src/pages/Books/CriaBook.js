@@ -53,11 +53,11 @@ function CreateBook() {
 
     try {
       setLoading(true);
-      const imageUrl = await handleFileUpload(bookData.picture);
-      console.log(imageUrl);
+      const coverImage = await handleFileUpload(bookData.picture);
+      console.log(coverImage);
       const response = await api.post("/api/book/create-book", {
         ...bookData,
-        imageUrl,
+        coverImage,
       });
       setLoading(false);
       console.log(response);
