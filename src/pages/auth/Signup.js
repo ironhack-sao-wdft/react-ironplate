@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
+import Navbar from "../../components/Navbar";
+import "../../assets/styles/signup.css";
+import { AuthContext } from "../../contexts/authContext";
 
 function Signup(props) {
-  const [state, setState] = useState({ name: "", password: "", email: "" });
+  const [state, setState] = useState({ name: "", email: "", password: "" });
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({
     name: null,
     email: null,
@@ -23,9 +27,13 @@ function Signup(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/signup", state);
-      setErrors({ name: "", password: "", email: "" });
-      navigate("/login");
+      setLoading(false);
+      const response = await api.post(
+        "http://localhost:4000/api/signup",
+        state
+      );
+      setLoading(true);
+      navigate("/");
     } catch (err) {
       if (err.response) {
         console.error(err.response);
@@ -33,53 +41,65 @@ function Signup(props) {
       }
 
       console.error(err);
+      setLoading(false);
     }
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+      <Navbar />
+      <div className="container">
+        <h1 className="text">Crie sua conta</h1>
+        <div>
+          <label htmlFor="signupName">Nome Completo</label>
+          <div className="formName">
+            <input
+              type="text"
+              name="name"
+              id="signupFormName"
+              value={state.name}
+              error={errors.name}
+              onChange={handleChange}
+              readOnly={loading}
+            />
+          </div>
+        </div>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormEmail">Email</label>
+          <div className="formEmail">
+            <input
+              type="email"
+              name="email"
+              id="signupFormEmail"
+              value={state.email}
+              error={errors.email}
+              onChange={handleChange}
+              readOnly={loading}
+            />
+          </div>
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <label htmlFor="signupFormPassword">Senha</label>
+          <div className="formPassword">
+            <input
+              type="password"
+              name="password"
+              id="signupFormPassword"
+              value={state.password}
+              error={errors.password}
+              onChange={handleChange}
+              readOnly={loading}
+            />
+          </div>
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
-
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/login">Already have an account? Click here to login.</Link>
+        <div className="buttonSubmit">
+          <button type="submit" className="btn btn-primary">
+            Cadastrar
+          </button>
+        </div>
       </div>
     </form>
   );

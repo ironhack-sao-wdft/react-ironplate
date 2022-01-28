@@ -1,0 +1,15 @@
+.text {
+  margin-top: 5%;
+}
+.container {
+  margin-left: 3%;
+}
+.formEmail {
+  height: 47px;
+}
+.formPassword {
+  width: 385px;
+}
+.buttonSubmit {
+  margin-top: 2%;
+}
