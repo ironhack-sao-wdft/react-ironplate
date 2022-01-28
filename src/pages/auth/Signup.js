@@ -28,10 +28,7 @@ function Signup(props) {
 
     try {
       setLoading(false);
-      const response = await api.post(
-        "http://localhost:4000/api/signup",
-        state
-      );
+      const response = await api.post("/api/signup", state);
       setLoading(true);
       navigate("/");
     } catch (err) {

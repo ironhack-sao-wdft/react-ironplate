@@ -30,10 +30,7 @@ function CreateBook() {
 
     try {
       setLoading(true);
-      const response = await api.post(
-        "http://localhost:4000/api/book/create-book",
-        bookData
-      );
+      const response = await api.post("/api/book/create-book", bookData);
       setLoading(false);
       console.log(response);
     } catch (err) {

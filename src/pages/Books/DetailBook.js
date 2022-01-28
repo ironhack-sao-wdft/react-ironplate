@@ -13,9 +13,7 @@ function DetailBook(props) {
 
   async function fetchData() {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/api/book/detail-book/${id}`
-      );
+      const response = await axios.get(`/api/book/detail-book/${id}`);
       setBook({ ...response.data });
       console.log(response);
     } catch (err) {}
@@ -23,7 +21,7 @@ function DetailBook(props) {
 
   useEffect(() => {
     fetchData();
-    console.log(`http://localhost:4000/api/book/detail-book/${id}`);
+    console.log(`/api/book/detail-book/${id}`);
   }, []);
 
   useEffect(() => {

@@ -11,7 +11,7 @@ function DeleteBook() {
   useEffect(() => {
     async function deleteBook() {
       try {
-        await api.delete(`http://localhost:4000/api/book/delete-book/${id}`);
+        await api.delete(`/api/book/delete-book/${id}`);
         navigate("/");
       } catch (err) {
         console.error(err);

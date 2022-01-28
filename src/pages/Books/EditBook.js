@@ -25,9 +25,7 @@ function EditBook(props) {
   useEffect(() => {
     async function user() {
       try {
-        const response = await api.get(
-          `http://localhost:4000/api/book/detail-book/${id}`
-        );
+        const response = await api.get(`/api/book/detail-book/${id}`);
         const coverImage = await handleFileUpload(userData.picture);
 
         setUserData({ ...userData, coverImage, ...response.data });
@@ -72,7 +70,7 @@ function EditBook(props) {
       const coverImage = await handleFileUpload(userData.picture);
 
       const response = await api.patch(
-        `http://localhost:4000/api/book/update-book/${id}`,
+        `/api/book/update-book/${id}`,
         userData,
         coverImage
       );

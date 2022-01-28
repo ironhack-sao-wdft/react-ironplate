@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apis = {
   development: "",
-  production: "",
+  production: "https://project-extended-back.herokuapp.com/",
 };
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios

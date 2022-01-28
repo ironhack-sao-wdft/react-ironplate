@@ -10,9 +10,7 @@ function ListBook() {
   useEffect(() => {
     async function fetchBook() {
       try {
-        const response = await api.get(
-          "http://localhost:4000/api/book/list-book"
-        );
+        const response = await api.get("/api/book/list-book");
 
         setListBook([...response.data]);
       } catch (err) {
