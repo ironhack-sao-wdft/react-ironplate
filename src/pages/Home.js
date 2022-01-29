@@ -1,5 +1,5 @@
-import api from "../apis";
-import React, { useEffect , useState, useContext } from "react";
+import api from "../apis/api";
+import React, { useEffect , useState} from "react";
 import { Link } from "react-router-dom";
 
 

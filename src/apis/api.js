@@ -7,7 +7,7 @@ const apis = {
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
 const api = axios.create({
-  baseURL: "https://bookregister-api.herokuapp.com/api",
+  baseURL: apis[process.env.NODE_ENV],
 });
 
 // Configura a instância do Axios para injetar o cabeçalho de autenticação antes de cada requisição
