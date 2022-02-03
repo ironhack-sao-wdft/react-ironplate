@@ -4,7 +4,8 @@
   <img alt="Gif" title="Readme" src="./github/gifs-book.gif"/>
   </h1>
 <h1>Sobre o Projeto</h1>
-<p>Book App é um site que permite aos usuários cadastrar seus favoritos livros, desenvolvido para prática FullStack do curso de Desenvolvimento Web da IronHack - SP.</p>
+<p>Book App é um site que permite aos usuários cadastrar seus livros favoritos, desenvolvi essa aplicação para praticar CRUD tanto no back-end quanto no front-end, desafio no formato solo, sem suporte técnico adicional.</p>
+<p>Curso: Desenvolvimento Web - <b>IronHack - SP</b></p>
   <p>Link do <b>Site</b> ▶️ <a href="https://may-book.netlify.app/login">Book-App</a></p>
   <p>Link do <b>Repositório Back-end</b> ▶️ <a href="https://github.com/Elizeu-Santos/ironrest">Back-end</a></p>
   
