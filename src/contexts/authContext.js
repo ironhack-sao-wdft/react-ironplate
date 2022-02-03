@@ -15,8 +15,13 @@ function AuthContextComponent(props) {
     }
   }, []);
 
+  function logout() {
+    setLoggedInUser({ token: "", user: { }});
+    localStorage.removeItem("loggedInUser");
+  }
+
   return (
-    <AuthContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+    <AuthContext.Provider value={{ loggedInUser, setLoggedInUser, logout }}>
       {props.children}
     </AuthContext.Provider>
   );
