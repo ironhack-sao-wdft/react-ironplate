@@ -19,7 +19,7 @@ function Navbar() {
                     className={({IsActive}) => 
                         `nav-link ${IsActive ? 'active' : ''}`
                     }
-                    to="/"
+                    to="/book/list"
                     >
                     Home
                 </NavLink>
@@ -29,7 +29,7 @@ function Navbar() {
                     className={({ IsActive }) => 
                         `nav-link ${IsActive ? "active" : ""}`
                     }
-                    to="/book"
+                    to="/book/create"
                     >
                     Novo Livro
                 </NavLink>

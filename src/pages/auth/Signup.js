@@ -35,7 +35,7 @@ function Signup(props) {
     try {
 
       setLoading(true)
-      console.log(state)
+      
       const response = await api.post('/signup', state);    
       setErrors({ name: "", password: "", email: "" });
       navigate("/login");
