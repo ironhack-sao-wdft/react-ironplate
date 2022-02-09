@@ -94,7 +94,7 @@ async function handleFileUpload(file) {
 
   return (
     <form onSubmit={handleSubmit} className="container" className="form-label">
-        <h1>Novo Livro</h1>
+        <h1>Editar Livro</h1>
         <div>
         <label htmlFor="title">Titulo do livro</label>
         <input
