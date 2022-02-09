@@ -93,9 +93,9 @@ async function handleFileUpload(file) {
   }
 
   return (
-    <form>
+    <div>
       Hello
-    </form>
+    </div>
   );
 }
 
