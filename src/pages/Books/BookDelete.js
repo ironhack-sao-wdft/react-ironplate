@@ -9,7 +9,7 @@ function BookDelete() {
         async function deleteBook() {
             try {
                 await api.delete(`/book/${id}`)
-                navigate('/')
+                navigate('/book/list')
             } catch(err) {
                 console.error(err)
             }
