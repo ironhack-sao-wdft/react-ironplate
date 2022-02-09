@@ -186,7 +186,7 @@ async function handleFileUpload(file) {
         </div>
         <br></br>
         <div>
-        <Link to="/" disabled={loading} type="submit" className="btn btn-primary" >
+        <Link to="/book/list" disabled={loading} type="submit" className="btn btn-primary" >
         {loading ? ( <> <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> <span>Carregando</span> {" "}
         </> 
 
