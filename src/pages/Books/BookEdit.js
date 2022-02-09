@@ -28,10 +28,11 @@ function BookEdit(props) {
       try {
         const response = await api.get(`/book/${id}`);
                   const pictures = await handleFileUpload(userData.picture);
- 
+        console.log(response)
         setUserData({ ...userData,
             pictures,
            ...response.data });
+      
       } catch (e) {
         console.log(e);
       }
