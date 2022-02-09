@@ -27,7 +27,7 @@ function BookDetail () {
     useEffect (() => {
         async function fetchBook() {
             try {
-                const response = await api.get(`http://localhost:4000/api/book/${id}`)
+                const response = await api.get(`/book/${id}`)
             
                 setBookDetails({...response.data})
             } catch(err) {
