@@ -19,7 +19,7 @@ function BookEdit(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { id } = useParams();
+  const {id} = useParams();
 
   const navigate = useNavigate();
 
@@ -28,7 +28,7 @@ function BookEdit(props) {
       try {
         const response = await api.get(`/book/${id}`);
                   const pictures = await handleFileUpload(userData.picture);
-        console.log(response)
+        
         setUserData({ ...userData,
             pictures,
            ...response.data });
@@ -38,7 +38,7 @@ function BookEdit(props) {
       }
     }
     user();
-  }, [id]);
+  }, );
 
   function handleChange(e) {
     if (e.target.files) {
@@ -94,7 +94,7 @@ async function handleFileUpload(file) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="container" className="form-label">
+    <form onSubmit={handleSubmit} className="container form-label">
         <h1>Editar Livro</h1>
         <div>
         <label htmlFor="title">Titulo do livro</label>

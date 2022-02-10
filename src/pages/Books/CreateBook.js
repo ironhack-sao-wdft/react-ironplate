@@ -66,7 +66,7 @@ function CreateBook(){
       
 
     return (
-    <form onSubmit={handleSubmit} className="container" className="form-label">
+    <form onSubmit={handleSubmit} className="container form-label">
         <h1>Novo Livro</h1>
         <div>
         <label htmlFor="title">Titulo do livro</label>
