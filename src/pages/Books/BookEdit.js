@@ -38,7 +38,7 @@ function BookEdit(props) {
       }
     }
     user();
-  }, );
+  }, [ id ]);
 
   function handleChange(e) {
     if (e.target.files) {
