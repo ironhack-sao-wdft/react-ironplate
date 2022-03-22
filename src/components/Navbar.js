@@ -8,15 +8,11 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-     
       <div className="container  d-flex justify-content-between align-items-center text-light">
         <NavLink className="navbar-brand" to="/">
           System Books
         </NavLink>
-       
-       
 
-      
         <div className="collapse navbar-collapse" id="#menuPrincipal">
           <ul className="navbar-nav">
             <li className="nav-item">
@@ -29,6 +25,17 @@ function Navbar() {
                 Home
               </NavLink>
             </li>
+
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/lista"
+              >
+                Livros
+              </NavLink>
+            </li>
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -39,7 +46,6 @@ function Navbar() {
                 Criar Livro
               </NavLink>
             </li>
-            
           </ul>
         </div>
         <div>

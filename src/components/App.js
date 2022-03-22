@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Lista from "../pages/Lista";
 import Home from "../pages/Home";
+
 import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
@@ -21,12 +23,12 @@ function App() {
           <Navbar />
           <div className="container-fluid mt-3 row-col-md-4">
             <Routes>
-              <Route path="/" element={<ProtectedRoute component={Home} />} />
+              <Route path="/lista" element={<ProtectedRoute component={Lista} />} />
               <Route
                 path="/cadastrarLivro"
                 element={<ProtectedRoute component={CadastrarLivro} />}
               />
-              
+
               <Route
                 path="/livro/detalhe/:id"
                 element={<ProtectedRoute component={DetalheLivro} />}
@@ -40,14 +42,15 @@ function App() {
                 path="/edit-livro/:id"
                 element={<ProtectedRoute component={EditLivro} />}
               />
+              <Route path="/" element={<Home />} />
+
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
             </Routes>
           </div>
-          <Rodape/>
+          <Rodape />
         </div>
       </AuthContextComponent>
-
     </div>
   );
 }

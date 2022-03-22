@@ -1,31 +1,13 @@
-import { useState, useEffect } from "react";
-import api from "../apis/api";
-import CardLivro from "../pages/Livros/CardLivro";
-// import index from "../assets/styles/index.css";
-function ListaLivro() {
-  const [listaLivro, setListaLivro] = useState([]);
+import Slider from "../components/Slider";
+import Album from "../components/Album";
 
-  useEffect(() => {
-    async function fetchLivro() {
-      try {
-        const response = await api.get("/lista-livro");
+function Home(){
 
-        setListaLivro([...response.data]);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-    fetchLivro();
-  }, []);
-
-  return (
-    <div className="container d-flex justify-content-between">
-      <div className="row home">
-                 {listaLivro.map((currentLivroObj) => (
-                  <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
-                ))}
-              </div>
-            </div>
-   );
+  return(
+    <div className="container-fluid">
+      <Slider/>
+      <Album/>
+    </div>
+  )
 }
-export default ListaLivro;
+export default Home;

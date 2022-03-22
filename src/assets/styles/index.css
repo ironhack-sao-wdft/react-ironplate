@@ -1,85 +1,81 @@
 /* Seus estilos globais vão aqui */
 
 body {
-    background-color:aquamarine;
-    margin: 0px;
+  background-color: aquamarine;
+  margin: 0px;
 }
 
-.home{
-    background:aquamarine;
+.home {
+  background: aquamarine;
 }
 /*imagem da página de detalhes*/
-.img-detalhe{
-    width: 400px;
-    height: 400px;
-    margin-bottom: 10px;
-    border: 2px solid black;
-    box-shadow: inset 0 0 1em gold, 0 0 1em black; 
+.img-detalhe {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  box-shadow: inset 0 0 1em gold, 0 0 1em black;
 }
 /*imagem dos cards*/
-.img-card{
-    height: 200px;
-    width: auto;
+.img-card {
+  height: 200px;
+  width: auto;
 }
-.card{
-    box-shadow: inset 0 0 1em gold, 0 0 1em black; 
-    padding: 5px;
-    margin:10px;
-   height: 600px; 
+.card {
+  box-shadow: inset 0 0 1em gold, 0 0 1em black;
+  padding: 5px;
+  margin: 10px;
+  height: 600px;
 }
-
-
 
 /*botão de editar na pagina home*/
 
-.btn-editar{
-    background-color:yellow;
-    margin-right: 2px;
+.btn-editar {
+  background-color: yellow;
+  margin-right: 2px;
 }
 /*cor da fonte do link de ver detalhe*/
 
-.link-detalhe{
-    color:white;
+.link-detalhe {
+  color: white;
 }
-.botao-detalhe{
-    border-radius: 5px;
-    margin-right: 2px;
+.botao-detalhe {
+  border-radius: 5px;
+  margin-right: 2px;
 }
 
 /*div que contem os botões do card da home*/
-.div-botoes{
-    margin-bottom: 2px;
+.div-botoes {
+  margin-bottom: 2px;
 }
-.lista{
-display:grid;
-grid-template-columns: 25% 75%;
-grid-template-rows: 25vh;
-
-
+.lista {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 25vh;
 }
-.lista-livro{
-    width: 400px;
-height: 400px;
+.lista-livro {
+  width: 400px;
+  height: 400px;
 }
 
-
-.rodape{
-     display: flex;
-     justify-content: center; 
-    align-items: center; 
-    background-color: black;
-    color: white;
-    height:60px;
-    width:100%;
-    padding: 10px;
-     font-size: 16px;
-    bottom: 0px;
-    position: fixed;
+.rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 60px;
+  width: 100%;
+  margin-top: 60px;
+  padding: 10px;
+  font-size: 16px;
+  bottom: 0px;
+  position: fixed;
 }
-.link-icone{
-   width: 30px; 
-    padding:20px;
-    margin-left: 5px;
-    color: blue;
-    margin-bottom: 15px;
+.link-icone {
+  width: 30px;
+  padding: 20px;
+  margin-left: 5px;
+  color: blue;
+  margin-bottom: 15px;
 }
