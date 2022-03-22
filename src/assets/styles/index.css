@@ -67,14 +67,13 @@ height: 400px;
      display: flex;
      justify-content: center; 
     align-items: center; 
-    background-color:black;
+    background-color: blue;
     color: white;
     height:60px;
     padding: 10px;
-    margin-top:250px;
-    font-size: 16px;
+     font-size: 16px;
     bottom: 0px;
-    position: relative;
+    position: fixed;
 }
 .link-icone{
    width: 30px; 
