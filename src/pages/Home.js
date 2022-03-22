@@ -4,7 +4,7 @@ import Album from "../components/Album";
 function Home(){
 
   return(
-    <div className="container-fluid">
+    <div>
       <Slider/>
       <Album/>
     </div>
