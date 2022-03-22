@@ -5,9 +5,6 @@ body {
   margin: 0px;
 }
 
-.home {
-  background: aquamarine;
-}
 /*imagem da página de detalhes*/
 .img-detalhe {
   width: 400px;
@@ -52,6 +49,7 @@ body {
   display: grid;
   grid-template-columns: 25% 75%;
   grid-template-rows: 25vh;
+  margin-bottom:10px;
 }
 .lista-livro {
   width: 400px;
@@ -64,7 +62,7 @@ body {
   align-items: center;
   background-color: black;
   color: white;
-  margin-top: 150px;
+  margin-top: 0px;
   width: 100%;
   padding-top: 10px;
   padding-bottom:10px;
@@ -87,12 +85,15 @@ body {
   margin-top: 45px;
   margin-bottom: 45px;
 }
-/* Estilos da página de Acomodações */
+/* Estilos da página de livros */
 .album {
   background: aquamarine;
+  margin:10px;
 }
 .photo-album {
   border: 2px solid white;
   box-shadow: 3px 3px 3px white;
 }
-
+.slide{
+ width: 100%;
+}
