@@ -19,23 +19,13 @@ function ListaLivro() {
   }, []);
 
   return (
-         <div className="album py-sm-0 bg-light">
-
-    <div className="container-fluid mb-2">
-      <div className="row-cols-md-3">
-                   <div className="col">
-                                  <div className="card shadow-sm photo-album">
-
-
+    <div className="container  d-flex justify-content-between">
+      <div className="row ">
                  {listaLivro.map((currentLivroObj) => (
                   <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
                 ))}
               </div>
             </div>
-     </div>
-     </div>
-     </div>
-
    );
 }
 export default ListaLivro;

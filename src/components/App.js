@@ -22,7 +22,7 @@ function App() {
       <AuthContextComponent>
         <div>
           <Navbar />
-          <div className="container-fluid">
+          <div className="container-fluid  row-col-md-4">
             <Routes>
               <Route path="/lista" element={<ProtectedRoute component={Lista} />} />
               <Route
