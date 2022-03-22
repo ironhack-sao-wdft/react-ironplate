@@ -4,7 +4,6 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaTrashAlt } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
 import ConfirmationModal from "../../components/ConfirmationModal";
-import index from "../../assets/styles/index.css"
 
 
 

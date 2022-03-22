@@ -88,9 +88,6 @@ body {
   margin-bottom: 45px;
 }
 /* Estilos da página de Acomodações */
-.album {
-  /* background-image: url("../../public/img/fundo4.webp"); */
-}
 .photo-album {
   border: 2px solid white;
   box-shadow: 3px 3px 3px white;
