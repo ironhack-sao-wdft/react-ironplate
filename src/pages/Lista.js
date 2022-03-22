@@ -19,8 +19,8 @@ function ListaLivro() {
   }, []);
 
   return (
-    <div className="container d-flex justify-content-center lista-livro">
-      <div className="row">
+    <div className="container d-flex justify-content-between">
+      <div className="row lista-livro">
         {listaLivro.map((currentLivroObj) => (
           <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
         ))}
