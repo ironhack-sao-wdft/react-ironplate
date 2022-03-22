@@ -24,12 +24,15 @@ function ListaLivro() {
     <div className="container-fluid mb-2">
       <div className="row-cols-md-3">
                    <div className="col">
+                                  <div className="card shadow-sm photo-album">
+
 
                  {listaLivro.map((currentLivroObj) => (
                   <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
                 ))}
               </div>
             </div>
+     </div>
      </div>
      </div>
 
