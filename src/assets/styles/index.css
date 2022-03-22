@@ -4,6 +4,10 @@ body {
     background-color:aquamarine;
     margin: 0px;
 }
+
+.home{
+    background:aquamarine;
+}
 /*imagem da página de detalhes*/
 .img-detalhe{
     width: 400px;
@@ -63,7 +67,7 @@ height: 400px;
      display: flex;
      justify-content: center; 
     align-items: center; 
-    background-color:blue;
+    background-color:black;
     color: white;
     height:60px;
     padding: 10px;

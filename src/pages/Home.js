@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../apis/api";
 import CardLivro from "../pages/Livros/CardLivro";
-import index from "../assets/styles/index.css";
+// import index from "../assets/styles/index.css";
 function ListaLivro() {
   const [listaLivro, setListaLivro] = useState([]);
 
@@ -19,8 +19,8 @@ function ListaLivro() {
   }, []);
 
   return (
-    <div className="container d-flex justify-content-between">
-      <div className="row">
+    <div className="container d-flex justify-content-between home">
+      <div className="row ">
                  {listaLivro.map((currentLivroObj) => (
                   <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
                 ))}
