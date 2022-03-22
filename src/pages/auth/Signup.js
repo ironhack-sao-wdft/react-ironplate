@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import validator from "validator";
+import ReactTooltip from "react-tooltip";
 
 function Signup(props) {
   const [state, setState] = useState({ name: "", password: "", email: "" });
@@ -10,9 +13,43 @@ function Signup(props) {
     password: null,
   });
 
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const validate = (value) => {
+    if (
+      validator.isStrongPassword(value, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+    ) {
+      setErrorMessage("");
+    } else {
+      setErrorMessage(
+        "Your password must have at least 8 characters with uppercase, numeric and special."
+      );
+    }
+  };
+
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   const navigate = useNavigate();
 
   function handleChange(event) {
+    setState({
+      ...state,
+      [event.currentTarget.name]: event.currentTarget.value,
+    });
+  }
+
+  function handleChangePW(event) {
+    validate(event.target.value);
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
@@ -37,51 +74,74 @@ function Signup(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Signup!</h1>
+    <div className="login-container m-4 shadow-lg p-1 mb-5">
+      <form onSubmit={handleSubmit}>
+        <div className="p-2">
+          <label htmlFor="signupFormName" />
+          <input
+            type="text"
+            name="name"
+            id="signupFormName"
+            value={state.name}
+            error={errors.name}
+            onChange={handleChange}
+            placeholder="Your name"
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormName">Name</label>
-        <input
-          type="text"
-          name="name"
-          id="signupFormName"
-          value={state.name}
-          error={errors.name}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="p-2">
+          <label htmlFor="signupFormEmail" />
+          <input
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+            placeholder="Your e-mail"
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div className="p-2">
+          <label htmlFor="signupFormPassword" />
+          <input
+            type={passwordShown ? "text" : "password"}
+            name="password"
+            id="signupFormPassword"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChangePW}
+            placeholder="Your password"
+            data-tip={errorMessage}
+          />
+        </div>
+        {errorMessage !== "" && <ReactTooltip />}
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <button
+          class="btn btn-white"
+          style={{ marginTop: "-99px", marginLeft: "230px", border: "none" }}
+          onClick={togglePassword}
+        >
+          <VisibilityIcon sx={{ color: "#965353" }} />
+        </button>
 
-      <div>
-        <button type="submit">Signup!</button>
-
-        <Link to="/login">Already have an account? Click here to login.</Link>
-      </div>
-    </form>
+        <div className="p-4">
+          <button
+            className="btn btn-light btn-lg mt-4"
+            type="submit"
+            style={{ color: "#965353" }}
+          >
+            Signup
+          </button>
+        </div>
+        <div className="p-4">
+          <Link to="/login" style={{ textDecoration: "none", color: "white" }}>
+            <p>Already have an account?</p>
+            <p> Click here to login!</p>
+          </Link>
+        </div>
+      </form>
+    </div>
   );
 }
 
