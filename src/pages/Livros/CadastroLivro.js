@@ -60,7 +60,7 @@ async function handleFileUpload(file) {
         ...livro,
         coverImage
       });
-      navigate("/");
+      navigate("/lista");
 
       console.log(response);
       

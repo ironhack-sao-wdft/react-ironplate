@@ -13,7 +13,7 @@ function DeleteLivro() {
     async function deleteLivro() {
       try {
         await api.delete(`/delete-livro/${id}`);
-        navigate("/");
+        navigate("/lista");
       } catch (err) {
         console.error(err);
       }
