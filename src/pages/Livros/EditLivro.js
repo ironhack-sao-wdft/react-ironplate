@@ -37,7 +37,7 @@ function EditLivro(props) {
       }
     }
     user();
-  }, [id]);
+  }, [id, userData]);
 
   function handleChange(e) {
     if (e.target.files) {
