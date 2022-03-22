@@ -19,6 +19,8 @@ function ListaLivro() {
   }, []);
 
   return (
+         <div className="album py-sm-0 bg-light">
+
     <div className="container-fluid mb-2">
       <div className="row-cols-md-3">
                    <div className="col">
@@ -28,6 +30,7 @@ function ListaLivro() {
                 ))}
               </div>
             </div>
+     </div>
      </div>
 
    );
