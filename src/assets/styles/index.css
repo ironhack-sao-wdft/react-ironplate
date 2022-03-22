@@ -79,3 +79,20 @@ body {
   color: blue;
   margin-bottom: 15px;
 }
+/* Estilos dos títulos das sessões */
+.titulos {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+/* Estilos da página de Acomodações */
+.album {
+  background-image: url("../../public/img/fundo4.webp");
+}
+.photo-album {
+  border: 2px solid white;
+  box-shadow: 3px 3px 3px white;
+}
+
