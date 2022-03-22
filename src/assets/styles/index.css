@@ -1,1 +1,98 @@
 /* Seus estilos globais vão aqui */
+
+body {
+  background-color: aquamarine;
+  margin: 0px;
+}
+
+.home {
+  background: aquamarine;
+}
+/*imagem da página de detalhes*/
+.img-detalhe {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  box-shadow: inset 0 0 1em gold, 0 0 1em black;
+}
+/*imagem dos cards*/
+.img-card {
+  height: 200px;
+  width: auto;
+}
+.card {
+  box-shadow: inset 0 0 1em gold, 0 0 1em black;
+  padding: 5px;
+  margin: 10px;
+  height: 600px;
+}
+
+/*botão de editar na pagina home*/
+
+.btn-editar {
+  background-color: yellow;
+  margin-right: 2px;
+}
+/*cor da fonte do link de ver detalhe*/
+
+.link-detalhe {
+  color: white;
+}
+.botao-detalhe {
+  border-radius: 5px;
+  margin-right: 2px;
+}
+
+/*div que contem os botões do card da home*/
+.div-botoes {
+  margin-bottom: 2px;
+}
+.lista {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 25vh;
+}
+.lista-livro {
+  width: 400px;
+  height: 400px;
+}
+
+.rodape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  color: white;
+  height: 60px;
+  width: 100%;
+  margin-top: 100px;
+  padding: 15px;
+  font-size: 16px;
+  bottom: 0px;
+  position: fixed;
+}
+.link-icone {
+  width: 30px;
+  padding: 20px;
+  margin-left: 5px;
+  color: blue;
+  margin-bottom: 15px;
+}
+/* Estilos dos títulos das sessões */
+.titulos {
+  font-size: 2rem;
+  color: green;
+  text-align: center;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+/* Estilos da página de Acomodações */
+.album {
+  background-image: url("../public/img/fundo4.webp");
+}
+.photo-album {
+  border: 2px solid white;
+  box-shadow: 3px 3px 3px white;
+}
+

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
+import FormField from "../../components/Form/FormField";
 import { AuthContext } from "../../contexts/authContext";
 
 function Login(props) {
@@ -43,39 +44,46 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div className="container cadastro">
+      <form onSubmit={handleSubmit}>
+        <h1>Entre na sua conta</h1>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <FormField
+            label="Emai"
+            type="email"
+            name="email"
+            id="signupFormEmail"
+            value={state.email}
+            error={errors.email}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+        <div>
+          <FormField
+            label="Senha"
+            type="password"
+            name="password"
+            id="signupFormPassword"
+            value={state.password}
+            error={errors.password}
+            onChange={handleChange}
+          />
+        </div>
 
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/signup">Don't have an account? Click here to signup!</Link>
-      </div>
-    </form>
+        <div className="mb-3 d-flex justify-content-center">
+          <button type="submit" className="btn btn-primary mr-3">
+            Entrar
+          </button>
+          <div>
+            <Link className="btn btn-primary " to="/signup">
+              Não tem uma conta? Clique aqui e cadastre!
+            </Link>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
 
