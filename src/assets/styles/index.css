@@ -89,7 +89,7 @@ body {
 }
 /* Estilos da página de Acomodações */
 .album {
-  background-image: url("../public/img/fundo4.webp");
+  background-image: url("../../public/img/fundo4.webp");
 }
 .photo-album {
   border: 2px solid white;
