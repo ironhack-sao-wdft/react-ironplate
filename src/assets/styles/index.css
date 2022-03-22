@@ -57,6 +57,11 @@ grid-template-rows: 25vh;
     width: 400px;
 height: 400px;
 }
+.footer{
+    position: relative;
+    bottom: 0px;
+    height:200px;
+}
 
 .rodape{
      display: flex;

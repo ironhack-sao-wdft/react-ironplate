@@ -2,8 +2,8 @@ import {FaFacebook} from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 import { AiFillGithub } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
-import index from "../assets/styles/index.css";
-import { Link } from "react-router-dom";
+// import index from "../assets/styles/index.css";
+// import { Link } from "react-router-dom";
 
 
 
