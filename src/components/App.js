@@ -24,12 +24,12 @@ function App() {
           <Navbar />
           <div className="container-fluid">
             <Routes>
-              <div className="row-col-md-4" >
+              
                 <Route
                   path="/lista"
                   element={<ProtectedRoute component={Lista} />}
                 />
-              </div>
+              
               <Route
                 path="/cadastrarLivro"
                 element={<ProtectedRoute component={CadastrarLivro} />}
