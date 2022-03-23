@@ -7,9 +7,6 @@ function Home(){
     <>
     <div className="container-fluid">
       <Slider/>
-    </div>
-    
-    <div>
       <Album/>
     </div>
      
