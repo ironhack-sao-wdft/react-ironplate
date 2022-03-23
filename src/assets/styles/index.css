@@ -4,7 +4,10 @@ body {
   background-color: aquamarine;
   margin: 0px;
 }
-
+*{
+  padding: 0px;
+  margin: 0px;
+}
 /*imagem da página de detalhes*/
 .img-detalhe {
   width: 400px;
@@ -45,7 +48,7 @@ body {
 .div-botoes {
   margin-bottom: 2px;
 }
-.lista {
+/* .lista {
   display: grid;
   grid-template-columns: 25% 75%;
   grid-template-rows: 25vh;
@@ -54,7 +57,7 @@ body {
 .lista-livro {
   width: 400px;
   height: 400px;
-}
+} */
 
 .rodape {
   display: flex;
