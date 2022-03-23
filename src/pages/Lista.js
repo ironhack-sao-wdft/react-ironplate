@@ -19,7 +19,7 @@ function ListaLivro() {
   }, []);
 
   return (
-         <div className="container-fluid mb-2">
+         <div className="container  mb-3">
           <div className="row  row-col-md-4">
                
         
