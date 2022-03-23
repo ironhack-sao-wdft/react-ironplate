@@ -65,7 +65,7 @@ body {
   align-items: center;
   background-color: black;
   color: white;
-  margin-top: 0px;
+  margin-top: 150px;
   width: 100%;
   padding-top: 10px;
   padding-bottom:10px;
@@ -104,7 +104,7 @@ body {
   position: relative;
 }
 .lista-livro{
-  margin-bottom:100px;
+  border: 2px solid black;
 }
 
 .detalhes{
