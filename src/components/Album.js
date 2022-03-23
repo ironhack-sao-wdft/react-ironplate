@@ -13,10 +13,7 @@ function Album() {
                   height="225"
                   src="./img/quarto1.jpg"
                   alt="quarto1"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                />
+                  />
               </div>
             </div>
             <div className="col">
@@ -27,9 +24,6 @@ function Album() {
                   height="225"
                   src="./img/quarto2.jpg"
                   alt="quarto 2"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
                 />
               </div>
             </div>
@@ -40,10 +34,7 @@ function Album() {
                   width="100%"
                   height="225"
                   src="./img/quarto3.jpg"
-                  alt="quarto 3"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
+                  alt="quarto 3" 
                 />
               </div>
             </div>
@@ -56,9 +47,6 @@ function Album() {
                   height="225"
                   src="./img/quarto4.jpg"
                   alt="quarto 4"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
                 />
               </div>
             </div>
@@ -70,9 +58,7 @@ function Album() {
                   height="225"
                   src="./img/quarto5.jpg"
                   alt="quarto 5"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
+                  
                 />
               </div>
             </div>
@@ -84,9 +70,6 @@ function Album() {
                   height="225"
                   src="./img/quarto6.jpg"
                   alt="quaro 6"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
                 />
               </div>
             </div>
@@ -99,9 +82,6 @@ function Album() {
                   height="225"
                   src="./img/quarto7.jpg"
                   alt="quarto 7"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
                 />
               </div>
             </div>
@@ -113,10 +93,7 @@ function Album() {
                   height="225"
                   src="./img/quarto8.jpg"
                   alt="quarto 8"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                />
+                  />
               </div>
             </div>
             <div className="col">
@@ -127,10 +104,7 @@ function Album() {
                   height="225"
                   src="./img/quarto9.jpg"
                   alt="quarto 9"
-                  aria-label="Placeholder: Thumbnail"
-                  preserveAspectRatio="xMidYMid slice"
-                  focusable="false"
-                />
+                 />
               </div>
             </div>
           </div>

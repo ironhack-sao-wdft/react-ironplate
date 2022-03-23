@@ -97,19 +97,16 @@ body {
   border: 2px solid white;
   box-shadow: 3px 3px 3px white;
 }
-.slide{
- width: 100%;
-}
-.cadastro{
-  position: relative;
-}
+
 
 
 .detalhes{
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 .photo-album{
   border-top: 1px solid black;
+  clear: both;
 }
 .card-livro{
   border-top: 1px solid blue;
