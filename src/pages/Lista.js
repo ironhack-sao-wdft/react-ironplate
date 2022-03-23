@@ -20,7 +20,7 @@ function ListaLivro() {
 
   return (
          <div className="container-fluid mb-2">
-          <div className="row row-cols-1 row-cols-sm-2 row-col-md-4">
+          <div className="row row-cols-1  row-col-md-4">
                
         
         {listaLivro.map((currentLivroObj) => (
