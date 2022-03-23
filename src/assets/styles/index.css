@@ -103,13 +103,14 @@ body {
 .cadastro{
   position: relative;
 }
-.lista-livro{
-  border: 2px solid black;
-}
+
 
 .detalhes{
   margin: 20px;
 }
 .photo-album{
   border-top: 1px solid black;
+}
+.card-livro{
+  border-top: 1px solid blue;
 }
