@@ -24,12 +24,16 @@ function App() {
           <Navbar />
           <div className="container-fluid">
             <Routes>
-              <Route path="/lista" element={<ProtectedRoute component={Lista} />} />
+              <div className="row-col-md-4" >
+                <Route
+                  path="/lista"
+                  element={<ProtectedRoute component={Lista} />}
+                />
+              </div>
               <Route
                 path="/cadastrarLivro"
                 element={<ProtectedRoute component={CadastrarLivro} />}
               />
-
               <Route
                 path="/livro/detalhe/:id"
                 element={<ProtectedRoute component={DetalheLivro} />}
@@ -44,7 +48,6 @@ function App() {
                 element={<ProtectedRoute component={EditLivro} />}
               />
               <Route path="/" element={<Home />} />
-
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
             </Routes>
