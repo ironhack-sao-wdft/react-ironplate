@@ -107,3 +107,6 @@ body {
 .detalhes{
   margin: 20px;
 }
+.photo-album{
+  border-top: 1px solid black;
+}
