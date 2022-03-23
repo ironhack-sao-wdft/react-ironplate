@@ -33,7 +33,7 @@ function DetalheLivro(props) {
   }, [id]);
 
   return (
-    <div className="container">
+    <div className="container detalhes">
       <div className=" d-flex justify-content-between">
         <div className="img-fluid">
           <img
