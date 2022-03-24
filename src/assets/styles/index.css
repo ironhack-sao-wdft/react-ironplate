@@ -61,20 +61,35 @@ body {
 .pagina-principal{
   position: relative;
 }
+
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  color: white;
-  margin-top: 0px;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom:10px;
-  font-size: 16px;
-  bottom: 0px;
-  position: absolute;
+  height: 90px;
+  margin-top: 0px;
+  background-color: #a9bfb0;
+  position: relative;
 }
+
+ .footer__social {
+    width: 100%;
+    padding-top: 8px;
+    display: flex;
+    justify-content: center;
+ }
+    a + a {
+      margin-left: 8px;
+    }  
+
+  .footer__copyright {
+    position: absolute;
+    bottom: 5px;
+
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+
+
 .link-icone {
   width: 30px;
   padding: 15px;

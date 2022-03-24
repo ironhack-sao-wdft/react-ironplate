@@ -1,48 +1,43 @@
-import {FaFacebook} from "react-icons/fa";
-import { BsInstagram } from "react-icons/bs";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { AiFillGithub } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
-// import index from "../assets/styles/index.css";
-// import { Link } from "react-router-dom";
-
-
-
 
 function Rodape() {
   return (
-    <div className="footer">
-      <footer className="rodape">
-        <p>Todos os direitos reservados</p>
+    <footer className="footer">
+      <div className="footer__social">
         <a
-          href="https://www.facebook.com/jfilhossouza"
+          href="https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack/"
           className=" link-icone"
-          title="Facebook"
+          title="linkedin"
         >
-          <FaFacebook />
-        </a>
-        <a
-          href="https://www.instagram.com/filho_souzaa/"
-          className=" link-icone"
-          title="instagram"
-        >
-          <BsInstagram />
+          <BsLinkedin size="30" color="#fff" />
         </a>
         <a
           href="https://github.com/jfilinho"
           className=" link-icone"
           title="github"
         >
-          <AiFillGithub />
+          <AiFillGithub size="30" color="#fff" />
         </a>
+
+        <a href="https://www.instagram.com/filho_souzaa/">
+          <FaInstagram size="30" color="#fff" />
+        </a>
+
         <a
-          href="https://www.linkedin.com/in/jo%C3%A3o-filho-souza-silva-734773165/"
+          href="https://www.facebook.com/jfilhossouza"
           className=" link-icone"
-          title="linkedin"
+          title="Facebook"
         >
-          <BsLinkedin />
+          <FaFacebook size="30" color="#fff" />
         </a>
-      </footer>
-    </div>
+      </div>
+      <p className="footer__copyright">
+        &copy; Copyright 2022 - Desenvolvido por - João Filho
+      </p>
+    </footer>
   );
-};
+}
 export default Rodape;
