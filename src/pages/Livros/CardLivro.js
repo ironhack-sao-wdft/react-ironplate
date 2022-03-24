@@ -10,7 +10,7 @@ import ConfirmationModal from "../../components/ConfirmationModal";
 function CardLivro(props) {
   const [showModal, setShowModal] = useState(false);
 
-   useParams();
+   const { id } = useParams();
   const navigate = useNavigate();
 
   return (
