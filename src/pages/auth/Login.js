@@ -44,7 +44,7 @@ function Login(props) {
   }
 
   return (
-    <div className="container cadastro">
+    <div className="">
       <form onSubmit={handleSubmit}>
         <h1>Entre na sua conta</h1>
 
