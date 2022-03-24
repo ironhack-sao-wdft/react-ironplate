@@ -71,7 +71,7 @@ body {
   padding-bottom:10px;
   font-size: 16px;
   bottom: 0px;
-  position: fixed;
+  position: absolute;
 }
 .link-icone {
   width: 30px;
