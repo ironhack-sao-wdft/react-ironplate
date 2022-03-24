@@ -20,8 +20,7 @@ function App() {
   return (
     <div className="pagina-principal">
       <AuthContextComponent>
-        <div className="">
-          <Navbar />
+           <Navbar />
           <div className="container-fluid">
             <Routes>
               <Route
@@ -52,7 +51,6 @@ function App() {
             </Routes>
           </div>
           <Rodape />
-        </div>
       </AuthContextComponent>
     </div>
   );
