@@ -18,18 +18,17 @@ import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
   return (
-    <div>
+    <div className="pagina-principal">
       <AuthContextComponent>
-        <div className="pagina-principal">
+        <div>
           <Navbar />
           <div className="container-fluid">
             <Routes>
-              
-                <Route
-                  path="/lista"
-                  element={<ProtectedRoute component={Lista} />}
-                />
-              
+              <Route
+                path="/lista"
+                element={<ProtectedRoute component={Lista} />}
+              />
+
               <Route
                 path="/cadastrarLivro"
                 element={<ProtectedRoute component={CadastrarLivro} />}
