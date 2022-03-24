@@ -19,7 +19,7 @@ function EditLivro(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { id } = useParams();
+  const { id } =  useParams();
 
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ function EditLivro(props) {
       }
     }
     user();
-  }, [id]);
+  }, [id,userData]);
 
   function handleChange(e) {
     if (e.target.files) {
