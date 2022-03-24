@@ -20,7 +20,7 @@ function App() {
   return (
     <div>
       <AuthContextComponent>
-        <div>
+        <div className="pagina-principal">
           <Navbar />
           <div className="container-fluid">
             <Routes>
