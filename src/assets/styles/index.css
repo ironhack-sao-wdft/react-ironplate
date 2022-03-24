@@ -48,7 +48,7 @@ body {
 .div-botoes {
   margin-bottom: 2px;
 }
-/* .lista {
+.lista {
   display: grid;
   grid-template-columns: 25% 75%;
   grid-template-rows: 25vh;
@@ -57,7 +57,7 @@ body {
 .lista-livro {
   width: 400px;
   height: 400px;
-} */
+} 
 .pagina-principal{
   position: relative;
 }
@@ -73,7 +73,7 @@ body {
  .footer__social {
     width: 100%;
     padding-top: 8px;
-    display: flex;
+    display: inline-block;
     justify-content: center;
  }
     a + a {

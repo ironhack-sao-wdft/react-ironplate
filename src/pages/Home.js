@@ -5,7 +5,7 @@ function Home(){
 
   return(
     <>
-    <div className="container-fluid">
+    <div>
       <Slider/>
       <Album/>
     </div>
