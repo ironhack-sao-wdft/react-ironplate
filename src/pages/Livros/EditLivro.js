@@ -19,14 +19,14 @@ function EditLivro(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { _id } =  useParams();
+  const { id } =  useParams();
 
   const navigate = useNavigate();
 
   useEffect(() => {
     async function user() {
       try {
-        const response = await api.get(`/detalhe-livro/${_id}`);
+        const response = await api.get(`/detalhe-livro/${id}`);
                   const coverImage = await handleFileUpload(userData.picture);
  
         setUserData({ ...userData,
@@ -37,7 +37,7 @@ function EditLivro(props) {
       }
     }
     user();
-  }, [_id,userData]);
+  }, [id, userData]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -73,8 +73,8 @@ async function handleFileUpload(file) {
       setLoading(true);
             const coverImage = await handleFileUpload(userData.picture);
 
-      const response = await api.patch(`/atualizar-livro/${_id}`,
-       userData,
+      const response = await api.patch(`/atualizar-livro/${id}`,
+       ...userData,
        coverImage
        );
 
