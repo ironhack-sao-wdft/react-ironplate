@@ -7,7 +7,7 @@ function Slide() {
           <Carousel.Item interval={2000}>
             <img
               className="d-block w-100 fluid "
-              src="./img/capa.jpg"
+              src="./img/capa.png"
               alt="First slide"
               height="550"
             />
@@ -15,7 +15,7 @@ function Slide() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./img/capa1.jpg"
+              src="./img/capa2.jpg"
               alt="Second slide"
               height="550"
             />
@@ -23,13 +23,13 @@ function Slide() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="./img/slide4.gif"
+              src="./img/capa1.png"
               alt="Third slide"
               height="550"
             />
           </Carousel.Item>
         </Carousel>
-      </div>{" "}
+      </div>
       {/* fim do slide */}
     </div>
   );

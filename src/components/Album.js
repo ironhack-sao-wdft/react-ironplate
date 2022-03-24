@@ -11,8 +11,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto1.jpg"
-                  alt="quarto1"
+                  src="./img/livro1.png"
+                  alt="livro 1"
                   />
               </div>
             </div>
@@ -22,8 +22,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto2.jpg"
-                  alt="quarto 2"
+                  src="./img/livro.jpg"
+                  alt="livro 2"
                 />
               </div>
             </div>
@@ -33,8 +33,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto3.jpg"
-                  alt="quarto 3" 
+                  src="./img/livro2.png"
+                  alt="livro 3" 
                 />
               </div>
             </div>
@@ -45,8 +45,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto4.jpg"
-                  alt="quarto 4"
+                  src="./img/livro3.png"
+                  alt="livro 4"
                 />
               </div>
             </div>
@@ -56,8 +56,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto5.jpg"
-                  alt="quarto 5"
+                  src="./img/livro4.jpg"
+                  alt="livro 5"
                   
                 />
               </div>
@@ -68,8 +68,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto6.jpg"
-                  alt="quaro 6"
+                  src="./img/livro5.jpg"
+                  alt="livro 6"
                 />
               </div>
             </div>
@@ -80,8 +80,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto7.jpg"
-                  alt="quarto 7"
+                  src="./img/livro6.jpg"
+                  alt="livro 7"
                 />
               </div>
             </div>
@@ -91,8 +91,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto8.jpg"
-                  alt="quarto 8"
+                  src="./img/livro7.jpg"
+                  alt="livro 8"
                   />
               </div>
             </div>
@@ -102,8 +102,8 @@ function Album() {
                   className="bd-placeholder-img card-img-top"
                   width="100%"
                   height="225"
-                  src="./img/quarto9.jpg"
-                  alt="quarto 9"
+                  src="./img/livro8.jpg"
+                  alt="livro 9"
                  />
               </div>
             </div>
