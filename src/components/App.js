@@ -18,9 +18,9 @@ import { AuthContextComponent } from "../contexts/authContext";
 
 function App() {
   return (
-    <div className="pagina-principal">
+    <div className="">
       <AuthContextComponent>
-        <div>
+        <div className="pagina-principal">
           <Navbar />
           <div className="container-fluid">
             <Routes>

@@ -1,8 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 function Slide() {
   return (
-    <div>
-      <div>
+       <div>
         <Carousel className="slide">
           <Carousel.Item interval={2000}>
             <img
@@ -30,8 +29,7 @@ function Slide() {
           </Carousel.Item>
         </Carousel>
       </div>
-      {/* fim do slide */}
-    </div>
+      /* fim do slide */
   );
 }
 export default Slide;
