@@ -34,6 +34,10 @@
   border-radius: 5px;
   margin-right: 2px;
 }
+.detalhes{
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
 
 /*div que contem os botões do card da home*/
 /* .div-botoes {
@@ -65,8 +69,14 @@
   position: relative;
 } */
 
- * { margin:0; padding:0; }
-html, body {height:100%;}
+ /* * {
+    margin:0;
+     padding:0; 
+    } */
+
+/* html, body {
+  height:100%;
+} */
 .main {
     min-height:100%; 
     position:relative; 
@@ -83,8 +93,7 @@ html, body {height:100%;}
     position:absolute;
     bottom:0; 
     width:100%;
-    margin-top: 10px;
-}
+ }
 
 /* Estilos dos títulos das sessões */
 .titulos {
@@ -95,35 +104,23 @@ html, body {height:100%;}
   margin-bottom: 45px;
 }
 /* Estilos da página de livros */
-.album {
+/* .album {
   background: aquamarine;
   margin:10px;
-}
-.photo-album {
+} */
+/* .photo-album {
   border: 2px solid white;
   box-shadow: 3px 3px 3px white;
-}
+} */
 .cadastro{
   width: 100%;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   background:chocolate;
   padding: 20px;
-  margin:10px;
+  margin-left:400px;
   border-radius:15px;
 }
 
 
-.detalhes{
-  margin-top: 20px;
-  margin-bottom: 60px;
-}
-
-.card-livro{
-  border-top: 1px solid blue;
-}
-.conteudo{
-  border-top: 1px solid red;
-  background:aquamarine;
-}
