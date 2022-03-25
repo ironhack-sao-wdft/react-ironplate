@@ -21,7 +21,7 @@ function App() {
     <div className="pagina-principal">
       <AuthContextComponent>
            <Navbar />
-          <div className="container-fluid">
+          <div className="container-fluid mb-3 conteudo">
             <Routes>
               <Route
                 path="/lista"
