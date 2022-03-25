@@ -56,12 +56,9 @@
   height: 400px;
 } 
 .pagina-principal{
-  background: aquamarine;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
+  display: inline-block;
+  align-items: center;
+  justify-self: unset;
  }
  /* estilos de rodapé */
 
