@@ -19,7 +19,8 @@ function EditLivro(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { id } =  useParams();
+  
+  const { id } =  useParams(props);
 
   const navigate = useNavigate();
 
@@ -27,17 +28,15 @@ function EditLivro(props) {
     async function user() {
       try {
         const response = await api.get(`/detalhe-livro/${id}`);
-                  const coverImage = await handleFileUpload(userData.picture);
- 
-        setUserData({ ...userData,
-              coverImage,
-           ...response.data });
+        const coverImage = await handleFileUpload(userData.picture);
+
+        setUserData({ ...userData, coverImage, ...response.data });
       } catch (e) {
         console.log(e);
       }
     }
     user();
-  }, [id,userData ]);
+  }, [id, userData]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -71,12 +70,12 @@ async function handleFileUpload(file) {
 
     try {
       setLoading(true);
-            const coverImage = await handleFileUpload(userData.picture);
+      const coverImage = await handleFileUpload(userData.picture);
 
-      const response = await api.patch(`/atualizar-livro/${id}`,
+      const response = await api.patch(`/atualizar-livro/${id}`,{
        ...userData,
        coverImage
-       );
+      });
 
       console.log(response);
 
