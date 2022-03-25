@@ -94,7 +94,7 @@ async function handleFileUpload(file) {
 
   return (
     <div className="container cadastro">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form">
         <div className="titulo">
           <h1>Novo Livro</h1>
         </div>
@@ -176,7 +176,7 @@ async function handleFileUpload(file) {
           />
         </div>
         <div className="mb-3 text-end">
-          <button disabled={loading} type="submit" className="btn btn-primary">
+          <button disabled={loading} type="submit" className="btn btn-primary p-2">
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm me-2"
