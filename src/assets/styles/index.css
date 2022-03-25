@@ -1,9 +1,6 @@
 /* Seus estilos globais vão aqui */
 
-body {
-  background-color: aquamarine;
-  margin: 0px;
-}
+
 *{
   padding: 0px;
   margin: 0px;
@@ -25,7 +22,7 @@ body {
   box-shadow: inset 0 0 1em gold, 0 0 1em black;
   padding: 5px;
   margin: 10px;
-  height: 500px;
+  height: 400px;
 }
 
 /*botão de editar na pagina home*/
@@ -89,8 +86,7 @@ body {
 
   .footer__copyright {
     position: absolute;
-    bottom: 5px;
-
+ 
     width: 100%;
     text-align: center;
     color: white;

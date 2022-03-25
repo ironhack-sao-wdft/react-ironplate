@@ -22,7 +22,9 @@ function Rodape() {
           <AiFillGithub size="30" color="#fff" />
         </a>
 
-        <a href="https://www.instagram.com/filho_souzaa/">
+        <a href="https://www.instagram.com/filho_souzaa"
+         className=" link-icone
+        " title="instagram">
           <FaInstagram size="30" color="#fff" />
         </a>
 
