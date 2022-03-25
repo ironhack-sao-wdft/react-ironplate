@@ -14,7 +14,7 @@ function CardLivro(props) {
   const navigate = useNavigate();
 
   return (
-    <div className="list-group-item  card-livro">
+    <div className="list-group-item">
       <div className="img-fluid card" style={{ width: "18rem" }}>
         <img
           src={props.coverImage}

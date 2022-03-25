@@ -47,7 +47,7 @@
 }
 .lista {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 25vh;
   margin-bottom:10px;
 }
@@ -63,6 +63,7 @@
   justify-content: space-between;
 
  }
+ /* estilos de rodapé */
 
 .footer {
   display:flex;
@@ -112,7 +113,11 @@
   border: 2px solid white;
   box-shadow: 3px 3px 3px white;
 }
-
+.cadastro{
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .detalhes{
