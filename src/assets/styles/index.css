@@ -83,10 +83,11 @@
     width:100%;
     margin: 0;
     padding: 0;
+    background: #cccccc;   
+
 }
 .content{   
     width: 100%;
-    background: #cccccc;   
 }
 .footer{    
     background: #3C948B;
@@ -113,11 +114,11 @@
   box-shadow: 3px 3px 3px white;
 } */
 .cadastro{
-  width: 100%;
+  width: 90%;
   display: block;
   justify-content: center;
   align-items: center;
-  background:chocolate;
+  background: #928686;
   padding: 20px;
   margin:20px auto;
   border-radius:15px;
