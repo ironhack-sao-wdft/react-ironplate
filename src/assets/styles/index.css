@@ -114,11 +114,13 @@
   box-shadow: 3px 3px 3px white;
 }
 .cadastro{
-  width: 50%;
+  width: 60%;
   align-items: center;
   justify-content: center;
   background:chocolate;
   padding: 20px;
+  margin:10px;
+  border-radius:15px;
 }
 
 
