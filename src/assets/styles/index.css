@@ -95,14 +95,6 @@
     padding: 8px;
   }
 
-
-/* .link-icone {
-  width: 30px;
-  padding: 15px;
-  margin-left: 5px;
-  color: blue;
-  margin-bottom: 15px;
-} */
 /* Estilos dos títulos das sessões */
 .titulos {
   font-size: 2rem;
@@ -136,4 +128,6 @@
 }
 .conteudo{
   border-top: 1px solid red;
+  clear: both;
+  background:aquamarine;
 }
