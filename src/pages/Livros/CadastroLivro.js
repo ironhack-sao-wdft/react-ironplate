@@ -76,9 +76,7 @@ async function handleFileUpload(file) {
       <div>
         <div className="container cadastro">
           <form onSubmit={handleSubmit}>
-            <div className="titulo">
-              <h1>Novo Livro</h1>
-            </div>
+               <h1 className="titulos">Novo Livro</h1>
             {/* campo do titulo */}
             <div className=" mb-3 ">
               <FormField
