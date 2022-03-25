@@ -71,7 +71,7 @@
   height: 110px;
   margin-top: 0px;
   background-color: black;
-  /* position: relative; */
+  position: relative;
 }
 
  .footer__social {
