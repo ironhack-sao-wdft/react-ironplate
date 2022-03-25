@@ -71,26 +71,25 @@
   position: relative;
 }
 
- .footer__social {
+ * { margin:0; padding:0; }
+html, body {height:100%;}
+.main {
+    min-height:100%; 
+    position:relative; 
+    width:1200px;
+    margin: 0 auto;
+}
+.content{   
     width: 100%;
-    padding-top: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
-    a + a {
-      margin-left: 8px;
-    }  
-
-  .footer__copyright {
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    color: white;
-    align-items: center;
-    padding: 8px;
-  }
+    background: #cccccc;   
+}
+.footer{    
+    background: #3C948B;
+    position:absolute;
+    bottom:0; 
+    width:100%;
+    margin-top: 10px;
+}
 
 /* Estilos dos títulos das sessões */
 .titulos {
