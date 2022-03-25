@@ -57,8 +57,7 @@
 } 
 .pagina-principal{
   display: inline-block;
-  align-items: center;
-  justify-self: unset;
+   justify-content:center;
  }
  /* estilos de rodapé */
 
