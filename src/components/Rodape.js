@@ -12,20 +12,20 @@ function Rodape() {
           className=" link-icone"
           title="linkedin"
         >
-          <BsLinkedin size="30" color="#fff" />
+          <BsLinkedin size="10" color="#fff" />
         </a>
         <a
           href="https://github.com/jfilinho"
           className=" link-icone"
           title="github"
         >
-          <AiFillGithub size="30" color="#fff" />
+          <AiFillGithub size="10" color="#fff" />
         </a>
 
         <a href="https://www.instagram.com/filho_souzaa"
          className=" link-icone
         " title="instagram">
-          <FaInstagram size="30" color="#fff" />
+          <FaInstagram size="10" color="#fff" />
         </a>
 
         <a
@@ -33,7 +33,7 @@ function Rodape() {
           className=" link-icone"
           title="Facebook"
         >
-          <FaFacebook size="30" color="#fff" />
+          <FaFacebook size="10" color="#fff" />
         </a>
       </div>
       <p className="footer__copyright">
