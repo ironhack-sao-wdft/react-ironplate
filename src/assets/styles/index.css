@@ -125,16 +125,11 @@
   margin-top: 20px;
   margin-bottom: 60px;
 }
-.photo-album{
-  border-top: 1px solid black;
-  clear: both;
-}
+
 .card-livro{
   border-top: 1px solid blue;
 }
 .conteudo{
-  width: 100%;
   border-top: 1px solid red;
-  clear: both;
   background:aquamarine;
 }
