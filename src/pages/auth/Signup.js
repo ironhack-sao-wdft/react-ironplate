@@ -52,7 +52,7 @@ function Signup() {
   }
 
   return (
-    <div>
+    <div className="cadastrar-conta">
       <h1>Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>

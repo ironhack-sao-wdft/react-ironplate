@@ -120,8 +120,26 @@
   align-items: center;
   background: #928686;
   padding: 20px;
-  margin:20px auto;
+  margin:60px auto;
   border-radius:15px;
 }
-
-
+.login{
+   width: 90%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background: #928686;
+  padding: 20px;
+  margin:60px auto;
+  border-radius:15px; 
+}
+.cadastrar-conta{
+    width: 90%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background: #928686;
+  padding: 20px;
+  margin:60px auto;
+  border-radius:15px;
+}
