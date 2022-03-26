@@ -69,7 +69,9 @@
   align-items:center;
   color:white;
  } 
-
+.footer__social{
+  padding: 8px;
+}
 
 .main {
     min-height:100%; 

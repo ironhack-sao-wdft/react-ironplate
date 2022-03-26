@@ -6,7 +6,7 @@ import { BsLinkedin } from "react-icons/bs";
 function Rodape() {
   return (
     <footer className="footer">
-      <div className="footer__social">
+      <div className="footer_social">
         <a
           href="https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack/"
           className=" link-icone"
