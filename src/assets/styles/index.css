@@ -59,15 +59,11 @@
  } */
  /* estilos de rodapé */
 
-/* .footer {
-  display:flex;
-  justify-content: center;
-  width: 100%;
+ .footer {
   height: 150px;
   margin-top: 0px;
   background-color: black;
-  position: relative;
-} */
+ } 
 
 
 .main {
