@@ -69,6 +69,7 @@
   align-items:center;
   color:white;
   padding: 10px;
+  position: relative;
  } 
 .footer_social{
   display: flex;
