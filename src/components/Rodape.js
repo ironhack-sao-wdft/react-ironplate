@@ -6,7 +6,7 @@ import { BsLinkedin } from "react-icons/bs";
 function Rodape() {
   return (
     <footer className="footer">
-      <div className="footer_social">
+      <p className="footer_social">
         <a
           href="https://www.linkedin.com/in/jo%C3%A3o-filho-souza-wd-fullstack/"
           className=" link-icone"
@@ -35,7 +35,7 @@ function Rodape() {
         >
           <FaFacebook size="20" color="#fff" />
         </a>
-      </div>
+      </p>
       <p className="footer__copyright">
         &copy; Copyright 2022 - Desenvolvido por - João Filho
       </p>
