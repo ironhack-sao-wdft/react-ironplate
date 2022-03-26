@@ -19,8 +19,7 @@ function EditLivro(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  
-  const { id } =  useParams(props);
+  const { id } =  useParams();
 
   const navigate = useNavigate();
 
@@ -28,15 +27,17 @@ function EditLivro(props) {
     async function user() {
       try {
         const response = await api.get(`/detalhe-livro/${id}`);
-        const coverImage = await handleFileUpload(userData.picture);
-
-        setUserData({ ...userData, coverImage, ...response.data });
+                  const coverImage = await handleFileUpload(userData.picture);
+ 
+        setUserData({ ...userData,
+              coverImage,
+           ...response.data });
       } catch (e) {
         console.log(e);
       }
     }
     user();
-  }, [id, userData]);
+  }, [id,userData ]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -70,12 +71,12 @@ async function handleFileUpload(file) {
 
     try {
       setLoading(true);
-      const coverImage = await handleFileUpload(userData.picture);
+            const coverImage = await handleFileUpload(userData.picture);
 
-      const response = await api.patch(`/atualizar-livro/${id}`,{
+      const response = await api.patch(`/atualizar-livro/${id}`,
        ...userData,
        coverImage
-      });
+       );
 
       console.log(response);
 
@@ -94,8 +95,9 @@ async function handleFileUpload(file) {
   return (
     <div className="container cadastro">
       <form onSubmit={handleSubmit} className="form">
-        <h1 className="titulos">Editar Livro</h1>
-
+         
+          <h1 className="titulos">Editar Livro</h1>
+        
         {/* campo do titulo */}
         <div className=" mb-3 ">
           <FormField
@@ -174,11 +176,7 @@ async function handleFileUpload(file) {
           />
         </div>
         <div className="mb-3 text-end">
-          <button
-            disabled={loading}
-            type="submit"
-            className="btn btn-primary p-2"
-          >
+          <button disabled={loading} type="submit" className="btn btn-primary p-2">
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm me-2"
