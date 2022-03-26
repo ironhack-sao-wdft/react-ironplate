@@ -86,15 +86,6 @@
     background: #cccccc;   
 
 }
-.content{   
-    width: 100%;
-}
-.footer{    
-    background: #3C948B;
-    position:absolute;
-    bottom:0; 
-    width:100%;
- }
 
 /* Estilos dos títulos das sessões */
 .titulos {
