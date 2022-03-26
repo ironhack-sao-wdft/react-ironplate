@@ -54,7 +54,7 @@ async function handleFileUpload(file) {
     try {
       setLoading(true);
 
-            const coverImage = await handleFileUpload(livro.picture);
+      const coverImage = await handleFileUpload(livro.picture);
 
       const response = await api.post("/cadastrar-livro", {
         ...livro,
