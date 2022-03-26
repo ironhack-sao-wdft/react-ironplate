@@ -70,11 +70,17 @@
   color:white;
   padding: 10px;
  } 
-.footer__social{
+.footer_social{
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
+  position:absolute;
+  top: 0px;
+}
+.footer_copyright{
+  position: absolute;
+  bottom: 0px;
 }
 
 .main {

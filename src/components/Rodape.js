@@ -36,7 +36,7 @@ function Rodape() {
           <FaFacebook size="20" color="#fff" />
         </a>
       </p>
-      <p className="footer__copyright">
+      <p className="footer_copyright">
         &copy; Copyright 2022 - Desenvolvido por - João Filho
       </p>
     </footer>
