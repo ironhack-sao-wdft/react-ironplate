@@ -50,9 +50,7 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-        <div className="footer">
-          <Rodape />
-        </div>
+           <Rodape />
       </AuthContextComponent>
     </div>
   );
