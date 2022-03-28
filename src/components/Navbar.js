@@ -131,7 +131,9 @@ function Top() {
           <Nav>
             <Nav.Link
               eventKey="1"
-              className="text-color text-light"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
               href="/"
             >
               <span className="icones">
@@ -141,7 +143,9 @@ function Top() {
             </Nav.Link>
             <Nav.Link
               eventKey="2"
-              className="text-color text-light"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
               href="/lista"
             >
               <span className="icones">
@@ -151,7 +155,9 @@ function Top() {
             </Nav.Link>
             <Nav.Link
               eventKey="3"
-              className="text-color text-light"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
               href="/cadastrarLivro"
             >
               <span className="icones">
@@ -159,28 +165,27 @@ function Top() {
               </span>
               Novo Livro
             </Nav.Link>
-           
           </Nav>
         </Navbar.Collapse>
         <div>
-           {loggedInUser.user._id ? (
-          <>
+          {loggedInUser.user._id ? (
+            <>
               <span className="mr-3">Bem-vindo, {loggedInUser.user.name}</span>
 
-               <button onClick={logout} className="btn btn-link">
+              <button onClick={logout} className="btn btn-link">
                 Sair
-               </button>
-             </>
-           ) : (
-             <NavLink
-               className={({ isActive }) =>
-                 `nav-link ${isActive ? "active" : ""}`
-               }
-               to="/login"
-             >
-               Entrar
-             </NavLink>
-           )}
+              </button>
+            </>
+          ) : (
+            <NavLink
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/login"
+            >
+              Entrar
+            </NavLink>
+          )}
         </div>
       </div>
     </Navbar>
