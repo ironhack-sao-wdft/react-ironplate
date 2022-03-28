@@ -125,44 +125,43 @@ function Top() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <div className="collapse navbar-collapse" id="responsive-navbar">
-            <ul className="navbar-nav">
-            <li className="nav-item">
-            <NavLink
-              eventKey="1"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/"
-            >
-              
-              Home
-            </NavLink>
-            </li>
-            <li className="nav-item">
- 
-            <NavLink
-              eventKey="2"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/lista"
-            >
-              
-              Livros
-            </NavLink>
-            </li>
-            <li className="nav-item">
-            <NavLink
-              eventKey="3"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/cadastrarLivro"
-            >
-              Criar Livro
-            </NavLink>
-            </li>
-          </ul>
+            <nav>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <NavLink
+                    eventKey="1"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "active" : ""}`
+                    }
+                    to="/"
+                  >
+                    Home
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    eventKey="2"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "active" : ""}`
+                    }
+                    to="/lista"
+                  >
+                    Livros
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    eventKey="3"
+                    className={({ isActive }) =>
+                      `nav-link ${isActive ? "active" : ""}`
+                    }
+                    to="/cadastrarLivro"
+                  >
+                    Criar Livro
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
           </div>
         </Navbar.Collapse>
         <div>
