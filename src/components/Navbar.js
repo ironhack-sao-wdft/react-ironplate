@@ -103,6 +103,8 @@ import { AuthContext } from "../contexts/authContext";
 
 // import Container from "react-bootstrap/Container";
  import { NavLink } from "react-router-dom";
+ import Nav from "react-bootstrap/Nav";
+
 
 // import Nav from "react-bootstrap/Nav";
 function Top() {
@@ -123,9 +125,9 @@ function Top() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
-          <div className="collapse navbar-collapse" id="responsive-navbar-nav">
-            <nav>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          {/* <div className="collapse navbar-collapse" id="responsive-navbar-nav"> */}
+            <Nav>
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink
@@ -164,9 +166,9 @@ function Top() {
                   </NavLink>
                 </li>
               </ul>
-            </nav>
-          </div>
-        {/* </Navbar.Collapse> */}
+            </Nav>
+          {/* </div> */}
+        </Navbar.Collapse>
         <div>
           {loggedInUser.user._id ? (
             <>
