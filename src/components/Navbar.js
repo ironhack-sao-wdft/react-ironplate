@@ -10,8 +10,16 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container  d-flex justify-content-between align-items-center text-light">
         <NavLink className="navbar-brand" to="/">
-          System Books
+          <img
+            src="./img/logo.png"
+            alt="logo"
+            width="140"
+            height="100"
+            className="imagem-logo"
+          />
         </NavLink>
+        <nav className="navbar-toggle" aria-controls="responsive-navbar-nav" />
+          <nav className="navbar-collapse me-auto responsive-navbar-nav">
 
         <div className="collapse navbar-collapse" id="#menuPrincipal">
           <ul className="navbar-nav">
@@ -48,6 +56,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
+        </nav>
         <div>
           {loggedInUser.user._id ? (
             <>
