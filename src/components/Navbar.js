@@ -2,7 +2,6 @@ import { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-
 import { AuthContext } from "../contexts/authContext";
 
 function Navegador() {
@@ -26,7 +25,7 @@ function Navegador() {
           <Nav>
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
+                `nav-link ${isActive ? "active" : ""} cor-texto`
               }
               href="/"
             >
@@ -35,7 +34,7 @@ function Navegador() {
 
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
+                `nav-link ${isActive ? "active" : ""} cor-texto`
               }
               href="/lista"
             >
@@ -44,7 +43,7 @@ function Navegador() {
 
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
+                `nav-link ${isActive ? "active" : ""} cor-texto`
               }
               href="/cadastrarLivro"
             >
