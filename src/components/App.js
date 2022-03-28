@@ -8,7 +8,7 @@ import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
 import DetalheLivro from "../pages/Livros/DetalheLivro";
-import Navbar from "../components/Navbar";
+import Top from "../components/Navbar";
 import DeleteLivro from "../pages/Livros/DeleteLivro";
 import EditLivro from "../pages/Livros/EditLivro";
 import Rodape from "../components/Rodape";
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="main">
       <AuthContextComponent>
-        <Navbar />
+        <Top />
         <div className="container-fluid mb-3 content">
           <Routes>
             <Route
