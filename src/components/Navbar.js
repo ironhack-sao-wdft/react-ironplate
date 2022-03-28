@@ -10,9 +10,9 @@ function Navegador() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-  <Navbar collapseOnSelect expand="lg" className="top">
+    <Navbar collapseOnSelect expand="lg" className="navegador">
       <div className="container-fluid">
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img
             src="./img/logo.png"
             alt="logo"
@@ -21,60 +21,41 @@ function Navegador() {
             className="imagem-logo"
           />
         </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <nav className="navbar-nav">
-                 <Nav.Link
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/"
-                >
-                  Home
-                </Nav.Link>
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav>
+            <Nav.Link className="cor-texto" to="/">
+              Home
+            </Nav.Link>
 
-                <Nav.Link
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/lista"
-                >
-                  Livros
-                </Nav.Link>
-                <Nav.Link
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/cadastrarLivro"
-                >
-                  Criar Livro
-                </Nav.Link>
-              
-            </nav>
-          </Navbar.Collapse>
-        </div>
-        <div>
-          {loggedInUser.user._id ? (
-            <>
-              <span className="mr-3">Bem-vindo, {loggedInUser.user.name}</span>
+            <Nav.Link className="cor-texto" to="/lista">
+              Livros
+            </Nav.Link>
+            <Nav.Link className="cor-texto" to="/cadastrarLivro">
+              Criar Livro
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
+      <div>
+        {loggedInUser.user._id ? (
+          <>
+            <span className="mr-3">Bem-vindo, {loggedInUser.user.name}</span>
 
-              <button onClick={logout} className="btn btn-link">
-                Sair
-              </button>
-            </>
-          ) : (
-            <NavLink
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/login"
-            >
-              Entrar
-            </NavLink>
-          )}
-        </div>
-      
+            <button onClick={logout} className="btn btn-link">
+              Sair
+            </button>
+          </>
+        ) : (
+          <NavLink
+            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+            to="/login"
+          >
+            Entrar
+          </NavLink>
+        )}
+      </div>
     </Navbar>
   );
 }

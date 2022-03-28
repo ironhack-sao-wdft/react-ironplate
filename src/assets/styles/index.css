@@ -8,6 +8,28 @@
     background: #cccccc;   
 
 }
+/* estilos da barra de navegação */
+.navegador{
+  background: black;
+  align-items: center;
+}
+.responsive-navbar-nav{
+  justify-content: end;
+}
+.cor-texto{
+  background: black;
+  box-shadow: 3px 3px 3px green;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 2s;
+  font-size: 1.7rem;
+}
+.cor-texto:hover{
+  background:blue;
+}
 /* estilo galeria de livros */
 .photo-album{
 border:1px solid black;
