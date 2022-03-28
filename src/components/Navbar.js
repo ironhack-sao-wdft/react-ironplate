@@ -125,6 +125,8 @@ function Top() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
+            <ul className="navbar-nav">
+            <li className="nav-item">
             <NavLink
               eventKey="1"
               className={({ isActive }) =>
@@ -135,6 +137,9 @@ function Top() {
               
               Home
             </NavLink>
+            </li>
+            <li className="nav-item">
+ 
             <NavLink
               eventKey="2"
               className={({ isActive }) =>
@@ -145,6 +150,8 @@ function Top() {
               
               Livros
             </NavLink>
+            </li>
+            <li className="nav-item">
             <NavLink
               eventKey="3"
               className={({ isActive }) =>
@@ -152,9 +159,10 @@ function Top() {
               }
               href="/cadastrarLivro"
             >
-
               Novo Livro
             </NavLink>
+            </li>
+          </ul>
           </Nav>
         </Navbar.Collapse>
         <div>
