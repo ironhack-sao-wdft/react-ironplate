@@ -105,10 +105,6 @@ import { AuthContext } from "../contexts/authContext";
  import { NavLink } from "react-router-dom";
 
 import Nav from "react-bootstrap/Nav";
-import { ImHome } from "react-icons/im";
-import { AiFillInfoCircle } from "react-icons/ai";
-import { MdBedroomChild } from "react-icons/md";
-
 function Top() {
 
   const { loggedInUser, logout } = useContext(AuthContext);
@@ -129,42 +125,36 @@ function Top() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link
+            <NavLink
               eventKey="1"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               href="/"
             >
-              <span className="icones">
-                <ImHome />
-              </span>
+              
               Home
-            </Nav.Link>
-            <Nav.Link
+            </NavLink>
+            <NavLink
               eventKey="2"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               href="/lista"
             >
-              <span className="icones">
-                <AiFillInfoCircle />
-              </span>
+              
               Livros
-            </Nav.Link>
-            <Nav.Link
+            </NavLink>
+            <NavLink
               eventKey="3"
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               href="/cadastrarLivro"
             >
-              <span className="icones">
-                <MdBedroomChild />
-              </span>
+
               Novo Livro
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         <div>
