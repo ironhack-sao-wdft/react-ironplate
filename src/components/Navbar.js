@@ -128,68 +128,69 @@ function Top() {
         <Navbar.Collapse id="responsive-navbar-nav">
           {/* <div className="collapse navbar-collapse" id="responsive-navbar-nav"> */}
           <Nav>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <NavLink
-                  eventKey="1"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/"
-                  id="home"
-                >
-                  Home
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  eventKey="2"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/lista"
-                  id="lista"
-                >
-                  Livros
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <Nav.Link
-                  eventKey="3"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/cadastrarLivro"
-                  id="criar"
-                >
-                  Criar Livro
-                </Nav.Link>
-              </li>
-            </ul>
-          </Nav>
-          {/* </div> */}
-          <div>
-            {loggedInUser.user._id ? (
-              <>
-                <span className="mr-3">
-                  Bem-vindo, {loggedInUser.user.name}
-                </span>
+            {/* <ul className="navbar-nav"> */}
+            {/* <li className="nav-item"> */}
+            <NavLink
+              eventKey="1"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/"
+              id="home"
+            >
+              Home
+            </NavLink>
+            {/* </li> */}
+            {/* <li className="nav-item"> */}
+            <NavLink
+              eventKey="2"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/lista"
+              id="lista"
+            >
+              Livros
+            </NavLink>
+            {/* </li> */}
+            {/* <li className="nav-item"> */}
+            <NavLink
+              eventKey="3"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              to="/cadastrarLivro"
+              id="criar"
+            >
+              Criar Livro
+            </NavLink>
+            {/* </li> */}
+            {/* </ul> */}
+            {/* </div> */}
+            <div>
+              {loggedInUser.user._id ? (
+                <>
+                  <span className="mr-3">
+                    Bem-vindo, {loggedInUser.user.name}
+                  </span>
 
-                <button onClick={logout} className="btn btn-link">
-                  Sair
-                </button>
-              </>
-            ) : (
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/login"
-              >
-                Entrar
-              </NavLink>
-            )}
-          </div>
+                  <button onClick={logout} className="btn btn-link">
+                    Sair
+                  </button>
+                </>
+              ) : (
+                <NavLink
+                  eventKey="4"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/login"
+                >
+                  Entrar
+                </NavLink>
+              )}
+            </div>
+          </Nav>
         </Navbar.Collapse>
       </div>
     </Navbar>
