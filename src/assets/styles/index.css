@@ -11,9 +11,9 @@
 /* estilo galeria de livros */
 .photo-album{
 border:1px solid black;
-box-shadow:2px 2px black;
+box-shadow:3px 3px 3px  black;
 padding:5px;
-margin: 10px;
+margin: 5px;
 }
 /*imagem da página de detalhes*/
 .img-detalhe {

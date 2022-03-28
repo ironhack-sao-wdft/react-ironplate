@@ -14,39 +14,43 @@ function Navbar() {
         </NavLink>
 
         <div className="collapse navbar-collapse" id="#menuPrincipal">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/"
-              >
-                Home
-              </NavLink>
-            </li>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/"
+                >
+                  Home
+                </NavLink>
+              </li>
 
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/lista"
-              >
-                Livros
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
-                }
-                to="/cadastrarLivro"
-              >
-                Criar Livro
-              </NavLink>
-            </li>
-          </ul>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/lista"
+                >
+                  Livros
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/cadastrarLivro"
+                >
+                  Criar Livro
+                </NavLink>
+              </li>
+            </ul>
+          </Navbar.Collapse>
         </div>
         <div>
           {loggedInUser.user._id ? (
