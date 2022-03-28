@@ -191,7 +191,7 @@ function Top() {
   
     <Navbar collapseOnSelect expand="lg" className="top">
       <div className="container-fluid">
-        <Navbar.Brand href="/home">
+        <Navbar.Brand href="/">
           <img
             src="./img/logo.png"
             alt="logo"
@@ -206,7 +206,7 @@ function Top() {
             <Nav.Link
               eventKey="1"
               className="text-color text-light"
-              href="/home"
+              href="/"
             >
               
               Home
@@ -214,18 +214,18 @@ function Top() {
             <Nav.Link
               eventKey="2"
               className="text-color text-light"
-              href="/sobre"
+              href="/lista"
             >
             
-              Sobre
+              Livros
             </Nav.Link>
             <Nav.Link
               eventKey="3"
               className="text-color text-light"
-              href="/acomodacao"
+              href="/cadastrarLivro"
             >
 
-              Acomodações
+              Criar Livros
             </Nav.Link>
             <div>
               {loggedInUser.user._id ? (
