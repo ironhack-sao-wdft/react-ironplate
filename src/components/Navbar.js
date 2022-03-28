@@ -102,7 +102,7 @@ import { AuthContext } from "../contexts/authContext";
 
 
 // import Container from "react-bootstrap/Container";
- import { NavLink } from "react-router-dom";
+//  import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
 
 
@@ -130,7 +130,7 @@ function Top() {
             <Nav>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink
+                  <Nav.Link
                     eventKey="1"
                     className={({ isActive }) =>
                       `nav-link ${isActive ? "active" : ""}`
@@ -139,10 +139,10 @@ function Top() {
                     id="home"
                   >
                     Home
-                  </NavLink>
+                  </Nav.Link>
                 </li>
                 <li className="nav-item">
-                  <NavLink
+                  <Nav.Link
                     eventKey="2"
                     className={({ isActive }) =>
                       `nav-link ${isActive ? "active" : ""}`
@@ -151,10 +151,10 @@ function Top() {
                     id="lista"
                   >
                     Livros
-                  </NavLink>
+                  </Nav.Link>
                 </li>
                 <li className="nav-item">
-                  <NavLink
+                  <Nav.Link
                     eventKey="3"
                     className={({ isActive }) =>
                       `nav-link ${isActive ? "active" : ""}`
@@ -163,7 +163,7 @@ function Top() {
                     id="criar"
                   >
                     Criar Livro
-                  </NavLink>
+                  </Nav.Link>
                 </li>
               </ul>
             </Nav>
@@ -179,14 +179,14 @@ function Top() {
               </button>
             </>
           ) : (
-            <NavLink
+            <Nav.Link
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               to="/login"
             >
               Entrar
-            </NavLink>
+            </Nav.Link>
           )}
         </div>
       </div>
