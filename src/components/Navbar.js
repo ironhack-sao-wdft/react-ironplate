@@ -9,20 +9,21 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container  d-flex justify-content-between align-items-center text-light">
-        <NavLink className="navbar-brand" to="/">
-          <img
-            src="./img/logo.png"
-            alt="logo"
-            width="140"
-            height="100"
-            className="imagem-logo"
-          />
-        </NavLink>
-        <nav className="navbar-toggle" aria-controls="responsive-navbar-nav" />
-          <nav className="navbar-collapse me-auto responsive-navbar-nav">
+            <button className="navbar-toggler" type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a className="navbar-brand" href="/">Hidden brand</a>
+          
+
 
         <div className="collapse navbar-collapse" id="#menuPrincipal">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
@@ -55,8 +56,8 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
+          </div>
         </div>
-        </nav>
         <div>
           {loggedInUser.user._id ? (
             <>
@@ -83,3 +84,22 @@ function Navbar() {
 }
 
 export default Navbar;
+    
+//     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+//       <a class="navbar-brand" href="#">Hidden brand</a>
+//       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+//         <li class="nav-item">
+//           <a class="nav-link active" aria-current="page" href="#">Home</a>
+//         </li>
+//         <li class="nav-item">
+//           <a class="nav-link" href="#">Link</a>
+//         </li>
+//         <li class="nav-item">
+//           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+//         </li>
+//       </ul>
+      
+//     </div>
+//   </div>
+  
+// </nav>
