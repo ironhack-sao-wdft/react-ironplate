@@ -76,24 +76,7 @@
 
 // export default Navbar;
     
-// //     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-// //       <a class="navbar-brand" href="#">Hidden brand</a>
-// //       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-// //         <li class="nav-item">
-// //           <a class="nav-link active" aria-current="page" href="#">Home</a>
-// //         </li>
-// //         <li class="nav-item">
-// //           <a class="nav-link" href="#">Link</a>
-// //         </li>
-// //         <li class="nav-item">
-// //           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-// //         </li>
-// //       </ul>
-      
-// //     </div>
-// //   </div>
-  
-// // </nav>
+
 
 
 import Navbar from "react-bootstrap/Navbar";
@@ -113,9 +96,102 @@ function Top() {
 
 
   return (
+    // <Navbar collapseOnSelect expand="lg" className="top">
+    //   <div className="container-fluid">
+    //     <Navbar.Brand href="/">
+    //       <img
+    //         src="./img/logo.png"
+    //         alt="logo"
+    //         width="140"
+    //         height="100"
+    //         className="imagem-logo"
+    //       />
+    //     </Navbar.Brand>
+    //     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+    //     <Navbar.Collapse id="responsive-navbar-nav">
+    //       {/* <div className="collapse navbar-collapse" id="responsive-navbar-nav"> */}
+    //       <Nav>
+    //         {/* <ul className="navbar-nav"> */}
+    //         {/* <li className="nav-item"> */}
+    //         <NavLink
+    //           eventKey="1"
+    //           className={({ isActive }) =>
+    //             `nav-link ${isActive ? "active" : ""}`
+    //           }
+    //           to="/"
+    //           id="home"
+    //         >
+    //           Home
+    //         </NavLink>
+    //         {/* </li> */}
+    //         {/* <li className="nav-item"> */}
+    //         <NavLink
+    //           eventKey="2"
+    //           className={({ isActive }) =>
+    //             `nav-link ${isActive ? "active" : ""}`
+    //           }
+    //           to="/lista"
+    //           id="lista"
+    //         >
+    //           Livros
+    //         </NavLink>
+    //         {/* </li> */}
+    //         {/* <li className="nav-item"> */}
+    //         <NavLink
+    //           eventKey="3"
+    //           className={({ isActive }) =>
+    //             `nav-link ${isActive ? "active" : ""}`
+    //           }
+    //           to="/cadastrarLivro"
+    //           id="criar"
+    //         >
+    //           Criar Livro
+    //         </NavLink>
+    //         {/* </li> */}
+    //         {/* </ul> */}
+    //         {/* </div> */}
+    //         <div>
+    //           {loggedInUser.user._id ? (
+    //             <>
+    //               <span className="mr-3">
+    //                 Bem-vindo, {loggedInUser.user.name}
+    //               </span>
+
+    //               <button onClick={logout} className="btn btn-link">
+    //                 Sair
+    //               </button>
+    //             </>
+    //           ) : (
+    //             <NavLink
+    //               eventKey="4"
+    //               className={({ isActive }) =>
+    //                 `nav-link ${isActive ? "active" : ""}`
+    //               }
+    //               to="/login"
+    //             >
+    //               Entrar
+    //             </NavLink>
+    //           )}
+    //         </div>
+    //       </Nav>
+    //     </Navbar.Collapse>
+    //   </div>
+    // </Navbar>
+
+
+    // import Navbar from "react-bootstrap/Navbar";
+// import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
+// import { ImHome } from "react-icons/im";
+// import { AiFillInfoCircle } from "react-icons/ai";
+// import { MdBedroomChild } from "react-icons/md";
+// import { IoMdContact } from "react-icons/io";
+
+
+  
     <Navbar collapseOnSelect expand="lg" className="top">
       <div className="container-fluid">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <img
             src="./img/logo.png"
             alt="logo"
@@ -126,74 +202,60 @@ function Top() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          {/* <div className="collapse navbar-collapse" id="responsive-navbar-nav"> */}
           <Nav>
-            {/* <ul className="navbar-nav"> */}
-            {/* <li className="nav-item"> */}
-            <NavLink
+            <Nav.Link
               eventKey="1"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/"
-              id="home"
+              className="text-color text-light"
+              href="/home"
             >
+              
               Home
-            </NavLink>
-            {/* </li> */}
-            {/* <li className="nav-item"> */}
-            <NavLink
+            </Nav.Link>
+            <Nav.Link
               eventKey="2"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/lista"
-              id="lista"
+              className="text-color text-light"
+              href="/sobre"
             >
-              Livros
-            </NavLink>
-            {/* </li> */}
-            {/* <li className="nav-item"> */}
-            <NavLink
+            
+              Sobre
+            </Nav.Link>
+            <Nav.Link
               eventKey="3"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/cadastrarLivro"
-              id="criar"
+              className="text-color text-light"
+              href="/acomodacao"
             >
-              Criar Livro
-            </NavLink>
-            {/* </li> */}
-            {/* </ul> */}
-            {/* </div> */}
+
+              Acomodações
+            </Nav.Link>
             <div>
               {loggedInUser.user._id ? (
-                <>
-                  <span className="mr-3">
-                    Bem-vindo, {loggedInUser.user.name}
-                  </span>
+                 <>
+                   <span className="mr-3">
+                     Bem-vindo, {loggedInUser.user.name}
+                   </span>
 
-                  <button onClick={logout} className="btn btn-link">
-                    Sair
-                  </button>
-                </>
-              ) : (
-                <NavLink
-                  eventKey="4"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/login"
-                >
-                  Entrar
-                </NavLink>
-              )}
-            </div>
+                   <button onClick={logout} className="btn btn-link">
+                     Sair
+                   </button>
+                 </>
+               ) : (
+                 <NavLink
+                   eventKey="4"
+                   className={({ isActive }) =>
+                     `nav-link ${isActive ? "active" : ""}`
+                   }
+                   to="/login"
+                 >
+                   Entrar
+                 </NavLink>
+               )}
+             </div>
+
           </Nav>
         </Navbar.Collapse>
-      </div>
+     </div> 
     </Navbar>
   );
+
 }
 export default Top;
