@@ -134,6 +134,7 @@ function Top() {
                       `nav-link ${isActive ? "active" : ""}`
                     }
                     to="/"
+                    id="home"
                   >
                     Home
                   </NavLink>
@@ -145,6 +146,7 @@ function Top() {
                       `nav-link ${isActive ? "active" : ""}`
                     }
                     to="/lista"
+                    id="lista"
                   >
                     Livros
                   </NavLink>
@@ -156,6 +158,7 @@ function Top() {
                       `nav-link ${isActive ? "active" : ""}`
                     }
                     to="/cadastrarLivro"
+                    id="criar"
                   >
                     Criar Livro
                   </NavLink>

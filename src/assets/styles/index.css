@@ -16,7 +16,7 @@
 #responsive-navbar-nav{
   justify-content: end;
 }
-#cor-home{
+#home{
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -28,10 +28,10 @@
   font-size: 1.7rem;
   color: white;
 }
-#cor-home:hover{
+#home:hover{
   background:blue;
 }
-#cor-list{
+#lista{
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -43,10 +43,10 @@
   font-size: 1.7rem;
   color: white;
 }
-#cor-list:hover{
+#lista:hover{
   background:blue;
 }
-#cor-criar{
+#criar{
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -58,7 +58,7 @@
   font-size: 1.7rem;
   color: white;
 }
-#cor-criar:hover{
+#criar:hover{
   background:blue;
 }
 /* estilo galeria de livros */
@@ -179,4 +179,11 @@ text-align: center;
   padding: 20px;
   margin:60px auto;
   border-radius:15px;
+}
+.top{
+    align-items: center;
+    background: black;
+}
+#responsive-navbar-nav {
+  justify-content: end;
 }
