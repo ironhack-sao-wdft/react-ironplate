@@ -24,15 +24,30 @@ function Navegador() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link className="cor-texto text-light" href="/">
+            <Nav.Link
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              href="/"
+            >
               Home
             </Nav.Link>
 
-            <Nav.Link className="cor-texto text-light" href="/lista">
+            <Nav.Link
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              href="/lista"
+            >
               Livros
             </Nav.Link>
 
-            <Nav.Link className="cor-texto text-light" href="/cadastrarLivro">
+            <Nav.Link
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              href="/cadastrarLivro"
+            >
               Criar Livro
             </Nav.Link>
 

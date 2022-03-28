@@ -13,7 +13,7 @@
   background: black;
   align-items: center;
 }
-.responsive-navbar-nav{
+#responsive-navbar-nav{
   justify-content: end;
 }
 .cor-texto{
