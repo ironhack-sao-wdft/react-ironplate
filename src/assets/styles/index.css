@@ -8,6 +8,13 @@
     background: #cccccc;   
 
 }
+/* estilo galeria de livros */
+.photo-album{
+border:1px solid black;
+box-shadow:2px 2px black;
+padding:5px;
+margin: 10px;
+}
 /*imagem da página de detalhes*/
 .img-detalhe {
   width: 400px;
@@ -28,7 +35,7 @@
   height: 400px;
 }
 
-/*botão de editar na pagina home*/
+/*botão de editar na pagina de livros*/
 
 .btn-editar {
   background-color: yellow;
@@ -86,8 +93,8 @@ text-align: center;
   font-size: 2rem;
   color: green;
   text-align: center;
-  margin-top: 30px;
-  margin-bottom: 45px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .cadastro{
@@ -111,7 +118,7 @@ text-align: center;
   border-radius:15px; 
 }
 .cadastrar-conta{
-    width: 90%;
+  width: 90%;
   display: block;
   justify-content: center;
   align-items: center;
