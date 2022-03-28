@@ -6,7 +6,7 @@ function Album() {
         <div className="container-fluid mb-2">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -17,7 +17,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -28,7 +28,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -40,7 +40,7 @@ function Album() {
             </div>
 
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -51,7 +51,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -63,7 +63,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -75,7 +75,7 @@ function Album() {
             </div>
 
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -86,7 +86,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"
@@ -97,7 +97,7 @@ function Album() {
               </div>
             </div>
             <div className="col">
-              <div className="card shadow-sm photo-album">
+              <div className="shadow-sm photo-album">
                 <img
                   className="bd-placeholder-img card-img-top"
                   width="100%"

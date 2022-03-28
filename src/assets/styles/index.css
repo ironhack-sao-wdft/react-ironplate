@@ -1,4 +1,13 @@
+/* estilos da página principal app.js */
+.main {
+    min-height:100%; 
+    position:relative; 
+    width:100%;
+    margin: 0;
+    padding: 0;
+    background: #cccccc;   
 
+}
 /*imagem da página de detalhes*/
 .img-detalhe {
   width: 400px;
@@ -39,24 +48,6 @@
   margin-bottom: 60px;
 }
 
-/*div que contem os botões do card da home*/
-/* .div-botoes {
-  margin-bottom: 2px;
-}
-.lista {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 25vh;
-  margin-bottom:10px;
-} */
-/* .lista-livro {
-  width: 400px;
-  height: 400px;
-}  */
-/* .pagina-principal{
-  display: inline-block;
-   justify-content:center;
- } */
  /* estilos de rodapé */
 
  .footer {
@@ -88,15 +79,7 @@
 text-align: center;
 }
 
-.main {
-    min-height:100%; 
-    position:relative; 
-    width:100%;
-    margin: 0;
-    padding: 0;
-    background: #cccccc;   
 
-}
 
 /* Estilos dos títulos das sessões */
 .titulos {
