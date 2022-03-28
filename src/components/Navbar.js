@@ -63,7 +63,7 @@ function Navegador() {
                 Bem-vindo, {loggedInUser.user.name}
               </span>
 
-              <button onClick={logout} className="btn btn-Nav.Link">
+              <button onClick={logout} className="btn btn-Nav.Link text-danger">
                 Sair
               </button>
             </>
