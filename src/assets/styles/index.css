@@ -16,7 +16,7 @@
 #responsive-navbar-nav{
   justify-content: end;
 }
-.cor-texto{
+.cor-home{
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -27,7 +27,7 @@
   transition: background-color 2s;
   font-size: 1.7rem;
 }
-.cor-texto:hover{
+.cor-home:hover{
   background:blue;
 }
 /* estilo galeria de livros */

@@ -25,27 +25,30 @@ function Navegador() {
           <Nav>
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""} cor-texto`
+                `nav-link ${isActive ? "active" : ""}`
               }
               href="/"
+              id="cor-home"
             >
               Home
             </Nav.Link>
 
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""} cor-texto`
+                `nav-link ${isActive ? "active" : ""}`
               }
               href="/lista"
+              id="cor-list"
             >
               Livros
             </Nav.Link>
 
             <Nav.Link
               className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""} cor-texto`
+                `nav-link ${isActive ? "active" : ""}`
               }
               href="/cadastrarLivro"
+              id="cor-criar"
             >
               Criar Livro
             </Nav.Link>
