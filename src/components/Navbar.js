@@ -11,7 +11,7 @@ function Navegador() {
   return (
     <Navbar collapseOnSelect expand="lg" className="navegador">
       <div className="container-fluid">
-        <Navbar.Brand to="/">
+        <Navbar.Brand href="/">
           <img
             src="./img/logo.png"
             alt="logo"
@@ -24,15 +24,15 @@ function Navegador() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link className="cor-texto text-light" to="/">
+            <Nav.Link className="cor-texto text-light" href="/">
               Home
             </Nav.Link>
 
-            <Nav.Link className="cor-texto text-light" to="/lista">
+            <Nav.Link className="cor-texto text-light" href="/lista">
               Livros
             </Nav.Link>
 
-            <Nav.Link className="cor-texto text-light" to="/cadastrarLivro">
+            <Nav.Link className="cor-texto text-light" href="/cadastrarLivro">
               Criar Livro
             </Nav.Link>
 
@@ -52,7 +52,7 @@ function Navegador() {
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
-                  to="/login"
+                  href="/login"
                 >
                   Entrar
                 </Nav.Link>
