@@ -102,7 +102,7 @@ import { AuthContext } from "../contexts/authContext";
 
 
 // import Container from "react-bootstrap/Container";
-//  import { NavLink } from "react-router-dom";
+ import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
 
 
@@ -127,68 +127,70 @@ function Top() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {/* <div className="collapse navbar-collapse" id="responsive-navbar-nav"> */}
-            <Nav>
-              <ul className="navbar-nav">
-                <li className="nav-item">
-                  <Nav.Link
-                    eventKey="1"
-                    className={({ isActive }) =>
-                      `nav-link ${isActive ? "active" : ""}`
-                    }
-                    to="/"
-                    id="home"
-                  >
-                    Home
-                  </Nav.Link>
-                </li>
-                <li className="nav-item">
-                  <Nav.Link
-                    eventKey="2"
-                    className={({ isActive }) =>
-                      `nav-link ${isActive ? "active" : ""}`
-                    }
-                    to="/lista"
-                    id="lista"
-                  >
-                    Livros
-                  </Nav.Link>
-                </li>
-                <li className="nav-item">
-                  <Nav.Link
-                    eventKey="3"
-                    className={({ isActive }) =>
-                      `nav-link ${isActive ? "active" : ""}`
-                    }
-                    to="/cadastrarLivro"
-                    id="criar"
-                  >
-                    Criar Livro
-                  </Nav.Link>
-                </li>
-              </ul>
-            </Nav>
+          <Nav>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink
+                  eventKey="1"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/"
+                  id="home"
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  eventKey="2"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/lista"
+                  id="lista"
+                >
+                  Livros
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <Nav.Link
+                  eventKey="3"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  to="/cadastrarLivro"
+                  id="criar"
+                >
+                  Criar Livro
+                </Nav.Link>
+              </li>
+            </ul>
+          </Nav>
           {/* </div> */}
-        </Navbar.Collapse>
-        <div>
-          {loggedInUser.user._id ? (
-            <>
-              <span className="mr-3">Bem-vindo, {loggedInUser.user.name}</span>
+          <div>
+            {loggedInUser.user._id ? (
+              <>
+                <span className="mr-3">
+                  Bem-vindo, {loggedInUser.user.name}
+                </span>
 
-              <button onClick={logout} className="btn btn-link">
-                Sair
-              </button>
-            </>
-          ) : (
-            <Nav.Link
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              to="/login"
-            >
-              Entrar
-            </Nav.Link>
-          )}
-        </div>
+                <button onClick={logout} className="btn btn-link">
+                  Sair
+                </button>
+              </>
+            ) : (
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/login"
+              >
+                Entrar
+              </NavLink>
+            )}
+          </div>
+        </Navbar.Collapse>
       </div>
     </Navbar>
   );
