@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import { AuthContext } from "../contexts/authContext";
@@ -25,7 +25,7 @@ function Navegador() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <NavLink
+            <Link
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
@@ -33,9 +33,9 @@ function Navegador() {
               id="cor-home"
             >
               Home
-            </NavLink>
+            </Link>
 
-            <NavLink
+            <Link
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
@@ -43,9 +43,9 @@ function Navegador() {
               id="cor-list"
             >
               Livros
-            </NavLink>
+            </Link>
 
-            <NavLink
+            <Link
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
@@ -53,7 +53,7 @@ function Navegador() {
               id="cor-criar"
             >
               Criar Livro
-            </NavLink>
+            </Link>
           </Nav>
         </Navbar.Collapse>
 
@@ -69,14 +69,14 @@ function Navegador() {
               </button>
             </>
           ) : (
-            <NavLink
+            <Link
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
               href="/login"
             >
               Entrar
-            </NavLink>
+            </Link>
           )}
         </div>
       </div>
