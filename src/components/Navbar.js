@@ -10,13 +10,17 @@ function Navegador() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container  d-flex justify-content-between align-items-center text-light">
-        <NavLink className="navbar-brand" to="/">
-          System Books
-        </NavLink>
-
-        <div className="collapse navbar-collapse" id="#menuPrincipal">
+  <Navbar collapseOnSelect expand="lg" className="top">
+      <div className="container-fluid">
+        <Navbar.Brand href="/home">
+          <img
+            src="./img/logo.png"
+            alt="logo"
+            width="140"
+            height="100"
+            className="imagem-logo"
+          />
+        </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -70,8 +74,8 @@ function Navegador() {
             </NavLink>
           )}
         </div>
-      </div>
-    </nav>
+      
+    </Navbar>
   );
 }
 
