@@ -124,7 +124,7 @@ function Top() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
+          <div className="collapse navbar-collapse" id="responsive-navbar">
             <ul className="navbar-nav">
             <li className="nav-item">
             <NavLink
@@ -132,7 +132,7 @@ function Top() {
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
-              href="/"
+              to="/"
             >
               
               Home
@@ -145,7 +145,7 @@ function Top() {
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
-              href="/lista"
+              to="/lista"
             >
               
               Livros
@@ -157,13 +157,13 @@ function Top() {
               className={({ isActive }) =>
                 `nav-link ${isActive ? "active" : ""}`
               }
-              href="/cadastrarLivro"
+              to="/cadastrarLivro"
             >
-              Novo Livro
+              Criar Livro
             </NavLink>
             </li>
           </ul>
-          </Nav>
+          </div>
         </Navbar.Collapse>
         <div>
           {loggedInUser.user._id ? (
