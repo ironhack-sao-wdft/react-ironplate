@@ -50,31 +50,31 @@ function Navegador() {
             >
               Criar Livro
             </Nav.Link>
-
-            <div>
-              {loggedInUser.user._id ? (
-                <>
-                  <span className="mr-3 text-light">
-                    Bem-vindo, {loggedInUser.user.name}
-                  </span>
-
-                  <button onClick={logout} className="btn btn-link">
-                    Sair
-                  </button>
-                </>
-              ) : (
-                <Nav.Link
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  href="/login"
-                >
-                  Entrar
-                </Nav.Link>
-              )}
-            </div>
           </Nav>
         </Navbar.Collapse>
+
+        <div>
+          {loggedInUser.user._id ? (
+            <>
+              <span className="mr-3 text-light">
+                Bem-vindo, {loggedInUser.user.name}
+              </span>
+
+              <button onClick={logout} className="btn btn-link">
+                Sair
+              </button>
+            </>
+          ) : (
+            <Nav.Link
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              href="/login"
+            >
+              Entrar
+            </Nav.Link>
+          )}
+        </div>
       </div>
     </Navbar>
   );
