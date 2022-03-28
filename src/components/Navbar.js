@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+
 
 import { AuthContext } from "../contexts/authContext";
 
-function Navbar() {
+function Navegador() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
@@ -15,41 +18,36 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="#menuPrincipal">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          
+
           <Navbar.Collapse id="responsive-navbar-nav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <NavLink
+            <nav className="navbar-nav">
+                 <Nav.Link
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
                   to="/"
                 >
                   Home
-                </NavLink>
-              </li>
+                </Nav.Link>
 
-              <li className="nav-item">
-                <NavLink
+                <Nav.Link
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
                   to="/lista"
                 >
                   Livros
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
+                </Nav.Link>
+                <Nav.Link
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
                   to="/cadastrarLivro"
                 >
                   Criar Livro
-                </NavLink>
-              </li>
-            </ul>
+                </Nav.Link>
+              
+            </nav>
           </Navbar.Collapse>
         </div>
         <div>
@@ -77,4 +75,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navegador;
