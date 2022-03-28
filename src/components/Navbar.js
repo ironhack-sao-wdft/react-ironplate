@@ -25,14 +25,21 @@ function Navegador() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link className="cor-texto" to="/">
+            <Nav.Link 
+            className="cor-texto text-light"
+             href="/">
               Home
             </Nav.Link>
 
-            <Nav.Link className="cor-texto" to="/lista">
+            <Nav.Link 
+            className="cor-texto text-light"
+             href="/lista">
               Livros
             </Nav.Link>
-            <Nav.Link className="cor-texto" to="/cadastrarLivro">
+
+            <Nav.Link 
+            className="cor-texto text-light"
+             href="/cadastrarLivro">
               Criar Livro
             </Nav.Link>
           </Nav>
