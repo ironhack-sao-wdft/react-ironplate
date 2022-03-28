@@ -123,8 +123,8 @@ function Top() {
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <div className="collapse navbar-collapse" id="responsive-navbar">
+        {/* <Navbar.Collapse id="responsive-navbar-nav"> */}
+          <div className="collapse navbar-collapse" id="responsive-navbar-nav">
             <nav>
               <ul className="navbar-nav">
                 <li className="nav-item">
@@ -166,7 +166,7 @@ function Top() {
               </ul>
             </nav>
           </div>
-        </Navbar.Collapse>
+        {/* </Navbar.Collapse> */}
         <div>
           {loggedInUser.user._id ? (
             <>
