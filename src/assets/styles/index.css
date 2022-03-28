@@ -26,8 +26,39 @@
   text-align: center;
   transition: background-color 2s;
   font-size: 1.7rem;
+  color: white;
 }
 #cor-home:hover{
+  background:blue;
+}
+#cor-list{
+  background: black;
+  box-shadow: 3px 3px 3px green;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 2s;
+  font-size: 1.7rem;
+  color: white;
+}
+#cor-list:hover{
+  background:blue;
+}
+#cor-criar{
+  background: black;
+  box-shadow: 3px 3px 3px green;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  text-align: center;
+  transition: background-color 2s;
+  font-size: 1.7rem;
+  color: white;
+}
+#cor-criar:hover{
   background:blue;
 }
 /* estilo galeria de livros */
