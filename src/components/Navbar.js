@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
@@ -25,43 +24,42 @@ function Navegador() {
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link 
-            className="cor-texto text-light"
-             href="/">
+            <Nav.Link className="cor-texto text-light" href="/">
               Home
             </Nav.Link>
 
-            <Nav.Link 
-            className="cor-texto text-light"
-             href="/lista">
+            <Nav.Link className="cor-texto text-light" href="/lista">
               Livros
             </Nav.Link>
 
-            <Nav.Link 
-            className="cor-texto text-light"
-             href="/cadastrarLivro">
+            <Nav.Link className="cor-texto text-light" href="/cadastrarLivro">
               Criar Livro
             </Nav.Link>
+
+            <div>
+              {loggedInUser.user._id ? (
+                <>
+                  <span className="mr-3 text-light">
+                    Bem-vindo, {loggedInUser.user.name}
+                  </span>
+
+                  <button onClick={logout} className="btn btn-link">
+                    Sair
+                  </button>
+                </>
+              ) : (
+                <Nav.Link
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                  href="/login"
+                >
+                  Entrar
+                </Nav.Link>
+              )}
+            </div>
           </Nav>
         </Navbar.Collapse>
-      </div>
-      <div>
-        {loggedInUser.user._id ? (
-          <>
-            <span className="mr-3">Bem-vindo, {loggedInUser.user.name}</span>
-
-            <button onClick={logout} className="btn btn-link">
-              Sair
-            </button>
-          </>
-        ) : (
-          <NavLink
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-            to="/login"
-          >
-            Entrar
-          </NavLink>
-        )}
       </div>
     </Navbar>
   );
