@@ -184,7 +184,10 @@ import { AuthContext } from "../contexts/authContext";
 import Container from "react-bootstrap/Container";
 //  import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
-//  import Container from "react-bootstrap/Navbar";
+  import Offcanvas from "react-bootstrap/Offcanvas";
+
+
+  
 
  function Top() {
 
@@ -192,34 +195,47 @@ import Container from "react-bootstrap/Container";
 
 
   return (
-    <Navbar bg="dark" expand="lg">
-      <Container>
+    <Navbar bg="light" expand={false}>
+      <Container fluid>
         <Navbar.Brand href="/">System-Books</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/lista">Livros</Nav.Link>
-            <Nav.Link href="/cadastrarLivro">Novo Livro</Nav.Link>
-            {loggedInUser.user._id ? (
+        <Navbar.Toggle aria-controls="offcanvasNavbar" />
+        <Navbar.Offcanvas
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+          placement="end"
+        >
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title id="offcanvasNavbarLabel">Menu</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            <Nav className="justify-content-end flex-grow-1 pe-3">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/lista">Livros</Nav.Link>
+              <Nav.Link href="/cadastrarLivro">Novo Livro</Nav.Link>
+
+              {loggedInUser.user._id ? (
                 <>
                   <span className="mr-3">
-                     Bem-vindo, {loggedInUser.user.name}
-                   </span>
+                    Bem-vindo, {loggedInUser.user.name}
+                  </span>
 
                   <button onClick={logout} className="btn btn-link">
-                     Sair
-                   </button>
-                 </>
-               ) : (
-                 <Nav.Link
+                    Sair
+                  </button>
+                </>
+              ) : (
+                <Nav.Link
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
                   href="/login"
-                 >
-                   Entrar
-                 </Nav.Link>
-               )} 
-          </Nav>
-        </Navbar.Collapse>
+                >
+                  Entrar
+                </Nav.Link>
+              )}
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Container>
     </Navbar>
   );
