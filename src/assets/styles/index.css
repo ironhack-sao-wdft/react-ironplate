@@ -2,9 +2,10 @@
 
 
 
-#menu-principal {
+.navbar-nav {
   justify-content: end;
   background: white;
+  border-top: 1px solid red;
 }
 
 /* estilos da página principal app.js */

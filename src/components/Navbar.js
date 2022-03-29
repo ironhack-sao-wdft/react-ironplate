@@ -10,7 +10,10 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container  d-flex justify-content-between align-items-center text-light">
         <NavLink className="navbar-brand" to="/">
-          System Books
+          <img src="./img/logo.png"
+          alt="Logo"
+          height="100px"
+          width="200px"/>
         </NavLink>
 
         <div className="collapse navbar-collapse" id="#menu-principal">
