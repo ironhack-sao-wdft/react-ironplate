@@ -1,9 +1,11 @@
 .navbar-nav {
+  display: flex;
   justify-content: end;
-  background: white;
-  border-top: 1px solid red;
 }
 
+.navbar-collapse {
+  border-top: 1px solid red;
+}
 /* estilos da página principal app.js */
 .main {
   min-height: 100%;
@@ -58,7 +60,7 @@
 
 /*botão de editar na pagina de livros*/
 
-.btn-editar {
+.btn-link {
   background-color: yellow;
   margin-right: 2px;
 }

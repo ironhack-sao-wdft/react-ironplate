@@ -45,7 +45,7 @@ function DetalheLivro(props) {
           <Link
             to={`/edit-livro/${id}`}
             type="button"
-            className="btn btn-link  btn-warning mr-3"
+            className="btn btn-link  btn-warning"
           >
             Editar
           </Link>
