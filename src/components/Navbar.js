@@ -79,23 +79,11 @@
 
 
 
-import Navbar from "react-bootstrap/Navbar";
-import { useContext } from "react";
-import { AuthContext } from "../contexts/authContext";
 
-
-// import Container from "react-bootstrap/Container";
- import { NavLink } from "react-router-dom";
- import Nav from "react-bootstrap/Nav";
 
 
 // import Nav from "react-bootstrap/Nav";
-function Top() {
 
-  const { loggedInUser, logout } = useContext(AuthContext);
-
-
-  return (
     // <Navbar collapseOnSelect expand="lg" className="top">
     //   <div className="container-fluid">
     //     <Navbar.Brand href="/">
@@ -188,72 +176,35 @@ function Top() {
 // import { IoMdContact } from "react-icons/io";
 
 
-  
-    <Navbar collapseOnSelect expand="lg" className="top">
-      <div className="container-fluid">
-        <Navbar.Brand href="/">
-          <img
-            src="./img/logo.png"
-            alt="logo"
-            width="140"
-            height="100"
-            className="imagem-logo"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav>
-            <NavLink
-              eventKey="1"
-              className="text-color text-light"
-              href="/"
-            >
-              
-              Home
-            </NavLink>
-            <NavLink
-              eventKey="2"
-              className="text-color text-light"
-              href="/lista"
-            >
+import Navbar from "react-bootstrap/Navbar";
+// import { useContext } from "react";
+// import { AuthContext } from "../contexts/authContext";
+
+
+// import Container from "react-bootstrap/Container";
+//  import { NavLink } from "react-router-dom";
+ import Nav from "react-bootstrap/Nav";
+ import Container from "react-bootstrap/Navbar";
+
+ function Top() {
+
+  // const { loggedInUser, logout } = useContext(AuthContext);
+
+
+  return (
+    <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
             
-              Livros
-            </NavLink>
-            <NavLink
-              eventKey="3"
-              className="text-color text-light"
-              href="/cadastrarLivro"
-            >
-
-              Criar Livros
-            </NavLink>
-            <div>
-              {loggedInUser.user._id ? (
-                 <>
-                   <span className="mr-3">
-                     Bem-vindo, {loggedInUser.user.name}
-                   </span>
-
-                   <button onClick={logout} className="btn btn-link">
-                     Sair
-                   </button>
-                 </>
-               ) : (
-                 <NavLink
-                   eventKey="4"
-                   className={({ isActive }) =>
-                     `nav-link ${isActive ? "active" : ""}`
-                   }
-                   to="/login"
-                 >
-                   Entrar
-                 </NavLink>
-               )}
-             </div>
-
+               
           </Nav>
         </Navbar.Collapse>
-     </div> 
+      </Container>
     </Navbar>
   );
 
