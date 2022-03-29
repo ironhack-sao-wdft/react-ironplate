@@ -209,9 +209,31 @@ import Offcanvas from "react-bootstrap/Navbar";
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/lista">Livros</Nav.Link>
-              <Nav.Link href="/cadastrarLivro">Novo Livro</Nav.Link>
+              <Nav.Link
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                href="/"
+              >
+                Home
+              </Nav.Link>
+
+              <Nav.Link
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                href="/lista"
+              >
+                Livros
+              </Nav.Link>
+              <Nav.Link
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                href="/cadastrarLivro"
+              >
+                Novo Livro
+              </Nav.Link>
 
               {loggedInUser.user._id ? (
                 <>
