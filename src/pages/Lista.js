@@ -20,7 +20,7 @@ function ListaLivro() {
 
   return (
     <div className="container  mb-3">
-      <div className="row  row-col-md-4">
+      <div className="row  row-col-md-3">
         {listaLivro.map((currentLivroObj) => (
           <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
         ))}

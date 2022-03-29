@@ -5,12 +5,10 @@ import { FaTrashAlt } from "react-icons/fa";
 import { BiEdit } from "react-icons/bi";
 import ConfirmationModal from "../../components/ConfirmationModal";
 
-
-
 function CardLivro(props) {
   const [showModal, setShowModal] = useState(false);
 
-   useParams();
+  useParams();
   const navigate = useNavigate();
 
   return (
@@ -22,22 +20,20 @@ function CardLivro(props) {
           alt={props.title}
         />
         <div classN="card-body">
-             <h3>
-              <strong>{props.title}</strong>
-            </h3>
-            <h5>
-              <strong>{props.author}</strong>
-            </h5>
-          
+          <h3>
+            <strong>{props.title}</strong>
+          </h3>
+          <h5>
+            <strong>{props.author}</strong>
+          </h5>
+
           <h4>
             <p>{props.releaseYear}</p>
           </h4>
-
         </div>
         <div className="container-fluid d-flex justify-content-between">
           <div className="btn btn-primary">
             <Link className="link-detalhe" to={`/livro/detalhe/${props._id}`}>
-              
               Detalhe
             </Link>
           </div>
