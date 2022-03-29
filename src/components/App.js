@@ -8,13 +8,12 @@ import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
 import DetalheLivro from "../pages/Livros/DetalheLivro";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
 import DeleteLivro from "../pages/Livros/DeleteLivro";
 import EditLivro from "../pages/Livros/EditLivro";
 import Rodape from "../components/Rodape";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import { AuthContextComponent } from "../contexts/authContext";
-
 
 function App() {
   return (
@@ -50,7 +49,7 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-           <Rodape />
+        <Rodape />
       </AuthContextComponent>
     </div>
   );

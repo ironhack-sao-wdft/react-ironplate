@@ -9,45 +9,44 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container  d-flex justify-content-between align-items-center text-light">
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          
+        <NavLink className="navbar-brand" to="/">
+          System Books
+        </NavLink>
 
-          <div className="collapse navbar-collapse" id="#menuPrincipal">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/"
-                >
-                  Home
-                </NavLink>
-              </li>
+        <div className="collapse navbar-collapse" id="#menuPrincipal">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/"
+              >
+                Home
+              </NavLink>
+            </li>
 
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/lista"
-                >
-                  Livros
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
-                  to="/cadastrarLivro"
-                >
-                  Criar Livro
-                </NavLink>
-              </li>
-            </ul>
-            
-          </div>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/lista"
+              >
+                Livros
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                className={({ isActive }) =>
+                  `nav-link ${isActive ? "active" : ""}`
+                }
+                to="/cadastrarLivro"
+              >
+                Criar Livro
+              </NavLink>
+            </li>
+          </ul>
         </div>
         <div>
           {loggedInUser.user._id ? (
@@ -75,4 +74,3 @@ function Navbar() {
 }
 
 export default Navbar;
-    
