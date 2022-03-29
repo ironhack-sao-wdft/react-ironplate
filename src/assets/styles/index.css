@@ -1,10 +1,10 @@
-.navbar-nav {
-  display: flex;
-  justify-content: end;
-}
+
 
 .navbar-collapse {
-  border-top: 1px solid red;
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
+
 }
 /* estilos da página principal app.js */
 .main {
@@ -61,8 +61,8 @@
 /*botão de editar na pagina de livros*/
 
 .btn-link {
-  background-color: yellow;
-  margin-right: 2px;
+  background-color: blue;
+  margin-left: 10px;
 }
 /*cor da fonte do link de ver detalhe*/
 
@@ -71,7 +71,7 @@
 }
 .botao-detalhe {
   border-radius: 5px;
-  margin-right: 2px;
+  margin-right: 10px;
 }
 .detalhes {
   margin-top: 20px;
