@@ -203,30 +203,30 @@ function Top() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link
+            <NavLink
               eventKey="1"
               className="text-color text-light"
               href="/"
             >
               
               Home
-            </Nav.Link>
-            <Nav.Link
+            </NavLink>
+            <NavLink
               eventKey="2"
               className="text-color text-light"
               href="/lista"
             >
             
               Livros
-            </Nav.Link>
-            <Nav.Link
+            </NavLink>
+            <NavLink
               eventKey="3"
               className="text-color text-light"
               href="/cadastrarLivro"
             >
 
               Criar Livros
-            </Nav.Link>
+            </NavLink>
             <div>
               {loggedInUser.user._id ? (
                  <>
