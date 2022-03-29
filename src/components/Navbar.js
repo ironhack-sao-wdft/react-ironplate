@@ -182,7 +182,7 @@ import { AuthContext } from "../contexts/authContext";
 
 
 import Container from "react-bootstrap/Container";
-//  import { NavLink } from "react-router-dom";
+ import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
 //  import Offcanvas from "react-bootstrap/Offcanvas";
 import Offcanvas from "react-bootstrap/Navbar";
@@ -209,31 +209,31 @@ import Offcanvas from "react-bootstrap/Navbar";
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link
+              <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                href="/"
+                to="/"
               >
                 Home
-              </Nav.Link>
+              </NavLink>
 
-              <Nav.Link
+              <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                href="/lista"
+                to="/lista"
               >
                 Livros
-              </Nav.Link>
-              <Nav.Link
+              </NavLink>
+              <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                href="/cadastrarLivro"
+                to="/cadastrarLivro"
               >
                 Novo Livro
-              </Nav.Link>
+              </NavLink>
 
               {loggedInUser.user._id ? (
                 <>
@@ -246,14 +246,14 @@ import Offcanvas from "react-bootstrap/Navbar";
                   </button>
                 </>
               ) : (
-                <Nav.Link
+                <NavLink
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
-                  href="/login"
+                  to="/login"
                 >
                   Entrar
-                </Nav.Link>
+                </NavLink>
               )}
             </Nav>
           </Offcanvas.Body>
