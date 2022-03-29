@@ -1,34 +1,11 @@
-/* estilos da página principal app.js */
-
-/* estilos da barra de navegação */
-/*.navegador{
-  background: black;
-  align-items: center;
-}
-#responsive-navbar-nav{
-  justify-content: end;
-}
 
 
 
 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-/* #responsive-navbar-nav {
+#menu-principal {
   justify-content: end;
   background: white;
-}/ */
+}
 
 /* estilos da página principal app.js */
 .main {

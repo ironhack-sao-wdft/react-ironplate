@@ -13,7 +13,7 @@ function Navbar() {
           System Books
         </NavLink>
 
-        <div className="collapse navbar-collapse" id="#menuPrincipal">
+        <div className="collapse navbar-collapse" id="#menu-principal">
           <ul className="navbar-nav">
             <li className="nav-item menu">
               <NavLink
