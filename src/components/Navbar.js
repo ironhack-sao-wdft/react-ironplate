@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 import { AuthContext } from "../contexts/authContext";
 
-function Top() {
+function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
@@ -74,5 +74,5 @@ function Top() {
   );
 }
 
-export default Top;
+export default Navbar;
     
