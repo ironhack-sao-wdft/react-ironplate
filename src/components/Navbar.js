@@ -184,8 +184,7 @@ import { AuthContext } from "../contexts/authContext";
 import Container from "react-bootstrap/Container";
 //  import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
-  import Offcanvas from "react-bootstrap/Offcanvas";
-
+ import Offcanvas from "react-bootstrap/Offcanvas";
 
   
 
