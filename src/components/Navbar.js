@@ -7,13 +7,10 @@ function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark d-flex  d-flex justify-content-between">
       <div className="container  d-flex justify-content-between align-items-center text-light">
         <NavLink className="navbar-brand" to="/">
-          <img src="./img/logo.png"
-          alt="Logo"
-          height="100px"
-          width="200px"/>
+          <img src="./img/logo.png" alt="Logo" height="100px" width="200px" />
         </NavLink>
 
         <div className="collapse navbar-collapse" id="#menu-principal">

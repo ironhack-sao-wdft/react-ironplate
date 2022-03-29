@@ -1,7 +1,3 @@
-
-
-
-
 .navbar-nav {
   justify-content: end;
   background: white;
@@ -10,16 +6,15 @@
 
 /* estilos da página principal app.js */
 .main {
-    min-height:100%; 
-    position:relative; 
-    width:100%;
-    margin: 0;
-    padding: 0;
-    background: #cccccc;   
-
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #cccccc;
 }
 
-.menu{
+.menu {
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -31,15 +26,15 @@
   font-size: 1.7rem;
   color: white;
 }
-.menu:hover{
-  background:blue;
+.menu:hover {
+  background: blue;
 }
 /* estilo galeria de livros */
-.photo-album{
-border:1px solid black;
-box-shadow:2px 2px black;
-padding:5px;
-margin: 10px;
+.photo-album {
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+  padding: 5px;
+  margin: 10px;
 }
 /*imagem da página de detalhes*/
 .img-detalhe {
@@ -76,43 +71,41 @@ margin: 10px;
   border-radius: 5px;
   margin-right: 2px;
 }
-.detalhes{
+.detalhes {
   margin-top: 20px;
   margin-bottom: 60px;
 }
 
- /* estilos de rodapé */
+/* estilos de rodapé */
 
- .footer {
+.footer {
   height: 100px;
   margin-top: 0px;
   background-color: black;
-  display:flex;
-  flex-direction:columns;
-  justify-content:center;
-  align-items:center;
-  color:white;
+  display: flex;
+  flex-direction: columns;
+  justify-content: center;
+  align-items: center;
+  color: white;
   padding: 10px;
   position: relative;
- } 
-.footer_social{
+}
+.footer_social {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  position:absolute;
+  position: absolute;
   top: 0px;
 }
-.footer_copyright{
+.footer_copyright {
   position: absolute;
   bottom: 0px;
   display: flex;
-  justify-content:center;
-  align-items:center;
-text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
-
 
 /* Estilos dos títulos das sessões */
 .titulos {
@@ -123,33 +116,33 @@ text-align: center;
   margin-bottom: 20px;
 }
 
-.cadastro{
+.cadastro {
   width: 90%;
   display: block;
   justify-content: center;
   align-items: center;
   background: #928686;
   padding: 20px;
-  margin:60px auto;
-  border-radius:15px;
+  margin: 60px auto;
+  border-radius: 15px;
 }
-.login{
-   width: 90%;
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background: #928686;
-  padding: 20px;
-  margin:60px auto;
-  border-radius:15px; 
-}
-.cadastrar-conta{
+.login {
   width: 90%;
   display: block;
   justify-content: center;
   align-items: center;
   background: #928686;
   padding: 20px;
-  margin:60px auto;
-  border-radius:15px;
+  margin: 60px auto;
+  border-radius: 15px;
+}
+.cadastrar-conta {
+  width: 90%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background: #928686;
+  padding: 20px;
+  margin: 60px auto;
+  border-radius: 15px;
 }

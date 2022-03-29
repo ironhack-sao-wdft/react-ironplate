@@ -5,14 +5,13 @@ import api from "../../apis/api";
 import ConfirmationModal from "../../components/ConfirmationModal";
 
 function DetalheLivro(props) {
-
   const [livroDetalhe, setLivroDetalhe] = useState({
-    title: '',
-    author: '',
-    synopsis: '',
+    title: "",
+    author: "",
+    synopsis: "",
     releaseYear: 0,
     genre: "",
-    coverImage: '',
+    coverImage: "",
   });
   const [showModal, setShowModal] = useState(false);
 
