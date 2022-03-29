@@ -19,7 +19,7 @@ function EditLivro(props) {
   // Loading
   const [loading, setLoading] = useState(false);
 
-  const { id } =  useParams(props);
+  const { id } = useParams();
 
   const navigate = useNavigate();
 
@@ -27,17 +27,15 @@ function EditLivro(props) {
     async function user() {
       try {
         const response = await api.get(`/detalhe-livro/${id}`);
-                  const coverImage = await handleFileUpload(userData.picture);
- 
-        setUserData({ ...userData,
-              coverImage,
-           ...response.data });
+        const coverImage = await handleFileUpload(userData.picture);
+
+        setUserData({ ...userData, coverImage, ...response.data });
       } catch (e) {
         console.log(e);
       }
     }
     user();
-  }, [id, userData]);
+  }, [id]);
 
   function handleChange(e) {
     if (e.target.files) {
@@ -49,40 +47,40 @@ function EditLivro(props) {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   }
 
-async function handleFileUpload(file) {
-  try {
-    const uploadData = new FormData();
+  async function handleFileUpload(file) {
+    try {
+      const uploadData = new FormData();
 
-    uploadData.append("picture", file);
+      uploadData.append("picture", file);
 
-    const response = await api.post("/upload", uploadData);
+      const response = await api.post("/upload", uploadData);
 
-    console.log(response);
+      console.log(response);
 
-    return response.data.url;
-  } catch (err) {
-    console.error(err);
+      return response.data.url;
+    } catch (err) {
+      console.error(err);
+    }
   }
-}
-
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       setLoading(true);
-            const coverImage = await handleFileUpload(userData.picture);
+      const coverImage = await handleFileUpload(userData.picture);
 
-      const response = await api.patch(`/atualizar-livro/${id}`,
-       ...userData,
-       coverImage
-       );
+      const response = await api.patch(
+        `/atualizar-livro/${id}`,
+        userData,
+        coverImage
+      );
 
       console.log(response);
 
       setLoading(false);
 
-      navigate("/lista");
+      navigate("/");
     } catch (err) {
       setLoading(false);
       console.error(err);
@@ -94,10 +92,10 @@ async function handleFileUpload(file) {
 
   return (
     <div className="container cadastro">
-      <form onSubmit={handleSubmit} className="form">
-         
-          <h1 className="titulos">Editar Livro</h1>
-        
+      <form onSubmit={handleSubmit}>
+        <div className="titulo">
+          <h1>Novo Livro</h1>
+        </div>
         {/* campo do titulo */}
         <div className=" mb-3 ">
           <FormField
@@ -176,7 +174,7 @@ async function handleFileUpload(file) {
           />
         </div>
         <div className="mb-3 text-end">
-          <button disabled={loading} type="submit" className="btn btn-primary p-2">
+          <button disabled={loading} type="submit" className="btn btn-primary">
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm me-2"
@@ -193,5 +191,3 @@ async function handleFileUpload(file) {
 }
 
 export default EditLivro;
-
-

@@ -15,7 +15,7 @@ function Navbar() {
 
         <div className="collapse navbar-collapse" id="#menuPrincipal">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            <li className="nav-item menu">
               <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
@@ -26,7 +26,7 @@ function Navbar() {
               </NavLink>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item menu">
               <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
@@ -36,7 +36,7 @@ function Navbar() {
                 Livros
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item menu">
               <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
