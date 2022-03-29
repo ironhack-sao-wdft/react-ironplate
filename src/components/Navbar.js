@@ -177,18 +177,18 @@
 
 
 import Navbar from "react-bootstrap/Navbar";
-// import { useContext } from "react";
-// import { AuthContext } from "../contexts/authContext";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/authContext";
 
 
-// import Container from "react-bootstrap/Container";
+import Container from "react-bootstrap/Container";
 //  import { NavLink } from "react-router-dom";
  import Nav from "react-bootstrap/Nav";
- import Container from "react-bootstrap/Navbar";
+//  import Container from "react-bootstrap/Navbar";
 
  function Top() {
 
-  // const { loggedInUser, logout } = useContext(AuthContext);
+  const { loggedInUser, logout } = useContext(AuthContext);
 
 
   return (
@@ -201,6 +201,23 @@ import Navbar from "react-bootstrap/Navbar";
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/lista">Livros</Nav.Link>
             <Nav.Link href="/cadastrarLivro">Novo Livro</Nav.Link>
+            {loggedInUser.user._id ? (
+                <>
+                  <span className="mr-3">
+                     Bem-vindo, {loggedInUser.user.name}
+                   </span>
+
+                  <button onClick={logout} className="btn btn-link">
+                     Sair
+                   </button>
+                 </>
+               ) : (
+                 <Nav.Link
+                  href="/login"
+                 >
+                   Entrar
+                 </Nav.Link>
+               )} 
           </Nav>
         </Navbar.Collapse>
       </Container>
