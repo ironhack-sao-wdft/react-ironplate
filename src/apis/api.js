@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apis = {
-  development: "http://localhost:4000/api",
+  development: "",
   production: "https://cadastro-livro-app.herokuapp.com/api",
 };
 
