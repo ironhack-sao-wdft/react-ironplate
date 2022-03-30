@@ -18,10 +18,7 @@ function CadastrarLivro() {
   const navigate = useNavigate();
   function handleChange(e) {
     if (e.target.files) {
-      return setLivro({
-        ...livro,
-        [e.target.name]: e.target.files[0],
-      });
+      return setLivro({ ...livro, [e.target.name]: e.target.files[0] });
     }
 
     setLivro({ ...livro, [e.target.name]: e.target.value });
