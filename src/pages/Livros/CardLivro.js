@@ -19,7 +19,7 @@ function CardLivro(props) {
           className="card-img-top img-card"
           alt={props.title}
         />
-        <div classN="card-body">
+        <div className="card-body">
           <h3>
             <strong>{props.title}</strong>
           </h3>

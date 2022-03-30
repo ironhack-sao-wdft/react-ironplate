@@ -4,10 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 function DeleteLivro() {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const { id } = useParams();
- 
 
   useEffect(() => {
     async function deleteLivro() {
@@ -19,7 +18,7 @@ function DeleteLivro() {
       }
     }
     deleteLivro();
-  }, [id,navigate]);
+  });
 
   return <div>Deletando...</div>;
 }

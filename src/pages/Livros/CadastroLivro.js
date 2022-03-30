@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
-import FormField from "../../components/Form/FormField"
-
+import FormField from "../../components/Form/FormField";
 
 function CadastrarLivro() {
-
   const [livro, setLivro] = useState({
     title: "",
     author: "",
@@ -30,23 +28,21 @@ function CadastrarLivro() {
   }
 
   //função para upload de arquivo
-async function handleFileUpload(file) {
-  try {
-    const uploadData = new FormData();
+  async function handleFileUpload(file) {
+    try {
+      const uploadData = new FormData();
 
-    uploadData.append("picture", file);
+      uploadData.append("picture", file);
 
-    const response = await api.post("/upload", uploadData);
+      const response = await api.post("/upload", uploadData);
 
-    console.log(response);
+      console.log(response);
 
-    return response.data.url;
-  } catch (err) {
-    console.error(err);
+      return response.data.url;
+    } catch (err) {
+      console.error(err);
+    }
   }
-}
-
-
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -58,13 +54,13 @@ async function handleFileUpload(file) {
 
       const response = await api.post("/cadastrar-livro", {
         ...livro,
-        coverImage
+        coverImage,
       });
       navigate("/lista");
 
       console.log(response);
-      
-           setLoading(false);
+
+      setLoading(false);
     } catch (err) {
       console.error(err);
       setLoading(false);
@@ -76,7 +72,7 @@ async function handleFileUpload(file) {
       <div>
         <div className="container cadastro">
           <form onSubmit={handleSubmit}>
-               <h1 className="titulos">Novo Livro</h1>
+            <h1 className="titulos">Novo Livro</h1>
             {/* campo do titulo */}
             <div className=" mb-3 ">
               <FormField
@@ -144,7 +140,8 @@ async function handleFileUpload(file) {
                 readOnly={loading}
               />
             </div>
-            <div class=" mb-3">
+            {/* campo imagem do livro */}
+            <div className="mb-3">
               <FormField
                 type="file"
                 label="Imagem"
