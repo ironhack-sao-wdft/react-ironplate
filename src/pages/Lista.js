@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import api from "../apis/api";
 import CardLivro from "../pages/Livros/CardLivro";
 // import index from "../assets/styles/index.css";
+
 function ListaLivro() {
   const [listaLivro, setListaLivro] = useState([]);
 
@@ -19,12 +20,14 @@ function ListaLivro() {
   }, []);
 
   return (
-    <div className="container  mb-3">
-      <div className="row  row-col-md-4">
+    <div className="container">
+    <div className="row">
+      <div className="row row-cols-md-3">
         {listaLivro.map((currentLivroObj) => (
           <CardLivro key={currentLivroObj._id} {...currentLivroObj} />
         ))}
       </div>
+    </div>
     </div>
   );
 }

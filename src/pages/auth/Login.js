@@ -38,7 +38,7 @@ function Login(props) {
       setErrors({ password: "", email: "" });
       navigate("/");
     } catch (err) {
-      console.log(err.response);
+      console.error(err.response);
       setErrors({ ...err.response.data.errors });
     }
   }

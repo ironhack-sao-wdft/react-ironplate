@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Lista from "../pages/Lista";
+import ListaLivro from "../pages/Lista";
 import Home from "../pages/Home";
 
 import Signup from "../pages/auth/Signup";
@@ -24,7 +24,7 @@ function App() {
           <Routes>
             <Route
               path="/lista"
-              element={<ProtectedRoute component={Lista} />}
+              element={<ProtectedRoute component={ListaLivro} />}
             />
 
             <Route

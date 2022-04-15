@@ -51,11 +51,11 @@ function Navbar() {
         <div>
           {loggedInUser.user._id ? (
             <>
-              <span className="text-warning">
+              <span className="text-warning me-3">
                 Bem-vindo, {loggedInUser.user.name}
               </span>
 
-              <button onClick={logout} className="btn btn-link">
+              <button onClick={logout} className="btn btn-danger">
                 Sair
               </button>
             </>

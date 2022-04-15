@@ -44,7 +44,7 @@ function CardLivro(props) {
             </Link>
           </button>
           <button
-            className="btn btn-danger btn-link"
+            className="btn btn-danger "
             onClick={() => setShowModal(true)}
           >
             <FaTrashAlt />
