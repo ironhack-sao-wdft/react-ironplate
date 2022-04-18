@@ -26,13 +26,13 @@ function EditLivro(props) {
       try {
         const response = await api.get(`/detalhe-livro/${id}`);
 
-        setUserData({ ...userData, ...response.data });
+        setUserData( ...userData, ...response.data );
       } catch (e) {
         console.log(e);
       }
     }
     user();
-  }, [id]);
+  }, [id, userData]);
 
   function handleChange(e) {
     setUserData({ ...userData, [e.target.name]: e.target.value });
