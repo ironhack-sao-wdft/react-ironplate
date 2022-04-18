@@ -22,17 +22,16 @@ function EditLivro(props) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    async function user() {
-      try {
-        const response = await api.get(`/detalhe-livro/${id}`);
+       try {
+        const response =  api.get(`/detalhe-livro/${id}`);
 
-        setUserData( ...userData, ...response.data );
-      } catch (e) {
-        console.log(e);
+             setUserData( ...userData, ...response.data);
+ 
+      } catch (err) {
+        console.log(err);
       }
-    }
-    user();
-  }, [id, userData]);
+    
+   }, [id, userData]);
 
   function handleChange(e) {
     setUserData({ ...userData, [e.target.name]: e.target.value });

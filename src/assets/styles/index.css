@@ -54,8 +54,11 @@
 .card {
   box-shadow: inset 0 0 1em gold, 0 0 1em black;
   padding: 5px;
-  margin: 10px;
-  height: 400px;
+   height: 400px;
+}
+.card-livros{
+    background: #cccccc;
+    margin-top: 20px;
 }
 
 /*botão de editar na pagina de livros*/
