@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apis = {
   development: "http://localhost:4000/api",
-  production: "https://cadastro-livro-app.herokuapp.com",
+  production: "https://main--cadastro-livro.netlify.app/",
 };
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
