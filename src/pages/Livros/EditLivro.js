@@ -64,7 +64,7 @@ function EditLivro(props) {
       <h1 className="text-center mt-5 mb-4">Editar Livro</h1>
 
       <form onSubmit={handleSubmit}>
-        <div className="container">
+        <div className="container cadastro">
           <FormField
             label="Titulo"
             id="title"
@@ -118,7 +118,7 @@ function EditLivro(props) {
 
           <div className="container"></div>
           <div>
-            <button disabled={loading} type="submit" className="botaoCriar">
+            <button disabled={loading} type="submit" className="btn btn-primary">
               {loading ? (
                 <span
                   className="spinner-border spinner-border-sm"

@@ -37,7 +37,7 @@ function Header() {
             Criar Livro
           </NavLink>
 
-          <div className="nav-menu">
+          <div className="login-user">
             {loggedInUser.user._id ? (
               <>
                 <span className="text-warning me-3">
@@ -51,7 +51,7 @@ function Header() {
             ) : (
               <NavLink
                 className={({ isActive }) =>
-                  `nav-link ${isActive ? "active" : ""}`
+                  `nav-link-login ${isActive ? "active" : ""}`
                 }
                 to="/login"
               >

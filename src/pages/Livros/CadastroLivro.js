@@ -153,7 +153,7 @@ function CadastrarLivro() {
               <button
                 disabled={loading}
                 type="submit"
-                className="btn-primary mb-3"
+                className=" btn btn-primary mb-3"
               >
                 {loading ? (
                   <>

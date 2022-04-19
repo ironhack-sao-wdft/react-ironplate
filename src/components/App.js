@@ -14,14 +14,12 @@ import EditLivro from "../pages/Livros/EditLivro";
 import Rodape from "../components/Rodape";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import { AuthContextComponent } from "../contexts/authContext";
-// import Topo from "../components/Topo";
 
 function App() {
   return (
     <div className="main">
       <AuthContextComponent>
-        {/* <Topo /> */}
-        <Header />
+         <Header />
         <div className="container-fluid mb-3 content">
           <Routes>
             <Route

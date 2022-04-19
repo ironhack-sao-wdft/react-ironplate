@@ -10,17 +10,11 @@
   margin: 0;
   padding: 0;
   background: #cccccc;
+  align-items: center;
 }
 /* estilos da navbar */
 .topo {
   align-items: center;
-}
-
-.container-fluid {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-
 }
 
 #responsive-navbar-nav {
@@ -29,7 +23,8 @@
 
 .nav-menu {
   display: flex;
-  justify-content: center
+  justify-content: center;
+  align-items: center;
 }
 
 .login-user {
@@ -38,7 +33,7 @@
 }
 
 .nav-link {
-  background: black;
+  background: #234E99;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
   padding: 8px;
@@ -48,9 +43,22 @@
   transition: background-color 2s;
   font-size: 1.7rem;
   color: white;
- }
+   }
 .nav-link:hover {
   background: blue;
+}
+.nav-link-login{
+background: #C2291A;
+box-shadow: 3px 3px 3px green;
+margin: 8px;
+padding: 8px;
+border-radius: 10px;
+text-transform: uppercase;
+text-align: center;
+text-decoration: none;
+transition: background-color 2s;
+font-size: 1.7rem;
+color: white;
 }
 
 /* estilo galeria de livros */
@@ -164,6 +172,11 @@ a+a {
   padding: 20px;
   margin: 60px auto;
   border-radius: 15px;
+}
+.link-cadastre{
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #eee;
 }
 .cadastrar-conta {
   width: 90%;
