@@ -8,18 +8,20 @@ import Signup from "../pages/auth/Signup";
 import Login from "../pages/auth/Login";
 import CadastrarLivro from "../pages/Livros/CadastroLivro";
 import DetalheLivro from "../pages/Livros/DetalheLivro";
-import Navbar from "../components/Navbar";
+import Header from "../components/Navbar";
 import DeleteLivro from "../pages/Livros/DeleteLivro";
 import EditLivro from "../pages/Livros/EditLivro";
 import Rodape from "../components/Rodape";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import { AuthContextComponent } from "../contexts/authContext";
+// import Topo from "../components/Topo";
 
 function App() {
   return (
     <div className="main">
       <AuthContextComponent>
-        <Navbar />
+        {/* <Topo /> */}
+        <Header />
         <div className="container-fluid mb-3 content">
           <Routes>
             <Route

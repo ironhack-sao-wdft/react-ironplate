@@ -1,11 +1,7 @@
 
 
-.navbar-collapse {
-  display: flex;
-  justify-content: flex-end;
-  margin: 5px;
+    
 
-}
 /* estilos da página principal app.js */
 .main {
   min-height: 100%;
@@ -15,8 +11,33 @@
   padding: 0;
   background: #cccccc;
 }
+/* estilos da navbar */
+.topo {
+  align-items: center;
+}
 
-.menu {
+.container-fluid {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#responsive-navbar-nav {
+  justify-content: end;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: center
+}
+
+.login-user {
+  margin: auto;
+  padding: 10px;
+}
+
+.nav-link {
   background: black;
   box-shadow: 3px 3px 3px green;
   margin: 8px;
@@ -27,10 +48,11 @@
   transition: background-color 2s;
   font-size: 1.7rem;
   color: white;
-}
-.menu:hover {
+ }
+.nav-link:hover {
   background: blue;
 }
+
 /* estilo galeria de livros */
 .photo-album {
   border: 1px solid black;
@@ -61,16 +83,15 @@
     margin-top: 20px;
 }
 
-/*botão de editar na pagina de livros*/
 
-.btn-link {
-  background-color: blue;
-  margin-left: 10px;
-}
 /*cor da fonte do link de ver detalhe*/
 
 .link-detalhe {
-  color: white;
+   color: white;
+   text-decoration: none;
+}
+.link-detalhe:hover{
+  color: black;
 }
 .botao-detalhe {
   border-radius: 5px;
@@ -125,7 +146,7 @@ a+a {
 }
 
 .cadastro {
-  width: 90%;
+  width: 100%;
   display: block;
   justify-content: center;
   align-items: center;
