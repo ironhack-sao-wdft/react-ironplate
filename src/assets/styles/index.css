@@ -15,6 +15,12 @@
 /* estilos da navbar */
 .topo {
   align-items: center;
+  padding: 20px;
+}
+.toggle{
+  background-color: blue;
+   padding: 5px;
+  width: 10%;
 }
 
 #responsive-navbar-nav {
@@ -24,7 +30,6 @@
 .nav-menu {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .login-user {

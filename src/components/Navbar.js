@@ -12,9 +12,9 @@ function Header() {
     <Navbar bg="dark" variant={"dark"} expand="lg" className="topo">
       {/* <Container className="container-fluid"> */}
       <Navbar.Brand href="/">
-        <img src="./img/logo.png" alt="Logo" height="100px" width="200px" />
+        <img src="./img/logo.png" alt="Logo" height="100px" width="200px"/>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" className="toggle" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="nav-menu">
           <NavLink
