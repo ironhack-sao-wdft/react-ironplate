@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import api from "../../apis/api";
 
 import { AuthContext } from "../../contexts/authContext";
@@ -14,6 +14,9 @@ function Login(props) {
   });
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   function handleChange(event) {
     setState({
@@ -35,7 +38,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/");
+      navigate(from, { replace: true });
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
