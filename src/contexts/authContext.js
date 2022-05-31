@@ -16,7 +16,7 @@ function AuthContextComponent(props) {
     }
   }, []);
 
-  useEffect(() => setLoading(false), [state.user]);
+  useEffect(() => setLoading(false), [loggedInUser.user]);
 
   function handleLogout() {
     window.localStorage.removeItem("loggedInUser");
