@@ -1,8 +1,12 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import api from "../../apis/api";
-
+import "../Home.css";
+import { Button } from "react-bootstrap";
+import "../Home.css";
 import { AuthContext } from "../../contexts/authContext";
+
+// document.body.style.backgroundColor = red;
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -33,7 +37,8 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      props.history.push("/book/all");
+
+      props.history.push("/");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
@@ -41,41 +46,50 @@ function Login(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <div className="general-text">
+      <form onSubmit={handleSubmit} className="login-signup-container">
+        <h1>Login</h1>
+        <div className="container mt-5">
+          <div className="d-flex justify-content-between m-1">
+            <label htmlFor="signupFormEmail">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              id="signupFormEmail"
+              value={state.email}
+              error={errors.email}
+              onChange={handleChange}
+            />
+          </div>
 
-      <div>
-        <label htmlFor="signupFormEmail">E-mail Address</label>
-        <input
-          type="email"
-          name="email"
-          id="signupFormEmail"
-          value={state.email}
-          error={errors.email}
-          onChange={handleChange}
-        />
-      </div>
+          <div className="d-flex justify-content-between m-1">
+            <label htmlFor="signupFormPassword">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="signupFormPassword"
+              value={state.password}
+              error={errors.password}
+              onChange={handleChange}
+            />
+          </div>
 
-      <div>
-        <label htmlFor="signupFormPassword">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="signupFormPassword"
-          value={state.password}
-          error={errors.password}
-          onChange={handleChange}
-        />
-      </div>
+          <div className="d-flex flex-column align-items-center link-style">
+            <Button
+              variant="light"
+              type="submit"
+              style={{ width: 100, margin: 20 }}
+            >
+              Login!
+            </Button>
 
-      <div>
-        <button type="submit">Login!</button>
-
-        <Link to="/auth/signup">
-          Don't have an account? Click here to signup!
-        </Link>
-      </div>
-    </form>
+            <Link to="/auth/signup">
+              Don't have an account? Click here to sign up!
+            </Link>
+          </div>
+        </div>
+      </form>
+    </div>
   );
 }
 
