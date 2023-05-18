@@ -1,1 +1,350 @@
-/* Seus estilos globais vão aqui */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-footer {
+  background-color: #1f3c88;
+  height: 10vh;
+}
+
+/* Homepage */
+
+.elefantBlue {
+  background-color: rgb(71, 96, 114);
+}
+.darkerBlue {
+  background-color: rgb(51, 66, 87);
+}
+.yellowTaxi {
+  background-color: rgb(247, 182, 51);
+}
+.darkGrey {
+  background-color: rgb(51, 66, 87);
+}
+.whiteLayer {
+  background-color: rgb(255, 255, 255);
+}
+.margin-footer {
+  margin-bottom: 24vh;
+}
+.container-rotas {
+  margin-bottom: 23vh;
+}
+
+/* .page-wrap {
+  width: 800px;
+  margin: 0 auto;
+} */
+
+/* Header */
+.headerBg {
+  position: relative;
+  height: 12vh;
+  width: 100vw;
+  opacity: 30%;
+  background-color: black;
+}
+
+.login-nav {
+  padding: 0;
+}
+
+/* Footer */
+.nav-mae {
+  color: white;
+  width: 100vw;
+}
+.nav-footer {
+  background-color: rgb(71, 96, 114);
+  height: 23vh;
+  color: white;
+  width: 100vw;
+}
+.nav-p {
+  font-size: small;
+}
+.mini-footer {
+  background-color: rgb(51, 66, 87);
+  font-size: smaller;
+  width: 100vw;
+  height: 3vh;
+
+  text-align: center;
+}
+/* Homepage */
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  height: 50vh;
+  background-repeat: repeat-x;
+}
+.country-img {
+  height: 67vh;
+  width: 33vw;
+}
+
+.container-rotas {
+  margin-bottom: 20vh;
+}
+.country-title {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-size: 18pt;
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+}
+
+.login-img {
+  width: 50vw;
+  height: auto;
+}
+
+/* AAAA */
+
+.allLinks {
+  text-decoration: none;
+  color: black;
+}
+
+.linksTextWhite {
+  text-decoration: none;
+  color: white;
+}
+
+.post-description {
+  color: #000a24;
+}
+
+.botao-criarForum {
+  background-color: #5893d4;
+  margin-left: 57vw;
+  border: none;
+  height: 7vh;
+  width: 10vw;
+  border-radius: 20px;
+}
+
+.heroImageForum {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1522152302542-71a8e5172aa1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=910&q=80");
+
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heroImagePaises {
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  height: 88vh;
+  width: 100vw;
+  background-repeat: repeat-x;
+}
+
+.titleHero {
+  color: white;
+  font-family: sans-serif;
+  padding: 20vh;
+  padding-top: 50vh;
+}
+
+.container-rotas {
+  margin-bottom: 12vh;
+}
+
+.card-details {
+  text-align: center;
+}
+
+.heroImageDoc {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://www.vietnamimmigration.org/wp-content/uploads/2019/10/Brazil-passport.jpg");
+
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: covers;
+  position: relative;
+}
+
+.textDoc {
+  text-align: center;
+}
+
+.docHr {
+  margin-top: 40px;
+  height: 4px;
+  width: 70vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+}
+
+.titleHr {
+  height: 2px;
+  width: 15vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+  margin-left: 3vw;
+}
+
+.text-area {
+  height: 10vh;
+  margin-left: 30vw;
+  display: block;
+  border-radius: 10px;
+}
+
+.botao {
+  width: 7vw;
+  height: 4vh;
+  border-radius: 10px;
+  color: white;
+}
+
+.iconComment {
+  color: #070d59;
+}
+
+.commentTitle {
+  display: inline;
+  margin: 20px;
+}
+
+.card {
+  border-radius: 30px;
+}
+
+.deleteComments {
+  margin-left: 100vh;
+}
+
+.botaoCountries {
+  border: none;
+  width: 12vw;
+  height: 3vh;
+  border-radius: 10px;
+  color: white;
+  background-color: #f7b633;
+  margin-bottom: 1vh;
+  margin-left: 20vh;
+}
+.allPage {
+  margin-bottom: 50vh;
+}
+
+.cardInfos {
+  padding-top: 4vh;
+}
+
+.cardComments {
+  margin-left: 20vh;
+}
+
+.cardImgPost {
+  margin-left: 8vh;
+}
+
+.image-card-info {
+  border-radius: 20px;
+  margin: 1vh;
+}
+
+.postHr {
+  margin-top: 5vh;
+  height: 1px;
+  width: 30vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+}
+
+.cardPostAll {
+  margin-left: 20vw;
+}
+
+.heroImageHabitation {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://s3-eu-central-1.amazonaws.com/cja-blogassets/wp-content/uploads/sites/3/2018/09/28081358/Vender-casa.jpg");
+
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heroImageCreate {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heroImageAddMoradia {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.container-moradia {
+  margin-top: 20vh;
+  margin-left: 20vw;
+}
+
+.moradiaHr {
+  height: 1px;
+  width: 40vw;
+  background-color: #f7b633;
+  border-radius: 40px;
+  margin-left: 5vh;
+}
+
+.heroImageJobs {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.heroImageAddEmprego {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1549923746-c502d488b3ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.cardJobs {
+  margin-left: 5vw;
+  margin-top: 20vh;
+}
+
+.heroImageSignup {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.338), rgba(0, 0, 0, 0.338)),
+    url("https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80://images.unsplash.com/photo-1549923746-c502d488b3ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
