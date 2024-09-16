@@ -1,31 +1,38 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# React IronPlate
+# MALA E CUIA
 
-Esse boilerplate já inclui:
+The Portuguese expression 'mala e cuia' means that a person is carrying all his belongings with him to somewhere.
+The 'Mala e Cuia' site was planned and designed to help everyone that intends to travel to Europe.
 
-- Pré-configuração do Axios para injeção de cabeçalhos de autenticação e BaseURL
-- Context para armazenar state de usuário logado
-- Forms de Login e Signup
-- Roteamento básico
-- Componente de rota protegida
+# About the application:
 
-## Para Começar
+Mala e Cuia is a site with the main information about life in Europe for expatriates.
+The website contains a 'forum' where people can exchange their knowledge and experience and a classified portal as well.
 
-- Faça o fork e clone deste repositório
+# The Requirements:
+Use React for all of the user-facing parts of your application.
+Use Express for your API backend that your React app will communicate with.
+Use Mongoose for models and database communication.
+Have 3 CRUD or more.
+Have two repos on GitHub. One for your React application and the other for your Express API backend.
+Be deployed online using Heroku, so anybody could use your app.
+Responsive design is not a requirement.
 
-## Instalação
+# The developers:
 
-```shell
-$ npm install
-```
+[Filipe Cintra](https://github.com/filipefcintra)
+[Kamila Nita](https://github.com/kamilanitta)
+[Priscila Veras](https://github.com/PriscilaVeras)
 
-## Deploy no Netlify
+# Repositores:
 
-1. Faça login no Netlify e selecione seu repositório
-2. Em 'Deploy settings > build command' escreva: CI=false npm run build
-3. Em 'publish directory' escreva: build/
-4. Adicione uma environment variable (variável de ambiente) REACT_APP_API_BASE com a URL da sua API funcionando no Heroku
-5. Adicione a URL do seu app hospedado no Netlify nas variáveis de ambiente do backend no Heroku
 
-Happy coding! 💙
+# Deploy:
+
+
+# Presentation:
+
+[Presentation link](https://docs.google.com/presentation/d/1NefH7VvvIocs5jetzKndfh9aqMRhNu8j6UmE0C-vGHE/edit?usp=sharing)
+
+This app was made as part of the Ironhack Bootcamp
