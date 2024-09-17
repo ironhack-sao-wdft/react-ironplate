@@ -1,0 +1,45 @@
+.form {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .form input[type="text"] {
+    width: 35vw;
+  }
+}
+
+.form_text {
+  border-radius: 10px;
+}
+
+.form_button {
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: transparent;
+  color: black;
+
+  font-size: 20px;
+}
+
+.form_button:hover {
+  color: blue;
+}
+
+.form_file {
+  color: black;
+  display: none;
+}
+
+i.fa-circle-plus {
+  margin: 10px;
+  cursor: pointer;
+  font-size: 45px;
+}
